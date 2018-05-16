@@ -14,7 +14,30 @@
 		6EA351C120AC7D1500AF1984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA351C020AC7D1500AF1984 /* Assets.xcassets */; };
 		6EA351C420AC7D1500AF1984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA351C220AC7D1500AF1984 /* LaunchScreen.storyboard */; };
 		6EA351C720AC7D1500AF1984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351C620AC7D1500AF1984 /* main.m */; };
+		6EA351FA20AC82C200AF1984 /* MainInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351E720AC82C100AF1984 /* MainInfoViewController.m */; };
+		6EA351FB20AC82C200AF1984 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351ED20AC82C100AF1984 /* SettingViewController.m */; };
+		6EA351FC20AC82C200AF1984 /* WalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351F320AC82C100AF1984 /* WalletViewController.m */; };
+		6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351FD20AC830900AF1984 /* TWNetworkManager.m */; };
+		6EA3520220AC830A00AF1984 /* TWUIInitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */; };
+		6EA3520D20AC848300AF1984 /* libToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA3520920AC834400AF1984 /* libToolKit.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6EA3520820AC834400AF1984 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EA3520320AC834400AF1984 /* ToolKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E1CD2971B3BDEE0003E56FF;
+			remoteInfo = ToolKit;
+		};
+		6EA3520A20AC834400AF1984 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EA3520320AC834400AF1984 /* ToolKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E1CD2A21B3BDEE0003E56FF;
+			remoteInfo = ToolKitTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		268A9A5C3A78189BCD39F032 /* Pods-TronWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TronWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-TronWallet/Pods-TronWallet.release.xcconfig"; sourceTree = "<group>"; };
@@ -28,6 +51,18 @@
 		6EA351C320AC7D1500AF1984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EA351C520AC7D1500AF1984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EA351C620AC7D1500AF1984 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6EA351E620AC82C100AF1984 /* MainInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainInfoViewController.h; sourceTree = "<group>"; };
+		6EA351E720AC82C100AF1984 /* MainInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfoViewController.m; sourceTree = "<group>"; };
+		6EA351EC20AC82C100AF1984 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		6EA351ED20AC82C100AF1984 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		6EA351F220AC82C100AF1984 /* WalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletViewController.h; sourceTree = "<group>"; };
+		6EA351F320AC82C100AF1984 /* WalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletViewController.m; sourceTree = "<group>"; };
+		6EA351FD20AC830900AF1984 /* TWNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWNetworkManager.m; sourceTree = "<group>"; };
+		6EA351FE20AC830A00AF1984 /* TWNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWNetworkManager.h; sourceTree = "<group>"; };
+		6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWUIInitManager.m; sourceTree = "<group>"; };
+		6EA3520020AC830A00AF1984 /* TWUIInitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWUIInitManager.h; sourceTree = "<group>"; };
+		6EA3520320AC834400AF1984 /* ToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ToolKit.xcodeproj; path = ToolKit/ToolKit.xcodeproj; sourceTree = "<group>"; };
+		6EA3520C20AC83DE00AF1984 /* TronWallet.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TronWallet.pch; sourceTree = "<group>"; };
 		88753940E089DDB3C9C183DD /* Pods-TronWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TronWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TronWallet/Pods-TronWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		FE13880D14A8B17218729F4C /* libPods-TronWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TronWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -37,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EA3520D20AC848300AF1984 /* libToolKit.a in Frameworks */,
 				0BFE87FAA0CE2A2D5E3C6214 /* libPods-TronWallet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +92,7 @@
 		6EA351AB20AC7D1500AF1984 = {
 			isa = PBXGroup;
 			children = (
+				6EA3520320AC834400AF1984 /* ToolKit.xcodeproj */,
 				6EA351B620AC7D1500AF1984 /* TronWallet */,
 				6EA351B520AC7D1500AF1984 /* Products */,
 				369EF89A339F1032DF92AC84 /* Pods */,
@@ -74,6 +111,11 @@
 		6EA351B620AC7D1500AF1984 /* TronWallet */ = {
 			isa = PBXGroup;
 			children = (
+				6EA351F820AC82C200AF1984 /* Manager */,
+				6EA351E320AC82C100AF1984 /* Pages */,
+				6EA351F920AC82C200AF1984 /* Resources */,
+				6EA351F720AC82C200AF1984 /* ThirdParty */,
+				6EA351F620AC82C100AF1984 /* Utils */,
 				6EA351B720AC7D1500AF1984 /* AppDelegate.h */,
 				6EA351B820AC7D1500AF1984 /* AppDelegate.m */,
 				6EA351BA20AC7D1500AF1984 /* ViewController.h */,
@@ -83,8 +125,159 @@
 				6EA351C220AC7D1500AF1984 /* LaunchScreen.storyboard */,
 				6EA351C520AC7D1500AF1984 /* Info.plist */,
 				6EA351C620AC7D1500AF1984 /* main.m */,
+				6EA3520C20AC83DE00AF1984 /* TronWallet.pch */,
 			);
 			path = TronWallet;
+			sourceTree = "<group>";
+		};
+		6EA351E320AC82C100AF1984 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				6EA351E420AC82C100AF1984 /* Main */,
+				6EA351EA20AC82C100AF1984 /* Setting */,
+				6EA351F020AC82C100AF1984 /* Wallet */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		6EA351E420AC82C100AF1984 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6EA351E520AC82C100AF1984 /* controller */,
+				6EA351E820AC82C100AF1984 /* model */,
+				6EA351E920AC82C100AF1984 /* view */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6EA351E520AC82C100AF1984 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EA351E620AC82C100AF1984 /* MainInfoViewController.h */,
+				6EA351E720AC82C100AF1984 /* MainInfoViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6EA351E820AC82C100AF1984 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6EA351E920AC82C100AF1984 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		6EA351EA20AC82C100AF1984 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				6EA351EB20AC82C100AF1984 /* controller */,
+				6EA351EE20AC82C100AF1984 /* model */,
+				6EA351EF20AC82C100AF1984 /* view */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		6EA351EB20AC82C100AF1984 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EA351EC20AC82C100AF1984 /* SettingViewController.h */,
+				6EA351ED20AC82C100AF1984 /* SettingViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6EA351EE20AC82C100AF1984 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6EA351EF20AC82C100AF1984 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		6EA351F020AC82C100AF1984 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				6EA351F120AC82C100AF1984 /* controller */,
+				6EA351F420AC82C100AF1984 /* model */,
+				6EA351F520AC82C100AF1984 /* view */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		6EA351F120AC82C100AF1984 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EA351F220AC82C100AF1984 /* WalletViewController.h */,
+				6EA351F320AC82C100AF1984 /* WalletViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6EA351F420AC82C100AF1984 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6EA351F520AC82C100AF1984 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		6EA351F620AC82C100AF1984 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6EA351F720AC82C200AF1984 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		6EA351F820AC82C200AF1984 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6EA351FE20AC830A00AF1984 /* TWNetworkManager.h */,
+				6EA351FD20AC830900AF1984 /* TWNetworkManager.m */,
+				6EA3520020AC830A00AF1984 /* TWUIInitManager.h */,
+				6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		6EA351F920AC82C200AF1984 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6EA3520420AC834400AF1984 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EA3520920AC834400AF1984 /* libToolKit.a */,
+				6EA3520B20AC834400AF1984 /* ToolKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BB52CC17CCCA6404819481E3 /* Frameworks */ = {
@@ -144,12 +337,35 @@
 			mainGroup = 6EA351AB20AC7D1500AF1984;
 			productRefGroup = 6EA351B520AC7D1500AF1984 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6EA3520420AC834400AF1984 /* Products */;
+					ProjectRef = 6EA3520320AC834400AF1984 /* ToolKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6EA351B320AC7D1500AF1984 /* TronWallet */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6EA3520920AC834400AF1984 /* libToolKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libToolKit.a;
+			remoteRef = 6EA3520820AC834400AF1984 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6EA3520B20AC834400AF1984 /* ToolKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ToolKitTests.xctest;
+			remoteRef = 6EA3520A20AC834400AF1984 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6EA351B220AC7D1500AF1984 /* Resources */ = {
@@ -219,7 +435,12 @@
 			files = (
 				6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */,
 				6EA351C720AC7D1500AF1984 /* main.m in Sources */,
+				6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */,
 				6EA351B920AC7D1500AF1984 /* AppDelegate.m in Sources */,
+				6EA3520220AC830A00AF1984 /* TWUIInitManager.m in Sources */,
+				6EA351FC20AC82C200AF1984 /* WalletViewController.m in Sources */,
+				6EA351FA20AC82C200AF1984 /* MainInfoViewController.m in Sources */,
+				6EA351FB20AC82C200AF1984 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +576,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = TronWallet.pch;
+				HEADER_SEARCH_PATHS = (
+					"${SRCROOT}/ToolKit/ToolKit/**",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/JSONModel\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SZTextView\"",
+					"\"${PODS_ROOT}/Headers/Public/TPKeyboardAvoiding\"",
+					"\"${PODS_ROOT}/Headers/Public/WebViewJavascriptBridge\"",
+				);
 				INFOPLIST_FILE = TronWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onesmile.TronWallet;
@@ -369,6 +605,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = TronWallet.pch;
+				HEADER_SEARCH_PATHS = (
+					"${SRCROOT}/ToolKit/ToolKit/**",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/JSONModel\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SZTextView\"",
+					"\"${PODS_ROOT}/Headers/Public/TPKeyboardAvoiding\"",
+					"\"${PODS_ROOT}/Headers/Public/WebViewJavascriptBridge\"",
+				);
 				INFOPLIST_FILE = TronWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onesmile.TronWallet;
