@@ -36,8 +36,8 @@ IMP_SINGLETON
 //
 //    
 //    NSString *hexColor = uiDict[@"nav_color"];
-//    bar.barTintColor = [UIColor colorWithHexString:hexColor];//HexColor(0x0076d1);//HexColor(0xffd200);
-//    
+    bar.barTintColor = [UIColor redColor];//HexColor(0x0076d1);//HexColor(0xffd200);
+//
     UIImage *backImage = [UIImage imageNamed:@"normal_back"];
     bar.backIndicatorImage = backImage;
     bar.backIndicatorTransitionMaskImage = backImage;
@@ -66,11 +66,11 @@ IMP_SINGLETON
 
 -(void)initHudStyle
 {
-    MBBackgroundView *backview = [MBBackgroundView appearance];
-    backview.style = MBProgressHUDBackgroundStyleSolidColor;
+//    MBBackgroundView *backview = [MBBackgroundView appearance];
+//    backview.style = MBProgressHUDBackgroundStyleSolidColor;
 //    backview.color = [UIColor colorWithWhite:0 alpha:0.8];
     
-    [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = [UIColor whiteColor];
+ //   [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = [UIColor whiteColor];
     
     
 //    MBRoundProgressView *progressView = [MBRoundProgressView appearance];

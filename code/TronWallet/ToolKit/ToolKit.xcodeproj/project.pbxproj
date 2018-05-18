@@ -7,14 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25F743E01DC0D7B100850F50 /* TkShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F743D51DC0D7B100850F50 /* TkShareData.m */; };
-		25F743E11DC0D7B100850F50 /* TKShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F743D71DC0D7B100850F50 /* TKShareManager.m */; };
-		25F743E21DC0D7B100850F50 /* TKShareResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F743D91DC0D7B100850F50 /* TKShareResult.m */; };
-		25F743E31DC0D7B100850F50 /* TKShareTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F743DB1DC0D7B100850F50 /* TKShareTools.m */; };
-		25F743E41DC0D7B100850F50 /* TKShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F743DD1DC0D7B100850F50 /* TKShareView.m */; };
 		25F7441E1DC0E13100850F50 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F744091DC0E13100850F50 /* libWeiboSDK.a */; };
 		25F744201DC0E13100850F50 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F744171DC0E13100850F50 /* TencentOpenAPI.framework */; };
-		25F7442F1DC1B5CA00850F50 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F744091DC0E13100850F50 /* libWeiboSDK.a */; };
 		533055741BD9DA5F0091915B /* TKCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 533055731BD9DA5F0091915B /* TKCommonTools.m */; };
 		53AD6E771F64DCB5005025BD /* TKCommonTools+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AD6E761F64DCB5005025BD /* TKCommonTools+Date.m */; };
 		6E0941341CBA6B1500B72917 /* TKStatisticsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0941331CBA6B1500B72917 /* TKStatisticsHandler.m */; };
@@ -61,7 +55,6 @@
 		6E1CD54A1B3FAFC8003E56FF /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD5491B3FAFC8003E56FF /* TKViewController.m */; };
 		6E1CD5631B3FC324003E56FF /* TKNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD5601B3FC324003E56FF /* TKNetworkManager.m */; };
 		6E1CD5641B3FC324003E56FF /* TKUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD5621B3FC324003E56FF /* TKUploader.m */; };
-		6E1D71B61DC213F100179926 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D71B21DC213F100179926 /* libWeChatSDK.a */; };
 		6E203EB21BA31D1600451DE0 /* TKAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E203EB11BA31D1600451DE0 /* TKAppInfo.m */; };
 		6E24FF961C045F7A005E6D57 /* SGActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24FF8D1C045F7A005E6D57 /* SGActionView.m */; };
 		6E24FF971C045F7A005E6D57 /* SGAlertMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24FF8F1C045F7A005E6D57 /* SGAlertMenu.m */; };
@@ -108,12 +101,6 @@
 		6EFC5A111C940ED30009D695 /* TKWebJSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC5A101C940ED30009D695 /* TKWebJSHelper.m */; };
 		BC1ED3557B2908C01CE9A774 /* TKRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1ED82213073F4D2D66CB52 /* TKRequestHelper.m */; };
 		BC1EDE430A597211E609FD10 /* TKResponseError.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1ED337FB1377A677AA1D40 /* TKResponseError.m */; };
-		F50D251C1C3BBAA7004741BF /* TKRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D25091C3BBAA7004741BF /* TKRegistViewController.m */; };
-		F50D251D1C3BBAA7004741BF /* TKForgetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D250D1C3BBAA7004741BF /* TKForgetPassWordViewController.m */; };
-		F50D251E1C3BBAA7004741BF /* TKForgetPassWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D25111C3BBAA7004741BF /* TKForgetPassWordView.m */; };
-		F50D25201C3BBAA7004741BF /* TKLoginRegistView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D251B1C3BBAA7004741BF /* TKLoginRegistView.m */; };
-		F50D254A1C3D0C49004741BF /* TKEmailLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D25491C3D0C49004741BF /* TKEmailLoginViewController.m */; };
-		F50D254D1C3D0D00004741BF /* TKLoginWithEmailView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D254C1C3D0D00004741BF /* TKLoginWithEmailView.m */; };
 		F50F98D01CB75B2800F2E82A /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = F50F98CF1CB75B2800F2E82A /* JRSwizzle.m */; };
 		F50F98E81CB76D9D00F2E82A /* NSArray+adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F50F98D51CB76D9D00F2E82A /* NSArray+adapter.m */; };
 		F50F98E91CB76D9D00F2E82A /* NSCache+adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F50F98D71CB76D9D00F2E82A /* NSCache+adapter.m */; };
@@ -126,7 +113,6 @@
 		F50F98F01CB76D9D00F2E82A /* TKExceptionGuard.m in Sources */ = {isa = PBXBuildFile; fileRef = F50F98E51CB76D9D00F2E82A /* TKExceptionGuard.m */; };
 		F50F98F11CB76D9D00F2E82A /* TKSmartFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = F50F98E71CB76D9D00F2E82A /* TKSmartFunction.m */; };
 		F5D94EC71DC88EB2001C8B4E /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D94EC61DC88EB2001C8B4E /* UMMobClick.framework */; };
-		F5D94EEA1DC8958C001C8B4E /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D94EC61DC88EB2001C8B4E /* UMMobClick.framework */; };
 		FA0069BA1F776FE9008A4826 /* TKCommonTools+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0069B91F776FE9008A4826 /* TKCommonTools+Toast.m */; };
 		FA4E4F631F781DEF004A8DBB /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4E4F621F781DEF004A8DBB /* NSString+JSON.m */; };
 /* End PBXBuildFile section */
@@ -155,16 +141,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		25F743D41DC0D7B100850F50 /* TkShareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TkShareData.h; sourceTree = "<group>"; };
-		25F743D51DC0D7B100850F50 /* TkShareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TkShareData.m; sourceTree = "<group>"; };
-		25F743D61DC0D7B100850F50 /* TKShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShareManager.h; sourceTree = "<group>"; };
-		25F743D71DC0D7B100850F50 /* TKShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShareManager.m; sourceTree = "<group>"; };
-		25F743D81DC0D7B100850F50 /* TKShareResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShareResult.h; sourceTree = "<group>"; };
-		25F743D91DC0D7B100850F50 /* TKShareResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShareResult.m; sourceTree = "<group>"; };
-		25F743DA1DC0D7B100850F50 /* TKShareTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShareTools.h; sourceTree = "<group>"; };
-		25F743DB1DC0D7B100850F50 /* TKShareTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShareTools.m; sourceTree = "<group>"; };
-		25F743DC1DC0D7B100850F50 /* TKShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShareView.h; sourceTree = "<group>"; };
-		25F743DD1DC0D7B100850F50 /* TKShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShareView.m; sourceTree = "<group>"; };
 		25F744091DC0E13100850F50 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		25F7440A1DC0E13100850F50 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
 		25F7440B1DC0E13100850F50 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
@@ -273,10 +249,6 @@
 		6E1CD5621B3FC324003E56FF /* TKUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUploader.m; sourceTree = "<group>"; };
 		6E1D71A41DC2078000179926 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
 		6E1D71A51DC207A200179926 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
-		6E1D71B21DC213F100179926 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		6E1D71B31DC213F100179926 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		6E1D71B41DC213F100179926 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		6E1D71B51DC213F100179926 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		6E203EB01BA31D1600451DE0 /* TKAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAppInfo.h; sourceTree = "<group>"; };
 		6E203EB11BA31D1600451DE0 /* TKAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAppInfo.m; sourceTree = "<group>"; };
 		6E24FF7E1C044B9C005E6D57 /* ToolKit.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolKit.pch; sourceTree = "<group>"; };
@@ -376,18 +348,6 @@
 		BC1ED10CC7137A261FAF0054 /* TKResponseError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKResponseError.h; sourceTree = "<group>"; };
 		BC1ED337FB1377A677AA1D40 /* TKResponseError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKResponseError.m; sourceTree = "<group>"; };
 		BC1ED82213073F4D2D66CB52 /* TKRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRequestHelper.m; sourceTree = "<group>"; };
-		F50D25081C3BBAA7004741BF /* TKRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRegistViewController.h; sourceTree = "<group>"; };
-		F50D25091C3BBAA7004741BF /* TKRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRegistViewController.m; sourceTree = "<group>"; };
-		F50D250C1C3BBAA7004741BF /* TKForgetPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKForgetPassWordViewController.h; sourceTree = "<group>"; };
-		F50D250D1C3BBAA7004741BF /* TKForgetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKForgetPassWordViewController.m; sourceTree = "<group>"; };
-		F50D25101C3BBAA7004741BF /* TKForgetPassWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKForgetPassWordView.h; sourceTree = "<group>"; };
-		F50D25111C3BBAA7004741BF /* TKForgetPassWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKForgetPassWordView.m; sourceTree = "<group>"; };
-		F50D251A1C3BBAA7004741BF /* TKLoginRegistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLoginRegistView.h; sourceTree = "<group>"; };
-		F50D251B1C3BBAA7004741BF /* TKLoginRegistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLoginRegistView.m; sourceTree = "<group>"; };
-		F50D25481C3D0C49004741BF /* TKEmailLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEmailLoginViewController.h; sourceTree = "<group>"; };
-		F50D25491C3D0C49004741BF /* TKEmailLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEmailLoginViewController.m; sourceTree = "<group>"; };
-		F50D254B1C3D0D00004741BF /* TKLoginWithEmailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLoginWithEmailView.h; sourceTree = "<group>"; };
-		F50D254C1C3D0D00004741BF /* TKLoginWithEmailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLoginWithEmailView.m; sourceTree = "<group>"; };
 		F50F98CE1CB75B2800F2E82A /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		F50F98CF1CB75B2800F2E82A /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		F50F98D41CB76D9D00F2E82A /* NSArray+adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+adapter.h"; sourceTree = "<group>"; };
@@ -421,9 +381,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5D94EEA1DC8958C001C8B4E /* UMMobClick.framework in Frameworks */,
-				25F7442F1DC1B5CA00850F50 /* libWeiboSDK.a in Frameworks */,
-				6E1D71B61DC213F100179926 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,17 +425,6 @@
 				25F744171DC0E13100850F50 /* TencentOpenAPI.framework */,
 			);
 			path = TencentSDK;
-			sourceTree = "<group>";
-		};
-		25F744191DC0E13100850F50 /* WXSDK */ = {
-			isa = PBXGroup;
-			children = (
-				6E1D71B21DC213F100179926 /* libWeChatSDK.a */,
-				6E1D71B31DC213F100179926 /* WechatAuthSDK.h */,
-				6E1D71B41DC213F100179926 /* WXApi.h */,
-				6E1D71B51DC213F100179926 /* WXApiObject.h */,
-			);
-			path = WXSDK;
 			sourceTree = "<group>";
 		};
 		6E09412B1CBA6AB400B72917 /* Statistics */ = {
@@ -528,23 +474,6 @@
 			path = Web;
 			sourceTree = "<group>";
 		};
-		6E18460F1C8847BE00B38971 /* Share */ = {
-			isa = PBXGroup;
-			children = (
-				25F743D41DC0D7B100850F50 /* TkShareData.h */,
-				25F743D51DC0D7B100850F50 /* TkShareData.m */,
-				25F743D61DC0D7B100850F50 /* TKShareManager.h */,
-				25F743D71DC0D7B100850F50 /* TKShareManager.m */,
-				25F743D81DC0D7B100850F50 /* TKShareResult.h */,
-				25F743D91DC0D7B100850F50 /* TKShareResult.m */,
-				25F743DA1DC0D7B100850F50 /* TKShareTools.h */,
-				25F743DB1DC0D7B100850F50 /* TKShareTools.m */,
-				25F743DC1DC0D7B100850F50 /* TKShareView.h */,
-				25F743DD1DC0D7B100850F50 /* TKShareView.m */,
-			);
-			path = Share;
-			sourceTree = "<group>";
-		};
 		6E18461C1C8847C600B38971 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,9 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB83E971CDC7AFD00F1B45A /* Keyboard */,
-				F50D25061C3BBAA7004741BF /* Login */,
 				6EA20B991BC76DE900AF0954 /* Cache */,
-				6EA3240F1B69DF28006833A4 /* Manager */,
 				6E566EB11B3FC72700F07DDA /* Common */,
 				6E1CD3001B3BEAEA003E56FF /* Network */,
 				6E1CD2B11B3BE087003E56FF /* ThirdParty */,
@@ -630,7 +557,6 @@
 				F5D94EC51DC88EB2001C8B4E /* UMAnalytics_Sdk */,
 				25F744081DC0E13100850F50 /* libWeiboSDK */,
 				25F744161DC0E13100850F50 /* TencentSDK */,
-				25F744191DC0E13100850F50 /* WXSDK */,
 				6EE6F6591CDC7CBD00740D41 /* HPGrowingTextView */,
 				6E5B03451CC0F15700BDD2AE /* RSA */,
 				6EA15C531CBCAB8C0031DDBC /* GZIP */,
@@ -909,14 +835,6 @@
 			path = TMCache;
 			sourceTree = "<group>";
 		};
-		6EA3240F1B69DF28006833A4 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				6E18460F1C8847BE00B38971 /* Share */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		6EB29CC21DACD2EC004DD1CC /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,113 +943,6 @@
 				6EFC5A001C93FB8F0009D695 /* TKGuidTransitionDelegate.m */,
 			);
 			path = Guide;
-			sourceTree = "<group>";
-		};
-		F50D25061C3BBAA7004741BF /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				F50D25441C3D0B9D004741BF /* LoginWithEmail */,
-				F50D25071C3BBAA7004741BF /* Controller */,
-				F50D250A1C3BBAA7004741BF /* ForgetPassWord */,
-				F50D25161C3BBAA7004741BF /* Model */,
-				F50D25191C3BBAA7004741BF /* View */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		F50D25071C3BBAA7004741BF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F50D25081C3BBAA7004741BF /* TKRegistViewController.h */,
-				F50D25091C3BBAA7004741BF /* TKRegistViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F50D250A1C3BBAA7004741BF /* ForgetPassWord */ = {
-			isa = PBXGroup;
-			children = (
-				F50D250B1C3BBAA7004741BF /* Controller */,
-				F50D250E1C3BBAA7004741BF /* Model */,
-				F50D250F1C3BBAA7004741BF /* View */,
-			);
-			path = ForgetPassWord;
-			sourceTree = "<group>";
-		};
-		F50D250B1C3BBAA7004741BF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F50D250C1C3BBAA7004741BF /* TKForgetPassWordViewController.h */,
-				F50D250D1C3BBAA7004741BF /* TKForgetPassWordViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F50D250E1C3BBAA7004741BF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F50D250F1C3BBAA7004741BF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F50D25101C3BBAA7004741BF /* TKForgetPassWordView.h */,
-				F50D25111C3BBAA7004741BF /* TKForgetPassWordView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F50D25161C3BBAA7004741BF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F50D25191C3BBAA7004741BF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F50D251A1C3BBAA7004741BF /* TKLoginRegistView.h */,
-				F50D251B1C3BBAA7004741BF /* TKLoginRegistView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F50D25441C3D0B9D004741BF /* LoginWithEmail */ = {
-			isa = PBXGroup;
-			children = (
-				F50D25451C3D0B9D004741BF /* Controller */,
-				F50D25461C3D0B9D004741BF /* Model */,
-				F50D25471C3D0B9D004741BF /* View */,
-			);
-			path = LoginWithEmail;
-			sourceTree = "<group>";
-		};
-		F50D25451C3D0B9D004741BF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F50D25481C3D0C49004741BF /* TKEmailLoginViewController.h */,
-				F50D25491C3D0C49004741BF /* TKEmailLoginViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F50D25461C3D0B9D004741BF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F50D25471C3D0B9D004741BF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F50D254B1C3D0D00004741BF /* TKLoginWithEmailView.h */,
-				F50D254C1C3D0D00004741BF /* TKLoginWithEmailView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F50F98CD1CB75B2800F2E82A /* JRSwizzle */ = {
@@ -1274,10 +1085,7 @@
 				6E1846051C8843FF00B38971 /* NSString+Encode.m in Sources */,
 				6E1CD4F51B3FA351003E56FF /* MJRefreshBackGifFooter.m in Sources */,
 				6E1845ED1C88416600B38971 /* UIDevice+UUID.m in Sources */,
-				25F743E41DC0D7B100850F50 /* TKShareView.m in Sources */,
-				25F743E11DC0D7B100850F50 /* TKShareManager.m in Sources */,
 				53AD6E771F64DCB5005025BD /* TKCommonTools+Date.m in Sources */,
-				F50D254D1C3D0D00004741BF /* TKLoginWithEmailView.m in Sources */,
 				F50F98EB1CB76D9D00F2E82A /* NSMutableDictionary+adapter.m in Sources */,
 				6E18460E1C88469000B38971 /* UIWebView+Clean.m in Sources */,
 				6EA20BA51BC76DE900AF0954 /* ISDiskCache.m in Sources */,
@@ -1300,8 +1108,6 @@
 				6E5B03481CC0F15700BDD2AE /* RSA.m in Sources */,
 				6E1CD4F71B3FA351003E56FF /* MJRefreshBackStateFooter.m in Sources */,
 				6EE6F65E1CDC7CBD00740D41 /* HPGrowingTextView.m in Sources */,
-				F50D251C1C3BBAA7004741BF /* TKRegistViewController.m in Sources */,
-				25F743E01DC0D7B100850F50 /* TkShareData.m in Sources */,
 				6E1846061C8843FF00B38971 /* UIColor+Util.m in Sources */,
 				6EFC5A011C93FB8F0009D695 /* TKGuidePageControl.m in Sources */,
 				6E1CD4FC1B3FA351003E56FF /* UIScrollView+MJExtension.m in Sources */,
@@ -1324,7 +1130,6 @@
 				F50F98F01CB76D9D00F2E82A /* TKExceptionGuard.m in Sources */,
 				6EA323F41B678ABC006833A4 /* TKModuleWebViewController.m in Sources */,
 				6EA20BA81BC76DE900AF0954 /* TMMemoryCache.m in Sources */,
-				25F743E21DC0D7B100850F50 /* TKShareResult.m in Sources */,
 				6EB83EB11CDC7AFD00F1B45A /* TKEmojiToolbar.m in Sources */,
 				6EB83EB21CDC7AFD00F1B45A /* TKInputBar.m in Sources */,
 				F50F98ED1CB76D9D00F2E82A /* NSNull+forwardMethods.m in Sources */,
@@ -1339,21 +1144,17 @@
 				6E1CD5641B3FC324003E56FF /* TKUploader.m in Sources */,
 				6E24FF9A1C045F7A005E6D57 /* SGSheetMenu.m in Sources */,
 				6E1CD4E51B3FA351003E56FF /* UIDevice+Hardware.m in Sources */,
-				F50D254A1C3D0C49004741BF /* TKEmailLoginViewController.m in Sources */,
 				F50F98EC1CB76D9D00F2E82A /* NSNotificationCenter+adapter.m in Sources */,
-				25F743E31DC0D7B100850F50 /* TKShareTools.m in Sources */,
 				6EFC5A021C93FB8F0009D695 /* TKGuideTranistion.m in Sources */,
 				F50F98EF1CB76D9D00F2E82A /* NSObject+signature.m in Sources */,
 				6E9CC4DB1B7F47D300A980F0 /* SAMTextView.m in Sources */,
 				6EFC5A041C93FB8F0009D695 /* TKGuidTransitionDelegate.m in Sources */,
 				6E24FF991C045F7A005E6D57 /* SGGridMenu.m in Sources */,
 				6E1CD4F01B3FA351003E56FF /* MJRefreshFooter.m in Sources */,
-				F50D251D1C3BBAA7004741BF /* TKForgetPassWordViewController.m in Sources */,
 				6E1845FC1C88420200B38971 /* NSString+MD5.m in Sources */,
 				6E1CD4FD1B3FA351003E56FF /* UIScrollView+MJRefresh.m in Sources */,
 				F50F98F11CB76D9D00F2E82A /* TKSmartFunction.m in Sources */,
 				6EE6F6581CDC7C3F00740D41 /* TKSwitchSlideView.m in Sources */,
-				F50D25201C3BBAA7004741BF /* TKLoginRegistView.m in Sources */,
 				6E1CD4F11B3FA351003E56FF /* MJRefreshHeader.m in Sources */,
 				F50F98EE1CB76D9D00F2E82A /* NSObject+forwardingTarget.m in Sources */,
 				6EA20BA61BC76DE900AF0954 /* TMCache.m in Sources */,
@@ -1378,7 +1179,6 @@
 				6EE6F6561CDC7C3F00740D41 /* TKSwitchSlideItemCollectionViewCell.m in Sources */,
 				6E1CD4F21B3FA351003E56FF /* MJRefreshAutoGifFooter.m in Sources */,
 				6EB83EAF1CDC7AFD00F1B45A /* TKInputPanelView.m in Sources */,
-				F50D251E1C3BBAA7004741BF /* TKForgetPassWordView.m in Sources */,
 				BC1EDE430A597211E609FD10 /* TKResponseError.m in Sources */,
 				BC1ED3557B2908C01CE9A774 /* TKRequestHelper.m in Sources */,
 			);

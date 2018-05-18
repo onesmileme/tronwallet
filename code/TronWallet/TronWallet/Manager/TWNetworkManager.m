@@ -57,8 +57,8 @@ IMP_SINGLETON
         
         NSString *notificatioName = kTKNetworkChangeNotification;
         [NotificationCenter addObserver:self selector:@selector(networkChangeNotification:) name:notificatioName object:nil];
-        [NotificationCenter addObserver:self selector:@selector(loginDoneNotification:) name:kLoginDoneNotification object:nil];
-        [NotificationCenter addObserver:self selector:@selector(logoutNotification:) name:kLogoutNotification object:nil];
+        //[NotificationCenter addObserver:self selector:@selector(loginDoneNotification:) name:kLoginDoneNotification object:nil];
+        //[NotificationCenter addObserver:self selector:@selector(logoutNotification:) name:kLogoutNotification object:nil];
         
     }
     return self;
@@ -98,16 +98,16 @@ IMP_SINGLETON
 
 -(void)updateAuthorization
 {
-    if ([[TKAccountManager sharedInstance] isLogin]) {
-        
-        TKUserInfo *userinfo = [TKAccountManager sharedInstance].userInfo;
-        
-        NSLog(@"authorization is: %@",[NSString stringWithFormat:@"%@ %@",[userinfo.tokenType capitalizedString],userinfo.accessToken]);
-        
-        [[TKNetworkManager sharedInstance] setValue:[NSString stringWithFormat:@"%@ %@",[userinfo.tokenType capitalizedString],userinfo.accessToken] forHTTPHeaderField:@"Authorization"];
-    }else{
-        [[TKNetworkManager sharedInstance] setAuthorizationHeaderFieldWithUsername:@"ecclient" password:@"ecclientsecret"];
-    }
+//    if ([[TKAccountManager sharedInstance] isLogin]) {
+//
+//        TKUserInfo *userinfo = [TKAccountManager sharedInstance].userInfo;
+//
+//        NSLog(@"authorization is: %@",[NSString stringWithFormat:@"%@ %@",[userinfo.tokenType capitalizedString],userinfo.accessToken]);
+//
+//        [[TKNetworkManager sharedInstance] setValue:[NSString stringWithFormat:@"%@ %@",[userinfo.tokenType capitalizedString],userinfo.accessToken] forHTTPHeaderField:@"Authorization"];
+//    }else{
+//        [[TKNetworkManager sharedInstance] setAuthorizationHeaderFieldWithUsername:@"ecclient" password:@"ecclientsecret"];
+//    }
 }
 
 -(NSDictionary *)baseParam
@@ -151,9 +151,9 @@ IMP_SINGLETON
 #pragma mark - login
 -(void)loginDoneNotification:(NSNotification *)notification
 {
-    TKUserInfo *userinfo = [[TKAccountManager sharedInstance]userInfo];
-    TKRequestHandler *handler = [TKRequestHandler sharedInstance];
-    [handler setValue:[NSString stringWithFormat:@"%@ %@",userinfo.tokenType,userinfo.accessToken] forHTTPHeaderField:@"Authorization"];
+   // TKUserInfo *userinfo = [[TKAccountManager sharedInstance]userInfo];
+   // TKRequestHandler *handler = [TKRequestHandler sharedInstance];
+   // [handler setValue:[NSString stringWithFormat:@"%@ %@",userinfo.tokenType,userinfo.accessToken] forHTTPHeaderField:@"Authorization"];
 }
 
 -(void)logoutNotification:(NSNotification *)notification
@@ -172,7 +172,7 @@ IMP_SINGLETON
             case 20002:
             case 20003:
             {
-                [[EAPushManager sharedInstance]handleOpenUrl:@"eis://show_login"];
+                //[[EAPushManager sharedInstance]handleOpenUrl:@"eis://show_login"];
             }
                 break;
                 
@@ -191,7 +191,7 @@ IMP_SINGLETON
         if ([[e lowercaseString] isEqualToString:@"invalid_token"]) {
 //            [[TKAccountManager sharedInstance] logout];
             [self resetToken];
-            [[EAPushManager sharedInstance]handleOpenUrl:@"eis://show_login"];
+            //[[EAPushManager sharedInstance]handleOpenUrl:@"eis://show_login"];
         }
         
     }else{
@@ -265,18 +265,18 @@ IMP_SINGLETON
 #pragma mark - uuid Keychain使用
 - (void)fetchUUID
 {
-    NSMutableDictionary *usernamepasswordKVPairs = (NSMutableDictionary *)[CHKeychain load:KEY_USERNAME_PASSWORD];
-    NSString *uuidString = [usernamepasswordKVPairs objectForKey:KEY_PASSWORD];
-    
-    if (!uuidString || uuidString.length == 0)
-    {
-        uuidString = [self creatUuid];
-        NSMutableDictionary *uuidMutableDic = [[NSMutableDictionary alloc] initWithCapacity:3];
-        [uuidMutableDic setObject:uuidString forKey:KEY_PASSWORD];
-        [CHKeychain save:KEY_USERNAME_PASSWORD data:uuidMutableDic];
-    }
-    
-    self.cuid = uuidString;
+//    NSMutableDictionary *usernamepasswordKVPairs = (NSMutableDictionary *)[CHKeychain load:KEY_USERNAME_PASSWORD];
+//    NSString *uuidString = [usernamepasswordKVPairs objectForKey:KEY_PASSWORD];
+//    
+//    if (!uuidString || uuidString.length == 0)
+//    {
+//        uuidString = [self creatUuid];
+//        NSMutableDictionary *uuidMutableDic = [[NSMutableDictionary alloc] initWithCapacity:3];
+//        [uuidMutableDic setObject:uuidString forKey:KEY_PASSWORD];
+//        [CHKeychain save:KEY_USERNAME_PASSWORD data:uuidMutableDic];
+//    }
+//    
+//    self.cuid = uuidString;
 }
 
 - (NSString*) creatUuid

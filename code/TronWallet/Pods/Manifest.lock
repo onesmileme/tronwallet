@@ -23,6 +23,11 @@ PODS:
   - JSONModel (1.7.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
@@ -36,22 +41,24 @@ DEPENDENCIES:
   - JSONModel (~> 1.7.0)
   - Masonry (~> 1.1.0)
   - MBProgressHUD (~> 1.0.0)
+  - NJKWebViewProgress
   - SDWebImage (~> 4.1.0)
   - SZTextView (~> 1.3.0)
   - TPKeyboardAvoiding (~> 1.3.1)
   - WebViewJavascriptBridge (~> 6.0.2)
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CocoaLumberjack: 2800c03334042fe80589423c8d80e582dcaec482
-  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
-  SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
-  TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
-  WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
+  AFNetworking: 0f9f92467cc2ad03ea9961c65bb75028ea4d49a9
+  CocoaLumberjack: faa19e2426b97e81b7f8007d37bc8fd693aa366e
+  JSONModel: a3b9097543a777e2a4041a0bb1b80252af9ed566
+  Masonry: 1db7cd0e5e34999ac095f67a1d0f7fc664e19140
+  MBProgressHUD: 797fffbdf83b36406236328cc560949edd850dcf
+  NJKWebViewProgress: 2b63fbc0e8b5210997a8e79702b9a1dcd23ffe0c
+  SDWebImage: e38485a0612e3f45f1ae2f7bc450b4140fb3da69
+  SZTextView: c317aace4926300500789dd10297b33de2c08407
+  TPKeyboardAvoiding: a6ba96fbec28ae5dacea11f45132a9d0698e1960
+  WebViewJavascriptBridge: 318ccc771d1ad661b9c05b12d70994f725cf0639
 
-PODFILE CHECKSUM: f2f88fea1b10b5378eff414906f71c3fbc758645
+PODFILE CHECKSUM: 67af9d9590e0f690aaf305f5f8d0a53497e6aa39
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1

@@ -14,12 +14,21 @@
 		6EA351C120AC7D1500AF1984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA351C020AC7D1500AF1984 /* Assets.xcassets */; };
 		6EA351C420AC7D1500AF1984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA351C220AC7D1500AF1984 /* LaunchScreen.storyboard */; };
 		6EA351C720AC7D1500AF1984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351C620AC7D1500AF1984 /* main.m */; };
-		6EA351FA20AC82C200AF1984 /* MainInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351E720AC82C100AF1984 /* MainInfoViewController.m */; };
-		6EA351FB20AC82C200AF1984 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351ED20AC82C100AF1984 /* SettingViewController.m */; };
-		6EA351FC20AC82C200AF1984 /* WalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351F320AC82C100AF1984 /* WalletViewController.m */; };
+		6EA351FA20AC82C200AF1984 /* TWMainInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351E720AC82C100AF1984 /* TWMainInfoViewController.m */; };
+		6EA351FB20AC82C200AF1984 /* TWSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351ED20AC82C100AF1984 /* TWSettingViewController.m */; };
+		6EA351FC20AC82C200AF1984 /* TWWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351F320AC82C100AF1984 /* TWWalletViewController.m */; };
 		6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351FD20AC830900AF1984 /* TWNetworkManager.m */; };
 		6EA3520220AC830A00AF1984 /* TWUIInitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */; };
 		6EA3520D20AC848300AF1984 /* libToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA3520920AC834400AF1984 /* libToolKit.a */; };
+		6EED948920AEC2DA003FF63E /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED948820AEC2DA003FF63E /* UIColor+Theme.m */; };
+		6EED948C20AEC485003FF63E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED948B20AEC485003FF63E /* libsqlite3.tbd */; };
+		6EED948F20AEC64F003FF63E /* TWTopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED948E20AEC64F003FF63E /* TWTopScrollView.m */; };
+		6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED949120AEC817003FF63E /* TWMainBasicViewController.m */; };
+		6EED949520AEC885003FF63E /* TWBlockChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED949420AEC885003FF63E /* TWBlockChainViewController.m */; };
+		6EED949820AEC8B4003FF63E /* TWRepresentativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED949720AEC8B4003FF63E /* TWRepresentativeViewController.m */; };
+		6EED949B20AEC8C2003FF63E /* TWNodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED949A20AEC8C2003FF63E /* TWNodesViewController.m */; };
+		6EED949E20AEC8CD003FF63E /* TWTokensViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED949D20AEC8CD003FF63E /* TWTokensViewController.m */; };
+		6EED94A120AEC8DC003FF63E /* TWAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED94A020AEC8DC003FF63E /* TWAccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,18 +60,36 @@
 		6EA351C320AC7D1500AF1984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EA351C520AC7D1500AF1984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EA351C620AC7D1500AF1984 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6EA351E620AC82C100AF1984 /* MainInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainInfoViewController.h; sourceTree = "<group>"; };
-		6EA351E720AC82C100AF1984 /* MainInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfoViewController.m; sourceTree = "<group>"; };
-		6EA351EC20AC82C100AF1984 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		6EA351ED20AC82C100AF1984 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		6EA351F220AC82C100AF1984 /* WalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletViewController.h; sourceTree = "<group>"; };
-		6EA351F320AC82C100AF1984 /* WalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletViewController.m; sourceTree = "<group>"; };
+		6EA351E620AC82C100AF1984 /* TWMainInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMainInfoViewController.h; sourceTree = "<group>"; };
+		6EA351E720AC82C100AF1984 /* TWMainInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMainInfoViewController.m; sourceTree = "<group>"; };
+		6EA351EC20AC82C100AF1984 /* TWSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSettingViewController.h; sourceTree = "<group>"; };
+		6EA351ED20AC82C100AF1984 /* TWSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSettingViewController.m; sourceTree = "<group>"; };
+		6EA351F220AC82C100AF1984 /* TWWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWalletViewController.h; sourceTree = "<group>"; };
+		6EA351F320AC82C100AF1984 /* TWWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWalletViewController.m; sourceTree = "<group>"; };
 		6EA351FD20AC830900AF1984 /* TWNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWNetworkManager.m; sourceTree = "<group>"; };
 		6EA351FE20AC830A00AF1984 /* TWNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWNetworkManager.h; sourceTree = "<group>"; };
 		6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWUIInitManager.m; sourceTree = "<group>"; };
 		6EA3520020AC830A00AF1984 /* TWUIInitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWUIInitManager.h; sourceTree = "<group>"; };
 		6EA3520320AC834400AF1984 /* ToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ToolKit.xcodeproj; path = ToolKit/ToolKit.xcodeproj; sourceTree = "<group>"; };
-		6EA3520C20AC83DE00AF1984 /* TronWallet.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TronWallet.pch; sourceTree = "<group>"; };
+		6EED948320AEC21E003FF63E /* TronWallet.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TronWallet.pch; sourceTree = "<group>"; };
+		6EED948720AEC2DA003FF63E /* UIColor+Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
+		6EED948820AEC2DA003FF63E /* UIColor+Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
+		6EED948A20AEC310003FF63E /* TWDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWDefines.h; sourceTree = "<group>"; };
+		6EED948B20AEC485003FF63E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		6EED948D20AEC64F003FF63E /* TWTopScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTopScrollView.h; sourceTree = "<group>"; };
+		6EED948E20AEC64F003FF63E /* TWTopScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWTopScrollView.m; sourceTree = "<group>"; };
+		6EED949020AEC817003FF63E /* TWMainBasicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainBasicViewController.h; sourceTree = "<group>"; };
+		6EED949120AEC817003FF63E /* TWMainBasicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainBasicViewController.m; sourceTree = "<group>"; };
+		6EED949320AEC885003FF63E /* TWBlockChainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWBlockChainViewController.h; sourceTree = "<group>"; };
+		6EED949420AEC885003FF63E /* TWBlockChainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWBlockChainViewController.m; sourceTree = "<group>"; };
+		6EED949620AEC8B4003FF63E /* TWRepresentativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWRepresentativeViewController.h; sourceTree = "<group>"; };
+		6EED949720AEC8B4003FF63E /* TWRepresentativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWRepresentativeViewController.m; sourceTree = "<group>"; };
+		6EED949920AEC8C2003FF63E /* TWNodesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWNodesViewController.h; sourceTree = "<group>"; };
+		6EED949A20AEC8C2003FF63E /* TWNodesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWNodesViewController.m; sourceTree = "<group>"; };
+		6EED949C20AEC8CD003FF63E /* TWTokensViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTokensViewController.h; sourceTree = "<group>"; };
+		6EED949D20AEC8CD003FF63E /* TWTokensViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWTokensViewController.m; sourceTree = "<group>"; };
+		6EED949F20AEC8DC003FF63E /* TWAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWAccountViewController.h; sourceTree = "<group>"; };
+		6EED94A020AEC8DC003FF63E /* TWAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAccountViewController.m; sourceTree = "<group>"; };
 		88753940E089DDB3C9C183DD /* Pods-TronWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TronWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TronWallet/Pods-TronWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		FE13880D14A8B17218729F4C /* libPods-TronWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TronWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EED948C20AEC485003FF63E /* libsqlite3.tbd in Frameworks */,
 				6EA3520D20AC848300AF1984 /* libToolKit.a in Frameworks */,
 				0BFE87FAA0CE2A2D5E3C6214 /* libPods-TronWallet.a in Frameworks */,
 			);
@@ -113,11 +141,11 @@
 			children = (
 				6EA351F820AC82C200AF1984 /* Manager */,
 				6EA351E320AC82C100AF1984 /* Pages */,
-				6EA351F920AC82C200AF1984 /* Resources */,
-				6EA351F720AC82C200AF1984 /* ThirdParty */,
-				6EA351F620AC82C100AF1984 /* Utils */,
-				6EA351B720AC7D1500AF1984 /* AppDelegate.h */,
+				6EED948520AEC2C7003FF63E /* Resources */,
+				6EED948620AEC2C7003FF63E /* ThirdParty */,
+				6EED948420AEC2C7003FF63E /* Utils */,
 				6EA351B820AC7D1500AF1984 /* AppDelegate.m */,
+				6EA351B720AC7D1500AF1984 /* AppDelegate.h */,
 				6EA351BA20AC7D1500AF1984 /* ViewController.h */,
 				6EA351BB20AC7D1500AF1984 /* ViewController.m */,
 				6EA351BD20AC7D1500AF1984 /* Main.storyboard */,
@@ -125,7 +153,8 @@
 				6EA351C220AC7D1500AF1984 /* LaunchScreen.storyboard */,
 				6EA351C520AC7D1500AF1984 /* Info.plist */,
 				6EA351C620AC7D1500AF1984 /* main.m */,
-				6EA3520C20AC83DE00AF1984 /* TronWallet.pch */,
+				6EED948A20AEC310003FF63E /* TWDefines.h */,
+				6EED948320AEC21E003FF63E /* TronWallet.pch */,
 			);
 			path = TronWallet;
 			sourceTree = "<group>";
@@ -153,8 +182,20 @@
 		6EA351E520AC82C100AF1984 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				6EA351E620AC82C100AF1984 /* MainInfoViewController.h */,
-				6EA351E720AC82C100AF1984 /* MainInfoViewController.m */,
+				6EA351E620AC82C100AF1984 /* TWMainInfoViewController.h */,
+				6EA351E720AC82C100AF1984 /* TWMainInfoViewController.m */,
+				6EED949020AEC817003FF63E /* TWMainBasicViewController.h */,
+				6EED949120AEC817003FF63E /* TWMainBasicViewController.m */,
+				6EED949320AEC885003FF63E /* TWBlockChainViewController.h */,
+				6EED949420AEC885003FF63E /* TWBlockChainViewController.m */,
+				6EED949620AEC8B4003FF63E /* TWRepresentativeViewController.h */,
+				6EED949720AEC8B4003FF63E /* TWRepresentativeViewController.m */,
+				6EED949920AEC8C2003FF63E /* TWNodesViewController.h */,
+				6EED949A20AEC8C2003FF63E /* TWNodesViewController.m */,
+				6EED949C20AEC8CD003FF63E /* TWTokensViewController.h */,
+				6EED949D20AEC8CD003FF63E /* TWTokensViewController.m */,
+				6EED949F20AEC8DC003FF63E /* TWAccountViewController.h */,
+				6EED94A020AEC8DC003FF63E /* TWAccountViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -169,6 +210,8 @@
 		6EA351E920AC82C100AF1984 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6EED948D20AEC64F003FF63E /* TWTopScrollView.h */,
+				6EED948E20AEC64F003FF63E /* TWTopScrollView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -186,8 +229,8 @@
 		6EA351EB20AC82C100AF1984 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				6EA351EC20AC82C100AF1984 /* SettingViewController.h */,
-				6EA351ED20AC82C100AF1984 /* SettingViewController.m */,
+				6EA351EC20AC82C100AF1984 /* TWSettingViewController.h */,
+				6EA351ED20AC82C100AF1984 /* TWSettingViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -219,8 +262,8 @@
 		6EA351F120AC82C100AF1984 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				6EA351F220AC82C100AF1984 /* WalletViewController.h */,
-				6EA351F320AC82C100AF1984 /* WalletViewController.m */,
+				6EA351F220AC82C100AF1984 /* TWWalletViewController.h */,
+				6EA351F320AC82C100AF1984 /* TWWalletViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -239,20 +282,6 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		6EA351F620AC82C100AF1984 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		6EA351F720AC82C200AF1984 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
 		6EA351F820AC82C200AF1984 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,13 +293,6 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		6EA351F920AC82C200AF1984 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		6EA3520420AC834400AF1984 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,9 +302,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6EED948420AEC2C7003FF63E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6EED948720AEC2DA003FF63E /* UIColor+Theme.h */,
+				6EED948820AEC2DA003FF63E /* UIColor+Theme.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6EED948520AEC2C7003FF63E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6EED948620AEC2C7003FF63E /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
 		BB52CC17CCCA6404819481E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EED948B20AEC485003FF63E /* libsqlite3.tbd */,
 				FE13880D14A8B17218729F4C /* libPods-TronWallet.a */,
 			);
 			name = Frameworks;
@@ -417,13 +463,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TronWallet-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -435,12 +484,20 @@
 			files = (
 				6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */,
 				6EA351C720AC7D1500AF1984 /* main.m in Sources */,
+				6EED949E20AEC8CD003FF63E /* TWTokensViewController.m in Sources */,
+				6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */,
+				6EED949520AEC885003FF63E /* TWBlockChainViewController.m in Sources */,
 				6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */,
 				6EA351B920AC7D1500AF1984 /* AppDelegate.m in Sources */,
+				6EED949820AEC8B4003FF63E /* TWRepresentativeViewController.m in Sources */,
+				6EED948F20AEC64F003FF63E /* TWTopScrollView.m in Sources */,
 				6EA3520220AC830A00AF1984 /* TWUIInitManager.m in Sources */,
-				6EA351FC20AC82C200AF1984 /* WalletViewController.m in Sources */,
-				6EA351FA20AC82C200AF1984 /* MainInfoViewController.m in Sources */,
-				6EA351FB20AC82C200AF1984 /* SettingViewController.m in Sources */,
+				6EED948920AEC2DA003FF63E /* UIColor+Theme.m in Sources */,
+				6EED94A120AEC8DC003FF63E /* TWAccountViewController.m in Sources */,
+				6EA351FC20AC82C200AF1984 /* TWWalletViewController.m in Sources */,
+				6EED949B20AEC8C2003FF63E /* TWNodesViewController.m in Sources */,
+				6EA351FA20AC82C200AF1984 /* TWMainInfoViewController.m in Sources */,
+				6EA351FB20AC82C200AF1984 /* TWSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -563,7 +620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -576,7 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = TronWallet.pch;
+				GCC_PREFIX_HEADER = TronWallet/TronWallet.pch;
 				HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/ToolKit/ToolKit/**",
 					"$(inherited)",
@@ -605,7 +662,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = TronWallet.pch;
+				GCC_PREFIX_HEADER = TronWallet/TronWallet.pch;
 				HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/ToolKit/ToolKit/**",
 					"$(inherited)",
