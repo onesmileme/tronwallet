@@ -24,6 +24,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)accountInfoAction:(id)sender
+{
+    
+}
+
+-(IBAction)connectionAction:(id)sender
+{
+    
+}
+
+-(IBAction)aboutAction:(id)sender
+{
+    
+}
+
+-(IBAction)resetAppAction:(id)sender
+{
+    
+}
+
 /*
 #pragma mark - Navigation
 
