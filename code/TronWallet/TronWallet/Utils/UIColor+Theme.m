@@ -15,4 +15,9 @@
     return [UIColor redColor];
 }
 
++(UIColor *)themeDarkBgColor
+{
+    return [UIColor darkGrayColor];
+}
+
 @end

@@ -7,21 +7,36 @@
 //
 
 #import "TWBlockChainViewController.h"
+#import "TWMainRecentBlockTableViewCell.h"
+#import "TWMainRecentTransactionTableViewCell.h"
+#import "TWMainInfoTipHeader.h"
 
 @interface TWBlockChainViewController ()
+
+@property(nonatomic , strong) TWMainRecentBlockTableViewCell *blockCell;
+@property(nonatomic , strong) TWMainRecentBlockTableViewCell *recentCell;
 
 @end
 
 @implementation TWBlockChainViewController
 
 - (void)viewDidLoad {
+    
+    self.showSearcher = NO;
+    
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.tableView registerClass:[TWMainRecentBlockTableViewCell class] forCellReuseIdentifier:@"block_cell"];
+    [self.tableView registerClass:[TWMainRecentTransactionTableViewCell class] forCellReuseIdentifier:@"recent_cell"];
+
+    self.tableView.allowsSelection = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 10)];
+    header.backgroundColor = [UIColor clearColor];
+    self.tableView.tableHeaderView = header;
+    
+    self.tableView.backgroundColor = [UIColor themeDarkBgColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,58 +47,60 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 1;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = nil;
     
     // Configure the cell...
+    if (indexPath.section == 0) {
+        
+        TWMainRecentBlockTableViewCell *blockCell = [tableView dequeueReusableCellWithIdentifier:@"block_cell"];
+        
+        cell = blockCell;
+        
+    }else{
+        
+        TWMainRecentTransactionTableViewCell *recentCell = [tableView dequeueReusableCellWithIdentifier:@"recent_cell"];
+        
+        
+        cell = recentCell;
+        
+    }
+    
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return (CGRectGetHeight(tableView.frame)-110)/2;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    TWMainInfoTipHeader *infoTip = [[TWMainInfoTipHeader alloc]init];
+    infoTip.tipLabel.text = (section == 0? @"    BLOCKCHAIN":@"    RECENT");
+    return infoTip;
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
 }
-*/
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
+
 
 /*
 #pragma mark - Navigation

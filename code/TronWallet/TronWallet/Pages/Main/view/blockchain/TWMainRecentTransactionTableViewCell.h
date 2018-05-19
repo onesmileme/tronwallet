@@ -1,5 +1,5 @@
 //
-//  UIColor+Theme.h
+//  TWMainRecentTransactionTableViewCell.h
 //  TronWallet
 //
 //  Created by chunhui on 2018/5/18.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Theme)
+@interface TWMainRecentTransactionTableViewCell : UITableViewCell
 
-+(UIColor *)themeRed;
-
-+(UIColor *)themeDarkBgColor;
+-(void)bindData:(id)data;
 
 @end

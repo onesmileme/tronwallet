@@ -1,5 +1,5 @@
 //
-//  UIColor+Theme.h
+//  TWMainInfoTipHeader.h
 //  TronWallet
 //
 //  Created by chunhui on 2018/5/18.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Theme)
+@interface TWMainInfoTipHeader : UIView
 
-+(UIColor *)themeRed;
-
-+(UIColor *)themeDarkBgColor;
+@property(nonatomic , strong) UILabel *tipLabel;
 
 @end

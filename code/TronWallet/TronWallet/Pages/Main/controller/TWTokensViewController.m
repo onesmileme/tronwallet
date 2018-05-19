@@ -7,8 +7,11 @@
 //
 
 #import "TWTokensViewController.h"
+#import "TWMainTokenTableViewCell.h"
 
 @interface TWTokensViewController ()
+
+@property(nonatomic , strong)NSMutableArray *datas;
 
 @end
 
@@ -17,11 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UINib *nib = [UINib nibWithNibName:@"TWMainTokenTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"cell_id"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,14 +32,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return _datas.count;
 }
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TWMainTokenTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_id" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 185;
+}
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

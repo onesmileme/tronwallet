@@ -63,10 +63,10 @@
     
     [self.view addSubview:_pageContainerViewController.view];
     
-    for (int i = 0 ; i < _controllers.count ; i++) {
-        UIViewController *controller = _controllers[i];
-        controller.view.backgroundColor = i % 2 == 0 ? [UIColor redColor] : [UIColor greenColor];
-    }
+//    for (int i = 0 ; i < _controllers.count ; i++) {
+//        UIViewController *controller = _controllers[i];
+//        controller.view.backgroundColor = i % 2 == 0 ? [UIColor redColor] : [UIColor greenColor];
+//    }
     
     self.view.backgroundColor = [UIColor whiteColor];
     

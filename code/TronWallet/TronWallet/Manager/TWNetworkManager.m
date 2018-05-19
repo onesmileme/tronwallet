@@ -67,12 +67,7 @@ IMP_SINGLETON
 
 +(NSString *)appHost
 {
-#if kOnLine
-    return @"http://eisapp.cn";
-#else
-    return @"http://218.247.171.92:8090";
-//    return [[FAConfigManager sharedInstance]host];
-#endif
+    return @"http://47.254.18.49:18890/";
 }
 
 +(NSString *)loginAppHost

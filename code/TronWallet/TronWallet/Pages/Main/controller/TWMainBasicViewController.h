@@ -10,4 +10,6 @@
 
 @interface TWMainBasicViewController : UITableViewController
 
+@property(nonatomic , assign) BOOL showSearcher;
+
 @end

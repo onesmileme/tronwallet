@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0BFE87FAA0CE2A2D5E3C6214 /* libPods-TronWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE13880D14A8B17218729F4C /* libPods-TronWallet.a */; };
+		6E93FF0420AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF0320AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m */; };
+		6E93FF0720AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF0620AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m */; };
+		6E93FF0B20AF20BA000FD37D /* TWTransInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF0920AF20BA000FD37D /* TWTransInfoTableViewCell.m */; };
+		6E93FF0C20AF20BA000FD37D /* TWTransInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF0A20AF20BA000FD37D /* TWTransInfoTableViewCell.xib */; };
+		6E93FF1020AF22BC000FD37D /* TWMainBlockInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF0E20AF22BC000FD37D /* TWMainBlockInfoTableViewCell.m */; };
+		6E93FF1120AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF0F20AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib */; };
+		6E93FF1420AF25E9000FD37D /* TWMainInfoTipHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF1320AF25E9000FD37D /* TWMainInfoTipHeader.m */; };
+		6E93FF1720AFB9C5000FD37D /* TKRequestHandler+MainBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF1620AFB9C5000FD37D /* TKRequestHandler+MainBlock.m */; };
+		6E93FF1A20AFB9F3000FD37D /* TWMainSearchHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF1920AFB9F3000FD37D /* TWMainSearchHeader.m */; };
+		6E93FF2320B08EB2000FD37D /* TWMainPresentativesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF2120B08EB2000FD37D /* TWMainPresentativesTableViewCell.m */; };
+		6E93FF2420B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2220B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib */; };
+		6E93FF2820B09164000FD37D /* TWMainNodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF2620B09164000FD37D /* TWMainNodeTableViewCell.m */; };
+		6E93FF2920B09164000FD37D /* TWMainNodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2720B09164000FD37D /* TWMainNodeTableViewCell.xib */; };
+		6E93FF2D20B092BC000FD37D /* TWMainTokenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF2B20B092BC000FD37D /* TWMainTokenTableViewCell.m */; };
+		6E93FF2E20B092BC000FD37D /* TWMainTokenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2C20B092BC000FD37D /* TWMainTokenTableViewCell.xib */; };
 		6EA351B920AC7D1500AF1984 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351B820AC7D1500AF1984 /* AppDelegate.m */; };
 		6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351BB20AC7D1500AF1984 /* ViewController.m */; };
 		6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA351BD20AC7D1500AF1984 /* Main.storyboard */; };
@@ -50,6 +65,31 @@
 
 /* Begin PBXFileReference section */
 		268A9A5C3A78189BCD39F032 /* Pods-TronWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TronWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-TronWallet/Pods-TronWallet.release.xcconfig"; sourceTree = "<group>"; };
+		6E93FF0220AF1F21000FD37D /* TWMainRecentBlockTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainRecentBlockTableViewCell.h; sourceTree = "<group>"; };
+		6E93FF0320AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainRecentBlockTableViewCell.m; sourceTree = "<group>"; };
+		6E93FF0520AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainRecentTransactionTableViewCell.h; sourceTree = "<group>"; };
+		6E93FF0620AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainRecentTransactionTableViewCell.m; sourceTree = "<group>"; };
+		6E93FF0820AF20BA000FD37D /* TWTransInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTransInfoTableViewCell.h; sourceTree = "<group>"; };
+		6E93FF0920AF20BA000FD37D /* TWTransInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWTransInfoTableViewCell.m; sourceTree = "<group>"; };
+		6E93FF0A20AF20BA000FD37D /* TWTransInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWTransInfoTableViewCell.xib; sourceTree = "<group>"; };
+		6E93FF0D20AF22BC000FD37D /* TWMainBlockInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainBlockInfoTableViewCell.h; sourceTree = "<group>"; };
+		6E93FF0E20AF22BC000FD37D /* TWMainBlockInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainBlockInfoTableViewCell.m; sourceTree = "<group>"; };
+		6E93FF0F20AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWMainBlockInfoTableViewCell.xib; sourceTree = "<group>"; };
+		6E93FF1220AF25E9000FD37D /* TWMainInfoTipHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainInfoTipHeader.h; sourceTree = "<group>"; };
+		6E93FF1320AF25E9000FD37D /* TWMainInfoTipHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainInfoTipHeader.m; sourceTree = "<group>"; };
+		6E93FF1520AFB9C5000FD37D /* TKRequestHandler+MainBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKRequestHandler+MainBlock.h"; sourceTree = "<group>"; };
+		6E93FF1620AFB9C5000FD37D /* TKRequestHandler+MainBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TKRequestHandler+MainBlock.m"; sourceTree = "<group>"; };
+		6E93FF1820AFB9F3000FD37D /* TWMainSearchHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainSearchHeader.h; sourceTree = "<group>"; };
+		6E93FF1920AFB9F3000FD37D /* TWMainSearchHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainSearchHeader.m; sourceTree = "<group>"; };
+		6E93FF2020B08EB2000FD37D /* TWMainPresentativesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainPresentativesTableViewCell.h; sourceTree = "<group>"; };
+		6E93FF2120B08EB2000FD37D /* TWMainPresentativesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainPresentativesTableViewCell.m; sourceTree = "<group>"; };
+		6E93FF2220B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWMainPresentativesTableViewCell.xib; sourceTree = "<group>"; };
+		6E93FF2520B09164000FD37D /* TWMainNodeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainNodeTableViewCell.h; sourceTree = "<group>"; };
+		6E93FF2620B09164000FD37D /* TWMainNodeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainNodeTableViewCell.m; sourceTree = "<group>"; };
+		6E93FF2720B09164000FD37D /* TWMainNodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWMainNodeTableViewCell.xib; sourceTree = "<group>"; };
+		6E93FF2A20B092BC000FD37D /* TWMainTokenTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainTokenTableViewCell.h; sourceTree = "<group>"; };
+		6E93FF2B20B092BC000FD37D /* TWMainTokenTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainTokenTableViewCell.m; sourceTree = "<group>"; };
+		6E93FF2C20B092BC000FD37D /* TWMainTokenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWMainTokenTableViewCell.xib; sourceTree = "<group>"; };
 		6EA351B420AC7D1500AF1984 /* TronWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TronWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA351B720AC7D1500AF1984 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6EA351B820AC7D1500AF1984 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +155,60 @@
 				268A9A5C3A78189BCD39F032 /* Pods-TronWallet.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E93FEFF20AF1947000FD37D /* blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				6E93FF0220AF1F21000FD37D /* TWMainRecentBlockTableViewCell.h */,
+				6E93FF0320AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m */,
+				6E93FF0D20AF22BC000FD37D /* TWMainBlockInfoTableViewCell.h */,
+				6E93FF0E20AF22BC000FD37D /* TWMainBlockInfoTableViewCell.m */,
+				6E93FF0F20AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib */,
+				6E93FF0520AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.h */,
+				6E93FF0620AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m */,
+				6E93FF0820AF20BA000FD37D /* TWTransInfoTableViewCell.h */,
+				6E93FF0920AF20BA000FD37D /* TWTransInfoTableViewCell.m */,
+				6E93FF0A20AF20BA000FD37D /* TWTransInfoTableViewCell.xib */,
+			);
+			path = blockchain;
+			sourceTree = "<group>";
+		};
+		6E93FF1C20B08E87000FD37D /* representatives */ = {
+			isa = PBXGroup;
+			children = (
+				6E93FF2020B08EB2000FD37D /* TWMainPresentativesTableViewCell.h */,
+				6E93FF2120B08EB2000FD37D /* TWMainPresentativesTableViewCell.m */,
+				6E93FF2220B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib */,
+			);
+			path = representatives;
+			sourceTree = "<group>";
+		};
+		6E93FF1D20B08E87000FD37D /* nodes */ = {
+			isa = PBXGroup;
+			children = (
+				6E93FF2520B09164000FD37D /* TWMainNodeTableViewCell.h */,
+				6E93FF2620B09164000FD37D /* TWMainNodeTableViewCell.m */,
+				6E93FF2720B09164000FD37D /* TWMainNodeTableViewCell.xib */,
+			);
+			path = nodes;
+			sourceTree = "<group>";
+		};
+		6E93FF1E20B08E87000FD37D /* tokens */ = {
+			isa = PBXGroup;
+			children = (
+				6E93FF2A20B092BC000FD37D /* TWMainTokenTableViewCell.h */,
+				6E93FF2B20B092BC000FD37D /* TWMainTokenTableViewCell.m */,
+				6E93FF2C20B092BC000FD37D /* TWMainTokenTableViewCell.xib */,
+			);
+			path = tokens;
+			sourceTree = "<group>";
+		};
+		6E93FF1F20B08E87000FD37D /* account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = account;
 			sourceTree = "<group>";
 		};
 		6EA351AB20AC7D1500AF1984 = {
@@ -203,6 +297,8 @@
 		6EA351E820AC82C100AF1984 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				6E93FF1520AFB9C5000FD37D /* TKRequestHandler+MainBlock.h */,
+				6E93FF1620AFB9C5000FD37D /* TKRequestHandler+MainBlock.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -210,8 +306,17 @@
 		6EA351E920AC82C100AF1984 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				6EED948D20AEC64F003FF63E /* TWTopScrollView.h */,
+				6E93FEFF20AF1947000FD37D /* blockchain */,
+				6E93FF1F20B08E87000FD37D /* account */,
+				6E93FF1D20B08E87000FD37D /* nodes */,
+				6E93FF1C20B08E87000FD37D /* representatives */,
+				6E93FF1E20B08E87000FD37D /* tokens */,
 				6EED948E20AEC64F003FF63E /* TWTopScrollView.m */,
+				6EED948D20AEC64F003FF63E /* TWTopScrollView.h */,
+				6E93FF1220AF25E9000FD37D /* TWMainInfoTipHeader.h */,
+				6E93FF1320AF25E9000FD37D /* TWMainInfoTipHeader.m */,
+				6E93FF1820AFB9F3000FD37D /* TWMainSearchHeader.h */,
+				6E93FF1920AFB9F3000FD37D /* TWMainSearchHeader.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -419,8 +524,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EA351C420AC7D1500AF1984 /* LaunchScreen.storyboard in Resources */,
+				6E93FF2E20B092BC000FD37D /* TWMainTokenTableViewCell.xib in Resources */,
+				6E93FF2920B09164000FD37D /* TWMainNodeTableViewCell.xib in Resources */,
+				6E93FF1120AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib in Resources */,
 				6EA351C120AC7D1500AF1984 /* Assets.xcassets in Resources */,
 				6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */,
+				6E93FF0C20AF20BA000FD37D /* TWTransInfoTableViewCell.xib in Resources */,
+				6E93FF2420B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,22 +592,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E93FF0420AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m in Sources */,
+				6E93FF2320B08EB2000FD37D /* TWMainPresentativesTableViewCell.m in Sources */,
 				6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */,
 				6EA351C720AC7D1500AF1984 /* main.m in Sources */,
 				6EED949E20AEC8CD003FF63E /* TWTokensViewController.m in Sources */,
+				6E93FF2D20B092BC000FD37D /* TWMainTokenTableViewCell.m in Sources */,
 				6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */,
+				6E93FF0720AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m in Sources */,
 				6EED949520AEC885003FF63E /* TWBlockChainViewController.m in Sources */,
 				6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */,
 				6EA351B920AC7D1500AF1984 /* AppDelegate.m in Sources */,
+				6E93FF2820B09164000FD37D /* TWMainNodeTableViewCell.m in Sources */,
 				6EED949820AEC8B4003FF63E /* TWRepresentativeViewController.m in Sources */,
 				6EED948F20AEC64F003FF63E /* TWTopScrollView.m in Sources */,
+				6E93FF1420AF25E9000FD37D /* TWMainInfoTipHeader.m in Sources */,
+				6E93FF1720AFB9C5000FD37D /* TKRequestHandler+MainBlock.m in Sources */,
 				6EA3520220AC830A00AF1984 /* TWUIInitManager.m in Sources */,
+				6E93FF0B20AF20BA000FD37D /* TWTransInfoTableViewCell.m in Sources */,
 				6EED948920AEC2DA003FF63E /* UIColor+Theme.m in Sources */,
 				6EED94A120AEC8DC003FF63E /* TWAccountViewController.m in Sources */,
 				6EA351FC20AC82C200AF1984 /* TWWalletViewController.m in Sources */,
+				6E93FF1A20AFB9F3000FD37D /* TWMainSearchHeader.m in Sources */,
 				6EED949B20AEC8C2003FF63E /* TWNodesViewController.m in Sources */,
 				6EA351FA20AC82C200AF1984 /* TWMainInfoViewController.m in Sources */,
 				6EA351FB20AC82C200AF1984 /* TWSettingViewController.m in Sources */,
+				6E93FF1020AF22BC000FD37D /* TWMainBlockInfoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
