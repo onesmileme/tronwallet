@@ -23,6 +23,7 @@
 		6E93FF2920B09164000FD37D /* TWMainNodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2720B09164000FD37D /* TWMainNodeTableViewCell.xib */; };
 		6E93FF2D20B092BC000FD37D /* TWMainTokenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF2B20B092BC000FD37D /* TWMainTokenTableViewCell.m */; };
 		6E93FF2E20B092BC000FD37D /* TWMainTokenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2C20B092BC000FD37D /* TWMainTokenTableViewCell.xib */; };
+		6E93FF3020B0961F000FD37D /* TWWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2F20B0961F000FD37D /* TWWalletViewController.xib */; };
 		6EA351B920AC7D1500AF1984 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351B820AC7D1500AF1984 /* AppDelegate.m */; };
 		6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351BB20AC7D1500AF1984 /* ViewController.m */; };
 		6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA351BD20AC7D1500AF1984 /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 		6E93FF2A20B092BC000FD37D /* TWMainTokenTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainTokenTableViewCell.h; sourceTree = "<group>"; };
 		6E93FF2B20B092BC000FD37D /* TWMainTokenTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainTokenTableViewCell.m; sourceTree = "<group>"; };
 		6E93FF2C20B092BC000FD37D /* TWMainTokenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWMainTokenTableViewCell.xib; sourceTree = "<group>"; };
+		6E93FF2F20B0961F000FD37D /* TWWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWWalletViewController.xib; sourceTree = "<group>"; };
 		6EA351B420AC7D1500AF1984 /* TronWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TronWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA351B720AC7D1500AF1984 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6EA351B820AC7D1500AF1984 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			children = (
 				6EA351F220AC82C100AF1984 /* TWWalletViewController.h */,
 				6EA351F320AC82C100AF1984 /* TWWalletViewController.m */,
+				6E93FF2F20B0961F000FD37D /* TWWalletViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				6E93FF2920B09164000FD37D /* TWMainNodeTableViewCell.xib in Resources */,
 				6E93FF1120AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib in Resources */,
 				6EA351C120AC7D1500AF1984 /* Assets.xcassets in Resources */,
+				6E93FF3020B0961F000FD37D /* TWWalletViewController.xib in Resources */,
 				6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */,
 				6E93FF0C20AF20BA000FD37D /* TWTransInfoTableViewCell.xib in Resources */,
 				6E93FF2420B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib in Resources */,

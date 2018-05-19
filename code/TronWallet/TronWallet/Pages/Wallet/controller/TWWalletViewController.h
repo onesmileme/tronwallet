@@ -10,4 +10,11 @@
 
 @interface TWWalletViewController : UIViewController
 
+@property(nonatomic , strong) IBOutlet UILabel *priceLabel;
+@property(nonatomic , strong) IBOutlet UILabel *changeLabel;
+
+@property(nonatomic , strong) IBOutlet UILabel *countLabel;
+@property(nonatomic , strong) IBOutlet UILabel *tokenLabel;
+
+
 @end

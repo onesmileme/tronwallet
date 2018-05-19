@@ -24,6 +24,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)walletAction:(id)sender
+{
+    
+}
+
+-(IBAction)exchangeAction:(id)sender
+{
+    
+}
+
 /*
 #pragma mark - Navigation
 
