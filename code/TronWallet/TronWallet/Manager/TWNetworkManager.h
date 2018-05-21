@@ -10,7 +10,17 @@
 
 #define AppHost  [TWNetworkManager appHost]
 
+@class Wallet;
+@class WalletSolidity;
+@class Network;
+@class Database;
+
 @interface TWNetworkManager : NSObject
+
+@property(nonatomic , strong,readonly) Wallet *walletClient;
+@property(nonatomic , strong,readonly) WalletSolidity *walletSolidityClient;
+@property(nonatomic , strong,readonly) Network *networkClient;
+@property(nonatomic , strong,readonly) Database *databaseClient;
 
 DEF_SINGLETON;
 
@@ -21,15 +31,6 @@ DEF_SINGLETON;
  */
 +(NSString *)appHost;
 
-
-+(NSString *)loginAppHost;
-
-/**
- *  设备cuid
- *
- *  @return cuid
- */
--(NSString *)cuid;
 
 -(void)resetToken;
 

@@ -9,13 +9,12 @@
 #import "TWNetworkManager.h"
 #import "TKRequestHandler.h"
 #import "TKAppInfo.h"
-//#import "FAConfigManager.h"
 #import "UIDevice+Hardware.h"
 #import "Reachability.h"
-//#import "TKAccountManager.h"
 #import "TKNetworkManager.h"
-//#import "CHKeychain.h"
-//#import "EAPushManager.h"
+#import <GRPCClient/GRPCCall+ChannelArg.h>
+#import <GRPCClient/GRPCCall+Tests.h>
+#import "api/Api.pbrpc.h"
 
 NSString * const KEY_USERNAME_PASSWORD = @"com.company.app.usernamepassword";
 NSString * const KEY_PASSWORD = @"com.company.app.password";
@@ -25,7 +24,13 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
 @property(nonatomic , strong) NSMutableDictionary *extraInfo;
 @property(nonatomic , strong) NSString *cuid;
 
+@property(nonatomic , strong) Wallet *walletClient;
+@property(nonatomic , strong) WalletSolidity *walletSolidityClient;
+@property(nonatomic , strong) Network *networkClient;
+@property(nonatomic , strong) Database *databaseClient;
+
 @end
+
 
 @implementation TWNetworkManager
 
@@ -38,47 +43,74 @@ IMP_SINGLETON
         _extraInfo = [[NSMutableDictionary alloc]init];
         
 //        [[TKNetworkManager sharedInstance] setRequestSerializer:[AFJSONRequestSerializer serializer]];        
-        //TODO 获取网络状态
-        _extraInfo[@"net"] = @"1";
-        __weak typeof(self) wself = self;
-        TKRequestHandler *handler = [TKRequestHandler sharedInstance];
-        handler.delegate = self;
-        handler.baseParam = @{};//[self baseParam];
-        handler.extraInfoBlock = ^(){
-            return [wself extraParam];
-        };
 
-        [self setRequestSerializer:true resetAuthorization:false];
-        
-        handler.codeSignBlock = ^(NSDictionary *dic){
-            //no code sign
-            return @"";
-        };
+//        _extraInfo[@"net"] = @"1";
+//        __weak typeof(self) wself = self;
+//        TKRequestHandler *handler = [TKRequestHandler sharedInstance];
+//        handler.delegate = self;
+//        handler.baseParam = @{};//[self baseParam];
+//        handler.extraInfoBlock = ^(){
+//            return [wself extraParam];
+//        };
+//
+//        [self setRequestSerializer:true resetAuthorization:false];
+//
+//        handler.codeSignBlock = ^(NSDictionary *dic){
+//            //no code sign
+//            return @"";
+//        };
         
         NSString *notificatioName = kTKNetworkChangeNotification;
         [NotificationCenter addObserver:self selector:@selector(networkChangeNotification:) name:notificatioName object:nil];
         //[NotificationCenter addObserver:self selector:@selector(loginDoneNotification:) name:kLoginDoneNotification object:nil];
         //[NotificationCenter addObserver:self selector:@selector(logoutNotification:) name:kLogoutNotification object:nil];
         
+        
+        [GRPCCall useInsecureConnectionsForHost:[[self class]appHost]];
+//        [GRPCCall setUserAgentPrefix:@"" forHost:@""];
+        
     }
     return self;
+}
+
+-(Wallet *)walletClient
+{
+    if (!_walletClient) {
+        _walletClient = [[Wallet alloc]initWithHost:[[self class]appHost]];
+    }
+    return _walletClient;
+}
+
+-(WalletSolidity *)walletSolidityClient
+{
+    if (!_walletSolidityClient) {
+        _walletSolidityClient = [[WalletSolidity alloc]initWithHost:[[self class]appHost]];
+    }
+    return _walletSolidityClient;
+}
+
+-(Network *)networkClient
+{
+    if (!_networkClient) {
+        _networkClient = [[Network alloc]initWithHost:[[self class]appHost]];
+    }
+    return _networkClient;
+}
+
+-(Database *)databaseClient
+{
+    if (!_databaseClient) {
+        _databaseClient = [[Database alloc]initWithHost:[[self class]appHost]];
+    }
+    return _databaseClient;
 }
 
 
 +(NSString *)appHost
 {
-    return @"http://47.254.18.49:18890/";
+    return @"47.254.16.55:50051";
 }
 
-+(NSString *)loginAppHost
-{
-#if kOnLine
-    return @"http://eisapp.cn";
-#else
-    return @"http://218.247.171.92:8090";
-#endif
-//  return @"http://218.247.171.92:9002";
-}
 
 -(void)setRequestSerializer:(BOOL)isJson resetAuthorization:(BOOL)resetAuth
 {
@@ -87,23 +119,9 @@ IMP_SINGLETON
     if (resetAuth) {
         [serializer setAuthorizationHeaderFieldWithUsername:@"ecclient" password:@"ecclientsecret"];
     }else{
-        [self updateAuthorization];
     }
 }
 
--(void)updateAuthorization
-{
-//    if ([[TKAccountManager sharedInstance] isLogin]) {
-//
-//        TKUserInfo *userinfo = [TKAccountManager sharedInstance].userInfo;
-//
-//        NSLog(@"authorization is: %@",[NSString stringWithFormat:@"%@ %@",[userinfo.tokenType capitalizedString],userinfo.accessToken]);
-//
-//        [[TKNetworkManager sharedInstance] setValue:[NSString stringWithFormat:@"%@ %@",[userinfo.tokenType capitalizedString],userinfo.accessToken] forHTTPHeaderField:@"Authorization"];
-//    }else{
-//        [[TKNetworkManager sharedInstance] setAuthorizationHeaderFieldWithUsername:@"ecclient" password:@"ecclientsecret"];
-//    }
-}
 
 -(NSDictionary *)baseParam
 {

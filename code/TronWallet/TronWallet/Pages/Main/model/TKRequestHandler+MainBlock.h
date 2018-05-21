@@ -14,4 +14,7 @@
 
 -(NSURLSessionDataTask *)getMainRecentTransactionWithCompletion:(void (^)(NSURLSessionDataTask *task , NSDictionary *model , NSError *error))completion;
 
+
+-(NSURLSessionDataTask *)getListNodesWithCompletion:(void (^)(NSURLSessionDataTask *task , NSDictionary *model , NSError *error))completion;
+
 @end

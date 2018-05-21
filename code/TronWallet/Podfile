@@ -24,5 +24,10 @@ target 'TronWallet' do
   #pod 'Bugly'
   #pod 'JPush'
   #pod 'ZBarSDK'
+  
+  pod 'Protobuf' , '3.0.0'
+  pod 'BoringSSL' , '~>9.2'
+  pod 'gRPC' , '1.9.1'
+  pod 'gRPC-ProtoRPC' , '1.9.1'
 
 end

@@ -8,6 +8,7 @@
 
 #import "TWNodesViewController.h"
 #import "TWMainNodeTableViewCell.h"
+#import "TKRequestHandler+MainBlock.h"
 
 @interface TWNodesViewController ()
 
@@ -27,6 +28,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)headRequest
+{
+    [[TKRequestHandler sharedInstance] getListNodesWithCompletion:^(NSURLSessionDataTask *task, NSDictionary *model, NSError *error) {
+        
+    }];
 }
 
 #pragma mark - Table view data source

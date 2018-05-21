@@ -14,7 +14,19 @@
 {
     NSString *path = [NSString stringWithFormat:@"%@/eis/open/user/updateUser",AppHost];
     
-    NSURLSessionDataTask *task =  [[TKRequestHandler sharedInstance] postRequestForPath:path param:nil  finish:^(NSURLSessionDataTask * _Nullable sessionDataTask, NSDictionary * _Nullable model, NSError * _Nullable error) {
+    return [self emptyRequest:path completion:completion];
+}
+
+-(NSURLSessionDataTask *)getMainRecentTransactionWithCompletion:(void (^)(NSURLSessionDataTask *task , NSDictionary *model , NSError *error))completion
+{
+    NSString *path = [NSString stringWithFormat:@"%@/eis/open/user/updateUser",AppHost];
+    
+    return [self emptyRequest:path completion:completion];
+}
+
+-(NSURLSessionDataTask *)emptyRequest:(NSString *)url completion:(void (^)(NSURLSessionDataTask *task , NSDictionary *model , NSError *error))completion
+{
+    NSURLSessionDataTask *task =  [[TKRequestHandler sharedInstance] postRequestForPath:url param:nil  finish:^(NSURLSessionDataTask * _Nullable sessionDataTask, NSDictionary * _Nullable model, NSError * _Nullable error) {
         
         if (completion) {
             completion(sessionDataTask,model , error);
@@ -25,19 +37,12 @@
     return task;
 }
 
--(NSURLSessionDataTask *)getMainRecentTransactionWithCompletion:(void (^)(NSURLSessionDataTask *task , NSDictionary *model , NSError *error))completion
+
+-(NSURLSessionDataTask *)getListNodesWithCompletion:(void (^)(NSURLSessionDataTask *task , NSDictionary *model , NSError *error))completion
 {
-    NSString *path = [NSString stringWithFormat:@"%@/eis/open/user/updateUser",AppHost];
+    NSString *path = [NSString stringWithFormat:@"%@/wallet/listnodes",AppHost];
     
-    NSURLSessionDataTask *task =  [[TKRequestHandler sharedInstance] postRequestForPath:path param:nil  finish:^(NSURLSessionDataTask * _Nullable sessionDataTask, NSDictionary * _Nullable model, NSError * _Nullable error) {
-        
-        if (completion) {
-            completion(sessionDataTask,model , error);
-        }
-        
-    } ];
-    
-    return task;
+    return [self emptyRequest:path completion:completion];
 }
 
 @end

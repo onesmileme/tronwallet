@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TWUIInitManager.h"
+#import "Api.pbrpc.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [TWUIInitManager sharedInstance];
+    [TWNetworkManager sharedInstance];
     return YES;
 }
 
