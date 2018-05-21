@@ -12,7 +12,7 @@
 
 @interface TWNodesViewController ()
 
-@property(nonatomic , strong)NSMutableArray *datas;
+@property(nonatomic , strong) NSMutableArray<Node*> *nodesArray;
 
 @end
 
@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.allowsSelection = NO;
     UINib *nib = [UINib nibWithNibName:@"TWMainNodeTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell_id"];
 }
@@ -30,10 +31,16 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)headRequest
+-(void)startRequest
 {
-    [[TKRequestHandler sharedInstance] getListNodesWithCompletion:^(NSURLSessionDataTask *task, NSDictionary *model, NSError *error) {
-        
+    Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
+    [wallet listNodesWithRequest:[EmptyMessage new] handler:^(NodeList * _Nullable response, NSError * _Nullable error) {
+        BOOL success = NO;
+        if (response.nodesArray_Count > 0) {
+            success = YES;
+            self.nodesArray = response.nodesArray;
+        }
+        [self requestDone:success];
     }];
 }
 
@@ -41,12 +48,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return _nodesArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return _datas.count;
+    return 1;
 }
 
 
@@ -54,6 +61,9 @@
     TWMainNodeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_id" forIndexPath:indexPath];
     
     // Configure the cell...
+    Node *node = _nodesArray[indexPath.section];
+    NSString *host = [[NSString alloc] initWithData:node.address.host encoding:NSUTF8StringEncoding];
+    [cell updateIp:host port:node.address.port];
     
     return cell;
 }
@@ -61,6 +71,29 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section < _nodesArray.count - 1) {
+        return 2;
+    }
+    return CGFLOAT_MIN;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [[UIView alloc] init];
 }
 
 /*

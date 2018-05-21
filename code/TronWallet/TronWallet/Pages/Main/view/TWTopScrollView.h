@@ -10,4 +10,8 @@
 
 @interface TWTopScrollView : UIView
 
+@property(nonatomic , copy) void (^chooseBlock)(NSInteger index, NSInteger lastIndex);
+
+-(void)scrollToShow:(NSInteger)index;
+
 @end

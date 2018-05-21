@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Api.pbrpc.h"
 
 #define AppHost  [TWNetworkManager appHost]
 
-@class Wallet;
-@class WalletSolidity;
-@class Network;
-@class Database;
+//@class Wallet;
+//@class WalletSolidity;
+//@class Network;
+//@class Database;
 
 @interface TWNetworkManager : NSObject
 

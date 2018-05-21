@@ -12,4 +12,8 @@
 
 @property(nonatomic , assign) BOOL showSearcher;
 
+-(void)startRequest;
+
+-(void)requestDone:(BOOL)success;
+
 @end

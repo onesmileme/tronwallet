@@ -44,6 +44,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)startRequest
+{
+    [self requestDone:YES];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

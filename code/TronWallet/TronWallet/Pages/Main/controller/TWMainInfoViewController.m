@@ -37,6 +37,11 @@
     
     _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, insets.top+ 64, CGRectGetWidth(self.view.bounds), kTopScrollHeight)];
     [self.view addSubview:_topScrollView];
+    __weak typeof(self) wself = self;
+    _topScrollView.chooseBlock = ^(NSInteger index,NSInteger lastIndex) {
+        UIViewController *controller = wself.controllers[index];
+        [wself.pageContainerViewController setViewControllers:@[controller] direction:index>=lastIndex?UIPageViewControllerNavigationDirectionForward:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+    };
     
     _pageContainerViewController = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageContainerViewController.dataSource = self;
@@ -63,14 +68,9 @@
     
     [self.view addSubview:_pageContainerViewController.view];
     
-//    for (int i = 0 ; i < _controllers.count ; i++) {
-//        UIViewController *controller = _controllers[i];
-//        controller.view.backgroundColor = i % 2 == 0 ? [UIColor redColor] : [UIColor greenColor];
-//    }
-    
     self.view.backgroundColor = [UIColor whiteColor];
     
-    NSLog(@"nav bar is: %@",self.navigationController.navigationBar);
+    [_topScrollView scrollToShow:0];
     
 }
 
@@ -95,6 +95,18 @@
     }
     return _controllers[index+1];
 }
+
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers
+{
+    UIViewController *controller = [pendingViewControllers firstObject];
+    NSInteger index = [self.controllers indexOfObject:controller];
+    [self.topScrollView scrollToShow:index];
+}
+
+//- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
+//{
+//    NSLog(@"finish view controller is: %@",previousViewControllers);
+//}
 
 /*
 #pragma mark - Navigation

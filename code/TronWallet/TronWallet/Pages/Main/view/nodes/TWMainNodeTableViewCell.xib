@@ -19,40 +19,72 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="60.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-zq-5O4" userLabel="ipLabel">
-                        <rect key="frame" x="60" y="10" width="250" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHL-5G-03l" userLabel="portLabel">
-                        <rect key="frame" x="60" y="37" width="250" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLt-yf-1b2">
-                        <rect key="frame" x="10" y="15.5" width="30" height="30"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmM-lg-vsS" userLabel="containerView">
+                        <rect key="frame" x="10" y="0.0" width="300" height="60.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-zq-5O4" userLabel="ipLabel">
+                                <rect key="frame" x="62" y="5" width="228" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="T0W-d4-S81"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHL-5G-03l" userLabel="portLabel">
+                                <rect key="frame" x="62" y="31.5" width="228" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOST:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKV-lH-gJb">
+                                <rect key="frame" x="10" y="5" width="42" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="LwU-He-tbs"/>
+                                    <constraint firstAttribute="height" constant="20" id="pGG-3v-y9f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PORT:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-gC-iDG" userLabel="PORT:">
+                                <rect key="frame" x="10" y="30" width="42" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="lf6-fX-hq3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="hbw-oI-YZH"/>
-                            <constraint firstAttribute="width" constant="30" id="mLr-j4-t7N"/>
+                            <constraint firstItem="5jz-gC-iDG" firstAttribute="leading" secondItem="PKV-lH-gJb" secondAttribute="leading" id="CWS-tj-5E5"/>
+                            <constraint firstItem="5jz-gC-iDG" firstAttribute="trailing" secondItem="PKV-lH-gJb" secondAttribute="trailing" id="KGl-fs-aCI"/>
+                            <constraint firstItem="dD8-zq-5O4" firstAttribute="centerY" secondItem="PKV-lH-gJb" secondAttribute="centerY" id="RHO-Ia-kxA"/>
+                            <constraint firstItem="dD8-zq-5O4" firstAttribute="leading" secondItem="WHL-5G-03l" secondAttribute="leading" id="TpU-Vw-xGJ"/>
+                            <constraint firstAttribute="trailing" secondItem="dD8-zq-5O4" secondAttribute="trailing" constant="10" id="g0Z-ro-ZKJ"/>
+                            <constraint firstItem="WHL-5G-03l" firstAttribute="centerY" secondItem="5jz-gC-iDG" secondAttribute="centerY" id="ghU-UT-RPT"/>
+                            <constraint firstItem="5jz-gC-iDG" firstAttribute="top" secondItem="PKV-lH-gJb" secondAttribute="bottom" constant="5" id="iiL-XO-l1L"/>
+                            <constraint firstItem="PKV-lH-gJb" firstAttribute="leading" secondItem="kmM-lg-vsS" secondAttribute="leading" constant="10" id="nbH-uk-4OS"/>
+                            <constraint firstItem="dD8-zq-5O4" firstAttribute="leading" secondItem="PKV-lH-gJb" secondAttribute="trailing" constant="10" id="wKB-og-qfW"/>
+                            <constraint firstItem="dD8-zq-5O4" firstAttribute="trailing" secondItem="WHL-5G-03l" secondAttribute="trailing" id="wdA-M0-b4q"/>
+                            <constraint firstItem="PKV-lH-gJb" firstAttribute="top" secondItem="kmM-lg-vsS" secondAttribute="top" constant="5" id="yOv-ta-vmo"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="dD8-zq-5O4" secondAttribute="trailing" constant="10" id="9oH-uQ-GqJ"/>
-                    <constraint firstItem="WHL-5G-03l" firstAttribute="top" secondItem="dD8-zq-5O4" secondAttribute="bottom" constant="10" id="AUj-Nh-2cl"/>
-                    <constraint firstItem="dD8-zq-5O4" firstAttribute="leading" secondItem="yLt-yf-1b2" secondAttribute="trailing" constant="20" id="HjR-l0-jMj"/>
-                    <constraint firstItem="yLt-yf-1b2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="IZf-uC-v4V"/>
-                    <constraint firstItem="WHL-5G-03l" firstAttribute="leading" secondItem="dD8-zq-5O4" secondAttribute="leading" id="bSd-p0-cpt"/>
-                    <constraint firstItem="yLt-yf-1b2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kxn-QJ-Djo"/>
-                    <constraint firstItem="dD8-zq-5O4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="qlk-9L-c1X"/>
-                    <constraint firstItem="WHL-5G-03l" firstAttribute="trailing" secondItem="dD8-zq-5O4" secondAttribute="trailing" id="xt3-Bt-XGA"/>
+                    <constraint firstItem="kmM-lg-vsS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="b4l-01-hdb"/>
+                    <constraint firstAttribute="trailing" secondItem="kmM-lg-vsS" secondAttribute="trailing" constant="10" id="knL-nt-5MX"/>
+                    <constraint firstAttribute="bottom" secondItem="kmM-lg-vsS" secondAttribute="bottom" id="leg-3X-MDU"/>
+                    <constraint firstItem="kmM-lg-vsS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xt7-oH-wWq"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="containerView" destination="kmM-lg-vsS" id="zVk-gs-RkF"/>
                 <outlet property="ipLabel" destination="dD8-zq-5O4" id="hV5-7P-D0D"/>
                 <outlet property="portLabel" destination="WHL-5G-03l" id="2Jt-Ug-BaQ"/>
             </connections>

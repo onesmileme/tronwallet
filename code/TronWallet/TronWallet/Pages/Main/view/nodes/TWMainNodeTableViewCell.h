@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface TWMainNodeTableViewCell : UITableViewCell
+
+@property(nonatomic , strong) IBOutlet UIView *containerView;
 @property(nonatomic , strong) IBOutlet UILabel *ipLabel;
 @property(nonatomic , strong) IBOutlet UILabel *portLabel;
+
+-(void)updateIp:(NSString *)ip port:(uint32_t)port;
+
 @end

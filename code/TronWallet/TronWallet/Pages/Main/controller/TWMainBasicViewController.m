@@ -7,6 +7,9 @@
 //
 
 #import "TWMainBasicViewController.h"
+#import <MBProgressHUD.h>
+#import "UIViewController+Refresh.h"
+#import <MJRefresh.h>
 
 @interface TWMainBasicViewController ()
 
@@ -26,12 +29,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.backgroundColor = [UIColor themeDarkBgColor];
+    
+    self.tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self addHeaderRefreshView:self.tableView];
+    
+    [self.tableView.header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+-(void)headRefreshAction
+{
+    [self startRequest];
+}
+
+-(void)startRequest
+{
+
+}
+
+-(void)requestDone:(BOOL)success
+{
+    if ([self.tableView.header isRefreshing]) {
+        [self.tableView.header endRefreshing];
+    }    
+    if (success) {
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Table view data source
@@ -47,6 +80,22 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return CGFLOAT_MIN;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [[UIView alloc] init];
 }
 
 /*

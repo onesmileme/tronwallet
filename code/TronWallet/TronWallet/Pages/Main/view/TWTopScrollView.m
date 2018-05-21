@@ -9,7 +9,8 @@
 #import "TWTopScrollView.h"
 #import "NSString+TKSize.h"
 
-#define kTitleFont [UIFont boldSystemFontOfSize:16]
+#define kTitleFontSize 15
+
 
 @interface TWScrollItemViewCell : UICollectionViewCell
 
@@ -21,6 +22,8 @@
 
 @property(nonatomic , strong) UICollectionView *collectionView;
 @property(nonatomic , strong) NSArray *items;
+@property(nonatomic , assign) NSInteger currentIndex;
+
 @end
 
 @implementation TWTopScrollView
@@ -68,7 +71,8 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     NSString *title = _items[indexPath.item];
-    CGSize size = [title sizeWithMaxWidth:1000 font:kTitleFont];
+    UIFont *font = indexPath.item == _currentIndex ? [UIFont boldSystemFontOfSize:kTitleFontSize]:[UIFont systemFontOfSize:kTitleFontSize];
+    CGSize size = [title sizeWithMaxWidth:1000 font:font];
     
     size.width += 20;
     
@@ -79,6 +83,23 @@
     return CGSizeMake(size.width, CGRectGetHeight(collectionView.bounds));
 }
 
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_chooseBlock) {
+        _chooseBlock(indexPath.item,_currentIndex);
+    }
+    _currentIndex = indexPath.item;
+}
+
+-(void)scrollToShow:(NSInteger)index
+{
+    if (index < _items.count && index >= 0) {
+//        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+        [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionLeft];
+    }
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -98,11 +119,17 @@
     if (self) {
         _titleLabel = [[UILabel alloc]initWithFrame:self.bounds];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = kTitleFont;
+        _titleLabel.font = [UIFont systemFontOfSize:kTitleFontSize];
         _titleLabel.textColor = [UIColor whiteColor];
         [self addSubview:_titleLabel];
     }
     return self;
+}
+
+-(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    self.titleLabel.font = selected ? [UIFont boldSystemFontOfSize:kTitleFontSize]:[UIFont systemFontOfSize:kTitleFontSize];
 }
 
 @end
