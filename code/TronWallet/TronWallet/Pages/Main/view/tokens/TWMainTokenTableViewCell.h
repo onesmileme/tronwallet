@@ -17,4 +17,8 @@
 @property(nonatomic , strong) IBOutlet UILabel *startLabel;
 @property(nonatomic , strong) IBOutlet UILabel *endLabel;
 
+@property(nonatomic , copy) void (^participateBlock)(AssetIssueContract *asset);
+
+-(void)updateWithModel:(AssetIssueContract *)model;
+
 @end

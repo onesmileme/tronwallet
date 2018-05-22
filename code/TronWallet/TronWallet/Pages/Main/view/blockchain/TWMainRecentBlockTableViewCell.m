@@ -12,7 +12,7 @@
 @interface TWMainRecentBlockTableViewCell()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic , strong) UITableView *tableView;
-@property(nonatomic , strong) NSArray *datas;
+@property(nonatomic , strong) NSMutableArray<Block*> *blockArray;
 
 @end
 
@@ -58,11 +58,11 @@
     return _tableView;
 }
 
--(void)bindData:(id)data
+-(void)updateWithModel:(NSMutableArray<Block*> *)blockArray
 {
-    
+    self.blockArray = blockArray;
+    [self.tableView reloadData];
 }
-
 
 -(void)layoutSubviews
 {
@@ -73,12 +73,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;//_datas.count;
+    return _blockArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TWMainBlockInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
+    Block *block = _blockArray[indexPath.row];
+    [cell updateWithModel:block.blockHeader index:0];
     return cell;
 }
 

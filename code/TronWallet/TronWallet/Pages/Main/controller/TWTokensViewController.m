@@ -11,7 +11,7 @@
 
 @interface TWTokensViewController ()
 
-@property(nonatomic , strong)NSMutableArray *datas;
+@property(nonatomic , strong)NSMutableArray<AssetIssueContract*> *assetIssueArray;
 
 @end
 
@@ -29,14 +29,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)startRequest
+{
+    Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
+    //
+    [wallet getAssetIssueListWithRequest:[EmptyMessage new] handler:^(AssetIssueList * _Nullable response, NSError * _Nullable error) {
+        
+        BOOL success = NO;
+        if (response.assetIssueArray_Count > 0) {
+            success = YES;
+            self.assetIssueArray = response.assetIssueArray;
+        }
+        [self requestDone:success];
+    }];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return _assetIssueArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _datas.count;
+    return 1;
 }
 
 
@@ -44,15 +59,47 @@
     TWMainTokenTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_id" forIndexPath:indexPath];
     
     // Configure the cell...
+    if (!cell.participateBlock) {
+        cell.participateBlock = ^(AssetIssueContract *asset) {
+            
+        };
+    }
+    
+    AssetIssueContract *model = _assetIssueArray[indexPath.section];
+    [cell updateWithModel:model];
+    
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 185;
+    return 220;
 }
 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section < _assetIssueArray.count - 1) {
+        return 2;
+    }
+    return CGFLOAT_MIN;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [[UIView alloc] init];
+}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

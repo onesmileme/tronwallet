@@ -15,6 +15,7 @@
 
 @property(nonatomic , strong) TWMainRecentBlockTableViewCell *blockCell;
 @property(nonatomic , strong) TWMainRecentBlockTableViewCell *recentCell;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Block*> *blockArray;
 
 @end
 
@@ -44,8 +45,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)requestBlock
+{
+    Wallet *walletClient = [[TWNetworkManager sharedInstance] walletClient];
+    NumberMessage *numMsg = [NumberMessage new];
+    numMsg.num = 100;
+    
+    [walletClient getBlockByLatestNumWithRequest:numMsg handler:^(BlockList * _Nullable response, NSError * _Nullable error) {
+        BOOL success = NO;
+        if (response.blockArray_Count > 0) {
+            success = YES;
+            self.blockArray = response.blockArray;
+        }
+        [self requestDone:success];        
+    }];
+    
+    
+    
+}
+
 -(void)startRequest
 {
+    [self requestBlock];
     [self requestDone:YES];
 }
 
@@ -70,6 +91,8 @@
         TWMainRecentBlockTableViewCell *blockCell = [tableView dequeueReusableCellWithIdentifier:@"block_cell"];
         
         cell = blockCell;
+        
+        [blockCell updateWithModel:self.blockArray];
         
     }else{
         

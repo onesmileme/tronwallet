@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0BFE87FAA0CE2A2D5E3C6214 /* libPods-TronWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE13880D14A8B17218729F4C /* libPods-TronWallet.a */; };
+		6E4AD53520B454EB0012DCD1 /* TWShEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */; };
+		6E4AD55520B463350012DCD1 /* NS+BTCBase58.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55020B463350012DCD1 /* NS+BTCBase58.m */; };
+		6E4AD55620B463350012DCD1 /* BTCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55120B463350012DCD1 /* BTCData.m */; };
+		6E4AD55720B463350012DCD1 /* BTCBase58.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55220B463350012DCD1 /* BTCBase58.m */; };
+		6E4AD55820B463350012DCD1 /* NSData+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55320B463350012DCD1 /* NSData+Hashing.m */; };
 		6E91037420B2A370006FDEA1 /* Api.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91036A20B2A370006FDEA1 /* Api.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E91037520B2A370006FDEA1 /* TronInventoryItems.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91036F20B2A370006FDEA1 /* TronInventoryItems.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E91037620B2A370006FDEA1 /* Discover.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91037020B2A370006FDEA1 /* Discover.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -48,6 +53,7 @@
 		6E9103E020B2A5A8006FDEA1 /* HTTPRequest.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9103BE20B2A5A8006FDEA1 /* HTTPRequest.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E91040920B2AE79006FDEA1 /* Descriptor.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91040820B2AE79006FDEA1 /* Descriptor.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E91040C20B2B3AB006FDEA1 /* Api.pbrpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91040B20B2B3AB006FDEA1 /* Api.pbrpc.m */; };
+		6E91041120B2EB0C006FDEA1 /* NSData+HexToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91041020B2EB0C006FDEA1 /* NSData+HexToString.m */; };
 		6E93FF0420AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF0320AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m */; };
 		6E93FF0720AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF0620AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m */; };
 		6E93FF0B20AF20BA000FD37D /* TWTransInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF0920AF20BA000FD37D /* TWTransInfoTableViewCell.m */; };
@@ -107,6 +113,16 @@
 
 /* Begin PBXFileReference section */
 		268A9A5C3A78189BCD39F032 /* Pods-TronWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TronWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-TronWallet/Pods-TronWallet.release.xcconfig"; sourceTree = "<group>"; };
+		6E4AD53320B454EB0012DCD1 /* TWShEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWShEncoder.h; sourceTree = "<group>"; };
+		6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWShEncoder.m; sourceTree = "<group>"; };
+		6E4AD54D20B463350012DCD1 /* BTCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCData.h; sourceTree = "<group>"; };
+		6E4AD54E20B463350012DCD1 /* NSData+Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Hashing.h"; sourceTree = "<group>"; };
+		6E4AD54F20B463350012DCD1 /* BTCBase58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCBase58.h; sourceTree = "<group>"; };
+		6E4AD55020B463350012DCD1 /* NS+BTCBase58.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NS+BTCBase58.m"; sourceTree = "<group>"; };
+		6E4AD55120B463350012DCD1 /* BTCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCData.m; sourceTree = "<group>"; };
+		6E4AD55220B463350012DCD1 /* BTCBase58.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCBase58.m; sourceTree = "<group>"; };
+		6E4AD55320B463350012DCD1 /* NSData+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Hashing.m"; sourceTree = "<group>"; };
+		6E4AD55420B463350012DCD1 /* NS+BTCBase58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NS+BTCBase58.h"; sourceTree = "<group>"; };
 		6E91036920B2A370006FDEA1 /* Api.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.pbobjc.h; sourceTree = "<group>"; };
 		6E91036A20B2A370006FDEA1 /* Api.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.pbobjc.m; sourceTree = "<group>"; };
 		6E91036C20B2A370006FDEA1 /* Discover.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover.pbobjc.h; sourceTree = "<group>"; };
@@ -185,6 +201,8 @@
 		6E91040820B2AE79006FDEA1 /* Descriptor.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Descriptor.pbobjc.m; sourceTree = "<group>"; };
 		6E91040A20B2B3AB006FDEA1 /* Api.pbrpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.pbrpc.h; sourceTree = "<group>"; };
 		6E91040B20B2B3AB006FDEA1 /* Api.pbrpc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.pbrpc.m; sourceTree = "<group>"; };
+		6E91040F20B2EB0C006FDEA1 /* NSData+HexToString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+HexToString.h"; sourceTree = "<group>"; };
+		6E91041020B2EB0C006FDEA1 /* NSData+HexToString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+HexToString.m"; sourceTree = "<group>"; };
 		6E93FF0220AF1F21000FD37D /* TWMainRecentBlockTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainRecentBlockTableViewCell.h; sourceTree = "<group>"; };
 		6E93FF0320AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainRecentBlockTableViewCell.m; sourceTree = "<group>"; };
 		6E93FF0520AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainRecentTransactionTableViewCell.h; sourceTree = "<group>"; };
@@ -277,6 +295,21 @@
 				268A9A5C3A78189BCD39F032 /* Pods-TronWallet.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E4AD54C20B463350012DCD1 /* base58 */ = {
+			isa = PBXGroup;
+			children = (
+				6E4AD54F20B463350012DCD1 /* BTCBase58.h */,
+				6E4AD55220B463350012DCD1 /* BTCBase58.m */,
+				6E4AD54D20B463350012DCD1 /* BTCData.h */,
+				6E4AD55120B463350012DCD1 /* BTCData.m */,
+				6E4AD55420B463350012DCD1 /* NS+BTCBase58.h */,
+				6E4AD55020B463350012DCD1 /* NS+BTCBase58.m */,
+				6E4AD54E20B463350012DCD1 /* NSData+Hashing.h */,
+				6E4AD55320B463350012DCD1 /* NSData+Hashing.m */,
+			);
+			path = base58;
 			sourceTree = "<group>";
 		};
 		6E91035520B2A330006FDEA1 /* RPC */ = {
@@ -702,6 +735,10 @@
 			children = (
 				6EED948720AEC2DA003FF63E /* UIColor+Theme.h */,
 				6EED948820AEC2DA003FF63E /* UIColor+Theme.m */,
+				6E91040F20B2EB0C006FDEA1 /* NSData+HexToString.h */,
+				6E91041020B2EB0C006FDEA1 /* NSData+HexToString.m */,
+				6E4AD53320B454EB0012DCD1 /* TWShEncoder.h */,
+				6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -716,6 +753,7 @@
 		6EED948620AEC2C7003FF63E /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				6E4AD54C20B463350012DCD1 /* base58 */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -897,9 +935,11 @@
 				6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */,
 				6EA351C720AC7D1500AF1984 /* main.m in Sources */,
 				6E9103C420B2A5A8006FDEA1 /* Timeofday.pbobjc.m in Sources */,
+				6E4AD55620B463350012DCD1 /* BTCData.m in Sources */,
 				6E9103D420B2A5A8006FDEA1 /* Consumer.pbobjc.m in Sources */,
 				6E9103D320B2A5A8006FDEA1 /* Logging.pbobjc.m in Sources */,
 				6E9103CE20B2A5A8006FDEA1 /* Distribution.pbobjc.m in Sources */,
+				6E4AD53520B454EB0012DCD1 /* TWShEncoder.m in Sources */,
 				6E9103DA20B2A5A8006FDEA1 /* Code.pbobjc.m in Sources */,
 				6E9103DC20B2A5A8006FDEA1 /* ErrorDetails.pbobjc.m in Sources */,
 				6E9103D020B2A5A8006FDEA1 /* Control.pbobjc.m in Sources */,
@@ -907,10 +947,12 @@
 				6E9103C820B2A5A8006FDEA1 /* Auth.pbobjc.m in Sources */,
 				6E9103CA20B2A5A8006FDEA1 /* MonitoredResource.pbobjc.m in Sources */,
 				6E9103D220B2A5A8006FDEA1 /* Label.pbobjc.m in Sources */,
+				6E4AD55820B463350012DCD1 /* NSData+Hashing.m in Sources */,
 				6E9103C320B2A5A8006FDEA1 /* Money.pbobjc.m in Sources */,
 				6E9103C220B2A5A8006FDEA1 /* Date.pbobjc.m in Sources */,
 				6E93FF2D20B092BC000FD37D /* TWMainTokenTableViewCell.m in Sources */,
 				6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */,
+				6E4AD55520B463350012DCD1 /* NS+BTCBase58.m in Sources */,
 				6E91037420B2A370006FDEA1 /* Api.pbobjc.m in Sources */,
 				6E93FF0720AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m in Sources */,
 				6E91037720B2A370006FDEA1 /* Tron.pbobjc.m in Sources */,
@@ -921,7 +963,9 @@
 				6E9103DB20B2A5A8006FDEA1 /* Status.pbobjc.m in Sources */,
 				6E93FF2820B09164000FD37D /* TWMainNodeTableViewCell.m in Sources */,
 				6E9103D520B2A5A8006FDEA1 /* Monitoring.pbobjc.m in Sources */,
+				6E4AD55720B463350012DCD1 /* BTCBase58.m in Sources */,
 				6EED949820AEC8B4003FF63E /* TWRepresentativeViewController.m in Sources */,
+				6E91041120B2EB0C006FDEA1 /* NSData+HexToString.m in Sources */,
 				6E9103C120B2A5A8006FDEA1 /* Dayofweek.pbobjc.m in Sources */,
 				6E9103C020B2A5A8006FDEA1 /* Operations.pbobjc.m in Sources */,
 				6E91040920B2AE79006FDEA1 /* Descriptor.pbobjc.m in Sources */,

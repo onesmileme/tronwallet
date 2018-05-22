@@ -42,7 +42,7 @@
         [_collectionView registerClass:[TWScrollItemViewCell class] forCellWithReuseIdentifier:@"cellid"];
         [self addSubview:_collectionView];
         
-        _items = @[@"BLOCKCHAIN",@"REPRESENTATIVES",@"NODES",@"TOKENS",@"ACCOUNT"];
+        _items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS",@"ACCOUNT"];
         
         self.backgroundColor = [UIColor whiteColor];
         
@@ -96,7 +96,6 @@
 -(void)scrollToShow:(NSInteger)index
 {
     if (index < _items.count && index >= 0) {
-//        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
         [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionLeft];
     }
 }

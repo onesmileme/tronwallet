@@ -10,4 +10,8 @@
 
 @interface TWMainRecentBlockTableViewCell : UITableViewCell
 
+
+//
+-(void)updateWithModel:(NSMutableArray<Block*> *)blockArray;
+
 @end

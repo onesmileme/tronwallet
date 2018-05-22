@@ -15,4 +15,6 @@
 @property(nonatomic , strong) IBOutlet UIButton *exchangeButton;
 @property(nonatomic , strong) IBOutlet UIButton *timeButton;
 
+-(void)updateWithModel:(BlockHeader *)model index:(NSInteger)index;
+
 @end

@@ -11,7 +11,7 @@
 
 @interface TWRepresentativeViewController ()
 
-@property(nonatomic , strong) NSMutableArray *datas;
+@property(nonatomic , strong) NSMutableArray<Witness*> *witnessesArray;
 
 @end
 
@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.allowsSelection = NO;
     UINib *nib = [UINib nibWithNibName:@"TWMainPresentativesTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell_id"];
 }
@@ -29,14 +30,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)startRequest
+{
+    Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
+    [wallet listWitnessesWithRequest:[EmptyMessage new] handler:^(WitnessList * _Nullable response, NSError * _Nullable error) {
+        
+        BOOL success = NO;
+        if (response.witnessesArray_Count > 0) {
+            success = YES;
+            self.witnessesArray = response.witnessesArray;
+        }
+        [self requestDone:success];
+    }];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return _witnessesArray.count;;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _datas.count;
+    return 1;
 }
 
 
@@ -44,15 +59,40 @@
     TWMainPresentativesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_id" forIndexPath:indexPath];
     
     // Configure the cell...
+    Witness *witness = _witnessesArray[indexPath.section];
+    [cell updateWithModel:witness index:indexPath.section+1];
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 178;
+    return 160;
 }
 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section < _witnessesArray.count - 1) {
+        return 2;
+    }
+    return CGFLOAT_MIN;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [[UIView alloc] init];
+}
 
 /*
 // Override to support conditional editing of the table view.

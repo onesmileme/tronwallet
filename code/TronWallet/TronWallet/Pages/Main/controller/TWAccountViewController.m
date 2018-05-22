@@ -10,6 +10,8 @@
 
 @interface TWAccountViewController ()
 
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Account*> *accountsArray;
+
 @end
 
 @implementation TWAccountViewController
@@ -29,15 +31,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)startRequest
+{
+    Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
+    //
+    [wallet listAccountsWithRequest:[EmptyMessage new] handler:^(AccountList * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"account is: %@",response);
+        BOOL success = NO;
+        if (response.accountsArray_Count > 0) {
+            success = YES;
+            self.accountsArray = response.accountsArray;
+        }
+        [self requestDone:success];
+    }];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 0;//_accountsArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 0;
 }
 

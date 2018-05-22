@@ -14,7 +14,10 @@
 @property(nonatomic , strong) IBOutlet UILabel *urlLabel;
 @property(nonatomic , strong) IBOutlet UILabel *idLabel;
 @property(nonatomic , strong) IBOutlet UILabel *votesLabel;
+@property(nonatomic , strong) IBOutlet UILabel *blockLabel;
 @property(nonatomic , strong) IBOutlet UILabel *productIdLabel;
 @property(nonatomic , strong) IBOutlet UILabel *missLabel;
+
+-(void)updateWithModel:(Witness *)model index:(NSInteger)index;
 
 @end
