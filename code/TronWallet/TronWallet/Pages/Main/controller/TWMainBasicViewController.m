@@ -35,6 +35,7 @@
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.allowsSelection = NO;
     [self addHeaderRefreshView:self.tableView];
     
     [self.tableView.header beginRefreshing];

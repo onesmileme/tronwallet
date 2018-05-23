@@ -13,6 +13,8 @@
 		6E4AD55620B463350012DCD1 /* BTCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55120B463350012DCD1 /* BTCData.m */; };
 		6E4AD55720B463350012DCD1 /* BTCBase58.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55220B463350012DCD1 /* BTCBase58.m */; };
 		6E4AD55820B463350012DCD1 /* NSData+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55320B463350012DCD1 /* NSData+Hashing.m */; };
+		6E4AD55C20B4F8520012DCD1 /* TWConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55A20B4F8520012DCD1 /* TWConnectViewController.m */; };
+		6E4AD55D20B4F8520012DCD1 /* TWConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4AD55B20B4F8520012DCD1 /* TWConnectViewController.xib */; };
 		6E91037420B2A370006FDEA1 /* Api.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91036A20B2A370006FDEA1 /* Api.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E91037520B2A370006FDEA1 /* TronInventoryItems.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91036F20B2A370006FDEA1 /* TronInventoryItems.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E91037620B2A370006FDEA1 /* Discover.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91037020B2A370006FDEA1 /* Discover.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -123,6 +125,9 @@
 		6E4AD55220B463350012DCD1 /* BTCBase58.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCBase58.m; sourceTree = "<group>"; };
 		6E4AD55320B463350012DCD1 /* NSData+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Hashing.m"; sourceTree = "<group>"; };
 		6E4AD55420B463350012DCD1 /* NS+BTCBase58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NS+BTCBase58.h"; sourceTree = "<group>"; };
+		6E4AD55920B4F8520012DCD1 /* TWConnectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWConnectViewController.h; sourceTree = "<group>"; };
+		6E4AD55A20B4F8520012DCD1 /* TWConnectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWConnectViewController.m; sourceTree = "<group>"; };
+		6E4AD55B20B4F8520012DCD1 /* TWConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWConnectViewController.xib; sourceTree = "<group>"; };
 		6E91036920B2A370006FDEA1 /* Api.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.pbobjc.h; sourceTree = "<group>"; };
 		6E91036A20B2A370006FDEA1 /* Api.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.pbobjc.m; sourceTree = "<group>"; };
 		6E91036C20B2A370006FDEA1 /* Discover.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover.pbobjc.h; sourceTree = "<group>"; };
@@ -658,6 +663,9 @@
 				6EA351EC20AC82C100AF1984 /* TWSettingViewController.h */,
 				6EA351ED20AC82C100AF1984 /* TWSettingViewController.m */,
 				6E93FF3120B09A4F000FD37D /* TWSettingViewController.xib */,
+				6E4AD55920B4F8520012DCD1 /* TWConnectViewController.h */,
+				6E4AD55A20B4F8520012DCD1 /* TWConnectViewController.m */,
+				6E4AD55B20B4F8520012DCD1 /* TWConnectViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -854,6 +862,7 @@
 				6EA351C420AC7D1500AF1984 /* LaunchScreen.storyboard in Resources */,
 				6E93FF2E20B092BC000FD37D /* TWMainTokenTableViewCell.xib in Resources */,
 				6E93FF2920B09164000FD37D /* TWMainNodeTableViewCell.xib in Resources */,
+				6E4AD55D20B4F8520012DCD1 /* TWConnectViewController.xib in Resources */,
 				6E93FF1120AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib in Resources */,
 				6EA351C120AC7D1500AF1984 /* Assets.xcassets in Resources */,
 				6E93FF3020B0961F000FD37D /* TWWalletViewController.xib in Resources */,
@@ -945,6 +954,7 @@
 				6E9103D020B2A5A8006FDEA1 /* Control.pbobjc.m in Sources */,
 				6EED949E20AEC8CD003FF63E /* TWTokensViewController.m in Sources */,
 				6E9103C820B2A5A8006FDEA1 /* Auth.pbobjc.m in Sources */,
+				6E4AD55C20B4F8520012DCD1 /* TWConnectViewController.m in Sources */,
 				6E9103CA20B2A5A8006FDEA1 /* MonitoredResource.pbobjc.m in Sources */,
 				6E9103D220B2A5A8006FDEA1 /* Label.pbobjc.m in Sources */,
 				6E4AD55820B463350012DCD1 /* NSData+Hashing.m in Sources */,

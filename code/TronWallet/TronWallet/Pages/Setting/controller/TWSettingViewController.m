@@ -7,6 +7,7 @@
 //
 
 #import "TWSettingViewController.h"
+#import "TWConnectViewController.h"
 
 @interface TWSettingViewController ()
 
@@ -31,7 +32,8 @@
 
 -(IBAction)connectionAction:(id)sender
 {
-    
+    TWConnectViewController *connectController = [[TWConnectViewController alloc]initWithNibName:@"TWConnectViewController" bundle:nil];
+    [self.navigationController pushViewController:connectController animated:YES];
 }
 
 -(IBAction)aboutAction:(id)sender

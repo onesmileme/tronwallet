@@ -8,6 +8,7 @@
 
 #import "TWMainPresentativesTableViewCell.h"
 #import "NSData+HexToString.h"
+#import "TWShEncoder.h"
 
 @implementation TWMainPresentativesTableViewCell
 
@@ -26,17 +27,9 @@
 {
     self.indexLabel.text = [NSString stringWithFormat:@"#%ld",index];
     
-//
-//    NSLog(@"address is: %@ \n or %@\n\n",[model.address convertToHexStr],[model.address dataToHexString]);
-//
-//    const unsigned char * bytes =  [model.address bytes];
-//    for (int i = 0 ; i < model.address.length; i++) {
-//        unsigned char c = (unsigned char )bytes[i];
-//        printf("%c int value %d\n",c,(int)c);
-//    }
     
     self.urlLabel.text = model.URL;
-    self.idLabel.text =  [[NSString alloc] initWithData:model.address encoding:NSUTF8StringEncoding];
+    self.idLabel.text =  [TWShEncoder encode58Check:model.address];
     self.votesLabel.text = [NSString stringWithFormat:@"Votes :  %lld",model.voteCount];
     self.blockLabel.text = [NSString stringWithFormat:@"Last BlockNum: %lld",model.latestBlockNum];
     self.productIdLabel.text = [NSString stringWithFormat:@"TotalProduced:  %lld",model.totalProduced];

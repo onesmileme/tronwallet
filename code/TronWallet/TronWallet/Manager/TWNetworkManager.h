@@ -11,10 +11,6 @@
 
 #define AppHost  [TWNetworkManager appHost]
 
-//@class Wallet;
-//@class WalletSolidity;
-//@class Network;
-//@class Database;
 
 @interface TWNetworkManager : NSObject
 
@@ -32,8 +28,15 @@ DEF_SINGLETON;
  */
 +(NSString *)appHost;
 
+-(NSString *)ip;
 
--(void)resetToken;
+-(NSString *)port;
+
+-(void)resetToDefault;
+
+-(void)resetIp:(NSString *)ip andPort:(NSString *)port;
+
+//-(void)resetToken;
 
 -(void)setRequestSerializer:(BOOL)isJson resetAuthorization:(BOOL)resetAuth;
 

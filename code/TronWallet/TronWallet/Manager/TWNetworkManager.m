@@ -19,6 +19,12 @@
 NSString * const KEY_USERNAME_PASSWORD = @"com.company.app.usernamepassword";
 NSString * const KEY_PASSWORD = @"com.company.app.password";
 
+#define kNodeIpKey @"__node_ip__"
+#define kNodePortKey @"__node_port__"
+
+#define kDefaultIp @"47.254.16.55"
+#define kDefaultPort @"50051"
+
 @interface TWNetworkManager()<TKRequestHandlerDelegate>
 
 @property(nonatomic , strong) NSMutableDictionary *extraInfo;
@@ -28,6 +34,9 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
 @property(nonatomic , strong) WalletSolidity *walletSolidityClient;
 @property(nonatomic , strong) Network *networkClient;
 @property(nonatomic , strong) Database *databaseClient;
+
+@property(nonatomic , copy)  NSString *nodeIp;
+@property(nonatomic , copy)  NSString *nodePort;
 
 @end
 
@@ -42,33 +51,24 @@ IMP_SINGLETON
     if (self) {
         _extraInfo = [[NSMutableDictionary alloc]init];
         
-//        [[TKNetworkManager sharedInstance] setRequestSerializer:[AFJSONRequestSerializer serializer]];        
+//        NSString *notificatioName = kTKNetworkChangeNotification;
 
-//        _extraInfo[@"net"] = @"1";
-//        __weak typeof(self) wself = self;
-//        TKRequestHandler *handler = [TKRequestHandler sharedInstance];
-//        handler.delegate = self;
-//        handler.baseParam = @{};//[self baseParam];
-//        handler.extraInfoBlock = ^(){
-//            return [wself extraParam];
-//        };
-//
-//        [self setRequestSerializer:true resetAuthorization:false];
-//
-//        handler.codeSignBlock = ^(NSDictionary *dic){
-//            //no code sign
-//            return @"";
-//        };
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        self.nodeIp = [defaults objectForKey:kNodeIpKey];
+        self.nodePort = [defaults objectForKey:kNodePortKey];
         
-        NSString *notificatioName = kTKNetworkChangeNotification;
-        [NotificationCenter addObserver:self selector:@selector(networkChangeNotification:) name:notificatioName object:nil];
-        //[NotificationCenter addObserver:self selector:@selector(loginDoneNotification:) name:kLoginDoneNotification object:nil];
-        //[NotificationCenter addObserver:self selector:@selector(logoutNotification:) name:kLogoutNotification object:nil];
+        if (self.nodeIp.length == 0) {
+            self.nodeIp = kDefaultIp;
+            [defaults setObject:self.nodeIp forKey:kNodeIpKey];
+        }
+        if (self.nodePort.length == 0) {
+            self.nodePort = kDefaultPort;
+            [defaults setObject:self.nodePort forKey:kNodePortKey];
+        }
         
-        
-        [GRPCCall useInsecureConnectionsForHost:[[self class]appHost]];
-//        [GRPCCall setUserAgentPrefix:@"" forHost:@""];
-        
+        [defaults synchronize];
+        NSString *address = [NSString stringWithFormat:@"%@:%@",_nodeIp,_nodePort];
+        [GRPCCall useInsecureConnectionsForHost:address];
     }
     return self;
 }
@@ -108,7 +108,37 @@ IMP_SINGLETON
 
 +(NSString *)appHost
 {
-    return @"47.254.16.55:50051";
+    return [NSString stringWithFormat:@"%@:%@",kDefaultIp,kDefaultPort];
+}
+
+-(void)resetIp:(NSString *)ip andPort:(NSString *)port
+{
+    self.nodeIp = ip;
+    self.nodePort = port;
+    
+    NSString *address = [NSString stringWithFormat:@"%@:%@",ip,port];
+    [GRPCCall useInsecureConnectionsForHost:address];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.nodeIp forKey:kNodeIpKey];
+    [defaults setObject:self.nodePort forKey:kNodePortKey];
+    [defaults synchronize];
+    
+}
+
+-(void)resetToDefault
+{
+    [self resetIp:kDefaultIp andPort:kDefaultPort];
+}
+
+-(NSString *)ip
+{
+    return _nodeIp;
+}
+
+-(NSString *)port
+{
+    return _nodePort;
 }
 
 
@@ -128,38 +158,13 @@ IMP_SINGLETON
     NSString *mb = [[UIDevice currentDevice]hwMachineName];
     NSString *osv = [[UIDevice currentDevice]systemVersion];
     NSString *appVersion = [TKAppInfo appVersion];
-//    NSString *appKey = [[FAConfigManager sharedInstance]appKey];
 
     return @{@"mb" : mb, @"ov":osv, @"os":@"ios" ,
             @"sv":appVersion ,
              };    
 }
 
--(NSDictionary *)extraParam
-{
-    NSMutableDictionary *param = [[NSMutableDictionary alloc]init];
-//    [param addEntriesFromDictionary:_extraInfo];
-//    TKUserInfo *userinfo = [[TKAccountManager sharedInstance]userInfo];
-//    NSString *uid = userinfo.uid;
-//    if (uid && ![uid isKindOfClass:[NSString class]]) {
-//        uid = [NSString stringWithFormat:@"%@",uid];
-//    }
-//    if (uid.length > 0) {
-//        param[@"uid"] = uid;
-//    }
-//    NSString *token = userinfo.accessToken;
-//    if (token.length > 0) {
-//        param[@"token"] = token;
-//    }
-    return param;
-}
 
--(void)resetToken
-{
-    AFHTTPRequestSerializer *serializer =  [AFHTTPRequestSerializer serializer];
-    [[TKNetworkManager sharedInstance] setRequestSerializer: serializer];
-    [serializer setAuthorizationHeaderFieldWithUsername:@"ecclient" password:@"ecclientsecret"];
-}
 
 #pragma mark - login
 -(void)loginDoneNotification:(NSNotification *)notification
@@ -203,7 +208,7 @@ IMP_SINGLETON
         NSString *e = responseDict[@"error"];
         if ([[e lowercaseString] isEqualToString:@"invalid_token"]) {
 //            [[TKAccountManager sharedInstance] logout];
-            [self resetToken];
+//            [self resetToken];
             //[[EAPushManager sharedInstance]handleOpenUrl:@"eis://show_login"];
         }
         

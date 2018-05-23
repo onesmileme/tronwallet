@@ -46,6 +46,7 @@
     _pageContainerViewController = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageContainerViewController.dataSource = self;
     _pageContainerViewController.delegate = self;
+    _pageContainerViewController.view.backgroundColor = [UIColor themeDarkBgColor];
     
 
     
