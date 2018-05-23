@@ -16,6 +16,7 @@
 @property(nonatomic , strong) TWMainRecentBlockTableViewCell *blockCell;
 @property(nonatomic , strong) TWMainRecentBlockTableViewCell *recentCell;
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Block*> *blockArray;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Transaction*> *transactionsArray;
 
 @end
 
@@ -49,13 +50,24 @@
 {
     Wallet *walletClient = [[TWNetworkManager sharedInstance] walletClient];
     NumberMessage *numMsg = [NumberMessage new];
-    numMsg.num = 100;
+    numMsg.num = 25;
     
     [walletClient getBlockByLatestNumWithRequest:numMsg handler:^(BlockList * _Nullable response, NSError * _Nullable error) {
         BOOL success = NO;
         if (response.blockArray_Count > 0) {
             success = YES;
-            self.blockArray = response.blockArray;
+            self.blockArray = [response.blockArray sortedArrayUsingComparator:^NSComparisonResult(Block * _Nonnull obj1, Block*  _Nonnull obj2) {
+                return obj1.blockHeader.rawData.number - obj2.blockHeader.rawData.number;
+            }];
+            if (!self.transactionsArray) {
+                self.transactionsArray = [NSMutableArray new];
+            }else{
+                [self.transactionsArray removeAllObjects];
+            }
+            for (Block *b in self.blockArray) {
+                [self.transactionsArray addObjectsFromArray:b.transactionsArray];
+            }
+            
         }
         [self requestDone:success];        
     }];
@@ -98,8 +110,9 @@
         
         TWMainRecentTransactionTableViewCell *recentCell = [tableView dequeueReusableCellWithIdentifier:@"recent_cell"];
         
-        
         cell = recentCell;
+        
+        [recentCell bindData:self.transactionsArray];
         
     }
     
@@ -116,7 +129,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     TWMainInfoTipHeader *infoTip = [[TWMainInfoTipHeader alloc]init];
-    infoTip.tipLabel.text = (section == 0? @"    BLOCKCHAIN":@"    RECENT");
+    infoTip.tipLabel.text = (section == 0? @"    BLOCKCHAIN":@"    RECENT TRANSACTIONS");
     return infoTip;
 }
 

@@ -123,15 +123,20 @@ NSString *const TKDateFormatEnglishMedium2      = @"MM/dd/YYYY";
     NSTimeInterval interval = [now timeIntervalSinceDate:date];
     NSString *des = nil;
     
-    if (interval < 5*60) {
-        des = @"刚刚";
-    }else if (interval < 60*60){
-        des = [NSString stringWithFormat:@"%d分钟前",(int)interval/60];;
+//    if (interval < 5*60) {
+//        des = @"刚刚";
+//    }else
+    if (interval < 60*60){
+        int n = (int)interval/60;
+        des = [NSString stringWithFormat:@"%d minute%@ ago",(int)interval/60,n> 1?@"s":@""];
     }else if (interval < 60*60 * 24){
-        des = [NSString stringWithFormat:@"%ld小时前",(NSInteger)(interval/3600)];
-    } else if (interval < 60 * 60 * 24 * 8){
-        des = [NSString stringWithFormat:@"%ld天前", (NSInteger)(interval/(3600 * 24))];
-    } else {
+        int n = (int)interval/3600;
+        des = [NSString stringWithFormat:@"%ld hour%@ ago",(NSInteger)(interval/3600),n>1?@"s":@""];
+    }
+//    else if (interval < 60 * 60 * 24 * 8){
+//        des = [NSString stringWithFormat:@"%ld天前", (NSInteger)(interval/(3600 * 24))];
+//    }
+    else {
         if (![date isThisYear]) {
             des = [TKCommonTools dateStringWithFormat:@"yyyy-MM-dd" date:date];
         } else {

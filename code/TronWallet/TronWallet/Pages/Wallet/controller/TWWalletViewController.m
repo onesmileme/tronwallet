@@ -7,8 +7,10 @@
 //
 
 #import "TWWalletViewController.h"
-
+#import "TWPriceUpdater.h"
 @interface TWWalletViewController ()
+
+@property(nonatomic , strong) TWPriceUpdater *priceUpdater;
 
 @end
 
@@ -17,12 +19,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _priceUpdater = [[TWPriceUpdater alloc]init];
+    [_priceUpdater startUpdate];
+    _priceLabel.text = @"--";
+    _changeLabel.text = @"--";
+    __weak typeof(self) wself = self;
+    _priceUpdater.updatePrice = ^(TWPrice *price) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            wself.priceLabel.text = price.price_usd;
+            wself.changeLabel.text = [NSString stringWithFormat:@"%@%%",price.percent_change_1h];
+        });
+    };
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [_priceUpdater startUpdate];
+}
+
 
 -(IBAction)walletAction:(id)sender
 {

@@ -10,8 +10,11 @@
 
 @interface TWTransInfoTableViewCell : UITableViewCell
 
+@property(nonatomic , strong) IBOutlet UILabel *typeLabel;
 @property(nonatomic , strong) IBOutlet UILabel *fromLabel;
 @property(nonatomic , strong) IBOutlet UILabel *toLabel;
 @property(nonatomic , strong) IBOutlet UILabel *countLabel;
+
+-(void)bindData:(Transaction *)transaction;
 
 @end

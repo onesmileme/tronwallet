@@ -24,13 +24,13 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Cmt-es-caD"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CM2-z6-LdQ" userLabel="exchangeButton">
-                        <rect key="frame" x="80" y="55.5" width="46" height="30"/>
-                        <state key="normal" title="Button">
+                        <rect key="frame" x="80" y="55.5" width="30" height="30"/>
+                        <state key="normal" title="&lt;-&gt;">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>

@@ -12,7 +12,7 @@
 @interface TWMainRecentTransactionTableViewCell()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic , strong) UITableView *tableView;
-@property(nonatomic , strong) NSArray *datas;
+@property(nonatomic,  strong) NSArray<Transaction*> *transactionsArray;
 
 @end
 
@@ -41,6 +41,7 @@
         _tableView.dataSource = self;
         _tableView.allowsSelection = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.backgroundColor = [UIColor themeDarkBgColor];
         UINib *nib = [UINib nibWithNibName:@"TWTransInfoTableViewCell" bundle:nil];
         [_tableView registerNib:nib forCellReuseIdentifier:@"cellid"];
         
@@ -49,9 +50,9 @@
     return _tableView;
 }
 
--(void)bindData:(id)data
+-(void)bindData:(NSArray<Transaction *>*)data
 {
-    
+    self.transactionsArray = data;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -68,18 +69,20 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;//_datas.count;
+    return _transactionsArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TWTransInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
+    Transaction *transaction = _transactionsArray[indexPath.row];
+    [cell bindData:transaction];
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 90;
+    return 114;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

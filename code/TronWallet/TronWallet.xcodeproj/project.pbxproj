@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0BFE87FAA0CE2A2D5E3C6214 /* libPods-TronWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE13880D14A8B17218729F4C /* libPods-TronWallet.a */; };
+		6E3E9F1820B593390096399D /* TWQRCoderGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F1720B593390096399D /* TWQRCoderGenerator.m */; };
+		6E3E9F1C20B593DA0096399D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3E9F1B20B593DA0096399D /* CoreImage.framework */; };
+		6E3E9F1F20B5B8330096399D /* TWAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F1E20B5B8330096399D /* TWAccountManager.m */; };
+		6E3E9F2220B5BA7B0096399D /* TWPriceUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F2120B5BA7B0096399D /* TWPriceUpdater.m */; };
 		6E4AD53520B454EB0012DCD1 /* TWShEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */; };
 		6E4AD55520B463350012DCD1 /* NS+BTCBase58.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55020B463350012DCD1 /* NS+BTCBase58.m */; };
 		6E4AD55620B463350012DCD1 /* BTCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55120B463350012DCD1 /* BTCData.m */; };
@@ -115,6 +119,13 @@
 
 /* Begin PBXFileReference section */
 		268A9A5C3A78189BCD39F032 /* Pods-TronWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TronWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-TronWallet/Pods-TronWallet.release.xcconfig"; sourceTree = "<group>"; };
+		6E3E9F1620B593390096399D /* TWQRCoderGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWQRCoderGenerator.h; sourceTree = "<group>"; };
+		6E3E9F1720B593390096399D /* TWQRCoderGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWQRCoderGenerator.m; sourceTree = "<group>"; };
+		6E3E9F1B20B593DA0096399D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		6E3E9F1D20B5B8330096399D /* TWAccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWAccountManager.h; sourceTree = "<group>"; };
+		6E3E9F1E20B5B8330096399D /* TWAccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAccountManager.m; sourceTree = "<group>"; };
+		6E3E9F2020B5BA7B0096399D /* TWPriceUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWPriceUpdater.h; sourceTree = "<group>"; };
+		6E3E9F2120B5BA7B0096399D /* TWPriceUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWPriceUpdater.m; sourceTree = "<group>"; };
 		6E4AD53320B454EB0012DCD1 /* TWShEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWShEncoder.h; sourceTree = "<group>"; };
 		6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWShEncoder.m; sourceTree = "<group>"; };
 		6E4AD54D20B463350012DCD1 /* BTCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCData.h; sourceTree = "<group>"; };
@@ -284,6 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3E9F1C20B593DA0096399D /* CoreImage.framework in Frameworks */,
 				6EED948C20AEC485003FF63E /* libsqlite3.tbd in Frameworks */,
 				6EA3520D20AC848300AF1984 /* libToolKit.a in Frameworks */,
 				0BFE87FAA0CE2A2D5E3C6214 /* libPods-TronWallet.a in Frameworks */,
@@ -341,14 +353,14 @@
 		6E91036B20B2A370006FDEA1 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				6E91036C20B2A370006FDEA1 /* Discover.pbobjc.h */,
 				6E91036D20B2A370006FDEA1 /* Contract.pbobjc.h */,
-				6E91036E20B2A370006FDEA1 /* Tron.pbobjc.h */,
-				6E91036F20B2A370006FDEA1 /* TronInventoryItems.pbobjc.m */,
-				6E91037020B2A370006FDEA1 /* Discover.pbobjc.m */,
-				6E91037120B2A370006FDEA1 /* Tron.pbobjc.m */,
 				6E91037220B2A370006FDEA1 /* Contract.pbobjc.m */,
+				6E91036C20B2A370006FDEA1 /* Discover.pbobjc.h */,
+				6E91037020B2A370006FDEA1 /* Discover.pbobjc.m */,
+				6E91036E20B2A370006FDEA1 /* Tron.pbobjc.h */,
+				6E91037120B2A370006FDEA1 /* Tron.pbobjc.m */,
 				6E91037320B2A370006FDEA1 /* TronInventoryItems.pbobjc.h */,
+				6E91036F20B2A370006FDEA1 /* TronInventoryItems.pbobjc.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -725,6 +737,8 @@
 				6EA351FD20AC830900AF1984 /* TWNetworkManager.m */,
 				6EA3520020AC830A00AF1984 /* TWUIInitManager.h */,
 				6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */,
+				6E3E9F1D20B5B8330096399D /* TWAccountManager.h */,
+				6E3E9F1E20B5B8330096399D /* TWAccountManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -747,6 +761,10 @@
 				6E91041020B2EB0C006FDEA1 /* NSData+HexToString.m */,
 				6E4AD53320B454EB0012DCD1 /* TWShEncoder.h */,
 				6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */,
+				6E3E9F1620B593390096399D /* TWQRCoderGenerator.h */,
+				6E3E9F1720B593390096399D /* TWQRCoderGenerator.m */,
+				6E3E9F2020B5BA7B0096399D /* TWPriceUpdater.h */,
+				6E3E9F2120B5BA7B0096399D /* TWPriceUpdater.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -769,6 +787,7 @@
 		BB52CC17CCCA6404819481E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E3E9F1B20B593DA0096399D /* CoreImage.framework */,
 				6EED948B20AEC485003FF63E /* libsqlite3.tbd */,
 				FE13880D14A8B17218729F4C /* libPods-TronWallet.a */,
 			);
@@ -947,6 +966,7 @@
 				6E4AD55620B463350012DCD1 /* BTCData.m in Sources */,
 				6E9103D420B2A5A8006FDEA1 /* Consumer.pbobjc.m in Sources */,
 				6E9103D320B2A5A8006FDEA1 /* Logging.pbobjc.m in Sources */,
+				6E3E9F1F20B5B8330096399D /* TWAccountManager.m in Sources */,
 				6E9103CE20B2A5A8006FDEA1 /* Distribution.pbobjc.m in Sources */,
 				6E4AD53520B454EB0012DCD1 /* TWShEncoder.m in Sources */,
 				6E9103DA20B2A5A8006FDEA1 /* Code.pbobjc.m in Sources */,
@@ -966,6 +986,7 @@
 				6E91037420B2A370006FDEA1 /* Api.pbobjc.m in Sources */,
 				6E93FF0720AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m in Sources */,
 				6E91037720B2A370006FDEA1 /* Tron.pbobjc.m in Sources */,
+				6E3E9F1820B593390096399D /* TWQRCoderGenerator.m in Sources */,
 				6EED949520AEC885003FF63E /* TWBlockChainViewController.m in Sources */,
 				6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */,
 				6E9103D820B2A5A8006FDEA1 /* Annotations.pbobjc.m in Sources */,
@@ -993,6 +1014,7 @@
 				6EED948920AEC2DA003FF63E /* UIColor+Theme.m in Sources */,
 				6EED94A120AEC8DC003FF63E /* TWAccountViewController.m in Sources */,
 				6E9103CC20B2A5A8006FDEA1 /* Context.pbobjc.m in Sources */,
+				6E3E9F2220B5BA7B0096399D /* TWPriceUpdater.m in Sources */,
 				6EA351FC20AC82C200AF1984 /* TWWalletViewController.m in Sources */,
 				6E9103CD20B2A5A8006FDEA1 /* Log.pbobjc.m in Sources */,
 				6E9103D620B2A5A8006FDEA1 /* Documentation.pbobjc.m in Sources */,

@@ -10,6 +10,6 @@
 
 @interface TWMainRecentTransactionTableViewCell : UITableViewCell
 
--(void)bindData:(id)data;
+-(void)bindData:(NSArray<Transaction *>*)data;
 
 @end

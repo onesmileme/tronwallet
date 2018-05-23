@@ -8,7 +8,7 @@
 
 #import "TWMainBlockInfoTableViewCell.h"
 #import "TKCommonTools.h"
-
+#import "TWShEncoder.h"
 @implementation TWMainBlockInfoTableViewCell
 
 - (void)awakeFromNib {
@@ -25,9 +25,9 @@
 -(void)updateWithModel:(BlockHeader *)model index:(NSInteger)index
 {
     BlockHeader_raw *data =  model.rawData;
-    self.indexLabel.text = [NSString stringWithFormat:@"#%ld",data.number];        
-    self.accountLabel.text =  [[NSString alloc]initWithData:data.witnessAddress encoding:NSUTF8StringEncoding ];
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:data.timestamp];
+    self.indexLabel.text = [@(data.number) description];
+    self.accountLabel.text =  [TWShEncoder encode58Check:data.witnessAddress];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:data.timestamp/1000];
     NSString *time = [TKCommonTools dateDescForDate:date];
     [self.timeButton setTitle:time forState:UIControlStateNormal];
 }
