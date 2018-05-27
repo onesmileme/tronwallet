@@ -9,8 +9,13 @@
 #import "AppDelegate.h"
 #import "TWUIInitManager.h"
 #import "Api.pbrpc.h"
+#import "ViewController.h"
+#import "TWWalletAccountClient.h"
+#import "TWWalletCreateViewController.h"
 
 @interface AppDelegate ()
+
+@property(nonatomic , strong) UIViewController *originRootController;
 
 @end
 
@@ -21,9 +26,30 @@
     // Override point for customization after application launch.
     [TWUIInitManager sharedInstance];
     [TWNetworkManager sharedInstance];
+    
+
+    self.originRootController =self.window.rootViewController;
+    if (![TWWalletAccountClient loadPwdKey]) {
+        TWWalletCreateViewController *walletController = [[TWWalletCreateViewController alloc]initWithNibName:@"TWWalletCreateViewController" bundle:nil];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:walletController];
+        self.window.rootViewController = navController;
+    }else{
+        NSString *priKey = [TWWalletAccountClient loadPriKey];
+        _walletClient = [[TWWalletAccountClient alloc]initWithPriKeyStr:priKey];
+    }
+
+    
     return YES;
 }
 
+-(void)createAccountDone:(UINavigationController *)navController
+{
+    NSString *priKey = [TWWalletAccountClient loadPriKey];
+    self.walletClient = [[TWWalletAccountClient alloc] initWithPriKeyStr:priKey];
+    
+    self.window.rootViewController = self.originRootController;
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

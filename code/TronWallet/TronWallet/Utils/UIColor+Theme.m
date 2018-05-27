@@ -12,7 +12,7 @@
 
 +(UIColor *)themeRed
 {
-    return [UIColor redColor];
+    return HexColor(0xa22b28);
 }
 
 +(UIColor *)themeDarkBgColor

@@ -10,4 +10,6 @@
 
 @interface TWQRCoderGenerator : NSObject
 
++(UIImage *)generate:(NSString *)dataStr;
+
 @end

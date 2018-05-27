@@ -17,10 +17,12 @@
 #import "UIView+Utils.h"
 #import "UIColor+Theme.h"
 #import "TKCommonTools.h"
-//#import "EATools.h"
 #import "TWNetworkManager.h"
-//#import "EAPushManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
+#import <MBProgressHUD.h>
+#import "AppDelegate.h"
+
+#define AppWalletClient [(AppDelegate *)[[UIApplication sharedApplication] delegate] walletClient]
 
 #endif /* TronWallet_pch */

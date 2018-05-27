@@ -8,7 +8,7 @@
 
 #import "TWMainInfoViewController.h"
 #import "TWTopScrollView.h"
-#import "TWAccountViewController.h"
+#import "TWAccountsViewController.h"
 #import "TWBlockChainViewController.h"
 #import "TWNodesViewController.h"
 #import "TWRepresentativeViewController.h"
@@ -35,7 +35,8 @@
         insets = [[[UIApplication sharedApplication] keyWindow] safeAreaInsets];
     }
     
-    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, insets.top+ 64, CGRectGetWidth(self.view.bounds), kTopScrollHeight)];
+    NSArray *items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS",@"ACCOUNT"];
+    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, insets.top, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeDefault];
     [self.view addSubview:_topScrollView];
     __weak typeof(self) wself = self;
     _topScrollView.chooseBlock = ^(NSInteger index,NSInteger lastIndex) {
@@ -51,7 +52,7 @@
 
     
     CGRect frame = [[UIScreen mainScreen]bounds];
-    frame.size.height -= (insets.bottom+kTopScrollHeight + 49 + 64);
+    frame.size.height -= (insets.bottom+kTopScrollHeight + 49 );
     frame.origin.y = CGRectGetMaxY(_topScrollView.frame);
     _pageContainerViewController.view.frame = frame;
     
@@ -63,13 +64,13 @@
                      [[TWRepresentativeViewController alloc]init],
                      [[TWNodesViewController alloc]init],
                      [[TWTokensViewController alloc]init],
-                     [[TWAccountViewController alloc]init]
+                     [[TWAccountsViewController alloc]init]
                      ];
     [_pageContainerViewController setViewControllers:@[_controllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     [self.view addSubview:_pageContainerViewController.view];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor themeDarkBgColor];
     
     [_topScrollView scrollToShow:0];
     

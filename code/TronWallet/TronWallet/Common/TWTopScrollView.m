@@ -23,15 +23,17 @@
 @property(nonatomic , strong) UICollectionView *collectionView;
 @property(nonatomic , strong) NSArray *items;
 @property(nonatomic , assign) NSInteger currentIndex;
+@property(nonatomic , assign) TWTopScrollViewType type;
 
 @end
 
 @implementation TWTopScrollView
 
--(instancetype)initWithFrame:(CGRect)frame
+-(instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items type:(TWTopScrollViewType)type
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.type = type;
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _collectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:layout];
@@ -42,7 +44,8 @@
         [_collectionView registerClass:[TWScrollItemViewCell class] forCellWithReuseIdentifier:@"cellid"];
         [self addSubview:_collectionView];
         
-        _items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS",@"ACCOUNT"];
+//        _items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS",@"ACCOUNT"];
+        self.items = items;
         
         self.backgroundColor = [UIColor whiteColor];
         
@@ -69,6 +72,12 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    if (_type == TWTopScrollViewTypeEqualWidth) {
+        
+       return  CGSizeMake(CGRectGetWidth(collectionView.frame)/_items.count, CGRectGetHeight(collectionView.bounds));
+    }
     
     NSString *title = _items[indexPath.item];
     UIFont *font = indexPath.item == _currentIndex ? [UIFont boldSystemFontOfSize:kTitleFontSize]:[UIFont systemFontOfSize:kTitleFontSize];

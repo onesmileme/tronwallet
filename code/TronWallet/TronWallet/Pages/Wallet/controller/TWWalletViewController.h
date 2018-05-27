@@ -17,4 +17,7 @@
 @property(nonatomic , strong) IBOutlet UILabel *tokenLabel;
 
 
+@property(nonatomic , strong) IBOutlet UIButton *walletButton;
+@property(nonatomic , strong) IBOutlet UIButton *exchangeButton;
 @end
+

@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TWWalletAccountClient.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) TWWalletAccountClient *walletClient;
+
+-(void)createAccountDone:(UINavigationController *)navController;
 
 @end
 

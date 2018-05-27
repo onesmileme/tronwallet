@@ -45,6 +45,12 @@ IMP_SINGLETON
     return _sAccount;
 }
 
+-(void)createAccount:(void(^)(Account *account , NSError *error))completion
+{
+    Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
+//    [wallet ]
+}
+
 -(NSString *)path
 {
     NSString *p = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];

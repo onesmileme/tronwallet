@@ -12,4 +12,8 @@
 
 #define SYS_IMG(name) [UIImage imageNamed:name]
 
+#define kPwdKey @"_password_"
+#define kPubAddressRaw @"_public_address_raw_"
+
+
 #endif /* TWDefiles_h */

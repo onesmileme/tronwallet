@@ -10,16 +10,16 @@
 
 @implementation NSData (HexToString)
 
--(NSString *)dataToHexString
-{
-    NSUInteger len = [self length];
-    unichar *chars = (unichar *)[self bytes];
-    NSMutableString *hexString = [[NSMutableString alloc]init];
-    for (NSUInteger i=0; i<len; i++) {
-        [hexString appendString:[NSString stringWithFormat:@"%0.2hhx",chars[i]]];
-    }
-    return hexString;
-}
+//-(NSString *)dataToHexString
+//{
+//    NSUInteger len = [self length];
+//    unichar *chars = (unichar *)[self bytes];
+//    NSMutableString *hexString = [[NSMutableString alloc]init];
+//    for (NSUInteger i=0; i<len; i++) {
+//        [hexString appendString:[NSString stringWithFormat:@"%0.2hhx",chars[i]]];
+//    }
+//    return hexString;
+//}
 
 - (NSString *)convertToHexStr {
     NSData *data = self;

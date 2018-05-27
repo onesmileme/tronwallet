@@ -45,6 +45,7 @@ PODS:
   - gRPC/Main (1.9.1):
     - gRPC-Core (= 1.9.1)
     - gRPC-RxLibrary (= 1.9.1)
+  - ios-secp256k1 (0.1.2)
   - JSONModel (1.7.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - CocoaLumberjack (~> 3.2.1)
   - gRPC (= 1.9.1)
   - gRPC-ProtoRPC (= 1.9.1)
+  - ios-secp256k1
   - JSONModel (~> 1.7.0)
   - Masonry (~> 1.1.0)
   - MBProgressHUD (~> 1.0.0)
@@ -102,6 +104,7 @@ SPEC CHECKSUMS:
   gRPC-Core: a2a0e5610dbf914bdb001c99e9a2d0c4e5d0b6d9
   gRPC-ProtoRPC: 14e6f81c847614a3990ad4afb69c86128484dc4b
   gRPC-RxLibrary: cbfa47879ebbe4d28d78628c5e6f382a0ae3ed68
+  ios-secp256k1: 6164a2684beebadd6fa912decc37f7ae9ad4eeeb
   JSONModel: a3b9097543a777e2a4041a0bb1b80252af9ed566
   Masonry: 1db7cd0e5e34999ac095f67a1d0f7fc664e19140
   MBProgressHUD: 797fffbdf83b36406236328cc560949edd850dcf
@@ -114,6 +117,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: a6ba96fbec28ae5dacea11f45132a9d0698e1960
   WebViewJavascriptBridge: 318ccc771d1ad661b9c05b12d70994f725cf0639
 
-PODFILE CHECKSUM: cf11a7bb6bfe3d997e6c521e77ffdaac89f26898
+PODFILE CHECKSUM: 2713f1cad22d0e8f08ca9a3a3a44e9c4d3d0554a
 
 COCOAPODS: 1.2.0

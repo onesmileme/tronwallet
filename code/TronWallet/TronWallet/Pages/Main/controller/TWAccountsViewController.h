@@ -8,6 +8,6 @@
 
 #import "TWMainBasicViewController.h"
 
-@interface TWAccountViewController : TWMainBasicViewController
+@interface TWAccountsViewController : TWMainBasicViewController
 
 @end

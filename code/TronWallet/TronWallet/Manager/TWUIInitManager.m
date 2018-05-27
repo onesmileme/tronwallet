@@ -37,6 +37,7 @@ IMP_SINGLETON
 //    
 //    NSString *hexColor = uiDict[@"nav_color"];
     bar.barTintColor = [UIColor redColor];//HexColor(0x0076d1);//HexColor(0xffd200);
+    bar.translucent = NO;
 //
     UIImage *backImage = [UIImage imageNamed:@"normal_back"];
     bar.backIndicatorImage = backImage;

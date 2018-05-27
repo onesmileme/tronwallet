@@ -6,15 +6,15 @@
 //  Copyright © 2018年 onesmile. All rights reserved.
 //
 
-#import "TWAccountViewController.h"
+#import "TWAccountsViewController.h"
 
-@interface TWAccountViewController ()
+@interface TWAccountsViewController ()
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Account*> *accountsArray;
 
 @end
 
-@implementation TWAccountViewController
+@implementation TWAccountsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

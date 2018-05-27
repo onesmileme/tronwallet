@@ -10,7 +10,7 @@
 
 @interface NSData (HexToString)
 
--(NSString *)dataToHexString;
+//-(NSString *)dataToHexString;
 
 - (NSString *)convertToHexStr;
 
