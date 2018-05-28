@@ -15,8 +15,8 @@
 
 @property(nonatomic , strong) TWMainRecentBlockTableViewCell *blockCell;
 @property(nonatomic , strong) TWMainRecentBlockTableViewCell *recentCell;
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Block*> *blockArray;
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Transaction*> *transactionsArray;
+@property(nonatomic, readwrite, strong) NSMutableArray<Block*> *blockArray;
+@property(nonatomic, readwrite, strong) NSMutableArray<Transaction*> *transactionsArray;
 
 @end
 
@@ -56,9 +56,9 @@
         BOOL success = NO;
         if (response.blockArray_Count > 0) {
             success = YES;
-            self.blockArray = [response.blockArray sortedArrayUsingComparator:^NSComparisonResult(Block * _Nonnull obj1, Block*  _Nonnull obj2) {
+            self.blockArray = [[response.blockArray sortedArrayUsingComparator:^NSComparisonResult(Block * _Nonnull obj1, Block*  _Nonnull obj2) {
                 return obj1.blockHeader.rawData.number - obj2.blockHeader.rawData.number;
-            }];
+            }] mutableCopy];
             if (!self.transactionsArray) {
                 self.transactionsArray = [NSMutableArray new];
             }else{

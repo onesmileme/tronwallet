@@ -16,7 +16,7 @@
 @interface TWAccountViewController ()
 
 @property(nonatomic , strong) NSString *address;
-@property(nonatomic , strong) NSString *password;
+//@property(nonatomic , strong) NSString *password;
 @property(nonatomic , assign) BOOL cold;
 @property(nonatomic , strong) TWWalletAccountClient *client;
 
@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self.scrollView addSubview:self.conentView];
     self.contentWidth.constant = CGRectGetWidth(self.view.frame);
@@ -54,15 +54,16 @@
     }
 }
 
--(void)setupPassword:(NSString *)password cold:(BOOL)cold
+-(void)setupClient:(TWWalletAccountClient *)client cold:(BOOL)cold
 {
-    self.password = password;
+//    self.password = password;
     self.cold = cold;
     
-    _client = [TWWalletAccountClient walletWithPassword:password];
-    NSData *addressData = [_client address];
+    _client = client;
+//    _client = [TWWalletAccountClient walletWithPassword:password];
+    self.address = [_client base58OwnerAddress];
     
-    self.address = BTCBase58CheckStringWithData(addressData);
+//    self.address = BTCBase58CheckStringWithData(addressData);
     
 }
 

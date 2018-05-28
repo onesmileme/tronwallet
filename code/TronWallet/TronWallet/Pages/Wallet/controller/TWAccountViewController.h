@@ -16,6 +16,6 @@
 @property(nonatomic , strong) IBOutlet UIImageView *priKeyQR;
 @property(nonatomic , strong) IBOutlet NSLayoutConstraint *contentWidth;
 
--(void)setupPassword:(NSString *)password cold:(BOOL)cold;
+-(void)setupClient:(TWWalletAccountClient *)client cold:(BOOL)cold;
 
 @end

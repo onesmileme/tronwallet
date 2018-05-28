@@ -56,12 +56,11 @@
     TWWalletAccountClient *client = [[TWWalletAccountClient alloc] initWithGenKey:YES];
     [client store:_pwdTextField.text];
 
-    AppDelegate *appDelegate = AppWalletClient;// [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     appDelegate.walletClient = client;
     
-//    NSString *address = [client.crypto base58CheckOwnerAddress];
     TWAccountViewController *accoutController = [[TWAccountViewController alloc]initWithNibName:@"TWAccountViewController" bundle:nil];
-    [accoutController setupPassword:_pwdTextField.text cold:_coldSwitch.isOn];
+    [accoutController setupClient:client cold:_coldSwitch.isOn];
     
     [self.navigationController pushViewController:accoutController animated:YES];
     

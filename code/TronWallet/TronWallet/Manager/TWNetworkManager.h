@@ -38,6 +38,6 @@ DEF_SINGLETON;
 
 //-(void)resetToken;
 
--(void)setRequestSerializer:(BOOL)isJson resetAuthorization:(BOOL)resetAuth;
+//-(void)setRequestSerializer:(BOOL)isJson resetAuthorization:(BOOL)resetAuth;
 
 @end

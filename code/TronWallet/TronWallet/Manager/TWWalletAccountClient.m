@@ -39,18 +39,20 @@
 
 +(instancetype)walletWithPassword:(NSString *)password
 {
-    NSString *priKey = [self loadPriKey];
+    NSData *priKey = [self loadPriKey];
     if (!priKey) {
         return NULL;
     }
-    NSData *priData = [TWHexConvert convertHexStrToData:priKey];
-    NSData *enPwdData = [self getEncKey:password];
     
-    NSString *enpwdBase64 = [enPwdData base64EncodedStringWithOptions:kNilOptions];
-    NSData *prikeyEncode = [priData AES128EncryptWithKey:enpwdBase64];
+    //todo add password & privatekey encode
     
-    
-    return [[self alloc] initWithPriKey:prikeyEncode];
+//    NSData *priData = priData;
+//    NSData *enPwdData = [self getEncKey:password];
+//
+//    NSString *enpwdBase64 = [enPwdData base64EncodedStringWithOptions:kNilOptions];
+//    NSData *prikeyEncode = [priData AES128EncryptWithKey:enpwdBase64];
+//    return [[self alloc] initWithPriKey:prikeyEncode];
+    return [[self alloc] initWithPriKey:priKey];
 }
 
 
