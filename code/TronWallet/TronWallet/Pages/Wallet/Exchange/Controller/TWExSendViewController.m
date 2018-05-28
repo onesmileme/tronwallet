@@ -111,7 +111,7 @@
         tip = @"Please choose amount";
     }else{
         TWWalletAccountClient *accountClient = AppWalletClient;
-        Account *account = accountClient.account;
+//        Account *account = accountClient.account;
 //        if (account.balance < self.amountTextField.text.integerValue) {
 //            tip = @"Input amount too much";
 //        }

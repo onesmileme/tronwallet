@@ -47,7 +47,7 @@ IMP_SINGLETON
 
 -(void)createAccount:(void(^)(Account *account , NSError *error))completion
 {
-    Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
+//    Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
 //    [wallet ]
 }
 

@@ -12,7 +12,6 @@
 		6E3E9F1C20B593DA0096399D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3E9F1B20B593DA0096399D /* CoreImage.framework */; };
 		6E3E9F1F20B5B8330096399D /* TWAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F1E20B5B8330096399D /* TWAccountManager.m */; };
 		6E3E9F2220B5BA7B0096399D /* TWPriceUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F2120B5BA7B0096399D /* TWPriceUpdater.m */; };
-		6E3E9F2520B639480096399D /* TWWalletAccountClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F2420B639480096399D /* TWWalletAccountClient.m */; };
 		6E3E9F2E20B65E2A0096399D /* GMEllipticCurveCrypto+hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F2820B65E2A0096399D /* GMEllipticCurveCrypto+hash.m */; };
 		6E3E9F2F20B65E2A0096399D /* GMEllipticCurveCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F2B20B65E2A0096399D /* GMEllipticCurveCrypto.m */; };
 		6E3E9F3220B6638B0096399D /* TWHexConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F3120B6638B0096399D /* TWHexConvert.m */; };
@@ -45,6 +44,35 @@
 		6E3E9F8E20BAAA470096399D /* TWVoteWitnessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F8D20BAAA470096399D /* TWVoteWitnessModel.m */; };
 		6E3E9F9220BAF6250096399D /* TWExFreezeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F9020BAF6250096399D /* TWExFreezeViewController.m */; };
 		6E3E9F9320BAF6250096399D /* TWExFreezeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E9F9120BAF6250096399D /* TWExFreezeViewController.xib */; };
+		6E40342F20BBB3C8008140F5 /* mpi.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40342E20BBB3C8008140F5 /* mpi.c */; };
+		6E40345E20BBB483008140F5 /* bip39.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40343120BBB482008140F5 /* bip39.c */; };
+		6E40345F20BBB483008140F5 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40343220BBB482008140F5 /* aeskey.c */; };
+		6E40346020BBB483008140F5 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40343320BBB482008140F5 /* hmac.c */; };
+		6E40346120BBB483008140F5 /* sha2.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40343520BBB482008140F5 /* sha2.c */; };
+		6E40346220BBB483008140F5 /* rand.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40343620BBB482008140F5 /* rand.c */; };
+		6E40346320BBB483008140F5 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40343820BBB482008140F5 /* aescrypt.c */; };
+		6E40346420BBB483008140F5 /* curves.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40343C20BBB482008140F5 /* curves.c */; };
+		6E40346520BBB483008140F5 /* secp256k1.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40343E20BBB482008140F5 /* secp256k1.c */; };
+		6E40346620BBB483008140F5 /* aes_modes.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40344020BBB482008140F5 /* aes_modes.c */; };
+		6E40346720BBB483008140F5 /* bignum.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40344220BBB482008140F5 /* bignum.c */; };
+		6E40346820BBB483008140F5 /* ripemd160.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40344620BBB482008140F5 /* ripemd160.c */; };
+		6E40346920BBB483008140F5 /* secp256k1.table in Resources */ = {isa = PBXBuildFile; fileRef = 6E40344820BBB482008140F5 /* secp256k1.table */; };
+		6E40346A20BBB483008140F5 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40344D20BBB482008140F5 /* aestab.c */; };
+		6E40346B20BBB483008140F5 /* bip32.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40344E20BBB482008140F5 /* bip32.c */; };
+		6E40346C20BBB483008140F5 /* sha3.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40345020BBB482008140F5 /* sha3.c */; };
+		6E40346D20BBB483008140F5 /* base58.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40345120BBB482008140F5 /* base58.c */; };
+		6E40346E20BBB483008140F5 /* ecdsa.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40345320BBB482008140F5 /* ecdsa.c */; };
+		6E40346F20BBB483008140F5 /* pbkdf2.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40345420BBB482008140F5 /* pbkdf2.c */; };
+		6E40347020BBB483008140F5 /* scrypt_sha256.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40345A20BBB482008140F5 /* scrypt_sha256.c */; };
+		6E40347120BBB483008140F5 /* crypto_scrypt-nosse.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E40345B20BBB482008140F5 /* crypto_scrypt-nosse.c */; };
+		6E40348120BBB66D008140F5 /* BigNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40347520BBB66D008140F5 /* BigNumber.m */; };
+		6E40348320BBB66D008140F5 /* SecureData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40347820BBB66D008140F5 /* SecureData.m */; };
+		6E40348420BBB66D008140F5 /* RLPSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40347D20BBB66D008140F5 /* RLPSerialization.m */; };
+		6E40348520BBB66D008140F5 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40347F20BBB66D008140F5 /* Utilities.m */; };
+		6E40348620BBB66D008140F5 /* RegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40348020BBB66D008140F5 /* RegEx.m */; };
+		6E40348920BBB6B4008140F5 /* Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40348720BBB6B3008140F5 /* Hash.m */; };
+		6E40348C20BBB749008140F5 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40348B20BBB749008140F5 /* Test.m */; };
+		6E40349420BBBAA9008140F5 /* TWWalletAccountClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40349220BBBAA9008140F5 /* TWWalletAccountClient.m */; };
 		6E4AD53520B454EB0012DCD1 /* TWShEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */; };
 		6E4AD55520B463350012DCD1 /* NS+BTCBase58.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55020B463350012DCD1 /* NS+BTCBase58.m */; };
 		6E4AD55620B463350012DCD1 /* BTCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55120B463350012DCD1 /* BTCData.m */; };
@@ -158,8 +186,6 @@
 		6E3E9F1E20B5B8330096399D /* TWAccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAccountManager.m; sourceTree = "<group>"; };
 		6E3E9F2020B5BA7B0096399D /* TWPriceUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWPriceUpdater.h; sourceTree = "<group>"; };
 		6E3E9F2120B5BA7B0096399D /* TWPriceUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWPriceUpdater.m; sourceTree = "<group>"; };
-		6E3E9F2320B639480096399D /* TWWalletAccountClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWWalletAccountClient.h; sourceTree = "<group>"; };
-		6E3E9F2420B639480096399D /* TWWalletAccountClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWWalletAccountClient.m; sourceTree = "<group>"; };
 		6E3E9F2820B65E2A0096399D /* GMEllipticCurveCrypto+hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMEllipticCurveCrypto+hash.m"; sourceTree = "<group>"; };
 		6E3E9F2920B65E2A0096399D /* GMEllipticCurveCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMEllipticCurveCrypto.h; sourceTree = "<group>"; };
 		6E3E9F2A20B65E2A0096399D /* GMEllipticCurveCrypto+hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMEllipticCurveCrypto+hash.h"; sourceTree = "<group>"; };
@@ -215,6 +241,70 @@
 		6E3E9F8F20BAF6250096399D /* TWExFreezeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWExFreezeViewController.h; sourceTree = "<group>"; };
 		6E3E9F9020BAF6250096399D /* TWExFreezeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWExFreezeViewController.m; sourceTree = "<group>"; };
 		6E3E9F9120BAF6250096399D /* TWExFreezeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWExFreezeViewController.xib; sourceTree = "<group>"; };
+		6E40342820BBB3BE008140F5 /* ccMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccMemory.h; sourceTree = "<group>"; };
+		6E40342A20BBB3C8008140F5 /* tommath_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_private.h; sourceTree = "<group>"; };
+		6E40342B20BBB3C8008140F5 /* tommath_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_class.h; sourceTree = "<group>"; };
+		6E40342C20BBB3C8008140F5 /* tommath_superclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_superclass.h; sourceTree = "<group>"; };
+		6E40342D20BBB3C8008140F5 /* tommath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath.h; sourceTree = "<group>"; };
+		6E40342E20BBB3C8008140F5 /* mpi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mpi.c; sourceTree = "<group>"; };
+		6E40343120BBB482008140F5 /* bip39.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bip39.c; sourceTree = "<group>"; };
+		6E40343220BBB482008140F5 /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
+		6E40343320BBB482008140F5 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		6E40343420BBB482008140F5 /* ripemd160.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ripemd160.h; sourceTree = "<group>"; };
+		6E40343520BBB482008140F5 /* sha2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha2.c; sourceTree = "<group>"; };
+		6E40343620BBB482008140F5 /* rand.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rand.c; sourceTree = "<group>"; };
+		6E40343720BBB482008140F5 /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
+		6E40343820BBB482008140F5 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
+		6E40343920BBB482008140F5 /* base58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base58.h; sourceTree = "<group>"; };
+		6E40343A20BBB482008140F5 /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
+		6E40343B20BBB482008140F5 /* sha3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha3.h; sourceTree = "<group>"; };
+		6E40343C20BBB482008140F5 /* curves.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = curves.c; sourceTree = "<group>"; };
+		6E40343D20BBB482008140F5 /* bip32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bip32.h; sourceTree = "<group>"; };
+		6E40343E20BBB482008140F5 /* secp256k1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = secp256k1.c; sourceTree = "<group>"; };
+		6E40343F20BBB482008140F5 /* ecdsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdsa.h; sourceTree = "<group>"; };
+		6E40344020BBB482008140F5 /* aes_modes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes_modes.c; sourceTree = "<group>"; };
+		6E40344120BBB482008140F5 /* pbkdf2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pbkdf2.h; sourceTree = "<group>"; };
+		6E40344220BBB482008140F5 /* bignum.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bignum.c; sourceTree = "<group>"; };
+		6E40344320BBB482008140F5 /* options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = options.h; sourceTree = "<group>"; };
+		6E40344420BBB482008140F5 /* bip39_english.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bip39_english.h; sourceTree = "<group>"; };
+		6E40344520BBB482008140F5 /* sha2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha2.h; sourceTree = "<group>"; };
+		6E40344620BBB482008140F5 /* ripemd160.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ripemd160.c; sourceTree = "<group>"; };
+		6E40344720BBB482008140F5 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		6E40344820BBB482008140F5 /* secp256k1.table */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = secp256k1.table; sourceTree = "<group>"; };
+		6E40344920BBB482008140F5 /* bip39.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bip39.h; sourceTree = "<group>"; };
+		6E40344A20BBB482008140F5 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		6E40344B20BBB482008140F5 /* macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		6E40344C20BBB482008140F5 /* rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
+		6E40344D20BBB482008140F5 /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
+		6E40344E20BBB482008140F5 /* bip32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bip32.c; sourceTree = "<group>"; };
+		6E40344F20BBB482008140F5 /* curves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curves.h; sourceTree = "<group>"; };
+		6E40345020BBB482008140F5 /* sha3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha3.c; sourceTree = "<group>"; };
+		6E40345120BBB482008140F5 /* base58.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base58.c; sourceTree = "<group>"; };
+		6E40345220BBB482008140F5 /* bignum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bignum.h; sourceTree = "<group>"; };
+		6E40345320BBB482008140F5 /* ecdsa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ecdsa.c; sourceTree = "<group>"; };
+		6E40345420BBB482008140F5 /* pbkdf2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pbkdf2.c; sourceTree = "<group>"; };
+		6E40345520BBB482008140F5 /* secp256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secp256k1.h; sourceTree = "<group>"; };
+		6E40345720BBB482008140F5 /* scrypt_sha256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scrypt_sha256.h; sourceTree = "<group>"; };
+		6E40345820BBB482008140F5 /* crypto_scrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_scrypt.h; sourceTree = "<group>"; };
+		6E40345920BBB482008140F5 /* sysendian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sysendian.h; sourceTree = "<group>"; };
+		6E40345A20BBB482008140F5 /* scrypt_sha256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scrypt_sha256.c; sourceTree = "<group>"; };
+		6E40345B20BBB482008140F5 /* crypto_scrypt-nosse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "crypto_scrypt-nosse.c"; sourceTree = "<group>"; };
+		6E40347520BBB66D008140F5 /* BigNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigNumber.m; sourceTree = "<group>"; };
+		6E40347620BBB66D008140F5 /* RLPSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLPSerialization.h; sourceTree = "<group>"; };
+		6E40347820BBB66D008140F5 /* SecureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecureData.m; sourceTree = "<group>"; };
+		6E40347920BBB66D008140F5 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		6E40347A20BBB66D008140F5 /* RegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegEx.h; sourceTree = "<group>"; };
+		6E40347B20BBB66D008140F5 /* BigNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigNumber.h; sourceTree = "<group>"; };
+		6E40347C20BBB66D008140F5 /* SecureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureData.h; sourceTree = "<group>"; };
+		6E40347D20BBB66D008140F5 /* RLPSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLPSerialization.m; sourceTree = "<group>"; };
+		6E40347F20BBB66D008140F5 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		6E40348020BBB66D008140F5 /* RegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegEx.m; sourceTree = "<group>"; };
+		6E40348720BBB6B3008140F5 /* Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hash.m; sourceTree = "<group>"; };
+		6E40348820BBB6B4008140F5 /* Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hash.h; sourceTree = "<group>"; };
+		6E40348A20BBB749008140F5 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		6E40348B20BBB749008140F5 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		6E40349220BBBAA9008140F5 /* TWWalletAccountClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWalletAccountClient.m; sourceTree = "<group>"; };
+		6E40349320BBBAA9008140F5 /* TWWalletAccountClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWalletAccountClient.h; sourceTree = "<group>"; };
 		6E4AD53320B454EB0012DCD1 /* TWShEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWShEncoder.h; sourceTree = "<group>"; };
 		6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWShEncoder.m; sourceTree = "<group>"; };
 		6E4AD54D20B463350012DCD1 /* BTCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCData.h; sourceTree = "<group>"; };
@@ -523,6 +613,101 @@
 			path = QR;
 			sourceTree = "<group>";
 		};
+		6E40342720BBB3BE008140F5 /* BreadWallet */ = {
+			isa = PBXGroup;
+			children = (
+				6E40342820BBB3BE008140F5 /* ccMemory.h */,
+			);
+			path = BreadWallet;
+			sourceTree = "<group>";
+		};
+		6E40342920BBB3C8008140F5 /* libtommath-1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				6E40342A20BBB3C8008140F5 /* tommath_private.h */,
+				6E40342B20BBB3C8008140F5 /* tommath_class.h */,
+				6E40342C20BBB3C8008140F5 /* tommath_superclass.h */,
+				6E40342D20BBB3C8008140F5 /* tommath.h */,
+				6E40342E20BBB3C8008140F5 /* mpi.c */,
+			);
+			path = "libtommath-1.0";
+			sourceTree = "<group>";
+		};
+		6E40343020BBB482008140F5 /* trezor-crypto */ = {
+			isa = PBXGroup;
+			children = (
+				6E40343120BBB482008140F5 /* bip39.c */,
+				6E40343220BBB482008140F5 /* aeskey.c */,
+				6E40343320BBB482008140F5 /* hmac.c */,
+				6E40343420BBB482008140F5 /* ripemd160.h */,
+				6E40343520BBB482008140F5 /* sha2.c */,
+				6E40343620BBB482008140F5 /* rand.c */,
+				6E40343720BBB482008140F5 /* aestab.h */,
+				6E40343820BBB482008140F5 /* aescrypt.c */,
+				6E40343920BBB482008140F5 /* base58.h */,
+				6E40343A20BBB482008140F5 /* aesopt.h */,
+				6E40343B20BBB482008140F5 /* sha3.h */,
+				6E40343C20BBB482008140F5 /* curves.c */,
+				6E40343D20BBB482008140F5 /* bip32.h */,
+				6E40343E20BBB482008140F5 /* secp256k1.c */,
+				6E40343F20BBB482008140F5 /* ecdsa.h */,
+				6E40344020BBB482008140F5 /* aes_modes.c */,
+				6E40344120BBB482008140F5 /* pbkdf2.h */,
+				6E40344220BBB482008140F5 /* bignum.c */,
+				6E40344320BBB482008140F5 /* options.h */,
+				6E40344420BBB482008140F5 /* bip39_english.h */,
+				6E40344520BBB482008140F5 /* sha2.h */,
+				6E40344620BBB482008140F5 /* ripemd160.c */,
+				6E40344720BBB482008140F5 /* hmac.h */,
+				6E40344820BBB482008140F5 /* secp256k1.table */,
+				6E40344920BBB482008140F5 /* bip39.h */,
+				6E40344A20BBB482008140F5 /* aes.h */,
+				6E40344B20BBB482008140F5 /* macros.h */,
+				6E40344C20BBB482008140F5 /* rand.h */,
+				6E40344D20BBB482008140F5 /* aestab.c */,
+				6E40344E20BBB482008140F5 /* bip32.c */,
+				6E40344F20BBB482008140F5 /* curves.h */,
+				6E40345020BBB482008140F5 /* sha3.c */,
+				6E40345120BBB482008140F5 /* base58.c */,
+				6E40345220BBB482008140F5 /* bignum.h */,
+				6E40345320BBB482008140F5 /* ecdsa.c */,
+				6E40345420BBB482008140F5 /* pbkdf2.c */,
+				6E40345520BBB482008140F5 /* secp256k1.h */,
+			);
+			path = "trezor-crypto";
+			sourceTree = "<group>";
+		};
+		6E40345620BBB482008140F5 /* scrypt-1.1.6 */ = {
+			isa = PBXGroup;
+			children = (
+				6E40345B20BBB482008140F5 /* crypto_scrypt-nosse.c */,
+				6E40345820BBB482008140F5 /* crypto_scrypt.h */,
+				6E40345A20BBB482008140F5 /* scrypt_sha256.c */,
+				6E40345720BBB482008140F5 /* scrypt_sha256.h */,
+				6E40345920BBB482008140F5 /* sysendian.h */,
+			);
+			path = "scrypt-1.1.6";
+			sourceTree = "<group>";
+		};
+		6E40347420BBB66D008140F5 /* Ethers */ = {
+			isa = PBXGroup;
+			children = (
+				6E40347B20BBB66D008140F5 /* BigNumber.h */,
+				6E40347520BBB66D008140F5 /* BigNumber.m */,
+				6E40348820BBB6B4008140F5 /* Hash.h */,
+				6E40348720BBB6B3008140F5 /* Hash.m */,
+				6E40347A20BBB66D008140F5 /* RegEx.h */,
+				6E40348020BBB66D008140F5 /* RegEx.m */,
+				6E40347620BBB66D008140F5 /* RLPSerialization.h */,
+				6E40347D20BBB66D008140F5 /* RLPSerialization.m */,
+				6E40347C20BBB66D008140F5 /* SecureData.h */,
+				6E40347820BBB66D008140F5 /* SecureData.m */,
+				6E40347920BBB66D008140F5 /* Utilities.h */,
+				6E40347F20BBB66D008140F5 /* Utilities.m */,
+			);
+			path = Ethers;
+			sourceTree = "<group>";
+		};
 		6E4AD54C20B463350012DCD1 /* base58 */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +975,8 @@
 				6EA351B820AC7D1500AF1984 /* AppDelegate.m */,
 				6EA351BA20AC7D1500AF1984 /* ViewController.h */,
 				6EA351BB20AC7D1500AF1984 /* ViewController.m */,
+				6E40348A20BBB749008140F5 /* Test.h */,
+				6E40348B20BBB749008140F5 /* Test.m */,
 				6EA351BD20AC7D1500AF1984 /* Main.storyboard */,
 				6EA351C020AC7D1500AF1984 /* Assets.xcassets */,
 				6EA351C220AC7D1500AF1984 /* LaunchScreen.storyboard */,
@@ -958,6 +1145,8 @@
 				6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */,
 				6E3E9F1D20B5B8330096399D /* TWAccountManager.h */,
 				6E3E9F1E20B5B8330096399D /* TWAccountManager.m */,
+				6E40349320BBBAA9008140F5 /* TWWalletAccountClient.h */,
+				6E40349220BBBAA9008140F5 /* TWWalletAccountClient.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -974,6 +1163,7 @@
 		6EED948420AEC2C7003FF63E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6E40347420BBB66D008140F5 /* Ethers */,
 				6E3E9F6E20B896D30096399D /* QR */,
 				6EED948720AEC2DA003FF63E /* UIColor+Theme.h */,
 				6EED948820AEC2DA003FF63E /* UIColor+Theme.m */,
@@ -991,8 +1181,6 @@
 				6E3E9F1720B593390096399D /* TWQRCoderGenerator.m */,
 				6E3E9F2020B5BA7B0096399D /* TWPriceUpdater.h */,
 				6E3E9F2120B5BA7B0096399D /* TWPriceUpdater.m */,
-				6E3E9F2320B639480096399D /* TWWalletAccountClient.h */,
-				6E3E9F2420B639480096399D /* TWWalletAccountClient.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1008,6 +1196,10 @@
 		6EED948620AEC2C7003FF63E /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				6E40345620BBB482008140F5 /* scrypt-1.1.6 */,
+				6E40343020BBB482008140F5 /* trezor-crypto */,
+				6E40342920BBB3C8008140F5 /* libtommath-1.0 */,
+				6E40342720BBB3BE008140F5 /* BreadWallet */,
 				6E3E9F2720B65E2A0096399D /* GMEllipticCurveCrypto */,
 				6E4AD54C20B463350012DCD1 /* base58 */,
 			);
@@ -1122,6 +1314,7 @@
 				6E3E9F4B20B853820096399D /* TWAccountViewController.xib in Resources */,
 				6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */,
 				6E3E9F7620B897E00096399D /* SGQRCode.bundle in Resources */,
+				6E40346920BBB483008140F5 /* secp256k1.table in Resources */,
 				6E93FF0C20AF20BA000FD37D /* TWTransInfoTableViewCell.xib in Resources */,
 				6E9103DF20B2A5A8006FDEA1 /* http_request.proto in Resources */,
 				6E93FF3220B09A4F000FD37D /* TWSettingViewController.xib in Resources */,
@@ -1194,18 +1387,25 @@
 				6E9103D120B2A5A8006FDEA1 /* SystemParameter.pbobjc.m in Sources */,
 				6E9103CF20B2A5A8006FDEA1 /* Service.pbobjc.m in Sources */,
 				6E3E9F9220BAF6250096399D /* TWExFreezeViewController.m in Sources */,
+				6E40348620BBB66D008140F5 /* RegEx.m in Sources */,
 				6E91037820B2A370006FDEA1 /* Contract.pbobjc.m in Sources */,
-				6E3E9F2520B639480096399D /* TWWalletAccountClient.m in Sources */,
+				6E40347120BBB483008140F5 /* crypto_scrypt-nosse.c in Sources */,
 				6E93FF0420AF1F21000FD37D /* TWMainRecentBlockTableViewCell.m in Sources */,
+				6E40346C20BBB483008140F5 /* sha3.c in Sources */,
 				6E9103C520B2A5A8006FDEA1 /* Latlng.pbobjc.m in Sources */,
 				6E91040C20B2B3AB006FDEA1 /* Api.pbrpc.m in Sources */,
+				6E40348520BBB66D008140F5 /* Utilities.m in Sources */,
 				6E93FF2320B08EB2000FD37D /* TWMainPresentativesTableViewCell.m in Sources */,
 				6E9103C920B2A5A8006FDEA1 /* Usage.pbobjc.m in Sources */,
 				6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */,
+				6E40346A20BBB483008140F5 /* aestab.c in Sources */,
 				6E3E9F7120B896E10096399D /* TWQRViewController.m in Sources */,
 				6EA351C720AC7D1500AF1984 /* main.m in Sources */,
 				6E9103C420B2A5A8006FDEA1 /* Timeofday.pbobjc.m in Sources */,
+				6E40342F20BBB3C8008140F5 /* mpi.c in Sources */,
 				6E4AD55620B463350012DCD1 /* BTCData.m in Sources */,
+				6E40346E20BBB483008140F5 /* ecdsa.c in Sources */,
+				6E40346220BBB483008140F5 /* rand.c in Sources */,
 				6E9103D420B2A5A8006FDEA1 /* Consumer.pbobjc.m in Sources */,
 				6E3E9F3220B6638B0096399D /* TWHexConvert.m in Sources */,
 				6E9103D320B2A5A8006FDEA1 /* Logging.pbobjc.m in Sources */,
@@ -1220,34 +1420,46 @@
 				6E9103D020B2A5A8006FDEA1 /* Control.pbobjc.m in Sources */,
 				6E3E9F8320BA4EC70096399D /* TWCandicateViewController.m in Sources */,
 				6EED949E20AEC8CD003FF63E /* TWTokensViewController.m in Sources */,
+				6E40348C20BBB749008140F5 /* Test.m in Sources */,
 				6E9103C820B2A5A8006FDEA1 /* Auth.pbobjc.m in Sources */,
+				6E40346520BBB483008140F5 /* secp256k1.c in Sources */,
 				6E4AD55C20B4F8520012DCD1 /* TWConnectViewController.m in Sources */,
 				6E3E9F5620B88EE70096399D /* TWExchangeViewController.m in Sources */,
 				6E9103CA20B2A5A8006FDEA1 /* MonitoredResource.pbobjc.m in Sources */,
+				6E40346820BBB483008140F5 /* ripemd160.c in Sources */,
 				6E9103D220B2A5A8006FDEA1 /* Label.pbobjc.m in Sources */,
 				6E4AD55820B463350012DCD1 /* NSData+Hashing.m in Sources */,
 				6E9103C320B2A5A8006FDEA1 /* Money.pbobjc.m in Sources */,
 				6E9103C220B2A5A8006FDEA1 /* Date.pbobjc.m in Sources */,
 				6E3E9F4520B84D290096399D /* TWWalletCreateViewController.m in Sources */,
+				6E40345F20BBB483008140F5 /* aeskey.c in Sources */,
 				6E93FF2D20B092BC000FD37D /* TWMainTokenTableViewCell.m in Sources */,
 				6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */,
 				6E4AD55520B463350012DCD1 /* NS+BTCBase58.m in Sources */,
 				6E3E9F7A20BA46B90096399D /* TWWalletImportViewController.m in Sources */,
 				6E91037420B2A370006FDEA1 /* Api.pbobjc.m in Sources */,
 				6E93FF0720AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m in Sources */,
+				6E40346620BBB483008140F5 /* aes_modes.c in Sources */,
 				6E91037720B2A370006FDEA1 /* Tron.pbobjc.m in Sources */,
 				6E3E9F1820B593390096399D /* TWQRCoderGenerator.m in Sources */,
 				6EED949520AEC885003FF63E /* TWBlockChainViewController.m in Sources */,
+				6E40346B20BBB483008140F5 /* bip32.c in Sources */,
 				6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */,
+				6E40348120BBB66D008140F5 /* BigNumber.m in Sources */,
 				6E9103D820B2A5A8006FDEA1 /* Annotations.pbobjc.m in Sources */,
 				6EA351B920AC7D1500AF1984 /* AppDelegate.m in Sources */,
 				6E9103DB20B2A5A8006FDEA1 /* Status.pbobjc.m in Sources */,
+				6E40347020BBB483008140F5 /* scrypt_sha256.c in Sources */,
+				6E40346320BBB483008140F5 /* aescrypt.c in Sources */,
 				6E3E9F6D20B88FEB0096399D /* TWTopScrollView.m in Sources */,
 				6E93FF2820B09164000FD37D /* TWMainNodeTableViewCell.m in Sources */,
 				6E3E9F7F20BA4A990096399D /* TWVoteViewController.m in Sources */,
+				6E40349420BBBAA9008140F5 /* TWWalletAccountClient.m in Sources */,
 				6E9103D520B2A5A8006FDEA1 /* Monitoring.pbobjc.m in Sources */,
 				6E4AD55720B463350012DCD1 /* BTCBase58.m in Sources */,
 				6EED949820AEC8B4003FF63E /* TWRepresentativeViewController.m in Sources */,
+				6E40348920BBB6B4008140F5 /* Hash.m in Sources */,
+				6E40346120BBB483008140F5 /* sha2.c in Sources */,
 				6E91041120B2EB0C006FDEA1 /* NSData+HexToString.m in Sources */,
 				6E9103C120B2A5A8006FDEA1 /* Dayofweek.pbobjc.m in Sources */,
 				6E3E9F8620BA4EDC0096399D /* TWYourVotesViewController.m in Sources */,
@@ -1256,6 +1468,7 @@
 				6E91040920B2AE79006FDEA1 /* Descriptor.pbobjc.m in Sources */,
 				6E3E9F8A20BA4F420096399D /* TWCandicateTableViewCell.m in Sources */,
 				6E91037520B2A370006FDEA1 /* TronInventoryItems.pbobjc.m in Sources */,
+				6E40348320BBB66D008140F5 /* SecureData.m in Sources */,
 				6E9103DD20B2A5A8006FDEA1 /* LogSeverity.pbobjc.m in Sources */,
 				6E3E9F4120B7B3A00096399D /* TWEllipticCurveCrypto+Hash.m in Sources */,
 				6E3E9F5A20B88F000096399D /* TWExSendViewController.m in Sources */,
@@ -1269,18 +1482,24 @@
 				6EA3520220AC830A00AF1984 /* TWUIInitManager.m in Sources */,
 				6E3E9F2E20B65E2A0096399D /* GMEllipticCurveCrypto+hash.m in Sources */,
 				6E93FF0B20AF20BA000FD37D /* TWTransInfoTableViewCell.m in Sources */,
+				6E40346D20BBB483008140F5 /* base58.c in Sources */,
 				6E3E9F8E20BAAA470096399D /* TWVoteWitnessModel.m in Sources */,
 				6E9103D920B2A5A8006FDEA1 /* Billing.pbobjc.m in Sources */,
 				6EED948920AEC2DA003FF63E /* UIColor+Theme.m in Sources */,
 				6EED94A120AEC8DC003FF63E /* TWAccountsViewController.m in Sources */,
 				6E9103CC20B2A5A8006FDEA1 /* Context.pbobjc.m in Sources */,
 				6E3E9F2220B5BA7B0096399D /* TWPriceUpdater.m in Sources */,
+				6E40346720BBB483008140F5 /* bignum.c in Sources */,
 				6E3E9F3820B663E30096399D /* NSData+AES128.m in Sources */,
 				6EA351FC20AC82C200AF1984 /* TWWalletViewController.m in Sources */,
+				6E40345E20BBB483008140F5 /* bip39.c in Sources */,
 				6E9103CD20B2A5A8006FDEA1 /* Log.pbobjc.m in Sources */,
 				6E9103D620B2A5A8006FDEA1 /* Documentation.pbobjc.m in Sources */,
+				6E40346020BBB483008140F5 /* hmac.c in Sources */,
 				6E9103C620B2A5A8006FDEA1 /* Color.pbobjc.m in Sources */,
+				6E40346420BBB483008140F5 /* curves.c in Sources */,
 				6E93FF1A20AFB9F3000FD37D /* TWMainSearchHeader.m in Sources */,
+				6E40346F20BBB483008140F5 /* pbkdf2.c in Sources */,
 				6EED949B20AEC8C2003FF63E /* TWNodesViewController.m in Sources */,
 				6EA351FA20AC82C200AF1984 /* TWMainInfoViewController.m in Sources */,
 				6E9103C720B2A5A8006FDEA1 /* Metric.pbobjc.m in Sources */,
@@ -1288,6 +1507,7 @@
 				6E93FF1020AF22BC000FD37D /* TWMainBlockInfoTableViewCell.m in Sources */,
 				6E9103CB20B2A5A8006FDEA1 /* Backend.pbobjc.m in Sources */,
 				6E3E9F3C20B7A9C40096399D /* TWEllipticCurveCrypto.m in Sources */,
+				6E40348420BBB66D008140F5 /* RLPSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

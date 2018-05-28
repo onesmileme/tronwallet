@@ -21,26 +21,28 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef __BASE58_H__
-#define __BASE58_H__
+#ifndef __BIP39_H__
+#define __BIP39_H__
 
 #include <stdint.h>
-#include <stdbool.h>
-#include "hasher.h"
-#include "options.h"
 
-int base58_encode_check(const uint8_t *data, int len, HasherType hasher_type, char *str, int strsize);
-int base58_decode_check(const char *str, HasherType hasher_type, uint8_t *data, int datalen);
+#define BIP39_PBKDF2_ROUNDS 2048
 
-// Private
-bool b58tobin(void *bin, size_t *binszp, const char *b58);
-int b58check(const void *bin, size_t binsz, HasherType hasher_type, const char *base58str);
-bool b58enc(char *b58, size_t *b58sz, const void *data, size_t binsz);
+const char *mnemonic_generate(int strength);	// strength in bits
+const uint16_t *mnemonic_generate_indexes(int strength);	// strength in bits
 
-#if USE_GRAPHENE
-int base58gph_encode_check(const uint8_t *data, int datalen, char *str, int strsize);
-int base58gph_decode_check(const char *str, uint8_t *data, int datalen);
-int b58gphcheck(const void *bin, size_t binsz, const char *base58str);
+const char *mnemonic_from_data(const uint8_t *data, int len);
+const uint16_t *mnemonic_from_data_indexes(const uint8_t *data, int len);
+
+// Added for Ethers -- RicMoo
+#define MAXIMUM_BIP39_DATA_LENGTH      (1 + (512 / 8))
+int data_from_mnemonic(const char *mnemonic, uint8_t data[MAXIMUM_BIP39_DATA_LENGTH]);
+
+int mnemonic_check(const char *mnemonic);
+
+// passphrase must be at most 256 characters or code may crash
+void mnemonic_to_seed(const char *mnemonic, const char *passphrase, uint8_t seed[512 / 8], void (*progress_callback)(uint32_t current, uint32_t total));
+
+const char * const *mnemonic_wordlist(void);
+
 #endif
-
-

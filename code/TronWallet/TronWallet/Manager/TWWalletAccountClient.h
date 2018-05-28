@@ -25,7 +25,7 @@
 
 +(NSString *)loadPwdKey;
 
-+(NSString *)loadPriKey;
++(NSData *)loadPriKey;
 
 -(void)store:(NSString *)password;
 
@@ -36,5 +36,7 @@
 -(NSString *)base58OwnerAddress;
 
 -(void)refreshAccount:(void(^)(Account *account, NSError *error))completion;
+
++(NSString *)hexEncPassword:(NSString *)password;
 
 @end

@@ -154,18 +154,18 @@ void tk_safe_dispatch_sync_main_queue(void (^block)(void));
 /**
  *  根据dateNumber距离现在的时间生成一个时间字符串
  *
- *  @param number <#number description#>
+ *  @param dateNumber number description
  *
- *  @return <#return value description#>
+ *  @return return value description
  */
 +(NSString *)dateDescForTimeInterval:(NSNumber *)dateNumber;
 
 /**
  *  根据dateString距离现在的时间生成一个时间字符串
  *
- *  @param number <#number description#>
+ *  @param dateString number description
  *
- *  @return <#return value description#>
+ *  @return return value description
  */
 +(NSString *)dateDescForTimeStr:(NSString *)dateString;
 
@@ -175,7 +175,7 @@ void tk_safe_dispatch_sync_main_queue(void (^block)(void));
  *
  *  @param date 要处理的时间对象
  *
- *  @return 
+ *  @return week
  */
 + (NSString *)weekOfDate:(NSDate *)date;
 
@@ -184,18 +184,18 @@ void tk_safe_dispatch_sync_main_queue(void (^block)(void));
 /**
  *  根据date返回上个月
  *
- *  @param date <#date description#>
+ *  @param date date description
  *
- *  @return <#return value description#>
+ *  @return return value description
  */
 + (NSString *) getLastMonthFirstTimeInterval:(NSDate *)date;
 
 /**
  *  根据date返回下个月
  *
- *  @param date <#date description#>
+ *  @param date date description
  *
- *  @return <#return value description#>
+ *  @return return value description
  */
 + (NSString *) getNextMonthLastTimeInterval:(NSDate *)date;
 

@@ -35,7 +35,7 @@
  *  @param scrollView 要添加的view
  *  @param callback   回调方法
  */
--(void)addHeaderRefreshView:(UIScrollView *)scrollView callBack:(void(^)())callback;
+-(void)addHeaderRefreshView:(UIScrollView *)scrollView callBack:(void(^)(void))callback;
 
 /**
  *  添加上拉杀心 （block）
@@ -43,7 +43,7 @@
  *  @param scrollView 要添加的view
  *  @param callback   回调方法
  */
--(void)addFooterRefreshView:(UIScrollView *)scrollView callBack:(void (^)())callback;
+-(void)addFooterRefreshView:(UIScrollView *)scrollView callBack:(void (^)(void))callback;
 
 /**
  *  停止刷新
@@ -55,14 +55,14 @@
 /**
  *  开始上啦刷新
  *
- *  @param scrollView <#scrollView description#>
+ *  @param scrollView scrollView description
  */
 -(void)startHeadRefresh:(UIScrollView *)scrollView;
 
 /**
  *  开始下拉刷新
  *
- *  @param scrollView <#scrollView description#>
+ *  @param scrollView scrollView description
  */
 -(void)startFootRefresh:(UIScrollView *)scrollView;
 

@@ -11,6 +11,9 @@
 #import <openssl/hmac.h>
 #import <openssl/ripemd.h>
 #import <openssl/sha.h>
+#import "sha3.h"
+#import "ccMemory.h"
+#import "SecureData.h"
 
 @implementation NSData (Hashing)
 
@@ -43,5 +46,24 @@
        [digest mutableBytes],
        &length);
 }
+
+- (NSData*)KECCAK256Hash {
+    
+    SecureData *secureData = [SecureData secureDataWithData:self];
+    SecureData *kecck256Data = [secureData KECCAK256];
+    
+    return [kecck256Data data];
+    
+//    NSMutableData *hashData = [[NSMutableData alloc] initWithCapacity:32];
+//    SHA3_CTX context;
+//    keccak_256_Init(&context);
+//    keccak_Update(&context, self.bytes, (size_t)self.length);
+//    keccak_Final(&context, hashData.mutableBytes);
+//    
+//    CC_XZEROMEM(&context, sizeof(SHA3_CTX));
+//    
+//    return hashData;
+}
+
 
 @end

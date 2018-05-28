@@ -16,6 +16,10 @@
 #import "NSData+Hashing.h"
 #import "BTCBase58.h"
 #import "NS+BTCBase58.h"
+#import "SecureData.h"
+#import "ecdsa.h"
+#include "secp256k1.h"
+
 
 #define kPriKey @"pri_key"
 #define kPubKey @"pub_key"
@@ -26,20 +30,12 @@
 
 @property(nonatomic , strong) TWEllipticCurveCrypto *crypto;
 
+
 @end
 
 @implementation TWWalletAccountClient
 
 
-+(void)load
-{
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
-//        TWWalletAccountClient *client = [[TWWalletAccountClient alloc]initWithGenKey:YES];
-//        [client store:@"1234567890"];
-//
-//    });
-}
 
 +(instancetype)walletWithPassword:(NSString *)password
 {
@@ -53,7 +49,6 @@
     NSString *enpwdBase64 = [enPwdData base64EncodedStringWithOptions:kNilOptions];
     NSData *prikeyEncode = [priData AES128EncryptWithKey:enpwdBase64];
     
-//    NSString *hexPriKey = [TWHexConvert convertDataToHexStr:prikeyEncode];
     
     return [[self alloc] initWithPriKey:prikeyEncode];
 }
@@ -65,7 +60,7 @@
     return [defaults objectForKey:kPubKey];
 }
 
-+(NSString *)loadPriKey
++(NSData *)loadPriKey
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults objectForKey:kPriKey];
@@ -90,6 +85,7 @@
     self = [super init];
     if (self) {
         _crypto = [TWEllipticCurveCrypto cryptoForKey:priKey];
+        
         [self loadAccountInfo];
     }
     return self;
@@ -99,9 +95,7 @@
 {
     self = [super init];
     if(self){
-        
-        self.crypto = [TWEllipticCurveCrypto generateKeyPairForCurve:TWEllipticCurveSecp256k1];
-        
+        self.crypto = [TWEllipticCurveCrypto instanceGenerateKeyPair];        
     }
     return self;
 }
@@ -128,17 +122,16 @@
     NSString* hexPwd = [pwdData convertToHexStr];
     NSLog(@"hex pwd is: %@",hexPwd);
     
-    
     NSData *priKey = _crypto.privateKey;
     NSData *pubKey = _crypto.publicKey;
     
     [self printKey:priKey name:@"pri key"];
     [self printKey:pubKey name:@"pub_key"];
     
-    NSString *basePriKey = _crypto.privateKeyBase64;
-    NSString *basePubKey = _crypto.publicKeyBase64;
+        
+    NSString *basePriKey = [priKey base64EncodedStringWithOptions:0];
+    NSString *basePubKey = [pubKey base64EncodedStringWithOptions:0];
     NSLog(@"base64 pubkey is: %@\n prikey is: \n%@\n\n",basePubKey,basePriKey);
-    
     
     NSData *enpwd = [self.class getEncKey:password];
     
@@ -153,8 +146,10 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setObject:hexPwd forKey:kPwdKey];//password
-    [defaults setObject:hexPubKey forKey:kPubKey]; //public key
-    [defaults setObject:hexPriKey forKey:kPriKey]; //private key
+//    [defaults setObject:hexPubKey forKey:kPubKey]; //public key
+//    [defaults setObject:hexPriKey forKey:kPriKey]; //private key
+    
+    [defaults setObject:priKey forKey:kPriKey];
     
     [defaults synchronize];
     
@@ -188,7 +183,6 @@
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
     self.account = [[Account alloc]init];
     _account.address = [_crypto ownerAddress];
-    
     
     [wallet getAccountWithRequest:_account handler:^(Account * _Nullable response, NSError * _Nullable error) {
         
@@ -226,6 +220,12 @@
         return NO;
     }
     return YES;
+}
+
++(NSString *)hexEncPassword:(NSString *)password
+{
+    NSData *pwdData = [self.class convertPassword:password];
+    return  [pwdData convertToHexStr];
 }
 
 +(NSString *)encode58Check:(NSData *)data

@@ -19,4 +19,7 @@
 /// Performs the HMAC512-SHA256 algorithm on self using key and stores the result in digest.
 - (void)HMACSHA512WithKey:(NSData *)key digest:(NSMutableData *)digest;
 
+
+- (NSData*)KECCAK256Hash;
+
 @end

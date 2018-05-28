@@ -14,7 +14,6 @@
  *  加密
  *
  *  @param key 公钥
- *  @param iv  偏移量
  *
  *  @return 加密之后的NSData
  */
@@ -23,7 +22,6 @@
  *  解密
  *
  *  @param key 公钥
- *  @param iv  偏移量
  *
  *  @return 解密之后的NSData
  */

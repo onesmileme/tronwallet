@@ -35,7 +35,7 @@
             [self updateUI:account];
         }
         [hud hideAnimated:YES afterDelay:0.7];
-    }]
+    }];
 }
 
 -(void)updateUI:(Account *)account
@@ -76,7 +76,7 @@
     contract.ownerAddress = [client address];
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [wallet unfreezeBalanceWithRequest:(nonnull UnfreezeBalanceContract *) handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
+    [wallet unfreezeBalanceWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
         if (error) {
             hud.label.text = [error localizedDescription];
         }else{
