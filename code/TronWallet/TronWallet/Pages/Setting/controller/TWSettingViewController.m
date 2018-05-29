@@ -8,6 +8,7 @@
 
 #import "TWSettingViewController.h"
 #import "TWConnectViewController.h"
+#import "TWAccountViewController.h"
 
 @interface TWSettingViewController ()
 
@@ -27,12 +28,16 @@
 
 -(IBAction)accountInfoAction:(id)sender
 {
-    
+    TWAccountViewController *controller = [[TWAccountViewController alloc]initWithNibName:@"TWAccountViewController" bundle:nil];
+    [controller setupClient:AppWalletClient cold:NO];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(IBAction)connectionAction:(id)sender
 {
     TWConnectViewController *connectController = [[TWConnectViewController alloc]initWithNibName:@"TWConnectViewController" bundle:nil];
+    connectController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:connectController animated:YES];
 }
 
@@ -43,7 +48,11 @@
 
 -(IBAction)resetAppAction:(id)sender
 {
-    
+    [self showAlert:@"WARN" mssage:@"Do you really want reset app" confrim:@"YES" cancel:@"NO" confirmAction:^{
+        
+        AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+        [appdelegate reset];
+    }];
 }
 
 /*

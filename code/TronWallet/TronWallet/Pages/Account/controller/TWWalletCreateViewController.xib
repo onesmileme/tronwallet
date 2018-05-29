@@ -24,26 +24,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61W-Ms-f1p" userLabel="infoView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
-                    <color key="backgroundColor" red="1" green="0.16162655988910202" blue="0.068977443476911038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                    <color key="backgroundColor" red="0.63529411759999999" green="0.16862745100000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="120" id="9u2-lD-Jwh"/>
+                        <constraint firstAttribute="height" id="9u2-lD-Jwh"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tE1-HX-aHS" userLabel="containerView">
-                    <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E4-bm-UTd" userLabel="titleLabel">
-                            <rect key="frame" x="0.0" y="20" width="375" height="21"/>
+                            <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="21" id="X2q-kw-pKM"/>
+                                <constraint firstAttribute="height" constant="40" id="X2q-kw-pKM"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Input Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3qT-7q-va7" userLabel="pwdTextField">
-                            <rect key="frame" x="20" y="56" width="335" height="30"/>
+                            <rect key="frame" x="20" y="75" width="335" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="AiE-Lx-KmP"/>
                             </constraints>
@@ -55,32 +55,32 @@
                             </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password is important for every transaction. Without password you won\'t be able to access your assets through the wallet!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-OO-HlH" userLabel="tipLabel">
-                            <rect key="frame" x="20" y="106" width="335" height="43"/>
+                            <rect key="frame" x="20" y="125" width="335" height="43"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cold Wallet Setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c70-ES-BD0" userLabel="setupLabel">
-                            <rect key="frame" x="20" y="179" width="136.5" height="21"/>
+                            <rect key="frame" x="20" y="198" width="136.5" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jQr-lw-zTL" userLabel="setup Switch">
-                            <rect key="frame" x="306" y="174" width="51" height="31"/>
+                            <rect key="frame" x="306" y="193" width="51" height="31"/>
                         </switch>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="et7-cB-bW2" userLabel="approve Switch">
-                            <rect key="frame" x="20" y="240" width="51" height="31"/>
+                            <rect key="frame" x="20" y="259" width="51" height="31"/>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am aware of the risks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sao-dU-VAe" userLabel="approveLabel">
-                            <rect key="frame" x="210.5" y="235" width="144.5" height="41"/>
+                            <rect key="frame" x="210.5" y="254" width="144.5" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flu-Xn-pTo">
-                            <rect key="frame" x="20" y="366" width="335" height="30"/>
-                            <color key="backgroundColor" red="1" green="0.16162655989999999" blue="0.068977443479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="20" y="395" width="335" height="40"/>
+                            <color key="backgroundColor" red="0.63529411759999999" green="0.16862745100000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Import Wallet">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -89,10 +89,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXo-Yj-16M">
-                            <rect key="frame" x="20" y="306" width="335" height="30"/>
-                            <color key="backgroundColor" red="1" green="0.16162655989999999" blue="0.068977443479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="20" y="325" width="335" height="40"/>
+                            <color key="backgroundColor" red="0.63529411759999999" green="0.16862745100000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="ww1-XN-eFu"/>
+                                <constraint firstAttribute="height" constant="40" id="ww1-XN-eFu"/>
                             </constraints>
                             <state key="normal" title="Generate Address and Private Key">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

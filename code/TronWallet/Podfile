@@ -30,6 +30,6 @@ target 'TronWallet' do
   pod 'gRPC' , '1.9.1'
   pod 'gRPC-ProtoRPC' , '1.9.1'
   pod 'OpenSSL-Universal', :git => 'https://github.com/krzyzanowskim/OpenSSL.git', :branch => :master
-  pod 'ios-secp256k1'
+#  pod 'ios-secp256k1'
 
 end

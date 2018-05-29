@@ -9,8 +9,7 @@
 #import "TWWalletCreateViewController.h"
 #import "TWWalletAccountClient.h"
 #import "TWAccountViewController.h"
-#import "AppDelegate.h"
-
+#import "TWWalletImportViewController.h"
 
 @interface TWWalletCreateViewController ()<UITextFieldDelegate>
 
@@ -22,7 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+#if DEBUG
     self.pwdTextField.text = @"1234567890";
+#endif
     
 }
 
@@ -64,12 +65,12 @@
     
     [self.navigationController pushViewController:accoutController animated:YES];
     
-    
 }
 
 -(IBAction)importAction:(id)sender
 {
-    
+    TWWalletImportViewController *controller = [[TWWalletImportViewController alloc]initWithNibName:@"TWWalletImportViewController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -29,12 +29,11 @@
     // Do any additional setup after loading the view from its nib.
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    [self.scrollView addSubview:self.conentView];
-    self.contentWidth.constant = CGRectGetWidth(self.view.frame);
-    CGRect frame = self.conentView.frame;
-    frame.origin = CGPointZero;
-    self.conentView.frame = frame;
-    self.scrollView.contentSize = self.conentView.frame.size;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAddressTap)];
+    [self.addressLabel addGestureRecognizer:tap];
+    
+    tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onPrivateKeyTap)];
+    [self.privateKeyLabel addGestureRecognizer:tap];
     
 }
 
@@ -47,10 +46,26 @@
 {
     [super viewWillAppear:animated];
     if (!self.addressQR.image) {
-        self.addressQR.image = [TWQRCoderGenerator generate:self.address];
+        NSString *address = [_client base58OwnerAddress];
+        self.addressQR.image = [TWQRCoderGenerator generate:address];
+        self.addressLabel.text = address;
         NSData *priKeyData = [_client.crypto privateKey];
         NSString *priKey = [TWHexConvert convertDataToHexStr:priKeyData];
         self.priKeyQR.image = [TWQRCoderGenerator generate:priKey];
+        self.privateKeyLabel.text = priKey;
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (!_contentView.superview) {
+        self.contentWidth.constant = [[UIScreen mainScreen]bounds].size.width;
+        CGRect frame = self.contentView.frame;
+        frame.origin = CGPointZero;
+        self.contentView.frame = frame;
+        self.scrollView.contentSize = self.contentView.frame.size;
+        [self.scrollView addSubview:self.contentView];
     }
 }
 
@@ -71,6 +86,22 @@
 {
     AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     [appdelegate createAccountDone:self.navigationController];
+}
+
+-(void)onAddressTap
+{
+    UIPasteboard *board = [UIPasteboard generalPasteboard];
+    board.string = self.addressLabel.text;
+    
+    [self showHudTitle:@"Address has copy to pasteboard"];
+}
+
+-(void)onPrivateKeyTap
+{
+    UIPasteboard *board = [UIPasteboard generalPasteboard];
+    board.string = self.privateKeyLabel.text;
+    
+    [self showHudTitle:@"Private key has copy to pasteboard"];
 }
 
 /*

@@ -17,5 +17,7 @@
 
 -(void)createAccountDone:(UINavigationController *)navController;
 
+-(void)reset;
+
 @end
 

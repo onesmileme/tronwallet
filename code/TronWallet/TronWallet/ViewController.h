@@ -10,6 +10,7 @@
 
 @interface ViewController : UITabBarController
 
+-(void)reloadAll;
 
 @end
 

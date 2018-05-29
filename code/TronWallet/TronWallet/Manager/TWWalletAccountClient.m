@@ -42,10 +42,6 @@
         return NULL;
     }
     
-    //    NSData *pwdData = [TWWalletAccountClient convertPassword:password];
-//    NSString* hexPwd = password;//[pwdData convertToHexStr];
-    
-    NSString* hexPwd = password;//[pwdData convertToHexStr];
     NSData *prikeyData = [TWHexConvert convertHexStrToData:hexPriKey];
     
     NSData *priKey = [prikeyData AES128DecryptWithKey:password];
@@ -106,32 +102,23 @@
     return [self initWithPriKey:priKeyData];
 }
 
--(void)printKey:(NSData *)key name:(NSString *)name
-{
-    printf("key %s ====\n",[name UTF8String]);
-    const uint8_t *bytes = (const uint8_t *)[key bytes];
-    for (int i = 0 ; i < [key length]; i++) {
-        printf("0X%02X ",bytes[i]);
-    }
-    printf("\n\n");
-}
+//-(void)printKey:(NSData *)key name:(NSString *)name
+//{
+//    printf("key %s ====\n",[name UTF8String]);
+//    const uint8_t *bytes = (const uint8_t *)[key bytes];
+//    for (int i = 0 ; i < [key length]; i++) {
+//        printf("0X%02X ",bytes[i]);
+//    }
+//    printf("\n\n");
+//}
 
 -(void)store:(NSString *)password
 {
     NSData *pwdData = [self.class convertPassword:password];
     NSString* hexPwd = [pwdData convertToHexStr];
-//    NSLog(@"hex pwd is: %@",hexPwd);
     
     NSData *priKey = _crypto.privateKey;
     NSData *pubKey = _crypto.publicKey;
-    
-//    [self printKey:priKey name:@"pri key"];
-//    [self printKey:pubKey name:@"pub_key"];
-    
-        
-//    NSString *basePriKey = [priKey base64EncodedStringWithOptions:0];
-//    NSString *basePubKey = [pubKey base64EncodedStringWithOptions:0];
-//    NSLog(@"base64 pubkey is: %@\n prikey is: \n%@\n\n",basePubKey,basePriKey);
     
     NSData *enpwd = [self.class getEncKey:password];
     
@@ -179,12 +166,10 @@
 {
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
     self.account = [[Account alloc]init];
-//    NSString *address = [_crypto base58CheckOwnerAddress ];
-    _account.address = [self address];//[_crypto ownerAddress];//[address dataUsingEncoding:NSUTF8StringEncoding];//
+    _account.address = [self address];
     
     [wallet getAccountWithRequest:_account handler:^(Account * _Nullable response, NSError * _Nullable error) {
         
-        NSLog(@"get account is: %@",response);
         if(response){
             self.account = response;
         }
@@ -203,6 +188,14 @@
     }
     
     return transaction;
+}
+
+-(void)clear
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:kPriKey];
+    [defaults removeObjectForKey:kPubKey];
+    [defaults removeObjectForKey:kPwdKey];
 }
 
 +(NSData *)convertPassword:(NSString *)password
@@ -263,7 +256,7 @@
 {
     NSData *addressData = BTCDataFromBase58(address);
     
-    [self printData:addressData name:@"address data "];
+//    [self printData:addressData name:@"address data "];
     
     NSMutableData *baseData = [address dataFromBase58];
     if (baseData.length <= 4) {
@@ -279,26 +272,25 @@
     NSData *compData = [hash1 subdataWithRange:NSMakeRange(0, 4)];
     NSData *addData = [addressData subdataWithRange:NSMakeRange(decodeData.length, 4)];
     
-    [self printData:compData name:@"compare data"];
-    [self printData:addData name:@"address sub data"];
+//    [self printData:compData name:@"compare data"];
+//    [self printData:addData name:@"address sub data"];
     
     if ([compData isEqualToData:addData]) {
         return decodeData;
     }
     
-    
     return NULL;
 }
 
-+(void)printData:(NSData *)data name:(NSString *)name
-{
-    NSLog(@"-------%@-------",name);
-    const uint8_t *bytes = (const uint8_t *)[data bytes];
-    printf("===================\n");
-    for (int i = 0 ; i < data.length; i++) {
-        printf("%02X",bytes[i]);
-    }
-    printf("\n===================");
-}
+//+(void)printData:(NSData *)data name:(NSString *)name
+//{
+//    NSLog(@"-------%@-------",name);
+//    const uint8_t *bytes = (const uint8_t *)[data bytes];
+//    printf("===================\n");
+//    for (int i = 0 ; i < data.length; i++) {
+//        printf("%02X",bytes[i]);
+//    }
+//    printf("\n===================");
+//}
 
 @end

@@ -127,7 +127,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "-continueAction:"
+            landmarkName = "-setupClient:cold:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/ThirdParty/GMEllipticCurveCrypto/TWEllipticCurveCrypto.m"
-            timestampString = "549275969.565658"
+            timestampString = "549277751.290714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Test.m"
-            timestampString = "549275969.565845"
+            timestampString = "549277751.290885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "+test"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Test.m"
-            timestampString = "549275969.565979"
+            timestampString = "549277751.291015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
             landmarkName = "+test"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/ThirdParty/GMEllipticCurveCrypto/TWEllipticCurveCrypto.m"
-            timestampString = "549275969.566107"
+            timestampString = "549277751.291136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Test.m"
-            timestampString = "549275969.566245"
+            timestampString = "549277751.291278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "341"
+            endingLineNumber = "341"
             landmarkName = "+addressTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Test.m"
-            timestampString = "549275969.566358"
+            timestampString = "549277751.291388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
             landmarkName = "+addressTest"
             landmarkType = "7">
          </BreakpointContent>
@@ -265,24 +265,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TronWallet/Manager/TWWalletAccountClient.m"
-            timestampString = "549275969.56647"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "-store:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TronWallet/Pages/Wallet/Exchange/Controller/TWExSendViewController.m"
-            timestampString = "549275969.566584"
+            timestampString = "549277751.291639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -298,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Pages/Wallet/Exchange/Controller/TWExSendViewController.m"
-            timestampString = "549275969.566661"
+            timestampString = "549277751.291715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -314,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Test.m"
-            timestampString = "549275969.566734"
+            timestampString = "549277751.291786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "+hehe"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Test.m"
-            timestampString = "549275969.566836"
+            timestampString = "549277751.291885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "+hehe"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,7 +330,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Test.m"
-            timestampString = "549275969.566973"
+            timestampString = "549277751.29198"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "+hashTest"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TronWallet/Test.m"
+            timestampString = "549277751.292069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "248"
@@ -362,23 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Test.m"
-            timestampString = "549275969.567122"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
-            landmarkName = "+hashTest"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TronWallet/Test.m"
-            timestampString = "549275969.567274"
+            timestampString = "549277751.2921489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -394,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Pages/Wallet/Exchange/Controller/TWExFreezeViewController.m"
-            timestampString = "549275969.567345"
+            timestampString = "549277751.292209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -410,7 +394,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Exchange/Controller/TWExFreezeViewController.m"
-                  timestampString = "549275545.287763"
+                  timestampString = "549291680.287685"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "110"
@@ -425,7 +409,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Exchange/Controller/TWExFreezeViewController.m"
-                  timestampString = "549275545.289179"
+                  timestampString = "549291680.289243"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "111"
@@ -442,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Pages/Wallet/Exchange/Controller/TWExFreezeViewController.m"
-            timestampString = "549275969.56741"
+            timestampString = "549277751.292267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -458,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Utils/UIViewController+BroadcastTransaction.m"
-            timestampString = "549275969.567475"
+            timestampString = "549277751.292325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -474,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Utils/UIViewController+BroadcastTransaction.m"
-            timestampString = "549275969.567534"
+            timestampString = "549277751.292375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -490,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-            timestampString = "549275969.567602"
+            timestampString = "549291679.9862731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -506,7 +490,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-                  timestampString = "549275545.381108"
+                  timestampString = "549291680.301473"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
@@ -521,7 +505,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-                  timestampString = "549275545.382591"
+                  timestampString = "549291680.303012"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
@@ -529,38 +513,6 @@
                   offsetFromSymbolStart = "931">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-            timestampString = "549275969.567672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToolKit/ToolKit/ThirdParty/MJRefresh/Custom/Header/MJRefreshStateHeader.m"
-            timestampString = "549275969.567735"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-setLastUpdatedTimeKey:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

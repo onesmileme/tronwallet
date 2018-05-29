@@ -12,17 +12,9 @@
 		6E3E9F1C20B593DA0096399D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3E9F1B20B593DA0096399D /* CoreImage.framework */; };
 		6E3E9F1F20B5B8330096399D /* TWAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F1E20B5B8330096399D /* TWAccountManager.m */; };
 		6E3E9F2220B5BA7B0096399D /* TWPriceUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F2120B5BA7B0096399D /* TWPriceUpdater.m */; };
-		6E3E9F2E20B65E2A0096399D /* GMEllipticCurveCrypto+hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F2820B65E2A0096399D /* GMEllipticCurveCrypto+hash.m */; };
-		6E3E9F2F20B65E2A0096399D /* GMEllipticCurveCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F2B20B65E2A0096399D /* GMEllipticCurveCrypto.m */; };
 		6E3E9F3220B6638B0096399D /* TWHexConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F3120B6638B0096399D /* TWHexConvert.m */; };
 		6E3E9F3520B663A30096399D /* TWAES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F3420B663A30096399D /* TWAES128.m */; };
 		6E3E9F3820B663E30096399D /* NSData+AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F3720B663E30096399D /* NSData+AES128.m */; };
-		6E3E9F3C20B7A9C40096399D /* TWEllipticCurveCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F3B20B7A9C40096399D /* TWEllipticCurveCrypto.m */; };
-		6E3E9F4120B7B3A00096399D /* TWEllipticCurveCrypto+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F4020B7B3A00096399D /* TWEllipticCurveCrypto+Hash.m */; };
-		6E3E9F4520B84D290096399D /* TWWalletCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F4320B84D290096399D /* TWWalletCreateViewController.m */; };
-		6E3E9F4620B84D290096399D /* TWWalletCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E9F4420B84D290096399D /* TWWalletCreateViewController.xib */; };
-		6E3E9F4A20B853820096399D /* TWAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F4820B853820096399D /* TWAccountViewController.m */; };
-		6E3E9F4B20B853820096399D /* TWAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E9F4920B853820096399D /* TWAccountViewController.xib */; };
 		6E3E9F5620B88EE70096399D /* TWExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F5520B88EE70096399D /* TWExchangeViewController.m */; };
 		6E3E9F5A20B88F000096399D /* TWExSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F5820B88F000096399D /* TWExSendViewController.m */; };
 		6E3E9F5B20B88F000096399D /* TWExSendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E9F5920B88F000096399D /* TWExSendViewController.xib */; };
@@ -33,8 +25,6 @@
 		6E3E9F7120B896E10096399D /* TWQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F7020B896E10096399D /* TWQRViewController.m */; };
 		6E3E9F7420B897080096399D /* TWQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F7320B897080096399D /* TWQRScanView.m */; };
 		6E3E9F7620B897E00096399D /* SGQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E9F7520B897DF0096399D /* SGQRCode.bundle */; };
-		6E3E9F7A20BA46B90096399D /* TWWalletImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F7820BA46B90096399D /* TWWalletImportViewController.m */; };
-		6E3E9F7B20BA46B90096399D /* TWWalletImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E9F7920BA46B90096399D /* TWWalletImportViewController.xib */; };
 		6E3E9F7F20BA4A990096399D /* TWVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F7D20BA4A990096399D /* TWVoteViewController.m */; };
 		6E3E9F8020BA4A990096399D /* TWVoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E9F7E20BA4A990096399D /* TWVoteViewController.xib */; };
 		6E3E9F8320BA4EC70096399D /* TWCandicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E9F8220BA4EC70096399D /* TWCandicateViewController.m */; };
@@ -136,7 +126,6 @@
 		6E93FF2920B09164000FD37D /* TWMainNodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2720B09164000FD37D /* TWMainNodeTableViewCell.xib */; };
 		6E93FF2D20B092BC000FD37D /* TWMainTokenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93FF2B20B092BC000FD37D /* TWMainTokenTableViewCell.m */; };
 		6E93FF2E20B092BC000FD37D /* TWMainTokenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2C20B092BC000FD37D /* TWMainTokenTableViewCell.xib */; };
-		6E93FF3020B0961F000FD37D /* TWWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF2F20B0961F000FD37D /* TWWalletViewController.xib */; };
 		6E93FF3220B09A4F000FD37D /* TWSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E93FF3120B09A4F000FD37D /* TWSettingViewController.xib */; };
 		6EA351B920AC7D1500AF1984 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351B820AC7D1500AF1984 /* AppDelegate.m */; };
 		6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351BB20AC7D1500AF1984 /* ViewController.m */; };
@@ -146,12 +135,21 @@
 		6EA351C720AC7D1500AF1984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351C620AC7D1500AF1984 /* main.m */; };
 		6EA351FA20AC82C200AF1984 /* TWMainInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351E720AC82C100AF1984 /* TWMainInfoViewController.m */; };
 		6EA351FB20AC82C200AF1984 /* TWSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351ED20AC82C100AF1984 /* TWSettingViewController.m */; };
-		6EA351FC20AC82C200AF1984 /* TWWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351F320AC82C100AF1984 /* TWWalletViewController.m */; };
 		6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351FD20AC830900AF1984 /* TWNetworkManager.m */; };
 		6EA3520220AC830A00AF1984 /* TWUIInitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */; };
 		6EA3520D20AC848300AF1984 /* libToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA3520920AC834400AF1984 /* libToolKit.a */; };
 		6EC46DB720BD2BB50059C68F /* UIViewController+ShowTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DB620BD2BB50059C68F /* UIViewController+ShowTip.m */; };
 		6EC46DBC20BD2F600059C68F /* UIViewController+BroadcastTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DBB20BD2F600059C68F /* UIViewController+BroadcastTransaction.m */; };
+		6EC46DCC20BD4C720059C68F /* TWWalletImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DC320BD4C720059C68F /* TWWalletImportViewController.xib */; };
+		6EC46DCD20BD4C720059C68F /* TWWalletCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DC620BD4C720059C68F /* TWWalletCreateViewController.m */; };
+		6EC46DCE20BD4C720059C68F /* TWWalletCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DC720BD4C720059C68F /* TWWalletCreateViewController.xib */; };
+		6EC46DCF20BD4C720059C68F /* TWWalletImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DC820BD4C720059C68F /* TWWalletImportViewController.m */; };
+		6EC46DD520BD4CB20059C68F /* TWWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DD320BD4CB10059C68F /* TWWalletViewController.xib */; };
+		6EC46DD620BD4CB20059C68F /* TWWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DD420BD4CB20059C68F /* TWWalletViewController.m */; };
+		6EC46DD820BD4CBE0059C68F /* TWAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DD720BD4CBE0059C68F /* TWAccountViewController.xib */; };
+		6EC46DDB20BD4CC40059C68F /* TWAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DDA20BD4CC40059C68F /* TWAccountViewController.m */; };
+		6EC46DE920BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DE620BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.m */; };
+		6EC46DEA20BD85BC0059C68F /* TWEllipticCurveCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DE720BD85BC0059C68F /* TWEllipticCurveCrypto.m */; };
 		6EED948920AEC2DA003FF63E /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED948820AEC2DA003FF63E /* UIColor+Theme.m */; };
 		6EED948C20AEC485003FF63E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED948B20AEC485003FF63E /* libsqlite3.tbd */; };
 		6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED949120AEC817003FF63E /* TWMainBasicViewController.m */; };
@@ -188,26 +186,12 @@
 		6E3E9F1E20B5B8330096399D /* TWAccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAccountManager.m; sourceTree = "<group>"; };
 		6E3E9F2020B5BA7B0096399D /* TWPriceUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWPriceUpdater.h; sourceTree = "<group>"; };
 		6E3E9F2120B5BA7B0096399D /* TWPriceUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWPriceUpdater.m; sourceTree = "<group>"; };
-		6E3E9F2820B65E2A0096399D /* GMEllipticCurveCrypto+hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMEllipticCurveCrypto+hash.m"; sourceTree = "<group>"; };
-		6E3E9F2920B65E2A0096399D /* GMEllipticCurveCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMEllipticCurveCrypto.h; sourceTree = "<group>"; };
-		6E3E9F2A20B65E2A0096399D /* GMEllipticCurveCrypto+hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMEllipticCurveCrypto+hash.h"; sourceTree = "<group>"; };
-		6E3E9F2B20B65E2A0096399D /* GMEllipticCurveCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMEllipticCurveCrypto.m; sourceTree = "<group>"; };
 		6E3E9F3020B6638B0096399D /* TWHexConvert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWHexConvert.h; sourceTree = "<group>"; };
 		6E3E9F3120B6638B0096399D /* TWHexConvert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWHexConvert.m; sourceTree = "<group>"; };
 		6E3E9F3320B663A30096399D /* TWAES128.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWAES128.h; sourceTree = "<group>"; };
 		6E3E9F3420B663A30096399D /* TWAES128.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAES128.m; sourceTree = "<group>"; };
 		6E3E9F3620B663E30096399D /* NSData+AES128.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+AES128.h"; sourceTree = "<group>"; };
 		6E3E9F3720B663E30096399D /* NSData+AES128.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES128.m"; sourceTree = "<group>"; };
-		6E3E9F3A20B7A9C40096399D /* TWEllipticCurveCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWEllipticCurveCrypto.h; sourceTree = "<group>"; };
-		6E3E9F3B20B7A9C40096399D /* TWEllipticCurveCrypto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWEllipticCurveCrypto.m; sourceTree = "<group>"; };
-		6E3E9F3F20B7B3A00096399D /* TWEllipticCurveCrypto+Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TWEllipticCurveCrypto+Hash.h"; sourceTree = "<group>"; };
-		6E3E9F4020B7B3A00096399D /* TWEllipticCurveCrypto+Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TWEllipticCurveCrypto+Hash.m"; sourceTree = "<group>"; };
-		6E3E9F4220B84D290096399D /* TWWalletCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWWalletCreateViewController.h; sourceTree = "<group>"; };
-		6E3E9F4320B84D290096399D /* TWWalletCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWWalletCreateViewController.m; sourceTree = "<group>"; };
-		6E3E9F4420B84D290096399D /* TWWalletCreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWWalletCreateViewController.xib; sourceTree = "<group>"; };
-		6E3E9F4720B853820096399D /* TWAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWAccountViewController.h; sourceTree = "<group>"; };
-		6E3E9F4820B853820096399D /* TWAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAccountViewController.m; sourceTree = "<group>"; };
-		6E3E9F4920B853820096399D /* TWAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWAccountViewController.xib; sourceTree = "<group>"; };
 		6E3E9F5420B88EE70096399D /* TWExchangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWExchangeViewController.h; sourceTree = "<group>"; };
 		6E3E9F5520B88EE70096399D /* TWExchangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWExchangeViewController.m; sourceTree = "<group>"; };
 		6E3E9F5720B88F000096399D /* TWExSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWExSendViewController.h; sourceTree = "<group>"; };
@@ -225,9 +209,6 @@
 		6E3E9F7220B897080096399D /* TWQRScanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWQRScanView.h; sourceTree = "<group>"; };
 		6E3E9F7320B897080096399D /* TWQRScanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWQRScanView.m; sourceTree = "<group>"; };
 		6E3E9F7520B897DF0096399D /* SGQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SGQRCode.bundle; sourceTree = "<group>"; };
-		6E3E9F7720BA46B90096399D /* TWWalletImportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWWalletImportViewController.h; sourceTree = "<group>"; };
-		6E3E9F7820BA46B90096399D /* TWWalletImportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWWalletImportViewController.m; sourceTree = "<group>"; };
-		6E3E9F7920BA46B90096399D /* TWWalletImportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWWalletImportViewController.xib; sourceTree = "<group>"; };
 		6E3E9F7C20BA4A990096399D /* TWVoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWVoteViewController.h; sourceTree = "<group>"; };
 		6E3E9F7D20BA4A990096399D /* TWVoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWVoteViewController.m; sourceTree = "<group>"; };
 		6E3E9F7E20BA4A990096399D /* TWVoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWVoteViewController.xib; sourceTree = "<group>"; };
@@ -425,7 +406,6 @@
 		6E93FF2A20B092BC000FD37D /* TWMainTokenTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWMainTokenTableViewCell.h; sourceTree = "<group>"; };
 		6E93FF2B20B092BC000FD37D /* TWMainTokenTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWMainTokenTableViewCell.m; sourceTree = "<group>"; };
 		6E93FF2C20B092BC000FD37D /* TWMainTokenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWMainTokenTableViewCell.xib; sourceTree = "<group>"; };
-		6E93FF2F20B0961F000FD37D /* TWWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWWalletViewController.xib; sourceTree = "<group>"; };
 		6E93FF3120B09A4F000FD37D /* TWSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWSettingViewController.xib; sourceTree = "<group>"; };
 		6EA351B420AC7D1500AF1984 /* TronWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TronWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA351B720AC7D1500AF1984 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -441,8 +421,6 @@
 		6EA351E720AC82C100AF1984 /* TWMainInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMainInfoViewController.m; sourceTree = "<group>"; };
 		6EA351EC20AC82C100AF1984 /* TWSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSettingViewController.h; sourceTree = "<group>"; };
 		6EA351ED20AC82C100AF1984 /* TWSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSettingViewController.m; sourceTree = "<group>"; };
-		6EA351F220AC82C100AF1984 /* TWWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWalletViewController.h; sourceTree = "<group>"; };
-		6EA351F320AC82C100AF1984 /* TWWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWalletViewController.m; sourceTree = "<group>"; };
 		6EA351FD20AC830900AF1984 /* TWNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWNetworkManager.m; sourceTree = "<group>"; };
 		6EA351FE20AC830A00AF1984 /* TWNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWNetworkManager.h; sourceTree = "<group>"; };
 		6EA351FF20AC830A00AF1984 /* TWUIInitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWUIInitManager.m; sourceTree = "<group>"; };
@@ -452,6 +430,22 @@
 		6EC46DB620BD2BB50059C68F /* UIViewController+ShowTip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ShowTip.m"; sourceTree = "<group>"; };
 		6EC46DBA20BD2F600059C68F /* UIViewController+BroadcastTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BroadcastTransaction.h"; sourceTree = "<group>"; };
 		6EC46DBB20BD2F600059C68F /* UIViewController+BroadcastTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BroadcastTransaction.m"; sourceTree = "<group>"; };
+		6EC46DC220BD4C720059C68F /* TWWalletCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWalletCreateViewController.h; sourceTree = "<group>"; };
+		6EC46DC320BD4C720059C68F /* TWWalletImportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWWalletImportViewController.xib; sourceTree = "<group>"; };
+		6EC46DC420BD4C720059C68F /* TWWalletImportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWalletImportViewController.h; sourceTree = "<group>"; };
+		6EC46DC620BD4C720059C68F /* TWWalletCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWalletCreateViewController.m; sourceTree = "<group>"; };
+		6EC46DC720BD4C720059C68F /* TWWalletCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWWalletCreateViewController.xib; sourceTree = "<group>"; };
+		6EC46DC820BD4C720059C68F /* TWWalletImportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWalletImportViewController.m; sourceTree = "<group>"; };
+		6EC46DD220BD4CB10059C68F /* TWWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWalletViewController.h; sourceTree = "<group>"; };
+		6EC46DD320BD4CB10059C68F /* TWWalletViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWWalletViewController.xib; sourceTree = "<group>"; };
+		6EC46DD420BD4CB20059C68F /* TWWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWalletViewController.m; sourceTree = "<group>"; };
+		6EC46DD720BD4CBE0059C68F /* TWAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWAccountViewController.xib; sourceTree = "<group>"; };
+		6EC46DD920BD4CC30059C68F /* TWAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAccountViewController.h; sourceTree = "<group>"; };
+		6EC46DDA20BD4CC40059C68F /* TWAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAccountViewController.m; sourceTree = "<group>"; };
+		6EC46DE520BD85BC0059C68F /* TWEllipticCurveCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWEllipticCurveCrypto.h; sourceTree = "<group>"; };
+		6EC46DE620BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TWEllipticCurveCrypto+Hash.m"; sourceTree = "<group>"; };
+		6EC46DE720BD85BC0059C68F /* TWEllipticCurveCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWEllipticCurveCrypto.m; sourceTree = "<group>"; };
+		6EC46DE820BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TWEllipticCurveCrypto+Hash.h"; sourceTree = "<group>"; };
 		6EED948320AEC21E003FF63E /* TronWallet.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TronWallet.pch; sourceTree = "<group>"; };
 		6EED948720AEC2DA003FF63E /* UIColor+Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
 		6EED948820AEC2DA003FF63E /* UIColor+Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
@@ -495,21 +489,6 @@
 				268A9A5C3A78189BCD39F032 /* Pods-TronWallet.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		6E3E9F2720B65E2A0096399D /* GMEllipticCurveCrypto */ = {
-			isa = PBXGroup;
-			children = (
-				6E3E9F2920B65E2A0096399D /* GMEllipticCurveCrypto.h */,
-				6E3E9F2B20B65E2A0096399D /* GMEllipticCurveCrypto.m */,
-				6E3E9F2A20B65E2A0096399D /* GMEllipticCurveCrypto+hash.h */,
-				6E3E9F2820B65E2A0096399D /* GMEllipticCurveCrypto+hash.m */,
-				6E3E9F3A20B7A9C40096399D /* TWEllipticCurveCrypto.h */,
-				6E3E9F3B20B7A9C40096399D /* TWEllipticCurveCrypto.m */,
-				6E3E9F3F20B7B3A00096399D /* TWEllipticCurveCrypto+Hash.h */,
-				6E3E9F4020B7B3A00096399D /* TWEllipticCurveCrypto+Hash.m */,
-			);
-			path = GMEllipticCurveCrypto;
 			sourceTree = "<group>";
 		};
 		6E3E9F4C20B88ED50096399D /* Exchange */ = {
@@ -941,13 +920,6 @@
 			path = tokens;
 			sourceTree = "<group>";
 		};
-		6E93FF1F20B08E87000FD37D /* account */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = account;
-			sourceTree = "<group>";
-		};
 		6EA351AB20AC7D1500AF1984 = {
 			isa = PBXGroup;
 			children = (
@@ -997,6 +969,7 @@
 		6EA351E320AC82C100AF1984 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				6EC46DC020BD4C720059C68F /* Account */,
 				6EA351E420AC82C100AF1984 /* Main */,
 				6EA351EA20AC82C100AF1984 /* Setting */,
 				6EA351F020AC82C100AF1984 /* Wallet */,
@@ -1048,7 +1021,6 @@
 			isa = PBXGroup;
 			children = (
 				6E93FEFF20AF1947000FD37D /* blockchain */,
-				6E93FF1F20B08E87000FD37D /* account */,
 				6E93FF1D20B08E87000FD37D /* nodes */,
 				6E93FF1C20B08E87000FD37D /* representatives */,
 				6E93FF1E20B08E87000FD37D /* tokens */,
@@ -1112,18 +1084,9 @@
 		6EA351F120AC82C100AF1984 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				6EA351F220AC82C100AF1984 /* TWWalletViewController.h */,
-				6EA351F320AC82C100AF1984 /* TWWalletViewController.m */,
-				6E93FF2F20B0961F000FD37D /* TWWalletViewController.xib */,
-				6E3E9F4220B84D290096399D /* TWWalletCreateViewController.h */,
-				6E3E9F4320B84D290096399D /* TWWalletCreateViewController.m */,
-				6E3E9F4420B84D290096399D /* TWWalletCreateViewController.xib */,
-				6E3E9F4720B853820096399D /* TWAccountViewController.h */,
-				6E3E9F4820B853820096399D /* TWAccountViewController.m */,
-				6E3E9F4920B853820096399D /* TWAccountViewController.xib */,
-				6E3E9F7720BA46B90096399D /* TWWalletImportViewController.h */,
-				6E3E9F7820BA46B90096399D /* TWWalletImportViewController.m */,
-				6E3E9F7920BA46B90096399D /* TWWalletImportViewController.xib */,
+				6EC46DD220BD4CB10059C68F /* TWWalletViewController.h */,
+				6EC46DD420BD4CB20059C68F /* TWWalletViewController.m */,
+				6EC46DD320BD4CB10059C68F /* TWWalletViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1166,9 +1129,53 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6EC46DC020BD4C720059C68F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				6EC46DC120BD4C720059C68F /* controller */,
+				6EC46DCB20BD4C720059C68F /* view */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		6EC46DC120BD4C720059C68F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EC46DD920BD4CC30059C68F /* TWAccountViewController.h */,
+				6EC46DDA20BD4CC40059C68F /* TWAccountViewController.m */,
+				6EC46DD720BD4CBE0059C68F /* TWAccountViewController.xib */,
+				6EC46DC220BD4C720059C68F /* TWWalletCreateViewController.h */,
+				6EC46DC620BD4C720059C68F /* TWWalletCreateViewController.m */,
+				6EC46DC720BD4C720059C68F /* TWWalletCreateViewController.xib */,
+				6EC46DC420BD4C720059C68F /* TWWalletImportViewController.h */,
+				6EC46DC820BD4C720059C68F /* TWWalletImportViewController.m */,
+				6EC46DC320BD4C720059C68F /* TWWalletImportViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6EC46DCB20BD4C720059C68F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		6EC46DE420BD85BC0059C68F /* EllipticCurveCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				6EC46DE520BD85BC0059C68F /* TWEllipticCurveCrypto.h */,
+				6EC46DE620BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.m */,
+				6EC46DE720BD85BC0059C68F /* TWEllipticCurveCrypto.m */,
+				6EC46DE820BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.h */,
+			);
+			path = EllipticCurveCrypto;
+			sourceTree = "<group>";
+		};
 		6EED948420AEC2C7003FF63E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6EC46DE420BD85BC0059C68F /* EllipticCurveCrypto */,
 				6E40347420BBB66D008140F5 /* Ethers */,
 				6E3E9F6E20B896D30096399D /* QR */,
 				6EED948720AEC2DA003FF63E /* UIColor+Theme.h */,
@@ -1210,7 +1217,6 @@
 				6E40343020BBB482008140F5 /* trezor-crypto */,
 				6E40342920BBB3C8008140F5 /* libtommath-1.0 */,
 				6E40342720BBB3BE008140F5 /* BreadWallet */,
-				6E3E9F2720B65E2A0096399D /* GMEllipticCurveCrypto */,
 				6E4AD54C20B463350012DCD1 /* base58 */,
 			);
 			path = ThirdParty;
@@ -1315,15 +1321,16 @@
 				6E93FF2920B09164000FD37D /* TWMainNodeTableViewCell.xib in Resources */,
 				6E3E9F9320BAF6250096399D /* TWExFreezeViewController.xib in Resources */,
 				6E3E9F8B20BA4F420096399D /* TWCandicateTableViewCell.xib in Resources */,
+				6EC46DCC20BD4C720059C68F /* TWWalletImportViewController.xib in Resources */,
 				6E4AD55D20B4F8520012DCD1 /* TWConnectViewController.xib in Resources */,
 				6E93FF1120AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib in Resources */,
 				6E3E9F8020BA4A990096399D /* TWVoteViewController.xib in Resources */,
+				6EC46DD520BD4CB20059C68F /* TWWalletViewController.xib in Resources */,
 				6EA351C120AC7D1500AF1984 /* Assets.xcassets in Resources */,
-				6E93FF3020B0961F000FD37D /* TWWalletViewController.xib in Resources */,
-				6E3E9F7B20BA46B90096399D /* TWWalletImportViewController.xib in Resources */,
-				6E3E9F4B20B853820096399D /* TWAccountViewController.xib in Resources */,
+				6EC46DCE20BD4C720059C68F /* TWWalletCreateViewController.xib in Resources */,
 				6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */,
 				6E3E9F7620B897E00096399D /* SGQRCode.bundle in Resources */,
+				6EC46DD820BD4CBE0059C68F /* TWAccountViewController.xib in Resources */,
 				6E40346920BBB483008140F5 /* secp256k1.table in Resources */,
 				6E93FF0C20AF20BA000FD37D /* TWTransInfoTableViewCell.xib in Resources */,
 				6E9103DF20B2A5A8006FDEA1 /* http_request.proto in Resources */,
@@ -1331,7 +1338,6 @@
 				6E3E9F5B20B88F000096399D /* TWExSendViewController.xib in Resources */,
 				6E3E9F6020B88F160096399D /* TWExReceiveViewController.xib in Resources */,
 				6E93FF2420B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib in Resources */,
-				6E3E9F4620B84D290096399D /* TWWalletCreateViewController.xib in Resources */,
 				6E9103DE20B2A5A8006FDEA1 /* log_severity.proto in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1408,6 +1414,7 @@
 				6E93FF2320B08EB2000FD37D /* TWMainPresentativesTableViewCell.m in Sources */,
 				6E9103C920B2A5A8006FDEA1 /* Usage.pbobjc.m in Sources */,
 				6EA351BC20AC7D1500AF1984 /* ViewController.m in Sources */,
+				6EC46DE920BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.m in Sources */,
 				6E40346A20BBB483008140F5 /* aestab.c in Sources */,
 				6E3E9F7120B896E10096399D /* TWQRViewController.m in Sources */,
 				6EA351C720AC7D1500AF1984 /* main.m in Sources */,
@@ -1418,6 +1425,7 @@
 				6E40346220BBB483008140F5 /* rand.c in Sources */,
 				6E9103D420B2A5A8006FDEA1 /* Consumer.pbobjc.m in Sources */,
 				6E3E9F3220B6638B0096399D /* TWHexConvert.m in Sources */,
+				6EC46DCF20BD4C720059C68F /* TWWalletImportViewController.m in Sources */,
 				6E9103D320B2A5A8006FDEA1 /* Logging.pbobjc.m in Sources */,
 				6E3E9F3520B663A30096399D /* TWAES128.m in Sources */,
 				6E3E9F1F20B5B8330096399D /* TWAccountManager.m in Sources */,
@@ -1441,18 +1449,18 @@
 				6E4AD55820B463350012DCD1 /* NSData+Hashing.m in Sources */,
 				6E9103C320B2A5A8006FDEA1 /* Money.pbobjc.m in Sources */,
 				6E9103C220B2A5A8006FDEA1 /* Date.pbobjc.m in Sources */,
-				6E3E9F4520B84D290096399D /* TWWalletCreateViewController.m in Sources */,
 				6E40345F20BBB483008140F5 /* aeskey.c in Sources */,
 				6E93FF2D20B092BC000FD37D /* TWMainTokenTableViewCell.m in Sources */,
 				6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */,
 				6E4AD55520B463350012DCD1 /* NS+BTCBase58.m in Sources */,
-				6E3E9F7A20BA46B90096399D /* TWWalletImportViewController.m in Sources */,
+				6EC46DD620BD4CB20059C68F /* TWWalletViewController.m in Sources */,
 				6E91037420B2A370006FDEA1 /* Api.pbobjc.m in Sources */,
 				6EC46DB720BD2BB50059C68F /* UIViewController+ShowTip.m in Sources */,
 				6E93FF0720AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m in Sources */,
 				6E40346620BBB483008140F5 /* aes_modes.c in Sources */,
 				6E91037720B2A370006FDEA1 /* Tron.pbobjc.m in Sources */,
 				6E3E9F1820B593390096399D /* TWQRCoderGenerator.m in Sources */,
+				6EC46DDB20BD4CC40059C68F /* TWAccountViewController.m in Sources */,
 				6EED949520AEC885003FF63E /* TWBlockChainViewController.m in Sources */,
 				6E40346B20BBB483008140F5 /* bip32.c in Sources */,
 				6EA3520120AC830A00AF1984 /* TWNetworkManager.m in Sources */,
@@ -1473,25 +1481,23 @@
 				6E40346120BBB483008140F5 /* sha2.c in Sources */,
 				6E91041120B2EB0C006FDEA1 /* NSData+HexToString.m in Sources */,
 				6E9103C120B2A5A8006FDEA1 /* Dayofweek.pbobjc.m in Sources */,
+				6EC46DEA20BD85BC0059C68F /* TWEllipticCurveCrypto.m in Sources */,
 				6E3E9F8620BA4EDC0096399D /* TWYourVotesViewController.m in Sources */,
 				6E9103C020B2A5A8006FDEA1 /* Operations.pbobjc.m in Sources */,
-				6E3E9F2F20B65E2A0096399D /* GMEllipticCurveCrypto.m in Sources */,
 				6E91040920B2AE79006FDEA1 /* Descriptor.pbobjc.m in Sources */,
 				6E3E9F8A20BA4F420096399D /* TWCandicateTableViewCell.m in Sources */,
 				6E91037520B2A370006FDEA1 /* TronInventoryItems.pbobjc.m in Sources */,
 				6E40348320BBB66D008140F5 /* SecureData.m in Sources */,
 				6E9103DD20B2A5A8006FDEA1 /* LogSeverity.pbobjc.m in Sources */,
-				6E3E9F4120B7B3A00096399D /* TWEllipticCurveCrypto+Hash.m in Sources */,
 				6E3E9F5A20B88F000096399D /* TWExSendViewController.m in Sources */,
 				6E9103E020B2A5A8006FDEA1 /* HTTPRequest.pbobjc.m in Sources */,
 				6E91037620B2A370006FDEA1 /* Discover.pbobjc.m in Sources */,
-				6E3E9F4A20B853820096399D /* TWAccountViewController.m in Sources */,
 				6E93FF1420AF25E9000FD37D /* TWMainInfoTipHeader.m in Sources */,
 				6E9103D720B2A5A8006FDEA1 /* HTTP.pbobjc.m in Sources */,
+				6EC46DCD20BD4C720059C68F /* TWWalletCreateViewController.m in Sources */,
 				6E3E9F5F20B88F160096399D /* TWExReceiveViewController.m in Sources */,
 				6E93FF1720AFB9C5000FD37D /* TKRequestHandler+MainBlock.m in Sources */,
 				6EA3520220AC830A00AF1984 /* TWUIInitManager.m in Sources */,
-				6E3E9F2E20B65E2A0096399D /* GMEllipticCurveCrypto+hash.m in Sources */,
 				6E93FF0B20AF20BA000FD37D /* TWTransInfoTableViewCell.m in Sources */,
 				6E40346D20BBB483008140F5 /* base58.c in Sources */,
 				6E3E9F8E20BAAA470096399D /* TWVoteWitnessModel.m in Sources */,
@@ -1503,7 +1509,6 @@
 				6E3E9F2220B5BA7B0096399D /* TWPriceUpdater.m in Sources */,
 				6E40346720BBB483008140F5 /* bignum.c in Sources */,
 				6E3E9F3820B663E30096399D /* NSData+AES128.m in Sources */,
-				6EA351FC20AC82C200AF1984 /* TWWalletViewController.m in Sources */,
 				6E40345E20BBB483008140F5 /* bip39.c in Sources */,
 				6E9103CD20B2A5A8006FDEA1 /* Log.pbobjc.m in Sources */,
 				6E9103D620B2A5A8006FDEA1 /* Documentation.pbobjc.m in Sources */,
@@ -1518,7 +1523,6 @@
 				6EA351FB20AC82C200AF1984 /* TWSettingViewController.m in Sources */,
 				6E93FF1020AF22BC000FD37D /* TWMainBlockInfoTableViewCell.m in Sources */,
 				6E9103CB20B2A5A8006FDEA1 /* Backend.pbobjc.m in Sources */,
-				6E3E9F3C20B7A9C40096399D /* TWEllipticCurveCrypto.m in Sources */,
 				6E40348420BBB66D008140F5 /* RLPSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1656,6 +1660,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RQY8SXWN5H;
 				GCC_PREFIX_HEADER = TronWallet/TronWallet.pch;
 				HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/ToolKit/ToolKit/**",
@@ -1688,6 +1693,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RQY8SXWN5H;
 				GCC_PREFIX_HEADER = TronWallet/TronWallet.pch;
 				HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/ToolKit/ToolKit/**",

@@ -22,6 +22,11 @@
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor themeDarkBgColor];
     self.title = @"CONNECTION";
+    
+    TWNetworkManager *manager =  [TWNetworkManager sharedInstance];
+    self.ipTextField.text = [manager ip];
+    self.portTextField.text =[manager port];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +67,7 @@
     
     [[TWNetworkManager sharedInstance]resetIp:ip andPort:port];
 }
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {

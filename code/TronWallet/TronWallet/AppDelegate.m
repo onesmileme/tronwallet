@@ -12,6 +12,7 @@
 #import "ViewController.h"
 #import "TWWalletAccountClient.h"
 #import "TWWalletCreateViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,8 +28,8 @@
     [TWUIInitManager sharedInstance];
     [TWNetworkManager sharedInstance];
     
-
     self.originRootController =self.window.rootViewController;
+    
     if (![TWWalletAccountClient loadPwdKey]) {
         TWWalletCreateViewController *walletController = [[TWWalletCreateViewController alloc]initWithNibName:@"TWWalletCreateViewController" bundle:nil];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:walletController];
@@ -37,16 +38,25 @@
         NSString *password = [TWWalletAccountClient loadPwdKey];
         _walletClient = [TWWalletAccountClient walletWithPassword:password];
     }
-
     
     return YES;
 }
 
 -(void)createAccountDone:(UINavigationController *)navController
 {
-//    NSData *priKey = [TWWalletAccountClient loadPriKey];
-//    self.walletClient = [[TWWalletAccountClient alloc] initWithPriKey:priKey];
+
     self.window.rootViewController = self.originRootController;
+    ViewController *controller = (ViewController *)self.originRootController;
+    [controller reloadAll];
+}
+
+-(void)reset
+{
+    [_walletClient clear];
+    self.walletClient = nil;
+    TWWalletCreateViewController *walletController = [[TWWalletCreateViewController alloc]initWithNibName:@"TWWalletCreateViewController" bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:walletController];
+    self.window.rootViewController = navController;    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

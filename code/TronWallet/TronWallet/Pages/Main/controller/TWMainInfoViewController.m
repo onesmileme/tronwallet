@@ -35,7 +35,7 @@
         insets = [[[UIApplication sharedApplication] keyWindow] safeAreaInsets];
     }
     
-    NSArray *items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS",@"ACCOUNT"];
+    NSArray *items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS"];//,@"ACCOUNT"
     _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, insets.top, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeDefault];
     [self.view addSubview:_topScrollView];
     __weak typeof(self) wself = self;
@@ -63,8 +63,8 @@
     _controllers = @[[[TWBlockChainViewController alloc]init],
                      [[TWRepresentativeViewController alloc]init],
                      [[TWNodesViewController alloc]init],
-                     [[TWTokensViewController alloc]init],
-                     [[TWAccountsViewController alloc]init]
+                     [[TWTokensViewController alloc]init]
+//                     [[TWAccountsViewController alloc]init]
                      ];
     [_pageContainerViewController setViewControllers:@[_controllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     

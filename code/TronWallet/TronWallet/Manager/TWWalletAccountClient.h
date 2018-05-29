@@ -15,6 +15,10 @@
 
 @property(nonatomic , strong , readonly) TWEllipticCurveCrypto *crypto;
 
++(NSString *)loadPwdKey;
+
++(NSString *)loadPriKey;
+
 /*
  * load with current encoded password
  */
@@ -26,9 +30,7 @@
 
 -(instancetype)initWithPriKeyStr:(NSString *)priKey;
 
-+(NSString *)loadPwdKey;
-
-+(NSString *)loadPriKey;
+-(void)clear;
 
 -(void)store:(NSString *)password;
 
@@ -46,4 +48,6 @@
 
 +(NSData *)convertPassword:(NSString *)password;
 +(NSData *)getEncKey:(NSString *)password;
+
+
 @end

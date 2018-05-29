@@ -11,9 +11,11 @@
 @interface TWAccountViewController : UIViewController
 
 @property(nonatomic , strong) IBOutlet UIScrollView *scrollView;
-@property(nonatomic , strong) IBOutlet UIView *conentView;
+@property(nonatomic , strong) IBOutlet UIView *contentView;
 @property(nonatomic , strong) IBOutlet UIImageView *addressQR;
 @property(nonatomic , strong) IBOutlet UIImageView *priKeyQR;
+@property(nonatomic , strong) IBOutlet UILabel *addressLabel;
+@property(nonatomic , strong) IBOutlet UILabel *privateKeyLabel;
 @property(nonatomic , strong) IBOutlet NSLayoutConstraint *contentWidth;
 
 -(void)setupClient:(TWWalletAccountClient *)client cold:(BOOL)cold;

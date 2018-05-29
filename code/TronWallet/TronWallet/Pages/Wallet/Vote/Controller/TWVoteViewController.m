@@ -34,7 +34,7 @@
     }
     
     NSArray *items = @[@"CADIDATES",@"YOUR VOTES"];
-    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeEqualWidth];
+    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kTopScrollHeight) items:items type:TWTopScrollViewTypeEqualWidth];
     [self.containerView addSubview:_topScrollView];
     __weak typeof(self) wself = self;
     _topScrollView.chooseBlock = ^(NSInteger index,NSInteger lastIndex) {

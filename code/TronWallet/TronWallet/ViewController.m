@@ -8,15 +8,7 @@
 
 #import "ViewController.h"
 #import "TKTabControllerIniter.h"
-#import "MBProgressHUD.h"
-//#import "UIAlertView+BlocksKit.h"
-//#import "EAMessageViewController.h"
-//#import "EATaskViewController.h"
-//#import "EAReportViewController.h"
-//#import "EARecordViewController.h"
-//#import "EASubscribeViewController.h"
-//#import "EAAddRecordView.h"
-
+#import "TWAccountViewController.h"
 
 @interface ViewController ()<UITabBarControllerDelegate>
 
@@ -26,13 +18,13 @@
 
 -(void)initItems
 {
-    TKTabControllerItem *main = [[TKTabControllerItem alloc]initWithControllerName:@"TWMainInfoViewController" title:@"BLOCK" tabImageName:@"tab_news" selectedImageName:@"tab_news_pre"];
+    TKTabControllerItem *main = [[TKTabControllerItem alloc]initWithControllerName:@"TWMainInfoViewController" title:@"BLOCK" tabImageName:nil selectedImageName:nil];
     main.addNavController = true;
     
-    TKTabControllerItem *wallet = [[TKTabControllerItem alloc]initWithControllerName:@"TWWalletViewController" title:@"WALLET" tabImageName:@"tab_task" selectedImageName:@"tab_task_pre"];
+    TKTabControllerItem *wallet = [[TKTabControllerItem alloc]initWithControllerName:@"TWWalletViewController" title:@"WALLET" tabImageName:nil selectedImageName:nil];
     wallet.addNavController = true;
     
-    TKTabControllerItem *setting = [[TKTabControllerItem alloc]initWithControllerName:@"TWSettingViewController" title:@"SET" tabImageName:@"tab_add" selectedImageName:@"tab_add"];
+    TKTabControllerItem *setting = [[TKTabControllerItem alloc]initWithControllerName:@"TWSettingViewController" title:@"SET" tabImageName:nil selectedImageName:nil];
     setting.addNavController = true;
     
     NSArray *tabItems = @[main,wallet,setting];
@@ -51,6 +43,7 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = true;
     self.delegate = self;
     
+//    [self test];
 }
 
 
@@ -71,6 +64,16 @@
     [self initItems];
 }
 
+
+-(void)test
+{
+    UINavigationController *nav = self.viewControllers[0 ];
+    
+    TWAccountViewController *controller = [[TWAccountViewController alloc] initWithNibName:@"TWAccountViewController" bundle:nil];
+    controller.hidesBottomBarWhenPushed = YES;
+    [controller setupClient:AppWalletClient cold:YES];
+    [nav pushViewController:controller animated:YES];
+}
 
 
 #pragma mark -

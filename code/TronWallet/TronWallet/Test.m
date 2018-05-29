@@ -17,8 +17,8 @@
 #import "NSData+HexToString.h"
 #import "BTCBase58.h"
 #import "NSData+Hashing.h"
-#import <ios-secp256k1/secp256k1/secp256k1.h>
-#import <ios-secp256k1/secp256k1/secp256k1_recovery.h>
+//#import <ios-secp256k1/secp256k1/secp256k1.h>
+//#import <ios-secp256k1/secp256k1/secp256k1_recovery.h>
 
 
 @implementation Test
@@ -96,6 +96,8 @@
     [signData appendBytes:&l_pubkey length:1];
     NSLog(@"sign data is: \n%@\n",signData);
 }
+
+#if 0
 
 +(void)revFake
 {
@@ -259,6 +261,8 @@
         
     });
 }
+
+#endif
 
 +(void)hehe
 {
