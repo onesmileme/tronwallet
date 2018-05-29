@@ -27,6 +27,7 @@
 
 #define AppWalletClient [(AppDelegate *)[[UIApplication sharedApplication] delegate] walletClient]
 
+#define kDense 1000000.0
 
 #endif
 

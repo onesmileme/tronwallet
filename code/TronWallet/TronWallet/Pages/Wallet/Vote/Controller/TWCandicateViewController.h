@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "TWMainBasicViewController.h"
+#import "TWVoteWitnessModel.h"
 
 @interface TWCandicateViewController : TWMainBasicViewController
 
--(NSArray *)voteWitness;
+-(NSArray<TWVoteWitnessModel *> *)voteWitness;
+
+-(void)refresh;
 
 @end

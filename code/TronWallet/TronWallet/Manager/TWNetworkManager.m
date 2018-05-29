@@ -51,8 +51,6 @@ IMP_SINGLETON
     if (self) {
         _extraInfo = [[NSMutableDictionary alloc]init];
         
-//        NSString *notificatioName = kTKNetworkChangeNotification;
-
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         self.nodeIp = [defaults objectForKey:kNodeIpKey];
         self.nodePort = [defaults objectForKey:kNodePortKey];

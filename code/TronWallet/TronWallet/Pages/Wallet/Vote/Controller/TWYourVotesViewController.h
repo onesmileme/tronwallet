@@ -11,4 +11,6 @@
 
 @interface TWYourVotesViewController : TWMainBasicViewController
 
+-(void)refresh;
+
 @end

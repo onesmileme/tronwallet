@@ -11,6 +11,8 @@
 #import "NS+BTCBase58.h"
 #import "TWWalletAccountClient.h"
 
+             //1000000
+
 @interface TWExSendViewController ()<UITextFieldDelegate>
 
 @end
@@ -24,7 +26,7 @@
     [self.view addGestureRecognizer:tap];
     
 #if DEBUG
-    self.toLabel.text = @"27guAkL1Ny136ZoY6hMykPC3xt4Y93twFgf";
+    self.toLabel.text = @"27Qce6zrBTxKUk7kw665oQiSiYQUNSgXSDW";
 #endif
     
 }
@@ -32,6 +34,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self refreshAmount];
+}
+
+-(void)refreshAmount
+{
+    TWWalletAccountClient *client = AppWalletClient;
+    self.avaiableLabel.text = [NSString stringWithFormat:@"Avaiable %.0f",(client.account.balance/kDense)];
 }
 
 -(void)onTap:(UITapGestureRecognizer *)gesture
@@ -69,14 +83,25 @@
 -(void)reallySend
 {
     TransferContract *contract = [[TransferContract alloc]init];
-    contract.toAddress =  BTCDataFromBase58(_toLabel.text);
+    contract.toAddress =  BTCDataFromBase58Check(_toLabel.text); 
 //    NSString *priKey = [TWWalletAccountClient loadPriKey];
     TWWalletAccountClient *client = AppWalletClient;
-    contract.ownerAddress = [client address];
-    contract.amount = [_amountTextField.text integerValue];
+    NSString *baseAddress = [client base58OwnerAddress];
+    contract.ownerAddress = BTCDataFromBase58Check(baseAddress);//[client address];
+    contract.amount = [_amountTextField.text integerValue]*kDense;
+    
+    /*
+     if(isTrxCoin) {
+     Contract.TransferContract contract = WalletClient.createTransferContract(toRaw, WalletClient.decodeFromBase58Check(mAddress), (long) (amount * 1000000.0d));
+     transaction = WalletClient.createTransaction4Transfer(contract);
+     } else {
+     transaction = WalletClient.createTransferAssetTransaction(toRaw, asset.getBytes(), WalletClient.decodeFromBase58Check(mAddress), (long) amount);
+     }
+     */
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
+    
     [wallet createTransactionWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
         //update amount
         if (error) {
@@ -84,6 +109,9 @@
             [hud hideAnimated:YES afterDelay:0.7 ];
             return ;
         }
+        
+        response = [client signTransaction:response];
+        
         [wallet broadcastTransactionWithRequest:response handler:^(Return * _Nullable response, NSError * _Nullable error) {
             
             if (error) {
@@ -91,11 +119,15 @@
             }else{
                 if (response.code == Return_response_code_Success) {
                     hud.label.text = @"Success";
+                    
+                    [client refreshAccount:^(Account *account, NSError *error) {
+                        [self refreshAmount];
+                    }];
+                    
                 }else{
                     hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
                 }
             }
-            
             [hud hideAnimated:YES afterDelay:0.7 ];
         }];
         
@@ -111,10 +143,10 @@
         tip = @"Please choose amount";
     }else{
         TWWalletAccountClient *accountClient = AppWalletClient;
-//        Account *account = accountClient.account;
-//        if (account.balance < self.amountTextField.text.integerValue) {
-//            tip = @"Input amount too much";
-//        }
+        Account *account = accountClient.account;
+        if (account.balance < self.amountTextField.text.integerValue) {
+            tip = @"Input amount too much";
+        }
     }
     
     if (tip) {

@@ -7,7 +7,7 @@
 //
 
 #import "TWExFreezeViewController.h"
-
+#import "TKCommonTools.h"
 @interface TWExFreezeViewController ()<UITextFieldDelegate>
 
 @end
@@ -40,18 +40,43 @@
 
 -(void)updateUI:(Account *)account
 {
+    long freezed = 0;
+    long unfreezable = 0;
+    long expire = 0;
+    NSTimeInterval current = [[NSDate date] timeIntervalSince1970];
+    for (Account_Frozen *frozen in account.frozenArray) {
+        freezed += frozen.frozenBalance;
+        if (frozen.expireTime > expire) {
+            expire = frozen.expireTime;
+        }
+        if (frozen.expireTime < current) {
+            unfreezable += frozen.frozenBalance;
+        }
+    }
+    
+    //TODO add local us format
+    _fronzenLabel.text = [@(freezed/kDense) description];
+    _currentTpLabel.text = [@(freezed/kDense) description];
+    _currentEntropyLabel.text = @"0";//[@(account.)];
+    _expireLabel.text = (expire == 0 ? @"-":[TKCommonTools dateStringWithFormat:TKDateFormatEnglishAll date:[NSDate dateWithTimeIntervalSince1970:expire]]);
+    
+    NSString *freezeStr = [_amountField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    long freeze = [freezeStr integerValue]*kDense;
+    long newFreeze = freezed + freeze;
+    _freezeLabel.text = [@(newFreeze/kDense) description];
+    _tpLabel.text = [@(newFreeze/kDense) description];
+    _entropyLabel.text = @"0"; //
     
 }
 
 -(IBAction)freezeAction:(id)sender
-{
-    
+{    
     Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
     
     TWWalletAccountClient *client = AppWalletClient;
     FreezeBalanceContract *contract = [[FreezeBalanceContract alloc] init];
     contract.ownerAddress = [client address];
-    contract.frozenBalance = [_amountField.text integerValue];
+    contract.frozenBalance = (int64_t)[_amountField.text integerValue]*kDense;
     contract.frozenDuration = 3;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -59,7 +84,9 @@
         if (error) {
             hud.label.text = [error localizedDescription];
         }else{
-            
+            [client refreshAccount:^(Account *account, NSError *error) {
+                [self refreshData];
+            }];
         }
         [hud hideAnimated:YES afterDelay:0.7];
     }];
@@ -80,7 +107,9 @@
         if (error) {
             hud.label.text = [error localizedDescription];
         }else{
-            
+            [client refreshAccount:^(Account *account, NSError *error) {
+                [self updateUI:account];
+            }];
         }
         [hud hideAnimated:YES afterDelay:0.7];
     }];

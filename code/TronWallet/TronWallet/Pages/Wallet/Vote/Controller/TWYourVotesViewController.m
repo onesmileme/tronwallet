@@ -30,9 +30,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(void)startRequest
+-(void)refresh
 {
+    
     Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
     [wallet listWitnessesWithRequest:[EmptyMessage new] handler:^(WitnessList * _Nullable response, NSError * _Nullable error) {
         

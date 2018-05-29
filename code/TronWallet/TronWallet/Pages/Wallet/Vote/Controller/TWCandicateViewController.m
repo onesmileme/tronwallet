@@ -33,7 +33,13 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)startRequest
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self refresh];
+}
+
+-(void)refresh
 {
     Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
     [wallet listWitnessesWithRequest:[EmptyMessage new] handler:^(WitnessList * _Nullable response, NSError * _Nullable error) {

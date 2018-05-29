@@ -15,6 +15,9 @@
 
 @property(nonatomic , strong , readonly) TWEllipticCurveCrypto *crypto;
 
+/*
+ * load with current encoded password
+ */
 +(instancetype)walletWithPassword:(NSString *)password;
 
 -(instancetype)initWithPriKey:(NSData *)priKey;
@@ -25,7 +28,7 @@
 
 +(NSString *)loadPwdKey;
 
-+(NSData *)loadPriKey;
++(NSString *)loadPriKey;
 
 -(void)store:(NSString *)password;
 
@@ -39,4 +42,8 @@
 
 +(NSString *)hexEncPassword:(NSString *)password;
 
+-(Transaction *)signTransaction:(Transaction *)transaction;
+
++(NSData *)convertPassword:(NSString *)password;
++(NSData *)getEncKey:(NSString *)password;
 @end

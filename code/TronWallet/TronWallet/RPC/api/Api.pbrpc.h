@@ -10,7 +10,8 @@
 #endif
 
 @class Account;
-@class AccountList;
+@class AccountNetMessage;
+@class AccountPaginated;
 @class AccountUpdateContract;
 @class AssetIssueContract;
 @class AssetIssueList;
@@ -27,12 +28,14 @@
 @class ParticipateAssetIssueContract;
 @class Return;
 @class TimeMessage;
+@class TimePaginatedMessage;
 @class Transaction;
 @class TransactionList;
 @class TransferAssetContract;
 @class TransferContract;
 @class UnfreezeAssetContract;
 @class UnfreezeBalanceContract;
+@class UpdateAssetContract;
 @class VoteWitnessContract;
 @class WithdrawBalanceContract;
 @class WitnessCreateContract;
@@ -73,13 +76,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (GRPCProtoCall *)RPCToBroadcastTransactionWithRequest:(Transaction *)request handler:(void(^)(Return *_Nullable response, NSError *_Nullable error))handler;
 
 
-#pragma mark ListAccounts(EmptyMessage) returns (AccountList)
-
-- (void)listAccountsWithRequest:(EmptyMessage *)request handler:(void(^)(AccountList *_Nullable response, NSError *_Nullable error))handler;
-
-- (GRPCProtoCall *)RPCToListAccountsWithRequest:(EmptyMessage *)request handler:(void(^)(AccountList *_Nullable response, NSError *_Nullable error))handler;
-
-
 #pragma mark UpdateAccount(AccountUpdateContract) returns (Transaction)
 
 - (void)updateAccountWithRequest:(AccountUpdateContract *)request handler:(void(^)(Transaction *_Nullable response, NSError *_Nullable error))handler;
@@ -99,13 +95,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)createAssetIssueWithRequest:(AssetIssueContract *)request handler:(void(^)(Transaction *_Nullable response, NSError *_Nullable error))handler;
 
 - (GRPCProtoCall *)RPCToCreateAssetIssueWithRequest:(AssetIssueContract *)request handler:(void(^)(Transaction *_Nullable response, NSError *_Nullable error))handler;
-
-
-#pragma mark ListWitnesses(EmptyMessage) returns (WitnessList)
-
-- (void)listWitnessesWithRequest:(EmptyMessage *)request handler:(void(^)(WitnessList *_Nullable response, NSError *_Nullable error))handler;
-
-- (GRPCProtoCall *)RPCToListWitnessesWithRequest:(EmptyMessage *)request handler:(void(^)(WitnessList *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark UpdateWitness(WitnessUpdateContract) returns (Transaction)
@@ -164,6 +153,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (GRPCProtoCall *)RPCToWithdrawBalanceWithRequest:(WithdrawBalanceContract *)request handler:(void(^)(Transaction *_Nullable response, NSError *_Nullable error))handler;
 
 
+#pragma mark UpdateAsset(UpdateAssetContract) returns (Transaction)
+
+- (void)updateAssetWithRequest:(UpdateAssetContract *)request handler:(void(^)(Transaction *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToUpdateAssetWithRequest:(UpdateAssetContract *)request handler:(void(^)(Transaction *_Nullable response, NSError *_Nullable error))handler;
+
+
 #pragma mark ListNodes(EmptyMessage) returns (NodeList)
 
 - (void)listNodesWithRequest:(EmptyMessage *)request handler:(void(^)(NodeList *_Nullable response, NSError *_Nullable error))handler;
@@ -171,18 +167,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (GRPCProtoCall *)RPCToListNodesWithRequest:(EmptyMessage *)request handler:(void(^)(NodeList *_Nullable response, NSError *_Nullable error))handler;
 
 
-#pragma mark GetAssetIssueList(EmptyMessage) returns (AssetIssueList)
-
-- (void)getAssetIssueListWithRequest:(EmptyMessage *)request handler:(void(^)(AssetIssueList *_Nullable response, NSError *_Nullable error))handler;
-
-- (GRPCProtoCall *)RPCToGetAssetIssueListWithRequest:(EmptyMessage *)request handler:(void(^)(AssetIssueList *_Nullable response, NSError *_Nullable error))handler;
-
-
 #pragma mark GetAssetIssueByAccount(Account) returns (AssetIssueList)
 
 - (void)getAssetIssueByAccountWithRequest:(Account *)request handler:(void(^)(AssetIssueList *_Nullable response, NSError *_Nullable error))handler;
 
 - (GRPCProtoCall *)RPCToGetAssetIssueByAccountWithRequest:(Account *)request handler:(void(^)(AssetIssueList *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetAccountNet(Account) returns (AccountNetMessage)
+
+- (void)getAccountNetWithRequest:(Account *)request handler:(void(^)(AccountNetMessage *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGetAccountNetWithRequest:(Account *)request handler:(void(^)(AccountNetMessage *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark GetAssetIssueByName(BytesMessage) returns (AssetIssueContract)
@@ -204,13 +200,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getBlockByNumWithRequest:(NumberMessage *)request handler:(void(^)(Block *_Nullable response, NSError *_Nullable error))handler;
 
 - (GRPCProtoCall *)RPCToGetBlockByNumWithRequest:(NumberMessage *)request handler:(void(^)(Block *_Nullable response, NSError *_Nullable error))handler;
-
-
-#pragma mark TotalTransaction(EmptyMessage) returns (NumberMessage)
-
-- (void)totalTransactionWithRequest:(EmptyMessage *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
-
-- (GRPCProtoCall *)RPCToTotalTransactionWithRequest:(EmptyMessage *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark GetBlockById(BytesMessage) returns (Block)
@@ -241,6 +230,34 @@ NS_ASSUME_NONNULL_BEGIN
 - (GRPCProtoCall *)RPCToGetTransactionByIdWithRequest:(BytesMessage *)request handler:(void(^)(Transaction *_Nullable response, NSError *_Nullable error))handler;
 
 
+#pragma mark ListWitnesses(EmptyMessage) returns (WitnessList)
+
+- (void)listWitnessesWithRequest:(EmptyMessage *)request handler:(void(^)(WitnessList *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToListWitnessesWithRequest:(EmptyMessage *)request handler:(void(^)(WitnessList *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetAssetIssueList(EmptyMessage) returns (AssetIssueList)
+
+- (void)getAssetIssueListWithRequest:(EmptyMessage *)request handler:(void(^)(AssetIssueList *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGetAssetIssueListWithRequest:(EmptyMessage *)request handler:(void(^)(AssetIssueList *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark TotalTransaction(EmptyMessage) returns (NumberMessage)
+
+- (void)totalTransactionWithRequest:(EmptyMessage *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToTotalTransactionWithRequest:(EmptyMessage *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetNextMaintenanceTime(EmptyMessage) returns (NumberMessage)
+
+- (void)getNextMaintenanceTimeWithRequest:(EmptyMessage *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGetNextMaintenanceTimeWithRequest:(EmptyMessage *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
+
+
 @end
 
 @protocol WalletSolidity <NSObject>
@@ -250,13 +267,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getAccountWithRequest:(Account *)request handler:(void(^)(Account *_Nullable response, NSError *_Nullable error))handler;
 
 - (GRPCProtoCall *)RPCToGetAccountWithRequest:(Account *)request handler:(void(^)(Account *_Nullable response, NSError *_Nullable error))handler;
-
-
-#pragma mark ListAccounts(EmptyMessage) returns (AccountList)
-
-- (void)listAccountsWithRequest:(EmptyMessage *)request handler:(void(^)(AccountList *_Nullable response, NSError *_Nullable error))handler;
-
-- (GRPCProtoCall *)RPCToListAccountsWithRequest:(EmptyMessage *)request handler:(void(^)(AccountList *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark ListWitnesses(EmptyMessage) returns (WitnessList)
@@ -328,25 +338,50 @@ NS_ASSUME_NONNULL_BEGIN
 - (GRPCProtoCall *)RPCToGetTransactionByIdWithRequest:(BytesMessage *)request handler:(void(^)(Transaction *_Nullable response, NSError *_Nullable error))handler;
 
 
-#pragma mark GetTransactionsByTimestamp(TimeMessage) returns (TransactionList)
+@end
 
-- (void)getTransactionsByTimestampWithRequest:(TimeMessage *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+@protocol WalletExtension <NSObject>
 
-- (GRPCProtoCall *)RPCToGetTransactionsByTimestampWithRequest:(TimeMessage *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+#pragma mark GetTransactionsByTimestamp(TimePaginatedMessage) returns (TransactionList)
 
+- (void)getTransactionsByTimestampWithRequest:(TimePaginatedMessage *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
 
-#pragma mark GetTransactionsFromThis(Account) returns (TransactionList)
-
-- (void)getTransactionsFromThisWithRequest:(Account *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
-
-- (GRPCProtoCall *)RPCToGetTransactionsFromThisWithRequest:(Account *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToGetTransactionsByTimestampWithRequest:(TimePaginatedMessage *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
 
 
-#pragma mark GetTransactionsToThis(Account) returns (TransactionList)
+#pragma mark GetTransactionsByTimestampCount(TimeMessage) returns (NumberMessage)
 
-- (void)getTransactionsToThisWithRequest:(Account *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+- (void)getTransactionsByTimestampCountWithRequest:(TimeMessage *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
 
-- (GRPCProtoCall *)RPCToGetTransactionsToThisWithRequest:(Account *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+- (GRPCProtoCall *)RPCToGetTransactionsByTimestampCountWithRequest:(TimeMessage *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetTransactionsFromThis(AccountPaginated) returns (TransactionList)
+
+- (void)getTransactionsFromThisWithRequest:(AccountPaginated *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGetTransactionsFromThisWithRequest:(AccountPaginated *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetTransactionsToThis(AccountPaginated) returns (TransactionList)
+
+- (void)getTransactionsToThisWithRequest:(AccountPaginated *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGetTransactionsToThisWithRequest:(AccountPaginated *)request handler:(void(^)(TransactionList *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetTransactionsFromThisCount(Account) returns (NumberMessage)
+
+- (void)getTransactionsFromThisCountWithRequest:(Account *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGetTransactionsFromThisCountWithRequest:(Account *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetTransactionsToThisCount(Account) returns (NumberMessage)
+
+- (void)getTransactionsToThisCountWithRequest:(Account *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGetTransactionsToThisCountWithRequest:(Account *)request handler:(void(^)(NumberMessage *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
@@ -408,6 +443,14 @@ NS_ASSUME_NONNULL_BEGIN
  * marshalling and parsing.
  */
 @interface WalletSolidity : GRPCProtoService<WalletSolidity>
+- (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
++ (instancetype)serviceWithHost:(NSString *)host;
+@end
+/**
+ * Basic service implementation, over gRPC, that only does
+ * marshalling and parsing.
+ */
+@interface WalletExtension : GRPCProtoService<WalletExtension>
 - (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
 + (instancetype)serviceWithHost:(NSString *)host;
 @end

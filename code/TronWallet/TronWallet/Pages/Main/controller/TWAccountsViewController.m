@@ -33,17 +33,18 @@
 
 -(void)startRequest
 {
-    Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
-    //
-    [wallet listAccountsWithRequest:[EmptyMessage new] handler:^(AccountList * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"account is: %@",response);
-        BOOL success = NO;
-        if (response.accountsArray_Count > 0) {
-            success = YES;
-            self.accountsArray = response.accountsArray;
-        }
-        [self requestDone:success];
-    }];
+//    Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
+//    //
+//
+//    [wallet listAccountsWithRequest:[EmptyMessage new] handler:^(AccountList * _Nullable response, NSError * _Nullable error) {
+//        NSLog(@"account is: %@",response);
+//        BOOL success = NO;
+//        if (response.accountsArray_Count > 0) {
+//            success = YES;
+//            self.accountsArray = response.accountsArray;
+//        }
+//        [self requestDone:success];
+//    }];
 }
 
 

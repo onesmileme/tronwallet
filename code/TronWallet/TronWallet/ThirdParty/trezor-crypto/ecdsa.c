@@ -684,7 +684,11 @@ void generate_k_rfc6979(bignum256 *k, rfc6979_state *state)
 int ecdsa_sign(const ecdsa_curve *curve, const uint8_t *priv_key, const uint8_t *msg, uint32_t msg_len, uint8_t *sig, uint8_t *pby, int (*is_canonical)(uint8_t by, uint8_t sig[64]))
 {
 	uint8_t hash[32];
-	sha256_Raw(msg, msg_len, hash);
+    if (msg_len == 32) {
+        memcpy(hash, msg, msg_len);
+    }else{
+        sha256_Raw(msg, msg_len, hash);
+    }
 	int res = ecdsa_sign_digest(curve, priv_key, hash, sig, pby, is_canonical);
 	MEMSET_BZERO(hash, sizeof(hash));
 	return res;

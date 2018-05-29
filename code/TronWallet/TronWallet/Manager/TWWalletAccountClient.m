@@ -19,7 +19,7 @@
 #import "SecureData.h"
 #import "ecdsa.h"
 #include "secp256k1.h"
-
+#import "NSData+Hashing.h"
 
 #define kPriKey @"pri_key"
 #define kPubKey @"pub_key"
@@ -30,28 +30,26 @@
 
 @property(nonatomic , strong) TWEllipticCurveCrypto *crypto;
 
-
 @end
 
 @implementation TWWalletAccountClient
 
 
-
 +(instancetype)walletWithPassword:(NSString *)password
 {
-    NSData *priKey = [self loadPriKey];
-    if (!priKey) {
+    NSString *hexPriKey = [self loadPriKey];
+    if (!hexPriKey) {
         return NULL;
     }
     
-    //todo add password & privatekey encode
+    //    NSData *pwdData = [TWWalletAccountClient convertPassword:password];
+//    NSString* hexPwd = password;//[pwdData convertToHexStr];
     
-//    NSData *priData = priData;
-//    NSData *enPwdData = [self getEncKey:password];
-//
-//    NSString *enpwdBase64 = [enPwdData base64EncodedStringWithOptions:kNilOptions];
-//    NSData *prikeyEncode = [priData AES128EncryptWithKey:enpwdBase64];
-//    return [[self alloc] initWithPriKey:prikeyEncode];
+    NSString* hexPwd = password;//[pwdData convertToHexStr];
+    NSData *prikeyData = [TWHexConvert convertHexStrToData:hexPriKey];
+    
+    NSData *priKey = [prikeyData AES128DecryptWithKey:password];
+    
     return [[self alloc] initWithPriKey:priKey];
 }
 
@@ -62,7 +60,7 @@
     return [defaults objectForKey:kPubKey];
 }
 
-+(NSData *)loadPriKey
++(NSString *)loadPriKey
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults objectForKey:kPriKey];
@@ -122,18 +120,18 @@
 {
     NSData *pwdData = [self.class convertPassword:password];
     NSString* hexPwd = [pwdData convertToHexStr];
-    NSLog(@"hex pwd is: %@",hexPwd);
+//    NSLog(@"hex pwd is: %@",hexPwd);
     
     NSData *priKey = _crypto.privateKey;
     NSData *pubKey = _crypto.publicKey;
     
-    [self printKey:priKey name:@"pri key"];
-    [self printKey:pubKey name:@"pub_key"];
+//    [self printKey:priKey name:@"pri key"];
+//    [self printKey:pubKey name:@"pub_key"];
     
         
-    NSString *basePriKey = [priKey base64EncodedStringWithOptions:0];
-    NSString *basePubKey = [pubKey base64EncodedStringWithOptions:0];
-    NSLog(@"base64 pubkey is: %@\n prikey is: \n%@\n\n",basePubKey,basePriKey);
+//    NSString *basePriKey = [priKey base64EncodedStringWithOptions:0];
+//    NSString *basePubKey = [pubKey base64EncodedStringWithOptions:0];
+//    NSLog(@"base64 pubkey is: %@\n prikey is: \n%@\n\n",basePubKey,basePriKey);
     
     NSData *enpwd = [self.class getEncKey:password];
     
@@ -143,16 +141,12 @@
     NSString *hexPriKey = [TWHexConvert convertDataToHexStr:prikeyEncode];
     NSString *hexPubKey = [TWHexConvert convertDataToHexStr:pubKey];
     
-    NSLog(@"hex pri key is: %@\n hex pub key is: %@",hexPriKey,hexPubKey);
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setObject:hexPwd forKey:kPwdKey];//password
-//    [defaults setObject:hexPubKey forKey:kPubKey]; //public key
-//    [defaults setObject:hexPriKey forKey:kPriKey]; //private key
-    
-    [defaults setObject:priKey forKey:kPriKey];
-    
+    [defaults setObject:hexPubKey forKey:kPubKey]; //public key
+    [defaults setObject:hexPriKey forKey:kPriKey]; //private key
+        
     [defaults synchronize];
     
     [self loadAccountInfo];
@@ -161,7 +155,8 @@
 
 -(NSData *)address
 {    
-    return [_crypto ownerAddress];
+    NSString *address =  [_crypto base58OwnerAddress];
+    return BTCDataFromBase58Check(address);
 }
 
 -(NSString *)base58OwnerAddress
@@ -184,7 +179,8 @@
 {
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
     self.account = [[Account alloc]init];
-    _account.address = [_crypto ownerAddress];
+//    NSString *address = [_crypto base58CheckOwnerAddress ];
+    _account.address = [self address];//[_crypto ownerAddress];//[address dataUsingEncoding:NSUTF8StringEncoding];//
     
     [wallet getAccountWithRequest:_account handler:^(Account * _Nullable response, NSError * _Nullable error) {
         
@@ -198,6 +194,16 @@
     }];
 }
 
+-(Transaction *)signTransaction:(Transaction *)transaction
+{
+    NSData *data = [transaction.rawData.data SHA256Hash];
+    for (int i = 0 ; i < transaction.rawData.contractArray_Count; i++) {
+        NSData *signData = [_crypto signatureForHash:data];
+        [transaction.signatureArray addObject:signData];
+    }
+    
+    return transaction;
+}
 
 +(NSData *)convertPassword:(NSString *)password
 {

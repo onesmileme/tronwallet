@@ -34,8 +34,8 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:walletController];
         self.window.rootViewController = navController;
     }else{
-        NSData *priKey = [TWWalletAccountClient loadPriKey];
-        _walletClient = [[TWWalletAccountClient alloc]initWithPriKey:priKey];
+        NSString *password = [TWWalletAccountClient loadPwdKey];
+        _walletClient = [TWWalletAccountClient walletWithPassword:password];
     }
 
     
@@ -44,11 +44,9 @@
 
 -(void)createAccountDone:(UINavigationController *)navController
 {
-    NSData *priKey = [TWWalletAccountClient loadPriKey];
-    self.walletClient = [[TWWalletAccountClient alloc] initWithPriKey:priKey];
-    
+//    NSData *priKey = [TWWalletAccountClient loadPriKey];
+//    self.walletClient = [[TWWalletAccountClient alloc] initWithPriKey:priKey];
     self.window.rootViewController = self.originRootController;
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
