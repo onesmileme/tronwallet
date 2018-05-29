@@ -24,6 +24,8 @@
 #import <Masonry/Masonry.h>
 #import <MBProgressHUD.h>
 #import "AppDelegate.h"
+#import "UIViewController+ShowTip.h"
+#import "UIViewController+BroadcastTransaction.h"
 
 #define AppWalletClient [(AppDelegate *)[[UIApplication sharedApplication] delegate] walletClient]
 

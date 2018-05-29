@@ -59,10 +59,10 @@
     [super viewWillAppear:animated];
     [_priceUpdater startUpdate];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    TWWalletAccountClient *client = [appDelegate walletClient];
-    NSString *address = [client.crypto base58OwnerAddress];
-    self.tokenLabel.text = address;
+    TWWalletAccountClient *client = AppWalletClient;
+    self.tokenLabel.text = [client base58OwnerAddress];
+    
+    self.countLabel.text = [NSString stringWithFormat:@"%@", @(client.account.balance/kDense)];
     
 }
 

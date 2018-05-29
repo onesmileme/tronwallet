@@ -34,8 +34,8 @@
     }
     
     NSArray *items = @[@"CADIDATES",@"YOUR VOTES"];
-    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, insets.top+ 64, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeEqualWidth];
-    [self.view addSubview:_topScrollView];
+    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeEqualWidth];
+    [self.containerView addSubview:_topScrollView];
     __weak typeof(self) wself = self;
     _topScrollView.chooseBlock = ^(NSInteger index,NSInteger lastIndex) {
         UIViewController *controller = wself.controllers[index];
@@ -48,11 +48,11 @@
     _pageContainerViewController.view.backgroundColor = [UIColor themeDarkBgColor];
     
     
-    CGRect frame = [[UIScreen mainScreen]bounds];
-    frame.size.height -= (insets.bottom+kTopScrollHeight + 49 + 64);
+    CGRect frame = self.containerView.bounds;//[[UIScreen mainScreen]bounds];
+    frame.size.height -= ( CGRectGetHeight(_topScrollView.frame));
     frame.origin.y = CGRectGetMaxY(_topScrollView.frame);
     _pageContainerViewController.view.frame = frame;
-    
+    _pageContainerViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     
     [self addChildViewController:_pageContainerViewController];
     [_pageContainerViewController didMoveToParentViewController:self];
@@ -63,7 +63,7 @@
     
     [_pageContainerViewController setViewControllers:@[_controllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    _pageContainerViewController.view.frame = self.containerView.bounds;
+//    _pageContainerViewController.view.frame = self.containerView.bounds;
     _pageContainerViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.containerView addSubview:_pageContainerViewController.view];
     
@@ -84,7 +84,7 @@
     TWWalletAccountClient * client =  AppWalletClient ;
     NSMutableArray<Vote*> *voteArray = client.account.votesArray;
     
-    NSMutableArray *voteWitness = [NSMutableArray new];
+//    NSMutableArray *voteWitness = [NSMutableArray new];
     
     NSInteger totalVotes = 0;
     NSInteger fronzes = 0;
@@ -112,24 +112,31 @@
     }
     
     Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
-    VoteWitnessContract *contract = [VoteWitnessContract new];
+    VoteWitnessContract *contract = [[VoteWitnessContract alloc] init];
     contract.ownerAddress = [AppWalletClient address];
+    NSLog(@"owner address is: %@",contract.ownerAddress);
     for (TWVoteWitnessModel *model in self.canController.voteWitness) {
         VoteWitnessContract_Vote *vote = [VoteWitnessContract_Vote new];
+        NSLog(@"address is: %@",model.witness.address);
         vote.voteAddress = model.witness.address;
+        vote.voteCount = model.vote;
         [contract.votesArray addObject:vote];
     }
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak typeof(self) wself = self;
     [wallet voteWitnessAccountWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
         if (error) {
             hud.label.text = [NSString stringWithFormat:@"%@",error];
+            [hud hideAnimated:YES afterDelay:1];
         }else{
-            [AppWalletClient refreshAccount:^(Account *account, NSError *error) {
-                [self refrshUI];
+            [wself broadcastTransaction:response hud:hud completion:^(Return * _Nullable response, NSError * _Nullable error) {
+                [AppWalletClient refreshAccount:^(Account *account, NSError *error) {
+                    [wself refrshUI];
+                }];
+                [wself.canController startRequest];
+                [wself.ownController startRequest];
             }];
-            [self.canController refresh];
-            [self.ownController refresh];
         }
     }];
 }

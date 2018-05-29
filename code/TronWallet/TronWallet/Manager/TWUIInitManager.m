@@ -33,22 +33,18 @@ IMP_SINGLETON
     UIColor *titleColor = [UIColor whiteColor];
     UINavigationBar *bar = [UINavigationBar appearance];
     bar.titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:18],NSForegroundColorAttributeName:titleColor};
-//
-//    
-//    NSString *hexColor = uiDict[@"nav_color"];
-    bar.barTintColor = [UIColor redColor];//HexColor(0x0076d1);//HexColor(0xffd200);
+
+    bar.barTintColor = [UIColor themeRed];
     bar.translucent = NO;
-//
+    
     UIImage *backImage = [UIImage imageNamed:@"normal_back"];
     bar.backIndicatorImage = backImage;
     bar.backIndicatorTransitionMaskImage = backImage;
     bar.backItem.title = @"";
-//    
-//    UIImage *bgImage = [ImageHelper imageWithColor:bar.barTintColor size:CGSizeMake(2, 2)];
+
     UIImage *bgImage = SYS_IMG(@"top_bg");
     bgImage = [bgImage resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20) resizingMode:UIImageResizingModeStretch];
     [bar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
-//    bar.shadowImage = bgImage;
     
 }
 

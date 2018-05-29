@@ -11,6 +11,7 @@
 
 @interface TWYourVotesViewController ()
 
+@property(nonatomic , strong) NSMutableArray *votes;
 @property(nonatomic , strong) NSMutableDictionary *voteMap;
 @property(nonatomic , strong) NSMutableArray<Witness*> *witnessesArray;
 
@@ -20,28 +21,55 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    _votes = [NSMutableArray new];
+    _witnessesArray = [NSMutableArray new];
+    _voteMap = [NSMutableDictionary new];
     
     self.tableView.allowsSelection = NO;
     UINib *nib = [UINib nibWithNibName:@"TWCandicateTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell_id"];
+    
+    [_votes addObjectsFromArray: AppWalletClient.account.votesArray];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)refresh
+-(void)viewWillAppear:(BOOL)animated
 {
-    
-    Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
-    [wallet listWitnessesWithRequest:[EmptyMessage new] handler:^(WitnessList * _Nullable response, NSError * _Nullable error) {
+    [super viewWillAppear:animated];
+    [self startRequest];
+}
+
+-(void)startRequest
+{
+    [AppWalletClient refreshAccount:^(Account *account, NSError *error) {
+        [_votes removeAllObjects];
+        [_votes addObjectsFromArray: AppWalletClient.account.votesArray];
         
-        BOOL success = NO;
-        if (response.witnessesArray_Count > 0) {
-            success = YES;
-            self.witnessesArray = response.witnessesArray;
-        }
-        [self requestDone:success];
+        [_witnessesArray removeAllObjects];
+        
+        Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
+        [wallet listWitnessesWithRequest:[EmptyMessage new] handler:^(WitnessList * _Nullable response, NSError * _Nullable error) {
+            
+            BOOL success = NO;
+            if (response.witnessesArray_Count > 0) {
+                success = YES;
+                
+                NSInteger index = 0;
+                for (Witness *witness in response.witnessesArray) {
+                    for (Vote *vote in self.votes) {
+                        if ([vote.voteAddress isEqualToData:witness.address]) {
+                            [self.witnessesArray addObject:witness];
+                            self.voteMap[@(index)] = @(vote.voteCount);
+                            break;
+                        }
+                    }
+                }
+            }
+            [self requestDone:success];
+        }];
     }];
 }
 

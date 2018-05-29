@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.voteMap = [NSMutableDictionary new];
+    
     self.tableView.allowsSelection = NO;
     UINib *nib = [UINib nibWithNibName:@"TWCandicateTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell_id"];
@@ -36,10 +38,10 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self refresh];
+    [self startRequest];
 }
 
--(void)refresh
+-(void)startRequest
 {
     Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
     [wallet listWitnessesWithRequest:[EmptyMessage new] handler:^(WitnessList * _Nullable response, NSError * _Nullable error) {
@@ -54,8 +56,7 @@
 }
 
 -(NSArray *)voteWitness
-{
-    
+{    
     if (_voteMap.count == 0) {
         return NULL;
     }
@@ -90,7 +91,6 @@
     if (!cell.updateVotes) {
         __weak typeof(self) wself = self;
         cell.updateVotes = ^(NSInteger votes, NSInteger index) {
-//            [wself.voteMap removeAllObjects];
             wself.voteMap[@(index)] = @(votes);
             [wself.tableView reloadData];
         };
