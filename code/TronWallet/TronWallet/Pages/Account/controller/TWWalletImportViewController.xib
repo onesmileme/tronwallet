@@ -120,14 +120,14 @@
                         <outlet property="delegate" destination="-1" id="EK5-wW-xlE"/>
                     </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4G-xW-CSF" userLabel="QR Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4G-xW-CSF" userLabel="QR Button">
                     <rect key="frame" x="325" y="287" width="30" height="30"/>
                     <color key="backgroundColor" red="0.63529411759999999" green="0.16862745100000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="ruf-xH-sIo"/>
                         <constraint firstAttribute="width" constant="30" id="wdW-31-bJ4"/>
                     </constraints>
-                    <state key="normal" title="QR">
+                    <state key="normal" image="scan">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -191,14 +191,14 @@
                                 <outlet property="delegate" destination="-1" id="2tT-P2-w3Y"/>
                             </connections>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS4-Gp-Han" userLabel="pubQR Button">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS4-Gp-Han" userLabel="pubQR Button">
                             <rect key="frame" x="325" y="30" width="30" height="30"/>
                             <color key="backgroundColor" red="0.63529411759999999" green="0.16862745100000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="EXV-kE-0KY"/>
                                 <constraint firstAttribute="width" constant="30" id="wVx-SJ-gNP"/>
                             </constraints>
-                            <state key="normal" title="QR">
+                            <state key="normal" image="scan">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -283,4 +283,7 @@
             <point key="canvasLocation" x="71.5" y="-678.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="scan" width="40" height="40"/>
+    </resources>
 </document>

@@ -20,13 +20,13 @@
 {
     BOOL isCold = (AppWalletClient.type == TWWalletCold);
     
-    TKTabControllerItem *main = [[TKTabControllerItem alloc]initWithControllerName:@"TWMainInfoViewController" title:@"BLOCK" tabImageName:nil selectedImageName:nil];
+    TKTabControllerItem *main = [[TKTabControllerItem alloc]initWithControllerName:@"TWMainInfoViewController" title:@"BLOCK" tabImageName:@"tab_news" selectedImageName:@"tab_news"];
     main.addNavController = true;
     
-    TKTabControllerItem *wallet = [[TKTabControllerItem alloc]initWithControllerName:isCold?@"TWColdWalletViewController":@"TWWalletViewController" title:@"WALLET" tabImageName:nil selectedImageName:nil];
+    TKTabControllerItem *wallet = [[TKTabControllerItem alloc]initWithControllerName:isCold?@"TWColdWalletViewController":@"TWWalletViewController" title:@"WALLET" tabImageName:@"tab_wallet" selectedImageName:@"tab_wallet"];
     wallet.addNavController = true;
     
-    TKTabControllerItem *setting = [[TKTabControllerItem alloc]initWithControllerName:@"TWSettingViewController" title:@"SET" tabImageName:nil selectedImageName:nil];
+    TKTabControllerItem *setting = [[TKTabControllerItem alloc]initWithControllerName:@"TWSettingViewController" title:@"SET" tabImageName:@"tab_set" selectedImageName:@"tab_set"];
     setting.addNavController = true;
     
     NSArray *tabItems = @[main,wallet,setting];

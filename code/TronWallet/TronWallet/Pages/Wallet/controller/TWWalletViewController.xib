@@ -67,14 +67,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkU-hR-aF2" userLabel="contentView">
                     <rect key="frame" x="0.0" y="140" width="375" height="250"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBC-cj-gJH">
-                            <rect key="frame" x="10" y="81" width="90" height="50"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBC-cj-gJH">
+                            <rect key="frame" x="10" y="81" width="60" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="90" id="OSD-Pu-bP2"/>
-                                <constraint firstAttribute="height" constant="50" id="dFe-aa-g8E"/>
+                                <constraint firstAttribute="width" constant="60" id="OSD-Pu-bP2"/>
+                                <constraint firstAttribute="height" constant="60" id="dFe-aa-g8E"/>
                             </constraints>
-                            <state key="normal" title="Wallet">
+                            <state key="normal" image="wallet">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -90,14 +90,14 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-ea-rrx">
-                            <rect key="frame" x="275" y="81" width="90" height="50"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-ea-rrx">
+                            <rect key="frame" x="305" y="81" width="60" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="90" id="AQH-sh-sPV"/>
-                                <constraint firstAttribute="height" constant="50" id="Bfk-Xa-tnq"/>
+                                <constraint firstAttribute="width" constant="60" id="AQH-sh-sPV"/>
+                                <constraint firstAttribute="height" constant="60" id="Bfk-Xa-tnq"/>
                             </constraints>
-                            <state key="normal" title="Exchange">
+                            <state key="normal" image="exchange">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -105,7 +105,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5M-8s-t8f" userLabel="tokenLabel">
-                            <rect key="frame" x="10" y="141" width="355" height="20"/>
+                            <rect key="frame" x="10" y="151" width="355" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="Y8V-cA-k5k"/>
                             </constraints>
@@ -114,7 +114,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HM1-Rr-uJN">
-                            <rect key="frame" x="10" y="171" width="355" height="40"/>
+                            <rect key="frame" x="10" y="181" width="355" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaI-kg-ABD" userLabel="priceLabel">
                                     <rect key="frame" x="279" y="0.0" width="66" height="40"/>
@@ -194,4 +194,8 @@
             <point key="canvasLocation" x="36.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="exchange" width="50" height="50"/>
+        <image name="wallet" width="30" height="30"/>
+    </resources>
 </document>
