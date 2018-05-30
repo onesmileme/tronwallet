@@ -63,7 +63,6 @@
 		6E40348520BBB66D008140F5 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40347F20BBB66D008140F5 /* Utilities.m */; };
 		6E40348620BBB66D008140F5 /* RegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40348020BBB66D008140F5 /* RegEx.m */; };
 		6E40348920BBB6B4008140F5 /* Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40348720BBB6B3008140F5 /* Hash.m */; };
-		6E40348C20BBB749008140F5 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40348B20BBB749008140F5 /* Test.m */; };
 		6E40349420BBBAA9008140F5 /* TWWalletAccountClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40349220BBBAA9008140F5 /* TWWalletAccountClient.m */; };
 		6E4AD53520B454EB0012DCD1 /* TWShEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD53420B454EB0012DCD1 /* TWShEncoder.m */; };
 		6E4AD55520B463350012DCD1 /* NS+BTCBase58.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55020B463350012DCD1 /* NS+BTCBase58.m */; };
@@ -296,8 +295,6 @@
 		6E40348020BBB66D008140F5 /* RegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegEx.m; sourceTree = "<group>"; };
 		6E40348720BBB6B3008140F5 /* Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hash.m; sourceTree = "<group>"; };
 		6E40348820BBB6B4008140F5 /* Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hash.h; sourceTree = "<group>"; };
-		6E40348A20BBB749008140F5 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
-		6E40348B20BBB749008140F5 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		6E40349220BBBAA9008140F5 /* TWWalletAccountClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWalletAccountClient.m; sourceTree = "<group>"; };
 		6E40349320BBBAA9008140F5 /* TWWalletAccountClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWalletAccountClient.h; sourceTree = "<group>"; };
 		6E4AD53320B454EB0012DCD1 /* TWShEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWShEncoder.h; sourceTree = "<group>"; };
@@ -1002,8 +999,6 @@
 				6EA351B820AC7D1500AF1984 /* AppDelegate.m */,
 				6EA351BA20AC7D1500AF1984 /* ViewController.h */,
 				6EA351BB20AC7D1500AF1984 /* ViewController.m */,
-				6E40348A20BBB749008140F5 /* Test.h */,
-				6E40348B20BBB749008140F5 /* Test.m */,
 				6EA351BD20AC7D1500AF1984 /* Main.storyboard */,
 				6EA351C020AC7D1500AF1984 /* Assets.xcassets */,
 				6EA351C220AC7D1500AF1984 /* LaunchScreen.storyboard */,
@@ -1529,7 +1524,6 @@
 				6E9103D020B2A5A8006FDEA1 /* Control.pbobjc.m in Sources */,
 				6E3E9F8320BA4EC70096399D /* TWCandicateViewController.m in Sources */,
 				6EED949E20AEC8CD003FF63E /* TWTokensViewController.m in Sources */,
-				6E40348C20BBB749008140F5 /* Test.m in Sources */,
 				6E9103C820B2A5A8006FDEA1 /* Auth.pbobjc.m in Sources */,
 				6E40346520BBB483008140F5 /* secp256k1.c in Sources */,
 				6E4AD55C20B4F8520012DCD1 /* TWConnectViewController.m in Sources */,

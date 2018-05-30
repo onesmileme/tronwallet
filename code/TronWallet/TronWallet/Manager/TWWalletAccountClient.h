@@ -29,12 +29,6 @@ typedef NS_ENUM( NSInteger,TWWalletType) {
 
 +(NSString *)loadPriKey;
 
-+(BOOL)isCold;
-
-/*
- * load with current encoded password
- */
-+(instancetype)walletWithPassword:(NSString *)password;
 
 -(instancetype)initWithPriKey:(NSData *)priKey  type:(TWWalletType)type;
 
@@ -56,12 +50,8 @@ typedef NS_ENUM( NSInteger,TWWalletType) {
 
 -(void)refreshAccount:(void(^)(Account *account, NSError *error))completion;
 
-+(NSString *)hexEncPassword:(NSString *)password;
+-(BOOL)isRightPassword:(NSString *)pasword;
 
 -(Transaction *)signTransaction:(Transaction *)transaction;
-
-+(NSData *)convertPassword:(NSString *)password;
-+(NSData *)getEncKey:(NSString *)password;
-
 
 @end

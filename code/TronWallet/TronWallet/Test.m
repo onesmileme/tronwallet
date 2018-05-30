@@ -356,7 +356,7 @@
     
     
     NSString *hexpri = @"2FD756A756D83B6F167ED1441BCDDE0E517295EE198DD0AAAE3C24BFD3AB95B8";
-    NSData *hexPriData = [TWHexConvert convertHexStrToData:hexpri];
+//    NSData *hexPriData = [TWHexConvert convertHexStrToData:hexpri];
     
     
     TWEllipticCurveCrypto *crypto = [TWEllipticCurveCrypto instanceGenerateKeyPair];

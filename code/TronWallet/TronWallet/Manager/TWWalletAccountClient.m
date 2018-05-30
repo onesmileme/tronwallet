@@ -296,6 +296,16 @@
     return [mdata subdataWithRange:NSMakeRange(0, 16)];
 }
 
+-(BOOL)isRightPassword:(NSString *)pasword
+{
+    NSString *lpass = [self.class loadPwdKey];
+    NSData *convertPassData = [self.class convertPassword:pasword];
+    NSString *hexPwd = [TWHexConvert convertDataToHexStr:convertPassData];
+    
+    return [lpass isEqualToString:hexPwd];
+    
+}
+
 +(NSData *)getEncKey:(NSString *)password
 {
     NSData *pdata = [password dataUsingEncoding:NSUTF8StringEncoding];

@@ -90,7 +90,7 @@
     
     NSString *msg = [NSString stringWithFormat:@"Do you want to freeze %@ ?",_amountField.text];
     
-    [self showAlert:@"TIP" mssage:msg confrim:@"YES" cancel:@"NO" confirmAction:^{
+    [self showPasswordAlert:@"TIP" mssage:msg confrim:@"YES" cancel:@"NO" confirmAction:^{
         [self doFreeze];
     }];
 }
@@ -128,7 +128,7 @@
 -(IBAction)unfreezeAction:(id)sender
 {
     
-    [self showAlert:@"TIP" mssage:@"Do you want to unfreeze ?" confrim:@"YES" cancel:@"NO" confirmAction:^{
+    [self showPasswordAlert:@"TIP" mssage:@"Do you want to unfreeze ?" confrim:@"YES" cancel:@"NO" confirmAction:^{
         [self doUnFreeze];
     }];
     

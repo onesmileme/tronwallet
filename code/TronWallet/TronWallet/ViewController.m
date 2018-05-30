@@ -18,7 +18,7 @@
 
 -(void)initItems
 {
-    BOOL isCold = [TWWalletAccountClient isCold];
+    BOOL isCold = (AppWalletClient.type == TWWalletCold);
     
     TKTabControllerItem *main = [[TKTabControllerItem alloc]initWithControllerName:@"TWMainInfoViewController" title:@"BLOCK" tabImageName:nil selectedImageName:nil];
     main.addNavController = true;
@@ -46,6 +46,12 @@
     self.delegate = self;
     
 //    [self test];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self showPasswordAlert:nil mssage:@"input password" confrim:@"Confirm" cancel:@"Cancel" confirmAction:^{
+            NSLog(@"haha");
+        }];
+    });
 }
 
 
@@ -59,6 +65,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:true animated:true];
 }
+
 
 -(void)reloadAll
 {

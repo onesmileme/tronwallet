@@ -54,11 +54,21 @@
 
 -(IBAction)resetAppAction:(id)sender
 {
-    [self showAlert:@"WARN" mssage:@"Do you really want reset app" confrim:@"YES" cancel:@"NO" confirmAction:^{
+    if (AppWalletClient.type == TWWalletAddressOnly) {
+        [self showAlert:@"WARN" mssage:@"Do you really want reset app" confrim:@"YES" cancel:@"NO" confirmAction:^{
+            
+            AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+            [appdelegate reset];
+        }];
+    }else{
+        [self showPasswordAlert:@"WARN" mssage:@"Do you really want reset app" confrim:@"YES" cancel:@"NO" confirmAction:^{
+            
+            AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+            [appdelegate reset];
+        }];
+    }
         
-        AppDelegate *appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        [appdelegate reset];
-    }];
+
 }
 
 /*

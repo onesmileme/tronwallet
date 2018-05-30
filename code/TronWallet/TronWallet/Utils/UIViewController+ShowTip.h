@@ -12,7 +12,9 @@
 
 -(void)showAlert:(NSString *)title mssage:(NSString *)msg confrim:(NSString *)confirm cancel:(NSString *)cancel ;
 
--(void)showAlert:(NSString *)title mssage:(NSString *)msg confrim:(NSString *)confirm cancel:(NSString *)cancel confirmAction:(void(^)())confirmAction;
+-(void)showAlert:(NSString *)title mssage:(NSString *)msg confrim:(NSString *)confirm cancel:(NSString *)cancel confirmAction:(void(^)(void))confirmAction;
+
+-(void)showPasswordAlert:(NSString *)title mssage:(NSString *)msg confrim:(NSString *)confirm cancel:(NSString *)cancel confirmAction:(void(^)(void))confirmAction;
 
 -(MBProgressHUD *)showHud;
 
