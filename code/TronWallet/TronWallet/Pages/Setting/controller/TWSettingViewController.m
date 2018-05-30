@@ -28,6 +28,12 @@
 
 -(IBAction)accountInfoAction:(id)sender
 {
+    if (AppWalletClient.type == TWWalletAddressOnly){
+        
+        [self showAlert:nil mssage:@"Address only wallet can not see account info" confrim:@"Confirm" cancel:nil];
+        return;
+    }
+    
     TWAccountViewController *controller = [[TWAccountViewController alloc]initWithNibName:@"TWAccountViewController" bundle:nil];
     [controller setupClient:AppWalletClient cold:NO];
     controller.hidesBottomBarWhenPushed = YES;

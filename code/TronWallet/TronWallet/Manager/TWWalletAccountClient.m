@@ -221,6 +221,9 @@
 
 -(NSString *)base58OwnerAddress
 {
+    if (_type == TWWalletAddressOnly) {
+        return  [[NSUserDefaults standardUserDefaults]objectForKey:kColdAddressKey];
+    }
     return [_crypto base58OwnerAddress];
 }
 

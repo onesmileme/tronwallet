@@ -25,11 +25,12 @@
     TWQRScanView *scanview = [[TWQRScanView alloc] init];
     __weak typeof(self) wself = self;
     scanview.captureBlock = ^(NSArray *metaObbjs) {
+        [wself.navigationController popViewControllerAnimated:YES];
+        
         if (wself.captureBlock) {
             AVMetadataMachineReadableCodeObject *object = [metaObbjs firstObject];            
             wself.captureBlock(object.stringValue);
         }
-        [wself.navigationController popViewControllerAnimated:YES];
     };
     [self.view addSubview:scanview];
     

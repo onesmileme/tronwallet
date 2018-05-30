@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TWColdReceiveViewController">
             <connections>
+                <outlet property="addressLabel" destination="J8z-75-1Ir" id="8mM-th-AMA"/>
+                <outlet property="qaImageView" destination="MVM-rP-GLW" id="I9p-AC-K7x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

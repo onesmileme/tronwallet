@@ -43,7 +43,7 @@
        _signedTransaction =  [AppWalletClient signTransaction:trans];
         
         NSData *signData =[_signedTransaction data];
-        NSData *qr = [TWHexConvert convertDataToHexStr:signData];
+        NSString *qr = [TWHexConvert convertDataToHexStr:signData];
         _qrImageView.image = [TWQRCoderGenerator generate:qr];
     }
 }

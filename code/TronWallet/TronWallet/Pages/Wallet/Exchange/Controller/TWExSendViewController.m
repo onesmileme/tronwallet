@@ -10,10 +10,12 @@
 #import "TWQRViewController.h"
 #import "NS+BTCBase58.h"
 #import "TWWalletAccountClient.h"
-
-             //1000000
+#import "TWAddressOnlyViewController.h"
+#import "TWHexConvert.h"
 
 @interface TWExSendViewController ()<UITextFieldDelegate>
+
+@property(nonatomic , strong) Transaction *toSignTransaction;
 
 @end
 
@@ -26,7 +28,7 @@
     [self.view addGestureRecognizer:tap];
     
 #if DEBUG
-    self.toLabel.text = @"27Qce6zrBTxKUk7kw665oQiSiYQUNSgXSDW";
+    self.toLabel.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
 #endif
     
 }
@@ -68,7 +70,9 @@
     UIAlertController *aletController = [UIAlertController alertControllerWithTitle:@"TIP" message:@"Confirm Send Transcation?" preferredStyle:UIAlertControllerStyleAlert];
  
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+       
         [self reallySend];
+    
     }];
     [aletController addAction:confirmAction];
     
@@ -86,8 +90,10 @@
     contract.toAddress =  BTCDataFromBase58Check(_toLabel.text); 
 //    NSString *priKey = [TWWalletAccountClient loadPriKey];
     TWWalletAccountClient *client = AppWalletClient;
-    NSString *baseAddress = [client base58OwnerAddress];
-    contract.ownerAddress = BTCDataFromBase58Check(baseAddress);//[client address];
+//    NSString *baseAddress = [client base58OwnerAddress];
+//    contract.ownerAddress = BTCDataFromBase58Check(baseAddress);//[client address];
+    
+    contract.ownerAddress = [client address];
     contract.amount = [_amountTextField.text integerValue]*kDense;
     
     /*
@@ -99,9 +105,13 @@
      }
      */
     
+     if (AppWalletClient.type == TWWalletAddressOnly) {
+         [self addressOnlySend:contract];
+         return;
+     }
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
-    
     [wallet createTransactionWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
         //update amount
         if (error) {
@@ -134,8 +144,78 @@
     }];
 }
 
+-(void)addressOnlySend:(TransferContract *)contract
+{
+    TWWalletAccountClient *client = AppWalletClient;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
+    
+    [wallet createTransactionWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
+        //update amount
+        if (error) {
+            hud.label.text = [error localizedDescription];
+            [hud hideAnimated:YES afterDelay:0.7 ];
+            return ;
+        }
+        
+        [hud hideAnimated:YES];
+        
+        self.toSignTransaction = response;
+        
+        [self signTransaction:response];
+        
+        response = [client signTransaction:response];
+                       
+    }];
+    
+}
+
+-(void)signTransaction:(Transaction *)transaction
+{
+    TWAddressOnlyViewController *controller = [[TWAddressOnlyViewController alloc] initWithNibName:@"TWAddressOnlyViewController" bundle:nil];
+    
+    NSData *data = [transaction data];
+    NSString *str = [TWHexConvert convertDataToHexStr:data];
+    [controller updateQR:str];
+    __weak typeof(self) wself = self;
+    controller.scanblock = ^(NSString *qr) {
+        NSData *tdata = [TWHexConvert convertHexStrToData:qr];
+        Transaction *transaction = [Transaction parseFromData:tdata error:nil];
+        [wself broadcastTransaction:transaction];
+    };
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void)broadcastTransaction:(Transaction *)transaction
+{
+    TWWalletAccountClient *client = AppWalletClient;
+    Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
+    MBProgressHUD *hud = [self showHud];
+    [wallet broadcastTransactionWithRequest:transaction handler:^(Return * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            hud.label.text = [error localizedDescription];
+        }else{
+            if (response.code == Return_response_code_Success) {
+                hud.label.text = @"Success";
+                
+                [client refreshAccount:^(Account *account, NSError *error) {
+                    [self refreshAmount];
+                }];
+                
+            }else{
+                hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
+            }
+        }
+        [hud hideAnimated:YES afterDelay:0.7 ];
+    }];
+}
+
 -(IBAction)confirmAction:(id)sender
 {
+    [self.amountTextField resignFirstResponder];
+    
     NSString *tip = nil;
     if (self.toLabel.text.length == 0) {
         tip = @"Please choose other wallet address";
@@ -162,8 +242,6 @@
         [self.navigationController presentViewController:alert animated:YES completion:nil];
         return;
     }
-    
-//    Transaction *transaction = [[Transaction alloc]init];
     [self showConfirmAlert];
    
     

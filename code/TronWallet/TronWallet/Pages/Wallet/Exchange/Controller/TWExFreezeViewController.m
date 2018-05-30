@@ -149,7 +149,11 @@
         if (error) {
             hud.label.text = [error localizedDescription];
             [hud hideAnimated:YES afterDelay:1];
+        }else if (response.rawData){
+            hud.label.text = @"Unfreeze failed";
+            [hud hideAnimated:YES afterDelay:1];
         }else{
+            
             [wself broadcastTransaction:response hud:hud completion:^(Return * _Nullable response, NSError * _Nullable error) {
                 if (response.code == Return_response_code_Success) {
                     [wself refreshData];

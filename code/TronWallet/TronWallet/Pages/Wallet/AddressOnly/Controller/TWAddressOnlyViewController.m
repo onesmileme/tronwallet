@@ -1,27 +1,27 @@
 //
-//  TWColdSignViewController.m
+//  TWAddressOnlyViewController.m
 //  TronWallet
 //
 //  Created by chunhui on 2018/5/30.
 //  Copyright © 2018年 onesmile. All rights reserved.
 //
 
-#import "TWColdSignViewController.h"
+#import "TWAddressOnlyViewController.h"
+#import "TWQRCoderGenerator.h"
 #import "TWQRViewController.h"
-#import "TWColdSignTranscationViewController.h"
 
+@interface TWAddressOnlyViewController ()
 
-@interface TWColdSignViewController ()
+@property(nonatomic , copy) NSString *qrCode;
 
 @end
 
-@implementation TWColdSignViewController
+@implementation TWAddressOnlyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
+    // Do any additional setup after loading the view from its nib.
+    [self tryUpdateQr];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,27 +29,34 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)scanAction:(id)sender
+-(void)tryUpdateQr
+{
+    if (self.qrImageView && self.qrCode) {
+        self.qrImageView.image= [TWQRCoderGenerator generate:self.qrCode];
+    }
+}
+
+-(void)updateQR:(NSString *)qr
+{
+    self.qrCode = qr;
+    [self tryUpdateQr];
+}
+
+-(IBAction)scanDoneAction:(id)sender
 {
     TWQRViewController *controller = [[TWQRViewController alloc]init];
     __weak typeof(self) wself = self;
     controller.captureBlock = ^(NSString *metaObbj) {
-        [wself jumpToSign:metaObbj];
+        [wself.navigationController popViewControllerAnimated:NO];
+        
+        if (wself.scanblock) {
+            wself.scanblock(metaObbj);
+        }
+        
     };
-    if (_pushControllerBlock) {
-        _pushControllerBlock(controller);
-    }
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
--(void)jumpToSign:(NSString *)qr
-{
-    TWColdSignTranscationViewController *controller = [[TWColdSignTranscationViewController alloc]initWithNibName:@"TWColdSignTranscationViewController" bundle:nil];
-    [controller updateTranscation:qr];
-    
-    if (_pushControllerBlock) {
-        _pushControllerBlock(controller);
-    }
-}
 
 /*
 #pragma mark - Navigation
