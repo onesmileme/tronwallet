@@ -35,7 +35,7 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:walletController];
         self.window.rootViewController = navController;
     }
-//    else{
+//    else{ 
 //        NSString *password = [TWWalletAccountClient loadPwdKey];
 //        _walletClient = [TWWalletAccountClient walletWithPassword:password];
 //    }
