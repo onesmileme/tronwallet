@@ -27,9 +27,9 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTap:)];
     [self.view addGestureRecognizer:tap];
     
-#if DEBUG
-    self.toLabel.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
-#endif
+//#if DEBUG
+//    self.toLabel.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
+//#endif
     
 }
 

@@ -1346,7 +1346,7 @@
 				TargetAttributes = {
 					6EA351B320AC7D1500AF1984 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1747,8 +1747,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RQY8SXWN5H;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XQ7Y9VDVBN;
 				GCC_PREFIX_HEADER = TronWallet/TronWallet.pch;
 				HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/ToolKit/ToolKit/**",
@@ -1767,8 +1767,10 @@
 				);
 				INFOPLIST_FILE = TronWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onesmile.TronWallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chunhui.tronwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2c57d189-4b5d-49be-b3dc-93e0d4903db8";
+				PROVISIONING_PROFILE_SPECIFIER = tronwallet_dev;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/TronWallet/RPC/**";
 			};
@@ -1780,8 +1782,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RQY8SXWN5H;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XQ7Y9VDVBN;
 				GCC_PREFIX_HEADER = TronWallet/TronWallet.pch;
 				HEADER_SEARCH_PATHS = (
 					"${SRCROOT}/ToolKit/ToolKit/**",
@@ -1800,9 +1803,11 @@
 				);
 				INFOPLIST_FILE = TronWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onesmile.TronWallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chunhui.tronwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "528cfeba-b1ff-4c8d-89a3-9038081f8ed9";
+				PROVISIONING_PROFILE_SPECIFIER = tronwallet_distribution;	
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/TronWallet/RPC/**";
 			};
 			name = Release;

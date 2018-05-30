@@ -28,14 +28,15 @@
     
     self.pubContainerView.hidden = YES;
     
-#if DEBUG
-    
-    self.pubkeyField.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
-    
-    self.privateKeyField.text = @"2FD756A756D83B6F167ED1441BCDDE0E517295EE198DD0AAAE3C24BFD3AB95B8";
-    self.passwordField.text = @"1234567889";
-    
-#endif
+//#if DEBUG
+//    
+//    self.pubkeyField.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
+//    
+//    self.privateKeyField.text = @"2FD756A756D83B6F167ED1441BCDDE0E517295EE198DD0AAAE3C24BFD3AB95B8";
+//    self.passwordField.text = @"1234567889";
+//    
+//#endif
+
     
 }
 
