@@ -45,13 +45,6 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = true;
     self.delegate = self;
     
-//    [self test];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self showPasswordAlert:nil mssage:@"input password" confrim:@"Confirm" cancel:@"Cancel" confirmAction:^{
-            NSLog(@"haha");
-        }];
-    });
 }
 
 
@@ -88,8 +81,7 @@
 #pragma mark -
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    
-    
+
     return YES;
 }
 
