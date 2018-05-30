@@ -16,6 +16,8 @@
                 <outlet property="contentView" destination="izl-GW-56Z" id="FPL-IZ-1N2"/>
                 <outlet property="passwordField" destination="FKH-1F-pzb" id="C5P-Mv-tUy"/>
                 <outlet property="privateKeyField" destination="LhV-PX-9Co" id="qlw-Ep-DM6"/>
+                <outlet property="pubContainerView" destination="1bS-sc-jKA" id="115-Zb-EYG"/>
+                <outlet property="pubkeyField" destination="LJh-2X-Bue" id="Z2n-89-yta"/>
                 <outlet property="publicSwitch" destination="SXY-ZG-PdT" id="gK9-j8-vHU"/>
                 <outlet property="recoverySwitch" destination="ece-PP-fOn" id="6ME-Ud-e1n"/>
                 <outlet property="riskSwitch" destination="CuN-0b-8X2" id="r02-m0-tHT"/>
@@ -70,8 +72,11 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXY-ZG-PdT" userLabel="public Switch">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SXY-ZG-PdT" userLabel="public Switch">
                     <rect key="frame" x="202.5" y="85" width="51" height="31"/>
+                    <connections>
+                        <action selector="switchChangeAction:" destination="-1" eventType="valueChanged" id="qlb-He-NPz"/>
+                    </connections>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password is important for every transaction. Without password you won't be able to access your assets through the wallet!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-U0-DDq">
                     <rect key="frame" x="20" y="205.5" width="335" height="14.5"/>
@@ -129,7 +134,7 @@
                         <action selector="qaAction:" destination="-1" eventType="touchUpInside" id="1QY-Ju-yr5"/>
                     </connections>
                 </button>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ece-PP-fOn" userLabel="recovery Switch">
+                <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ece-PP-fOn" userLabel="recovery Switch">
                     <rect key="frame" x="138" y="233" width="51" height="31"/>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your private key is needed to sign transactions and access your assets" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geV-M9-7aU">
@@ -138,10 +143,10 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qO4-fg-4co">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qO4-fg-4co">
                     <rect key="frame" x="145.5" y="379" width="51" height="31"/>
                 </switch>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CuN-0b-8X2">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CuN-0b-8X2">
                     <rect key="frame" x="174.5" y="423" width="51" height="31"/>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFW-65-PdW">
@@ -151,7 +156,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovery phrase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10X-pr-mvL">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovery phrase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10X-pr-mvL">
                     <rect key="frame" x="20" y="240" width="108" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,6 +175,63 @@
                         <action selector="importAction:" destination="-1" eventType="touchUpInside" id="DSv-vO-Hdh"/>
                     </connections>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bS-sc-jKA" userLabel="publicView">
+                    <rect key="frame" x="0.0" y="146" width="375" height="521"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJh-2X-Bue" userLabel="Public Key Field">
+                            <rect key="frame" x="20" y="30" width="297" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="KiT-bV-ogj"/>
+                                <constraint firstAttribute="height" constant="30" id="WSx-eL-ScP"/>
+                            </constraints>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="2tT-P2-w3Y"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS4-Gp-Han" userLabel="pubQR Button">
+                            <rect key="frame" x="325" y="30" width="30" height="30"/>
+                            <color key="backgroundColor" red="0.63529411759999999" green="0.16862745100000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="EXV-kE-0KY"/>
+                                <constraint firstAttribute="width" constant="30" id="wVx-SJ-gNP"/>
+                            </constraints>
+                            <state key="normal" title="QR">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="publicQRAction:" destination="-1" eventType="touchUpInside" id="0mu-7P-a4Q"/>
+                                <action selector="qaAction:" destination="-1" eventType="touchUpInside" id="dOP-sQ-jYn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxW-98-21a" userLabel="pub IMPORT WALLET">
+                            <rect key="frame" x="20" y="110" width="335" height="39"/>
+                            <color key="backgroundColor" red="0.63529411759999999" green="0.16862745100000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="KeL-WP-Clk"/>
+                            </constraints>
+                            <state key="normal" title="IMPORT WALLET">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="pubImportAction:" destination="-1" eventType="touchUpInside" id="QQ6-DY-bT1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="pS4-Gp-Han" firstAttribute="leading" secondItem="LJh-2X-Bue" secondAttribute="trailing" constant="8" symbolic="YES" id="0c4-M7-Kjr"/>
+                        <constraint firstItem="LJh-2X-Bue" firstAttribute="leading" secondItem="1bS-sc-jKA" secondAttribute="leading" constant="20" id="78Y-12-re7"/>
+                        <constraint firstAttribute="trailing" secondItem="pS4-Gp-Han" secondAttribute="trailing" constant="20" id="GHc-Co-im3"/>
+                        <constraint firstItem="LJh-2X-Bue" firstAttribute="top" secondItem="1bS-sc-jKA" secondAttribute="top" constant="30" id="JId-2m-oLl"/>
+                        <constraint firstItem="pS4-Gp-Han" firstAttribute="centerY" secondItem="LJh-2X-Bue" secondAttribute="centerY" id="P1I-ro-t9h"/>
+                        <constraint firstItem="QxW-98-21a" firstAttribute="top" secondItem="LJh-2X-Bue" secondAttribute="bottom" constant="50" id="dRw-UT-Bgo"/>
+                        <constraint firstItem="QxW-98-21a" firstAttribute="leading" secondItem="1bS-sc-jKA" secondAttribute="leading" constant="20" id="qqV-eZ-N8c"/>
+                        <constraint firstAttribute="trailing" secondItem="QxW-98-21a" secondAttribute="trailing" constant="20" id="tiB-2V-Mmx"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -181,6 +243,8 @@
                 <constraint firstItem="CJW-wH-GdB" firstAttribute="leading" secondItem="i6H-Fr-uXj" secondAttribute="leading" id="9L5-nZ-YGe"/>
                 <constraint firstItem="O4G-xW-CSF" firstAttribute="centerY" secondItem="LhV-PX-9Co" secondAttribute="centerY" id="9pi-0y-Ej9"/>
                 <constraint firstItem="CuN-0b-8X2" firstAttribute="leading" secondItem="CJW-wH-GdB" secondAttribute="trailing" constant="10" id="CJi-xx-Yq0"/>
+                <constraint firstItem="1bS-sc-jKA" firstAttribute="trailing" secondItem="Ri4-JG-urC" secondAttribute="trailing" id="CYb-v5-0qc"/>
+                <constraint firstItem="1bS-sc-jKA" firstAttribute="leading" secondItem="Ri4-JG-urC" secondAttribute="leading" id="DbU-4Q-XTy"/>
                 <constraint firstItem="SXY-ZG-PdT" firstAttribute="leading" secondItem="Fw8-Vg-XGJ" secondAttribute="trailing" constant="10" id="EJn-y1-GGk"/>
                 <constraint firstItem="geV-M9-7aU" firstAttribute="leading" secondItem="v7v-Qb-iOf" secondAttribute="leading" id="EhV-0K-1bD"/>
                 <constraint firstItem="kCM-DK-ZUw" firstAttribute="trailing" secondItem="v7v-Qb-iOf" secondAttribute="trailing" id="G3j-0m-3YR"/>
@@ -190,6 +254,7 @@
                 <constraint firstItem="v7v-Qb-iOf" firstAttribute="top" secondItem="Fw8-Vg-XGJ" secondAttribute="bottom" constant="10" id="Kne-w4-uMH"/>
                 <constraint firstItem="LhV-PX-9Co" firstAttribute="leading" secondItem="Fw8-Vg-XGJ" secondAttribute="leading" id="NQ5-Ej-FM3"/>
                 <constraint firstItem="LhV-PX-9Co" firstAttribute="trailing" secondItem="O4G-xW-CSF" secondAttribute="leading" constant="-10" id="NaP-ow-D0V"/>
+                <constraint firstItem="1bS-sc-jKA" firstAttribute="top" secondItem="v7v-Qb-iOf" secondAttribute="bottom" constant="10" id="OMU-ca-OO3"/>
                 <constraint firstItem="Fw8-Vg-XGJ" firstAttribute="leading" secondItem="Ri4-JG-urC" secondAttribute="leading" constant="20" id="ORy-cZ-EgC"/>
                 <constraint firstItem="Fw8-Vg-XGJ" firstAttribute="top" secondItem="Xpt-pf-Amt" secondAttribute="bottom" constant="20" id="Ogn-RR-cLw"/>
                 <constraint firstItem="CJW-wH-GdB" firstAttribute="top" secondItem="qO4-fg-4co" secondAttribute="bottom" constant="20" id="Qsh-IU-EKW"/>
@@ -212,6 +277,7 @@
                 <constraint firstItem="Ri4-JG-urC" firstAttribute="trailing" secondItem="Xpt-pf-Amt" secondAttribute="trailing" constant="10" id="tic-UO-Vsh"/>
                 <constraint firstItem="Ri4-JG-urC" firstAttribute="trailing" secondItem="v7v-Qb-iOf" secondAttribute="trailing" constant="20" id="v0z-t6-eFY"/>
                 <constraint firstItem="WHW-U0-DDq" firstAttribute="top" secondItem="FKH-1F-pzb" secondAttribute="bottom" constant="10" id="wZV-L4-0qZ"/>
+                <constraint firstItem="Ri4-JG-urC" firstAttribute="bottom" secondItem="1bS-sc-jKA" secondAttribute="bottom" id="zrU-7K-PGD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Ri4-JG-urC"/>
             <point key="canvasLocation" x="71.5" y="-678.5"/>

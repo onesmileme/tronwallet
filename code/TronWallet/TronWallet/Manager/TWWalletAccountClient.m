@@ -24,6 +24,9 @@
 #define kPriKey @"pri_key"
 #define kPubKey @"pub_key"
 #define kPwdKey @"pwd_key"
+#define kColdKey @"cold_key"
+#define kColdAddressKey @"cold_address_key"
+#define kWalletType @"wallet_type"
 
 
 @interface TWWalletAccountClient()
@@ -34,8 +37,38 @@
 
 @implementation TWWalletAccountClient
 
++(instancetype)loadWallet
+{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    TWWalletType type = [[defaults objectForKey:kWalletType] integerValue];
+    switch (type) {
+        case TWWalletDefault:
+            {
+                NSString *password = [TWWalletAccountClient loadPwdKey];
+                if (!password) {
+                    return nil;
+                }
+                return  [TWWalletAccountClient walletWithPassword:password  type:type];
+            }
+            break;
+        case TWWalletCold:
+        {
+            NSString *password = [TWWalletAccountClient loadPwdKey];
+            return  [TWWalletAccountClient walletWithPassword:password  type:type];
+        }
+            break;
+        case TWWalletAddressOnly:
+        {
+            NSString *address = [TWWalletAccountClient loadAddressKey];
+            return [[TWWalletAccountClient alloc]initWithAddress:address];
+        }
+            break;
+        default:
+            break;
+    }
+}
 
-+(instancetype)walletWithPassword:(NSString *)password
++(instancetype)walletWithPassword:(NSString *)password  type:(TWWalletType)type
 {
     NSString *hexPriKey = [self loadPriKey];
     if (!hexPriKey) {
@@ -46,7 +79,7 @@
     
     NSData *priKey = [prikeyData AES128DecryptWithKey:password];
     
-    return [[self alloc] initWithPriKey:priKey];
+    return [[self alloc] initWithPriKey:priKey  type:type];
 }
 
 
@@ -68,6 +101,19 @@
     return [defaults objectForKey:kPwdKey];
 }
 
++(NSString *)loadAddressKey
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:kColdAddressKey];
+}
+
++(BOOL)isCold
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    TWWalletType type = [[defaults objectForKey:kWalletType] integerValue];
+    return type == TWWalletCold;
+}
+
 +(BOOL)checkLogin:(NSString *)password
 {
     NSData *pwdData = [self convertPassword:password];
@@ -76,41 +122,61 @@
     return [hexPwd isEqualToString:pwd];
 }
 
--(instancetype)initWithPriKey:(NSData *)priKey
+-(instancetype)initWithPriKey:(NSData *)priKey  type:(TWWalletType)type
 {
+    if (priKey.length != 32) {
+        return nil;
+    }
     self = [super init];
     if (self) {
-        _crypto = [TWEllipticCurveCrypto cryptoForKey:priKey];
+        _crypto = [TWEllipticCurveCrypto cryptoForKey:priKey];        
+        _type = type;
+        [self storeWallet];
+        [self loadAccountInfo];
+        
+    }
+    return self;
+}
+
+-(instancetype)initWithGenKey:(BOOL)genKey type:(TWWalletType)type
+{
+    self = [super init];
+    if(self){
+        self.crypto = [TWEllipticCurveCrypto instanceGenerateKeyPair];
+        _type = type;
+        
+        [self storeWallet];
+    }
+    return self;
+}
+
+-(instancetype)initWithPriKeyStr:(NSString *)priKey  type:(TWWalletType)type
+{
+    NSData *priKeyData = [TWHexConvert convertHexStrToData:priKey];
+    return [self initWithPriKey:priKeyData type:type];
+}
+
+
+-(instancetype)initWithAddress:(NSString *)address
+{
+    if (address.length == 0) {
+        return nil;
+    }
+    self = [super init];
+    if(self){
+        
+        _type = TWWalletAddressOnly;
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:address forKey:kColdAddressKey];
+        
+        [self storeWallet];
         
         [self loadAccountInfo];
     }
     return self;
 }
 
--(instancetype)initWithGenKey:(BOOL)genKey
-{
-    self = [super init];
-    if(self){
-        self.crypto = [TWEllipticCurveCrypto instanceGenerateKeyPair];        
-    }
-    return self;
-}
-
--(instancetype)initWithPriKeyStr:(NSString *)priKey
-{
-    NSData *priKeyData = [TWHexConvert convertHexStrToData:priKey];
-    return [self initWithPriKey:priKeyData];
-}
-
-//-(void)printKey:(NSData *)key name:(NSString *)name
-//{
-//    printf("key %s ====\n",[name UTF8String]);
-//    const uint8_t *bytes = (const uint8_t *)[key bytes];
-//    for (int i = 0 ; i < [key length]; i++) {
-//        printf("0X%02X ",bytes[i]);
-//    }
-//    printf("\n\n");
-//}
 
 -(void)store:(NSString *)password
 {
@@ -136,12 +202,19 @@
         
     [defaults synchronize];
     
-    [self loadAccountInfo];
+    if (_type == TWWalletDefault) {
+        [self loadAccountInfo];
+    }
     
 }
 
 -(NSData *)address
-{    
+{
+    if (_type == TWWalletAddressOnly) {
+        NSString *address = [[NSUserDefaults standardUserDefaults]objectForKey:kColdAddressKey];
+        return BTCDataFromBase58Check(address);
+    }
+    
     NSString *address =  [_crypto base58OwnerAddress];
     return BTCDataFromBase58Check(address);
 }
@@ -165,10 +238,10 @@
 -(void)refreshAccount:(void(^)(Account *account, NSError *error))completion
 {
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
-    self.account = [[Account alloc]init];
-    _account.address = [self address];
+    Account *account = [[Account alloc]init];
+    account.address = [self address];
     
-    [wallet getAccountWithRequest:_account handler:^(Account * _Nullable response, NSError * _Nullable error) {
+    [wallet getAccountWithRequest:account handler:^(Account * _Nullable response, NSError * _Nullable error) {
         
         if(response){
             self.account = response;
@@ -181,6 +254,10 @@
 
 -(Transaction *)signTransaction:(Transaction *)transaction
 {
+    if (!_crypto) {
+        return transaction;
+    }
+    
     NSData *data = [transaction.rawData.data SHA256Hash];
     for (int i = 0 ; i < transaction.rawData.contractArray_Count; i++) {
         NSData *signData = [_crypto signatureForHash:data];
@@ -196,6 +273,15 @@
     [defaults removeObjectForKey:kPriKey];
     [defaults removeObjectForKey:kPubKey];
     [defaults removeObjectForKey:kPwdKey];
+    [defaults removeObjectForKey:kColdKey];
+    [defaults removeObjectForKey:kWalletType];
+    
+}
+
+-(void)storeWallet
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@(_type) forKey:kWalletType];
 }
 
 +(NSData *)convertPassword:(NSString *)password
@@ -231,14 +317,6 @@
 
 +(NSString *)encode58Check:(NSData *)data
 {
-    /*
-     byte[] hash0 = Hash.sha256(input);
-     byte[] hash1 = Hash.sha256(hash0);
-     byte[] inputCheck = new byte[input.length + 4];
-     System.arraycopy(input, 0, inputCheck, 0, input.length);
-     System.arraycopy(hash1, 0, inputCheck, input.length, 4);
-     return Base58.encode(inputCheck);
-     */
     
     NSData *hash0 = [data SHA256Hash];
     NSData *hash1 = [hash0 SHA256Hash];
@@ -249,14 +327,11 @@
     
     return BTCBase58StringWithData(mdata);
     
-    
 }
 
 +(NSData *)decodeBase58Check:(NSString *)address
 {
     NSData *addressData = BTCDataFromBase58(address);
-    
-//    [self printData:addressData name:@"address data "];
     
     NSMutableData *baseData = [address dataFromBase58];
     if (baseData.length <= 4) {
@@ -272,9 +347,6 @@
     NSData *compData = [hash1 subdataWithRange:NSMakeRange(0, 4)];
     NSData *addData = [addressData subdataWithRange:NSMakeRange(decodeData.length, 4)];
     
-//    [self printData:compData name:@"compare data"];
-//    [self printData:addData name:@"address sub data"];
-    
     if ([compData isEqualToData:addData]) {
         return decodeData;
     }
@@ -282,15 +354,5 @@
     return NULL;
 }
 
-//+(void)printData:(NSData *)data name:(NSString *)name
-//{
-//    NSLog(@"-------%@-------",name);
-//    const uint8_t *bytes = (const uint8_t *)[data bytes];
-//    printf("===================\n");
-//    for (int i = 0 ; i < data.length; i++) {
-//        printf("%02X",bytes[i]);
-//    }
-//    printf("\n===================");
-//}
 
 @end

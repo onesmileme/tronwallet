@@ -394,7 +394,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Exchange/Controller/TWExFreezeViewController.m"
-                  timestampString = "549291680.287685"
+                  timestampString = "549343592.471483"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "110"
@@ -409,7 +409,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Exchange/Controller/TWExFreezeViewController.m"
-                  timestampString = "549291680.289243"
+                  timestampString = "549343592.473287"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "111"
@@ -474,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-            timestampString = "549291679.9862731"
+            timestampString = "549343592.032261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -490,7 +490,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-                  timestampString = "549291680.301473"
+                  timestampString = "549343592.4914401"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
@@ -505,7 +505,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-                  timestampString = "549291680.303012"
+                  timestampString = "549343592.493019"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
@@ -513,6 +513,22 @@
                   offsetFromSymbolStart = "931">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TronWallet/Pages/Wallet/Cold/Controller/TWColdWalletViewController.m"
+            timestampString = "549343592.03234"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-pageViewController:viewControllerBeforeViewController:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

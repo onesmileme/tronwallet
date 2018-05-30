@@ -327,8 +327,8 @@
     NSData *priKeyData = [SecureData hexStringToData:priKeyHex];
     
     NSString *password = @"trx49688448";
-    
-    TWWalletAccountClient*client = [[TWWalletAccountClient alloc] initWithPriKey:priKeyData];
+    TWWalletType type = TWWalletDefault;
+    TWWalletAccountClient*client = [[TWWalletAccountClient alloc] initWithPriKey:priKeyData type:type];
     [client store:password];
 }
 

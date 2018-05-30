@@ -25,7 +25,15 @@
     self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"New Password" attributes:@{NSForegroundColorAttributeName:color}];
     
     self.privateKeyField.attributedPlaceholder =  [[NSAttributedString alloc] initWithString:@"Private Key" attributes:@{NSForegroundColorAttributeName:color}];
-        
+    
+    self.pubContainerView.hidden = YES;
+    
+#if DEBUG
+    
+    self.pubkeyField.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
+    
+#endif
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -41,6 +49,23 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)switchChangeAction:(UISwitch *)sender
+{
+    if(sender == _publicSwitch){
+        _pubContainerView.hidden = !_publicSwitch.isOn;
+    }
+}
+
+-(IBAction)publicQRAction:(id)sender
+{
+    TWQRViewController *controller = [[TWQRViewController alloc]init];
+    __weak typeof(self) wself = self;
+    controller.captureBlock = ^(NSString *metaObbj) {
+        wself.pubkeyField.text = metaObbj;
+    };
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(IBAction)qaAction:(id)sender
@@ -71,14 +96,38 @@
         return;
     }
     
+    
     [self reallyImportWallet];
+}
+
+-(IBAction)pubImportAction:(id)sender
+{
+    if (self.pubkeyField.text.length == 0) {
+        [self showAlert:@"TIP" mssage:@"Input address please" confrim:@"Confirm" cancel:nil];
+        return;
+    }
+    
+    [self importAddressOnlyWallet];
+    
+}
+
+-(void)importAddressOnlyWallet
+{    
+    NSString *pubkey = _pubkeyField.text;
+    TWWalletAccountClient *client = [[TWWalletAccountClient alloc]initWithAddress:pubkey];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    appDelegate.walletClient = client;
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    [appDelegate createAccountDone:self.navigationController];
 }
 
 -(void)reallyImportWallet
 {
     NSString *prikey = self.privateKeyField.text;
     NSString *password = self.passwordField.text;
-    TWWalletAccountClient *client = [[TWWalletAccountClient alloc]initWithPriKeyStr:prikey];
+    TWWalletType type = _coldSwitch.isOn ? TWWalletCold : TWWalletDefault;
+    TWWalletAccountClient *client = [[TWWalletAccountClient alloc]initWithPriKeyStr:prikey type:type];
     [client store:password];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     appDelegate.walletClient = client;

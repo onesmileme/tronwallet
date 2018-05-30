@@ -54,7 +54,8 @@
         return;
     }
     
-    TWWalletAccountClient *client = [[TWWalletAccountClient alloc] initWithGenKey:YES];
+    TWWalletType type = _coldSwitch.isOn ? TWWalletCold : TWWalletDefault;
+    TWWalletAccountClient *client = [[TWWalletAccountClient alloc] initWithGenKey:YES type:type];
     [client store:_pwdTextField.text];
 
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];

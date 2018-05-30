@@ -29,15 +29,16 @@
     [TWNetworkManager sharedInstance];
     
     self.originRootController =self.window.rootViewController;
-    
-    if (![TWWalletAccountClient loadPwdKey]) {
+    _walletClient = [TWWalletAccountClient loadWallet];
+    if (!_walletClient) {        
         TWWalletCreateViewController *walletController = [[TWWalletCreateViewController alloc]initWithNibName:@"TWWalletCreateViewController" bundle:nil];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:walletController];
         self.window.rootViewController = navController;
-    }else{
-        NSString *password = [TWWalletAccountClient loadPwdKey];
-        _walletClient = [TWWalletAccountClient walletWithPassword:password];
     }
+//    else{
+//        NSString *password = [TWWalletAccountClient loadPwdKey];
+//        _walletClient = [TWWalletAccountClient walletWithPassword:password];
+//    }
     
     return YES;
 }

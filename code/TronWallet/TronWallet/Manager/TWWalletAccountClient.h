@@ -9,26 +9,40 @@
 #import <Foundation/Foundation.h>
 #import "TWEllipticCurveCrypto.h"
 
+typedef NS_ENUM( NSInteger,TWWalletType) {
+    TWWalletDefault = 0, //正常钱包
+    TWWalletCold   = 1,//冷钱包
+    TWWalletAddressOnly  = 2,//只有地址
+};
+
 @interface TWWalletAccountClient : NSObject
 
 @property(nonatomic , strong) Account *account;
 
 @property(nonatomic , strong , readonly) TWEllipticCurveCrypto *crypto;
 
+@property(nonatomic , assign) TWWalletType type;
+
++(instancetype)loadWallet;
+
 +(NSString *)loadPwdKey;
 
 +(NSString *)loadPriKey;
+
++(BOOL)isCold;
 
 /*
  * load with current encoded password
  */
 +(instancetype)walletWithPassword:(NSString *)password;
 
--(instancetype)initWithPriKey:(NSData *)priKey;
+-(instancetype)initWithPriKey:(NSData *)priKey  type:(TWWalletType)type;
 
--(instancetype)initWithGenKey:(BOOL)genKey;
+-(instancetype)initWithGenKey:(BOOL)genKey type:(TWWalletType)type;
 
--(instancetype)initWithPriKeyStr:(NSString *)priKey;
+-(instancetype)initWithPriKeyStr:(NSString *)priKey  type:(TWWalletType)type;
+
+-(instancetype)initWithAddress:(NSString *)address;
 
 -(void)clear;
 

@@ -21,4 +21,8 @@
 @property(nonatomic , strong) IBOutlet UIScrollView *scrollView;
 @property(nonatomic , strong) IBOutlet UIView *contentView;
 
+@property(nonatomic , strong) IBOutlet UIView *pubContainerView;
+@property(nonatomic , strong) IBOutlet UITextField *pubkeyField;
+
+
 @end

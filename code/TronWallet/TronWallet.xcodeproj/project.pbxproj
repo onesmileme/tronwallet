@@ -150,6 +150,13 @@
 		6EC46DDB20BD4CC40059C68F /* TWAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DDA20BD4CC40059C68F /* TWAccountViewController.m */; };
 		6EC46DE920BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DE620BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.m */; };
 		6EC46DEA20BD85BC0059C68F /* TWEllipticCurveCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DE720BD85BC0059C68F /* TWEllipticCurveCrypto.m */; };
+		6EC46DF120BE2BB80059C68F /* TWColdWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DEF20BE2BB80059C68F /* TWColdWalletViewController.m */; };
+		6EC46DF520BE2CCF0059C68F /* TWColdSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DF420BE2CCF0059C68F /* TWColdSignViewController.m */; };
+		6EC46DF920BE2CDC0059C68F /* TWColdReceiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DF720BE2CDC0059C68F /* TWColdReceiveViewController.m */; };
+		6EC46DFA20BE2CDC0059C68F /* TWColdReceiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DF820BE2CDC0059C68F /* TWColdReceiveViewController.xib */; };
+		6EC46DFC20BE33E30059C68F /* TWColdSignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DFB20BE33E30059C68F /* TWColdSignViewController.xib */; };
+		6EC46E0020BE34FA0059C68F /* TWColdSignTranscationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DFE20BE34FA0059C68F /* TWColdSignTranscationViewController.m */; };
+		6EC46E0120BE34FA0059C68F /* TWColdSignTranscationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DFF20BE34FA0059C68F /* TWColdSignTranscationViewController.xib */; };
 		6EED948920AEC2DA003FF63E /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED948820AEC2DA003FF63E /* UIColor+Theme.m */; };
 		6EED948C20AEC485003FF63E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED948B20AEC485003FF63E /* libsqlite3.tbd */; };
 		6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED949120AEC817003FF63E /* TWMainBasicViewController.m */; };
@@ -446,6 +453,17 @@
 		6EC46DE620BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TWEllipticCurveCrypto+Hash.m"; sourceTree = "<group>"; };
 		6EC46DE720BD85BC0059C68F /* TWEllipticCurveCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWEllipticCurveCrypto.m; sourceTree = "<group>"; };
 		6EC46DE820BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TWEllipticCurveCrypto+Hash.h"; sourceTree = "<group>"; };
+		6EC46DEE20BE2BB80059C68F /* TWColdWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWColdWalletViewController.h; sourceTree = "<group>"; };
+		6EC46DEF20BE2BB80059C68F /* TWColdWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWColdWalletViewController.m; sourceTree = "<group>"; };
+		6EC46DF320BE2CCF0059C68F /* TWColdSignViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWColdSignViewController.h; sourceTree = "<group>"; };
+		6EC46DF420BE2CCF0059C68F /* TWColdSignViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWColdSignViewController.m; sourceTree = "<group>"; };
+		6EC46DF620BE2CDC0059C68F /* TWColdReceiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWColdReceiveViewController.h; sourceTree = "<group>"; };
+		6EC46DF720BE2CDC0059C68F /* TWColdReceiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWColdReceiveViewController.m; sourceTree = "<group>"; };
+		6EC46DF820BE2CDC0059C68F /* TWColdReceiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWColdReceiveViewController.xib; sourceTree = "<group>"; };
+		6EC46DFB20BE33E30059C68F /* TWColdSignViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWColdSignViewController.xib; sourceTree = "<group>"; };
+		6EC46DFD20BE34FA0059C68F /* TWColdSignTranscationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWColdSignTranscationViewController.h; sourceTree = "<group>"; };
+		6EC46DFE20BE34FA0059C68F /* TWColdSignTranscationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWColdSignTranscationViewController.m; sourceTree = "<group>"; };
+		6EC46DFF20BE34FA0059C68F /* TWColdSignTranscationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWColdSignTranscationViewController.xib; sourceTree = "<group>"; };
 		6EED948320AEC21E003FF63E /* TronWallet.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TronWallet.pch; sourceTree = "<group>"; };
 		6EED948720AEC2DA003FF63E /* UIColor+Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
 		6EED948820AEC2DA003FF63E /* UIColor+Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
@@ -1072,6 +1090,7 @@
 		6EA351F020AC82C100AF1984 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				6EC46DEB20BE2BA20059C68F /* Cold */,
 				6E3E9F4C20B88ED50096399D /* Exchange */,
 				6E3E9F5020B88ED50096399D /* Vote */,
 				6EA351F120AC82C100AF1984 /* controller */,
@@ -1170,6 +1189,40 @@
 				6EC46DE820BD85BC0059C68F /* TWEllipticCurveCrypto+Hash.h */,
 			);
 			path = EllipticCurveCrypto;
+			sourceTree = "<group>";
+		};
+		6EC46DEB20BE2BA20059C68F /* Cold */ = {
+			isa = PBXGroup;
+			children = (
+				6EC46DEC20BE2BA20059C68F /* Controller */,
+				6EC46DED20BE2BA20059C68F /* View */,
+			);
+			path = Cold;
+			sourceTree = "<group>";
+		};
+		6EC46DEC20BE2BA20059C68F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EC46DEE20BE2BB80059C68F /* TWColdWalletViewController.h */,
+				6EC46DEF20BE2BB80059C68F /* TWColdWalletViewController.m */,
+				6EC46DF320BE2CCF0059C68F /* TWColdSignViewController.h */,
+				6EC46DF420BE2CCF0059C68F /* TWColdSignViewController.m */,
+				6EC46DFB20BE33E30059C68F /* TWColdSignViewController.xib */,
+				6EC46DF620BE2CDC0059C68F /* TWColdReceiveViewController.h */,
+				6EC46DF720BE2CDC0059C68F /* TWColdReceiveViewController.m */,
+				6EC46DF820BE2CDC0059C68F /* TWColdReceiveViewController.xib */,
+				6EC46DFD20BE34FA0059C68F /* TWColdSignTranscationViewController.h */,
+				6EC46DFE20BE34FA0059C68F /* TWColdSignTranscationViewController.m */,
+				6EC46DFF20BE34FA0059C68F /* TWColdSignTranscationViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EC46DED20BE2BA20059C68F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6EED948420AEC2C7003FF63E /* Utils */ = {
@@ -1328,8 +1381,10 @@
 				6EC46DD520BD4CB20059C68F /* TWWalletViewController.xib in Resources */,
 				6EA351C120AC7D1500AF1984 /* Assets.xcassets in Resources */,
 				6EC46DCE20BD4C720059C68F /* TWWalletCreateViewController.xib in Resources */,
+				6EC46E0120BE34FA0059C68F /* TWColdSignTranscationViewController.xib in Resources */,
 				6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */,
 				6E3E9F7620B897E00096399D /* SGQRCode.bundle in Resources */,
+				6EC46DFC20BE33E30059C68F /* TWColdSignViewController.xib in Resources */,
 				6EC46DD820BD4CBE0059C68F /* TWAccountViewController.xib in Resources */,
 				6E40346920BBB483008140F5 /* secp256k1.table in Resources */,
 				6E93FF0C20AF20BA000FD37D /* TWTransInfoTableViewCell.xib in Resources */,
@@ -1338,6 +1393,7 @@
 				6E3E9F5B20B88F000096399D /* TWExSendViewController.xib in Resources */,
 				6E3E9F6020B88F160096399D /* TWExReceiveViewController.xib in Resources */,
 				6E93FF2420B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib in Resources */,
+				6EC46DFA20BE2CDC0059C68F /* TWColdReceiveViewController.xib in Resources */,
 				6E9103DE20B2A5A8006FDEA1 /* log_severity.proto in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1426,6 +1482,7 @@
 				6E9103D420B2A5A8006FDEA1 /* Consumer.pbobjc.m in Sources */,
 				6E3E9F3220B6638B0096399D /* TWHexConvert.m in Sources */,
 				6EC46DCF20BD4C720059C68F /* TWWalletImportViewController.m in Sources */,
+				6EC46DF520BE2CCF0059C68F /* TWColdSignViewController.m in Sources */,
 				6E9103D320B2A5A8006FDEA1 /* Logging.pbobjc.m in Sources */,
 				6E3E9F3520B663A30096399D /* TWAES128.m in Sources */,
 				6E3E9F1F20B5B8330096399D /* TWAccountManager.m in Sources */,
@@ -1434,6 +1491,7 @@
 				6E9103DA20B2A5A8006FDEA1 /* Code.pbobjc.m in Sources */,
 				6E3E9F6920B88F850096399D /* TWExTopView.m in Sources */,
 				6E9103DC20B2A5A8006FDEA1 /* ErrorDetails.pbobjc.m in Sources */,
+				6EC46E0020BE34FA0059C68F /* TWColdSignTranscationViewController.m in Sources */,
 				6E3E9F7420B897080096399D /* TWQRScanView.m in Sources */,
 				6E9103D020B2A5A8006FDEA1 /* Control.pbobjc.m in Sources */,
 				6E3E9F8320BA4EC70096399D /* TWCandicateViewController.m in Sources */,
@@ -1457,6 +1515,7 @@
 				6E91037420B2A370006FDEA1 /* Api.pbobjc.m in Sources */,
 				6EC46DB720BD2BB50059C68F /* UIViewController+ShowTip.m in Sources */,
 				6E93FF0720AF1F34000FD37D /* TWMainRecentTransactionTableViewCell.m in Sources */,
+				6EC46DF120BE2BB80059C68F /* TWColdWalletViewController.m in Sources */,
 				6E40346620BBB483008140F5 /* aes_modes.c in Sources */,
 				6E91037720B2A370006FDEA1 /* Tron.pbobjc.m in Sources */,
 				6E3E9F1820B593390096399D /* TWQRCoderGenerator.m in Sources */,
@@ -1511,6 +1570,7 @@
 				6E3E9F3820B663E30096399D /* NSData+AES128.m in Sources */,
 				6E40345E20BBB483008140F5 /* bip39.c in Sources */,
 				6E9103CD20B2A5A8006FDEA1 /* Log.pbobjc.m in Sources */,
+				6EC46DF920BE2CDC0059C68F /* TWColdReceiveViewController.m in Sources */,
 				6E9103D620B2A5A8006FDEA1 /* Documentation.pbobjc.m in Sources */,
 				6E40346020BBB483008140F5 /* hmac.c in Sources */,
 				6E9103C620B2A5A8006FDEA1 /* Color.pbobjc.m in Sources */,
