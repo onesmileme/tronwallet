@@ -36,7 +36,7 @@
     }
     
     NSArray *items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS"];//,@"ACCOUNT"
-    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, insets.top, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeDefault];
+    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeDefault];
     [self.view addSubview:_topScrollView];
     __weak typeof(self) wself = self;
     _topScrollView.chooseBlock = ^(NSInteger index,NSInteger lastIndex) {

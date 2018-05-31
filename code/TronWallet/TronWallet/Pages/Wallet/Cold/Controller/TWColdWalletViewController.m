@@ -33,7 +33,7 @@
     }
     
     NSArray *items = @[@"SIGN",@"RECEIVE"];
-    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, insets.top, SCREEN_WIDTH, kTopScrollHeight) items:items type:TWTopScrollViewTypeEqualWidth];
+    _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kTopScrollHeight) items:items type:TWTopScrollViewTypeEqualWidth];
     [self.view addSubview:_topScrollView];
     __weak typeof(self) wself = self;
     _topScrollView.chooseBlock = ^(NSInteger index,NSInteger lastIndex) {
