@@ -1805,9 +1805,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chunhui.tronwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
 				PROVISIONING_PROFILE = "528cfeba-b1ff-4c8d-89a3-9038081f8ed9";
-				PROVISIONING_PROFILE_SPECIFIER = tronwallet_distribution;	
+				PROVISIONING_PROFILE_SPECIFIER = tronwallet_distribution;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/TronWallet/RPC/**";
 			};
 			name = Release;
