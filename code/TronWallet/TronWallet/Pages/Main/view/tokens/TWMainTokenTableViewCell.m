@@ -17,6 +17,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.contentView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.contentView.layer.cornerRadius = 10;
+    self.contentView.layer.borderWidth = 0.5;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

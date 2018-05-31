@@ -17,7 +17,7 @@
 
 +(UIColor *)themeDarkBgColor
 {
-    return [UIColor darkGrayColor];
+    return [UIColor blackColor];
 }
 
 @end

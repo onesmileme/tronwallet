@@ -47,7 +47,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.allowsSelection = NO;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         UINib *nib = [UINib nibWithNibName:@"TWMainBlockInfoTableViewCell" bundle:nil];
         [_tableView registerNib:nib forCellReuseIdentifier:@"cellid"];
         
