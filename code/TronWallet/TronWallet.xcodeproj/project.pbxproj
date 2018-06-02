@@ -142,7 +142,6 @@
 		6EA7869C20C212F7006F40DE /* UIBarButtonItem+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7869B20C212F7006F40DE /* UIBarButtonItem+Navigation.m */; };
 		6EA7869F20C21412006F40DE /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7869E20C21412006F40DE /* UIViewController+Navigation.m */; };
 		6EA786A220C21557006F40DE /* UINavigationItem+margin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA786A120C21557006F40DE /* UINavigationItem+margin.m */; };
-		6EA786A520C2186D006F40DE /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA786A420C2186D006F40DE /* Test.m */; };
 		6EC46DB720BD2BB50059C68F /* UIViewController+ShowTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DB620BD2BB50059C68F /* UIViewController+ShowTip.m */; };
 		6EC46DBC20BD2F600059C68F /* UIViewController+BroadcastTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DBB20BD2F600059C68F /* UIViewController+BroadcastTransaction.m */; };
 		6EC46DCC20BD4C720059C68F /* TWWalletImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DC320BD4C720059C68F /* TWWalletImportViewController.xib */; };
@@ -445,8 +444,6 @@
 		6EA7869E20C21412006F40DE /* UIViewController+Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		6EA786A020C21557006F40DE /* UINavigationItem+margin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+margin.h"; sourceTree = "<group>"; };
 		6EA786A120C21557006F40DE /* UINavigationItem+margin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+margin.m"; sourceTree = "<group>"; };
-		6EA786A320C2186C006F40DE /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
-		6EA786A420C2186D006F40DE /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		6EC46DB520BD2BB50059C68F /* UIViewController+ShowTip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ShowTip.h"; sourceTree = "<group>"; };
 		6EC46DB620BD2BB50059C68F /* UIViewController+ShowTip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ShowTip.m"; sourceTree = "<group>"; };
 		6EC46DBA20BD2F600059C68F /* UIViewController+BroadcastTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BroadcastTransaction.h"; sourceTree = "<group>"; };
@@ -1016,8 +1013,6 @@
 				6EA351C220AC7D1500AF1984 /* LaunchScreen.storyboard */,
 				6EA351C520AC7D1500AF1984 /* Info.plist */,
 				6EA351C620AC7D1500AF1984 /* main.m */,
-				6EA786A320C2186C006F40DE /* Test.h */,
-				6EA786A420C2186D006F40DE /* Test.m */,
 				6EED948A20AEC310003FF63E /* TWDefines.h */,
 				6EED948320AEC21E003FF63E /* TronWallet.pch */,
 			);
@@ -1549,7 +1544,6 @@
 				6E40346520BBB483008140F5 /* secp256k1.c in Sources */,
 				6E4AD55C20B4F8520012DCD1 /* TWConnectViewController.m in Sources */,
 				6E3E9F5620B88EE70096399D /* TWExchangeViewController.m in Sources */,
-				6EA786A520C2186D006F40DE /* Test.m in Sources */,
 				6E9103CA20B2A5A8006FDEA1 /* MonitoredResource.pbobjc.m in Sources */,
 				6E40346820BBB483008140F5 /* ripemd160.c in Sources */,
 				6E9103D220B2A5A8006FDEA1 /* Label.pbobjc.m in Sources */,
