@@ -26,6 +26,7 @@
 #import "AppDelegate.h"
 #import "UIViewController+ShowTip.h"
 #import "UIViewController+BroadcastTransaction.h"
+#import "UIViewController+Navigation.h"
 
 #define AppWalletClient [(AppDelegate *)[[UIApplication sharedApplication] delegate] walletClient]
 

@@ -36,6 +36,7 @@
     
     TWAccountViewController *controller = [[TWAccountViewController alloc]initWithNibName:@"TWAccountViewController" bundle:nil];
     [controller setupClient:AppWalletClient cold:NO];
+    [controller showInfo:YES];
     controller.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
 }

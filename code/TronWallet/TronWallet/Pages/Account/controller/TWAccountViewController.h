@@ -17,7 +17,10 @@
 @property(nonatomic , strong) IBOutlet UILabel *addressLabel;
 @property(nonatomic , strong) IBOutlet UILabel *privateKeyLabel;
 @property(nonatomic , strong) IBOutlet NSLayoutConstraint *contentWidth;
+@property(nonatomic , strong) IBOutlet UIButton *continueButton;
 
 -(void)setupClient:(TWWalletAccountClient *)client cold:(BOOL)cold;
+
+-(void)showInfo:(BOOL)showInfo;
 
 @end

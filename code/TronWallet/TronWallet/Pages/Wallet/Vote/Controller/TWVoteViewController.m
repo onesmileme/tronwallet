@@ -72,6 +72,8 @@
     [_topScrollView scrollToShow:0];
     
     [self refrshUI];
+    
+    [self initBackItem];
 }
 
 - (void)didReceiveMemoryWarning {

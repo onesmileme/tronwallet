@@ -67,6 +67,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [_topScrollView scrollToShow:0];
+    
+    [self initBackItem];
 }
 
 - (void)didReceiveMemoryWarning {

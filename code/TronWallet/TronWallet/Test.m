@@ -39,6 +39,34 @@
 //    [self fake2];
 //    [self fake];
 //    [self revFake];
+//    [self imageTest];
+}
+
++(void)imageTest
+{
+    
+    NSArray *names = @[@"tab_wallet",@"tab_news",@"tab_set"];
+    
+    for (NSString *name in names) {
+
+        UIImage *image = [UIImage imageNamed:name];
+        
+        CGSize size = image.size;
+        size.width *= 1.5;
+        size.height *= 1.5;
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(size.width*1.5, size.height*1.5), NO, 0);
+        
+        [image drawInRect:CGRectMake(size.width/4, size.height/4, size.width, size.height)];
+        
+        UIImage *nimage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        NSData *data = UIImagePNGRepresentation(nimage);
+        [data writeToFile:[NSString stringWithFormat:@"/Users/chunhui/Desktop/temp/wallet/%@@3x.png",name] atomically:YES];
+        
+    }
+    
 }
 
 +(NSData *)hashData
@@ -346,6 +374,7 @@
     
 }
 
+#if 0
 +(void)passwordTest
 {
  
@@ -394,6 +423,8 @@
     //    [defaults setObject:hexPubKey forKey:kPubKey]; //public key
     //    [defaults setObject:hexPriKey forKey:kPriKey]; //private key
 }
+
+#endif
 
 +(void)reverse:(NSString *)hexPriKey password:(NSString *)password
 {

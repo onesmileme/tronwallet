@@ -19,6 +19,7 @@
 //@property(nonatomic , strong) NSString *password;
 @property(nonatomic , assign) BOOL cold;
 @property(nonatomic , strong) TWWalletAccountClient *client;
+@property(nonatomic , assign) BOOL showInfoOnly;
 
 @end
 
@@ -34,6 +35,9 @@
     
     tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onPrivateKeyTap)];
     [self.privateKeyLabel addGestureRecognizer:tap];
+    
+    self.continueButton.hidden = _showInfoOnly;
+    [self initBackItem];
     
 }
 
@@ -102,6 +106,12 @@
     board.string = self.privateKeyLabel.text;
     
     [self showHudTitle:@"Private key has copy to pasteboard"];
+}
+
+-(void)showInfo:(BOOL)showInfo
+{
+    _showInfoOnly = showInfo;
+    self.continueButton.hidden = showInfo;
 }
 
 /*

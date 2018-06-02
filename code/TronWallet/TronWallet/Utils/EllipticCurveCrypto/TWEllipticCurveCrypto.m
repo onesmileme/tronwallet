@@ -210,15 +210,16 @@ typedef struct
     
     NSMutableData *mdata = [[NSMutableData alloc]init];
     
-    uint8_t pre = 0xa0;
+    
+//    uint8_t pre = 0xa0;
     
     //on line
-    //pre = 0xb0;
+    uint8_t pre = 0x41;
     
     [mdata appendBytes:&pre length:1];
     
     [mdata appendData:subData];
-    [self printData:mdata name:@" address data "];
+//    [self printData:mdata name:@" address data "];
     
     
     NSData *hash0 = [mdata SHA256Hash];

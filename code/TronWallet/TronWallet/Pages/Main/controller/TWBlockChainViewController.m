@@ -10,6 +10,7 @@
 #import "TWMainRecentBlockTableViewCell.h"
 #import "TWMainRecentTransactionTableViewCell.h"
 #import "TWMainInfoTipHeader.h"
+#import "TWMainBlockInfoTableViewCell.h"
 
 @interface TWBlockChainViewController ()
 
@@ -31,7 +32,12 @@
     [self.tableView registerClass:[TWMainRecentBlockTableViewCell class] forCellReuseIdentifier:@"block_cell"];
     [self.tableView registerClass:[TWMainRecentTransactionTableViewCell class] forCellReuseIdentifier:@"recent_cell"];
 
+    UINib *nib = [UINib nibWithNibName:@"TWMainBlockInfoTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"cellid"];
+    
     self.tableView.allowsSelection = NO;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 10)];
     header.backgroundColor = [UIColor clearColor];
@@ -90,58 +96,65 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+//    return 1;
+    return self.blockArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = nil;
+//    UITableViewCell *cell = nil;
     
-    // Configure the cell...
-    if (indexPath.section == 0) {
-        
-        TWMainRecentBlockTableViewCell *blockCell = [tableView dequeueReusableCellWithIdentifier:@"block_cell"];
-        
-        cell = blockCell;
-        
-        [blockCell updateWithModel:self.blockArray];
-        
-    }else{
-        
-        TWMainRecentTransactionTableViewCell *recentCell = [tableView dequeueReusableCellWithIdentifier:@"recent_cell"];
-        
-        cell = recentCell;
-        
-        [recentCell bindData:self.transactionsArray];
-        
-    }
-    
-    
+//    // Configure the cell...
+//    if (indexPath.section == 0) {
+//
+//        TWMainRecentBlockTableViewCell *blockCell = [tableView dequeueReusableCellWithIdentifier:@"block_cell"];
+//
+//        cell = blockCell;
+//
+//        [blockCell updateWithModel:self.blockArray];
+//
+//    }else{
+//
+//        TWMainRecentTransactionTableViewCell *recentCell = [tableView dequeueReusableCellWithIdentifier:@"recent_cell"];
+//
+//        cell = recentCell;
+//
+//        [recentCell bindData:self.transactionsArray];
+//
+//    }
+//
+//
+//    return cell;
+    TWMainBlockInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
+    Block *block = _blockArray[indexPath.row];
+    [cell updateWithModel:block.blockHeader index:0];
     return cell;
+    
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return (CGRectGetHeight(tableView.frame)-110)+55;
+//    return (CGRectGetHeight(tableView.frame)-110)+55;
+    return 60;
 }
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    TWMainInfoTipHeader *infoTip = [[TWMainInfoTipHeader alloc]init];
-    infoTip.tipLabel.text = (section == 0? @"    BLOCKCHAIN":@"    RECENT TRANSACTIONS");
-    return infoTip;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 50;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return CGFLOAT_MIN;
-}
+//
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    TWMainInfoTipHeader *infoTip = [[TWMainInfoTipHeader alloc]init];
+//    infoTip.tipLabel.text = (section == 0? @"    BLOCKCHAIN":@"    RECENT TRANSACTIONS");
+//    return infoTip;
+//}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 50;
+//}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+//{
+//    return CGFLOAT_MIN;
+//}
 
 
 /*

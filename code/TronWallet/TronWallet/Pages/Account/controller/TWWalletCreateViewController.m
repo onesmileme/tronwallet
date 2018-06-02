@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self initBackItem];
     
 //#if DEBUG
 //    self.pwdTextField.text = @"1234567890";

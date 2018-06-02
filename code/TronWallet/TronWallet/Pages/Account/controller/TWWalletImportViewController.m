@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self initBackItem];
+    
     UIColor *color = [UIColor lightGrayColor];
     
     self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"New Password" attributes:@{NSForegroundColorAttributeName:color}];

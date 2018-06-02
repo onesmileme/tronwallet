@@ -27,6 +27,7 @@
     self.ipTextField.text = [manager ip];
     self.portTextField.text =[manager port];
     
+    [self initBackItem];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -16,6 +16,7 @@
                 <outlet property="addressQR" destination="Hud-iP-whv" id="Jho-BE-LrB"/>
                 <outlet property="contentView" destination="SFG-vr-rqF" id="o2l-mU-Cf3"/>
                 <outlet property="contentWidth" destination="zMu-tU-nLs" id="oKZ-XM-yPl"/>
+                <outlet property="continueButton" destination="ZHt-qr-Yeo" id="2gY-D2-qXf"/>
                 <outlet property="priKeyQR" destination="EFS-ob-kYP" id="BNe-QT-RYl"/>
                 <outlet property="privateKeyLabel" destination="Oii-ze-59Y" id="5UQ-gs-AaR"/>
                 <outlet property="scrollView" destination="IS8-XP-iNy" id="CrL-mF-ax6"/>
