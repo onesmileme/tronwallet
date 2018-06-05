@@ -22,7 +22,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
 #define kNodeIpKey @"__node_ip__"
 #define kNodePortKey @"__node_port__"
 
-#define kDefaultIp @"47.254.16.55"
+#define kDefaultIp @"39.104.116.191"//@"47.254.16.55"
 #define kDefaultPort @"50051"
 
 @interface TWNetworkManager()<TKRequestHandlerDelegate>
@@ -106,7 +106,8 @@ IMP_SINGLETON
 
 +(NSString *)appHost
 {
-    return [NSString stringWithFormat:@"%@:%@",kDefaultIp,kDefaultPort];
+    TWNetworkManager *manager = [TWNetworkManager sharedInstance];
+    return [NSString stringWithFormat:@"%@:%@",manager.nodeIp,manager.nodePort];
 }
 
 -(void)resetIp:(NSString *)ip andPort:(NSString *)port

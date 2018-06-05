@@ -362,7 +362,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-                  timestampString = "549591926.146558"
+                  timestampString = "549892510.521862"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -377,7 +377,7 @@
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-                  timestampString = "549591926.148073"
+                  timestampString = "549892510.523614"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -416,22 +416,6 @@
             startingLineNumber = "97"
             endingLineNumber = "97"
             landmarkName = "-reallySend"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToolKit/ToolKit/ViewController/TKTabControllerIniter.m"
-            timestampString = "549591925.97506"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "+viewControllersWithItems:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
