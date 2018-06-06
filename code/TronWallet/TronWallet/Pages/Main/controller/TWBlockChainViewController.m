@@ -92,69 +92,71 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return 1;
-    return self.blockArray.count;
+    return 1;
+//    return self.blockArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = nil;
+    UITableViewCell *cell = nil;
     
-//    // Configure the cell...
-//    if (indexPath.section == 0) {
-//
-//        TWMainRecentBlockTableViewCell *blockCell = [tableView dequeueReusableCellWithIdentifier:@"block_cell"];
-//
-//        cell = blockCell;
-//
-//        [blockCell updateWithModel:self.blockArray];
-//
-//    }else{
-//
-//        TWMainRecentTransactionTableViewCell *recentCell = [tableView dequeueReusableCellWithIdentifier:@"recent_cell"];
-//
-//        cell = recentCell;
-//
-//        [recentCell bindData:self.transactionsArray];
-//
-//    }
-//
-//
-//    return cell;
-    TWMainBlockInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
-    Block *block = _blockArray[indexPath.row];
-    [cell updateWithModel:block.blockHeader index:0];
+    // Configure the cell...
+    if (indexPath.section == 0) {
+
+        TWMainRecentBlockTableViewCell *blockCell = [tableView dequeueReusableCellWithIdentifier:@"block_cell"];
+
+        cell = blockCell;
+
+        [blockCell updateWithModel:self.blockArray];
+
+    }else{
+
+        TWMainRecentTransactionTableViewCell *recentCell = [tableView dequeueReusableCellWithIdentifier:@"recent_cell"];
+
+        cell = recentCell;
+
+        [recentCell bindData:self.transactionsArray];
+
+    }
+
+
     return cell;
+    
+//    TWMainBlockInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
+//    Block *block = _blockArray[indexPath.row];
+//    [cell updateWithModel:block.blockHeader index:0];
+//    return cell;
     
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    return (CGRectGetHeight(tableView.frame)-110)/2;
 //    return (CGRectGetHeight(tableView.frame)-110)+55;
-    return 60;
+//    return 60;
 }
-//
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    TWMainInfoTipHeader *infoTip = [[TWMainInfoTipHeader alloc]init];
-//    infoTip.tipLabel.text = (section == 0? @"    BLOCKCHAIN":@"    RECENT TRANSACTIONS");
-//    return infoTip;
-//}
-//
-//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    return 50;
-//}
-//
-//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-//{
-//    return CGFLOAT_MIN;
-//}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    TWMainInfoTipHeader *infoTip = [[TWMainInfoTipHeader alloc]init];
+    infoTip.tipLabel.text = (section == 0? @"    BLOCKCHAIN":@"    RECENT TRANSACTIONS");
+    return infoTip;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
 
 
 /*

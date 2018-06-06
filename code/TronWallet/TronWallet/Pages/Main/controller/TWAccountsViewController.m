@@ -10,7 +10,7 @@
 
 @interface TWAccountsViewController ()
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Account*> *accountsArray;
+@property(nonatomic, readwrite, strong) NSMutableArray<Account*> *accountsArray;
 
 @end
 

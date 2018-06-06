@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"EXCHANGE";
     UIEdgeInsets insets = UIEdgeInsetsZero;
     if (@available(iOS 11.0 , *)) {
         insets = [[[UIApplication sharedApplication] keyWindow] safeAreaInsets];

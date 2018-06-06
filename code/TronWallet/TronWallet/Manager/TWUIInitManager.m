@@ -37,7 +37,8 @@ IMP_SINGLETON
     bar.barTintColor = [UIColor themeRed];
     bar.translucent = NO;
     
-    UIImage *backImage = [UIImage imageNamed:@"normal_back"];
+    UIImage *backImage = [UIImage imageNamed:@"navi_back"];
+    backImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     bar.backIndicatorImage = backImage;
     bar.backIndicatorTransitionMaskImage = backImage;
     bar.backItem.title = @"";
@@ -55,11 +56,12 @@ IMP_SINGLETON
 
     //HexColor(0xe84c3d)}
 //    UIColor *color = HexColor(0xe84c3d)}
-    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor themeRed]}  forState:UIControlStateSelected];
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}  forState:UIControlStateSelected];
     
     
-//    UITabBar *bar = [UITabBar appearance];
-//    bar.backgroundImage = [UIImage imageNamed:@"tabbar_bg"];
+    
+    UITabBar *bar = [UITabBar appearance];
+    bar.backgroundImage = [UIImage imageNamed:@"tab_bg"];
     
 }
 

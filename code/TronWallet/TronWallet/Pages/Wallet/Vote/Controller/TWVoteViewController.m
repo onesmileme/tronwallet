@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = @"VOTES";
     UIEdgeInsets insets = UIEdgeInsetsZero;
     if (@available(iOS 11.0 , *)) {
         insets = [[[UIApplication sharedApplication] keyWindow] safeAreaInsets];
@@ -106,6 +107,7 @@
 
 -(IBAction)submitAction:(id)sender
 {
+    [self.canController.view endEditing:YES];
     if (self.canController.voteWitness.count == 0) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.label.text = @"Please choose Votes";
@@ -116,10 +118,8 @@
     Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
     VoteWitnessContract *contract = [[VoteWitnessContract alloc] init];
     contract.ownerAddress = [AppWalletClient address];
-    NSLog(@"owner address is: %@",contract.ownerAddress);
     for (TWVoteWitnessModel *model in self.canController.voteWitness) {
         VoteWitnessContract_Vote *vote = [VoteWitnessContract_Vote new];
-        NSLog(@"address is: %@",model.witness.address);
         vote.voteAddress = model.witness.address;
         vote.voteCount = model.vote;
         [contract.votesArray addObject:vote];
@@ -130,6 +130,9 @@
     [wallet voteWitnessAccountWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
         if (error) {
             hud.label.text = [NSString stringWithFormat:@"%@",error];
+            [hud hideAnimated:YES afterDelay:1];
+        }else if(!response.hasRawData){
+            hud.label.text = @"Vote failed";
             [hud hideAnimated:YES afterDelay:1];
         }else{
             [wself broadcastTransaction:response hud:hud completion:^(Return * _Nullable response, NSError * _Nullable error) {

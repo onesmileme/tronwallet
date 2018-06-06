@@ -14,6 +14,6 @@
 
 -(NSArray<TWVoteWitnessModel *> *)voteWitness;
 
--(void)refresh;
+//-(void)refresh;
 
 @end

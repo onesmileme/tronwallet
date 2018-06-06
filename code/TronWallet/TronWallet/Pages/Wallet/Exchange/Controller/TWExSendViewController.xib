@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="amountTextField" destination="yXc-Pa-78E" id="7M1-Zs-wD5"/>
                 <outlet property="avaiableLabel" destination="oRv-c5-564" id="OX2-yH-fWO"/>
-                <outlet property="toLabel" destination="AdP-NP-KMY" id="yIL-vA-73R"/>
+                <outlet property="toTextField" destination="lXg-sw-Dji" id="YpJ-80-Omt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,14 +45,23 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdP-NP-KMY" userLabel="toAddLabel">
-                    <rect key="frame" x="10" y="125.5" width="355" height="0.0"/>
+                    <rect key="frame" x="10" y="125.5" width="355" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lXg-sw-Dji" userLabel="toAddField">
+                    <rect key="frame" x="10" y="125.5" width="355" height="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="N8S-3e-yz8"/>
+                    </connections>
+                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy4-mw-Qnp">
                     <rect key="frame" x="335" y="86.5" width="30" height="30"/>
-                    <color key="backgroundColor" red="1" green="0.16162655989999999" blue="0.068977443479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.2274509804" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="XHm-8d-7mT"/>
                         <constraint firstAttribute="height" constant="30" id="kCd-An-tcO"/>
@@ -65,8 +74,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDK-xn-Nex">
-                    <rect key="frame" x="10" y="226.5" width="355" height="35"/>
-                    <color key="backgroundColor" red="1" green="0.16162655989999999" blue="0.068977443479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="10" y="248.5" width="355" height="35"/>
+                    <color key="backgroundColor" red="0.2274509804" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="roK-sr-6al"/>
                     </constraints>
@@ -78,27 +87,28 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nql-Ba-axO">
-                    <rect key="frame" x="10" y="145.5" width="60" height="21"/>
+                    <rect key="frame" x="10" y="167.5" width="60" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-Pa-78E">
-                    <rect key="frame" x="90" y="145" width="275" height="22"/>
+                    <rect key="frame" x="90" y="167" width="275" height="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaible" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRv-c5-564">
-                    <rect key="frame" x="10" y="182" width="355" height="14.5"/>
+                    <rect key="frame" x="10" y="204" width="355" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="8Cl-vD-oSL" firstAttribute="top" secondItem="LDg-9d-gfJ" secondAttribute="bottom" constant="20" id="3lk-1R-3Tv"/>
+                <constraint firstItem="lXg-sw-Dji" firstAttribute="trailing" secondItem="AdP-NP-KMY" secondAttribute="trailing" id="6Gs-m8-OqX"/>
                 <constraint firstItem="oRv-c5-564" firstAttribute="leading" secondItem="nql-Ba-axO" secondAttribute="leading" id="96R-KL-fVk"/>
                 <constraint firstItem="oRv-c5-564" firstAttribute="trailing" secondItem="yXc-Pa-78E" secondAttribute="trailing" id="CA7-dY-KRD"/>
                 <constraint firstItem="AdP-NP-KMY" firstAttribute="top" secondItem="8Cl-vD-oSL" secondAttribute="bottom" constant="15" id="DA7-dv-In6"/>
@@ -108,6 +118,7 @@
                 <constraint firstItem="nql-Ba-axO" firstAttribute="leading" secondItem="AdP-NP-KMY" secondAttribute="leading" id="LLo-Xa-wbl"/>
                 <constraint firstItem="AdP-NP-KMY" firstAttribute="leading" secondItem="8Cl-vD-oSL" secondAttribute="leading" id="Q2S-TV-Dzm"/>
                 <constraint firstItem="fy4-mw-Qnp" firstAttribute="centerY" secondItem="8Cl-vD-oSL" secondAttribute="centerY" id="TJc-tF-Fkf"/>
+                <constraint firstItem="lXg-sw-Dji" firstAttribute="leading" secondItem="AdP-NP-KMY" secondAttribute="leading" id="VFT-Uu-IO4"/>
                 <constraint firstItem="LDg-9d-gfJ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="W5g-2g-64w"/>
                 <constraint firstItem="nql-Ba-axO" firstAttribute="top" secondItem="AdP-NP-KMY" secondAttribute="bottom" constant="20" id="Wxc-It-bP6"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="fy4-mw-Qnp" secondAttribute="trailing" constant="10" id="XNL-rP-eV8"/>
@@ -117,8 +128,10 @@
                 <constraint firstItem="LDg-9d-gfJ" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="d02-JJ-RSN"/>
                 <constraint firstItem="fy4-mw-Qnp" firstAttribute="trailing" secondItem="yXc-Pa-78E" secondAttribute="trailing" id="eU2-8N-mHK"/>
                 <constraint firstItem="yXc-Pa-78E" firstAttribute="centerY" secondItem="nql-Ba-axO" secondAttribute="centerY" id="gFZ-kG-y48"/>
+                <constraint firstItem="lXg-sw-Dji" firstAttribute="top" secondItem="AdP-NP-KMY" secondAttribute="top" id="lfL-j7-1eL"/>
                 <constraint firstItem="oDK-xn-Nex" firstAttribute="trailing" secondItem="oRv-c5-564" secondAttribute="trailing" id="mon-v7-EaQ"/>
                 <constraint firstItem="oRv-c5-564" firstAttribute="top" secondItem="yXc-Pa-78E" secondAttribute="bottom" constant="15" id="mr9-iw-H9n"/>
+                <constraint firstItem="lXg-sw-Dji" firstAttribute="bottom" secondItem="AdP-NP-KMY" secondAttribute="bottom" id="qS8-3a-vTi"/>
                 <constraint firstItem="oDK-xn-Nex" firstAttribute="top" secondItem="oRv-c5-564" secondAttribute="bottom" constant="30" id="wRI-DT-GmZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
@@ -126,6 +139,6 @@
         </view>
     </objects>
     <resources>
-        <image name="scan" width="75" height="75"/>
+        <image name="scan" width="50" height="50"/>
     </resources>
 </document>

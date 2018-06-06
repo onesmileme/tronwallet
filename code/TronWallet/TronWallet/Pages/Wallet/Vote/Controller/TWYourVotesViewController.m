@@ -98,7 +98,7 @@
     // Configure the cell...
     NSInteger index = indexPath.section+1;
     Witness *witness = _witnessesArray[indexPath.section];
-    NSInteger votes = [self.voteMap[@(indexPath.section+1)] integerValue];
+    NSInteger votes = [self.voteMap[@(indexPath.section)] integerValue];
     [cell updateWithModel:witness index:index votes:votes];
     
     return cell;

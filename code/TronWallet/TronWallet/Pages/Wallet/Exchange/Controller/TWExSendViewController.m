@@ -28,7 +28,8 @@
     [self.view addGestureRecognizer:tap];
     
 //#if DEBUG
-//    self.toLabel.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
+////    self.toLabel.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
+//    self.toTextField.text = @"TVKtwJoGWuj8jYEL7T52kFVNDR89uofKb8";
 //#endif
     
 }
@@ -53,6 +54,7 @@
 -(void)onTap:(UITapGestureRecognizer *)gesture
 {
     [self.amountTextField resignFirstResponder];
+    [self.toTextField resignFirstResponder];
 }
 
 -(IBAction)qrAction:(id)sender
@@ -60,7 +62,7 @@
     TWQRViewController *controller = [[TWQRViewController alloc]init];
     __weak typeof(self) wself = self;
     controller.captureBlock = ^(NSString *metaObbj) {
-        wself.toLabel.text = metaObbj;
+        wself.toTextField.text = metaObbj;
     };
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -87,7 +89,7 @@
 -(void)reallySend
 {
     TransferContract *contract = [[TransferContract alloc]init];
-    contract.toAddress =  BTCDataFromBase58Check(_toLabel.text); 
+    contract.toAddress =  BTCDataFromBase58Check(_toTextField.text);
 //    NSString *priKey = [TWWalletAccountClient loadPriKey];
     TWWalletAccountClient *client = AppWalletClient;
 //    NSString *baseAddress = [client base58OwnerAddress];
@@ -172,6 +174,7 @@
 
 -(void)signTransaction:(Transaction *)transaction
 {
+    
     TWAddressOnlyViewController *controller = [[TWAddressOnlyViewController alloc] initWithNibName:@"TWAddressOnlyViewController" bundle:nil];
     
     NSData *data = [transaction data];
@@ -208,7 +211,7 @@
                 hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
             }
         }
-        [hud hideAnimated:YES afterDelay:0.7 ];
+        [hud hideAnimated:YES afterDelay:1.5 ];
     }];
 }
 
@@ -217,14 +220,14 @@
     [self.amountTextField resignFirstResponder];
     
     NSString *tip = nil;
-    if (self.toLabel.text.length == 0) {
+    if (self.toTextField.text.length == 0) {
         tip = @"Please choose other wallet address";
     }else if (self.amountTextField.text.length == 0){
         tip = @"Please choose amount";
     }else{
         TWWalletAccountClient *accountClient = AppWalletClient;
         Account *account = accountClient.account;
-        if (account.balance < self.amountTextField.text.integerValue) {
+        if (account.balance/kDense < self.amountTextField.text.integerValue) {
             tip = @"Input amount too much";
         }
     }

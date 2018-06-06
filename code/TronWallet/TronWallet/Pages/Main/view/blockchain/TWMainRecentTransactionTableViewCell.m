@@ -40,7 +40,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.allowsSelection = NO;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tableView.backgroundColor = [UIColor themeDarkBgColor];
         UINib *nib = [UINib nibWithNibName:@"TWTransInfoTableViewCell" bundle:nil];
         [_tableView registerNib:nib forCellReuseIdentifier:@"cellid"];
@@ -53,6 +53,7 @@
 -(void)bindData:(NSArray<Transaction *>*)data
 {
     self.transactionsArray = data;
+    [self.tableView reloadData];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

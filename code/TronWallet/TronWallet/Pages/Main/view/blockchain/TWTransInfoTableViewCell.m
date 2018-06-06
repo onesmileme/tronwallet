@@ -99,9 +99,13 @@
     NSString *to = nil;
     if (ownerAddress) {
         from = [TWShEncoder encode58Check:ownerAddress];
+    }else{
+        from = @"--";
     }
     if (accountName) {
         to = [TWShEncoder encode58Check:accountName];
+    }else{
+        to = @"--";
     }
 
     NSString *type = nil;

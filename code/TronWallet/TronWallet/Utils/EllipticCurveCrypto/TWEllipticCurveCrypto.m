@@ -169,7 +169,7 @@ typedef struct
 {
     NSData *mdata = [self ownerAddress];
     NSString *address = BTCBase58StringWithData(mdata);
-    NSLog(@"address is: %@",address);
+//    NSLog(@"address is: %@",address);
 //    NSData *d = BTCDataFromBase58(address);
 //    [self printData:d name:@"reverse 58"];
     
@@ -181,7 +181,7 @@ typedef struct
     NSData *mdata = [self ownerAddress];
     
     NSString *address = BTCBase58CheckStringWithData(mdata);
-    NSLog(@"base58 check address is: %@",address);
+//    NSLog(@"base58 check address is: %@",address);
     return address;
 }
 

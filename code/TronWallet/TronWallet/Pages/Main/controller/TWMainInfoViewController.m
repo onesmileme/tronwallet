@@ -13,6 +13,7 @@
 #import "TWNodesViewController.h"
 #import "TWRepresentativeViewController.h"
 #import "TWTokensViewController.h"
+#import "TWSettingViewController.h"
 
 #define kTopScrollHeight 40
 
@@ -26,6 +27,23 @@
 
 @implementation TWMainInfoViewController
 
+-(void)initNavbar
+{
+//    TWMainInfoViewController
+    
+    UIImage *img = [UIImage imageNamed:@"tab_set"];
+    img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStylePlain target:self action:@selector(gotoSet)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+-(void)gotoSet
+{
+    TWSettingViewController *controller = [[TWSettingViewController alloc]initWithNibName:@"TWSettingViewController" bundle:nil];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -34,6 +52,8 @@
     if (@available(iOS 11.0 , *)) {
         insets = [[[UIApplication sharedApplication] keyWindow] safeAreaInsets];
     }
+    
+    [self initNavbar];
     
     NSArray *items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS"];//,@"ACCOUNT"
     _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeDefault];
@@ -52,7 +72,7 @@
 
     
     CGRect frame = [[UIScreen mainScreen]bounds];
-    frame.size.height -= (insets.bottom+kTopScrollHeight + 49 );
+    frame.size.height -= (insets.bottom+kTopScrollHeight  );
     frame.origin.y = CGRectGetMaxY(_topScrollView.frame);
     _pageContainerViewController.view.frame = frame;
     

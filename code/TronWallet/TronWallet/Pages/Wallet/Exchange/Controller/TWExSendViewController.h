@@ -10,7 +10,8 @@
 
 @interface TWExSendViewController : UIViewController
 
-@property(nonatomic , strong) IBOutlet UILabel *toLabel;
+//@property(nonatomic , strong) IBOutlet UILabel *toLabel;
+@property(nonatomic , strong) IBOutlet UITextField *toTextField;
 @property(nonatomic , strong) IBOutlet UILabel * avaiableLabel;
 @property(nonatomic , strong) IBOutlet UITextField *amountTextField;
 

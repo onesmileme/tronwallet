@@ -19,7 +19,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"SET";
+    
+    UIImage *backImage = [UIImage imageNamed:@"navi_back"];
+    backImage = [backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    bar.backIndicatorImage = backImage;
+//    bar.backIndicatorTransitionMaskImage = backImage;
+//    bar.backItem.title = @"";
+    
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithImage:backImage style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+    self.navigationItem.leftBarButtonItem = back;
+    
 }
+
+//-(void)backAction
+//{
+//
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

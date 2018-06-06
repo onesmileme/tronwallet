@@ -71,6 +71,7 @@
 		6E4AD55820B463350012DCD1 /* NSData+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55320B463350012DCD1 /* NSData+Hashing.m */; };
 		6E4AD55C20B4F8520012DCD1 /* TWConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AD55A20B4F8520012DCD1 /* TWConnectViewController.m */; };
 		6E4AD55D20B4F8520012DCD1 /* TWConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4AD55B20B4F8520012DCD1 /* TWConnectViewController.xib */; };
+		6E5AF29320C76F5A008DD149 /* bg_short.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E5AF29220C76F59008DD149 /* bg_short.jpg */; };
 		6E91037420B2A370006FDEA1 /* Api.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91036A20B2A370006FDEA1 /* Api.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E91037520B2A370006FDEA1 /* TronInventoryItems.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91036F20B2A370006FDEA1 /* TronInventoryItems.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E91037620B2A370006FDEA1 /* Discover.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91037020B2A370006FDEA1 /* Discover.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -313,6 +314,7 @@
 		6E4AD55920B4F8520012DCD1 /* TWConnectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWConnectViewController.h; sourceTree = "<group>"; };
 		6E4AD55A20B4F8520012DCD1 /* TWConnectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWConnectViewController.m; sourceTree = "<group>"; };
 		6E4AD55B20B4F8520012DCD1 /* TWConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWConnectViewController.xib; sourceTree = "<group>"; };
+		6E5AF29220C76F59008DD149 /* bg_short.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_short.jpg; sourceTree = "<group>"; };
 		6E91036920B2A370006FDEA1 /* Api.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.pbobjc.h; sourceTree = "<group>"; };
 		6E91036A20B2A370006FDEA1 /* Api.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.pbobjc.m; sourceTree = "<group>"; };
 		6E91036C20B2A370006FDEA1 /* Discover.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover.pbobjc.h; sourceTree = "<group>"; };
@@ -1300,6 +1302,7 @@
 		6EED948520AEC2C7003FF63E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6E5AF29220C76F59008DD149 /* bg_short.jpg */,
 				6E3E9F7520B897DF0096399D /* SGQRCode.bundle */,
 			);
 			path = Resources;
@@ -1426,6 +1429,7 @@
 				6EC46E0120BE34FA0059C68F /* TWColdSignTranscationViewController.xib in Resources */,
 				6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */,
 				6E3E9F7620B897E00096399D /* SGQRCode.bundle in Resources */,
+				6E5AF29320C76F5A008DD149 /* bg_short.jpg in Resources */,
 				6EC46DFC20BE33E30059C68F /* TWColdSignViewController.xib in Resources */,
 				6EC46DD820BD4CBE0059C68F /* TWAccountViewController.xib in Resources */,
 				6E40346920BBB483008140F5 /* secp256k1.table in Resources */,

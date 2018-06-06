@@ -78,6 +78,7 @@
 
 -(IBAction)freezeAction:(id)sender
 {
+    [self.view endEditing:YES];
     NSInteger count = [_amountField.text integerValue];
     if (count == 0) {
         return;
@@ -127,7 +128,7 @@
 
 -(IBAction)unfreezeAction:(id)sender
 {
-    
+    [self.view endEditing:YES];
     [self showPasswordAlert:@"TIP" mssage:@"Do you want to unfreeze ?" confrim:@"YES" cancel:@"NO" confirmAction:^{
         [self doUnFreeze];
     }];
