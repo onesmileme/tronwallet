@@ -9,6 +9,7 @@
 #import "TWSettingViewController.h"
 #import "TWConnectViewController.h"
 #import "TWAccountViewController.h"
+#import "TWTransactionRecordViewController.h"
 
 @interface TWSettingViewController ()
 
@@ -62,6 +63,13 @@
     TWConnectViewController *connectController = [[TWConnectViewController alloc]initWithNibName:@"TWConnectViewController" bundle:nil];
     connectController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:connectController animated:YES];
+}
+
+-(IBAction)transactionListAction:(id)sender
+{
+    TWTransactionRecordViewController *controller = [[TWTransactionRecordViewController alloc]initWithNibName:@"TWTransactionRecordViewController" bundle:nil];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(IBAction)aboutAction:(id)sender

@@ -22,6 +22,8 @@
     
     UINib *nib = [UINib nibWithNibName:@"TWMainTokenTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell_id"];
+    self.tableView.allowsMultipleSelection = NO;
+    self.tableView.allowsSelection = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +102,29 @@
 {
     return [[UIView alloc] init];
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil message:@"Want to participate this ?" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (self.participateBlock) {
+            AssetIssueContract *model = _assetIssueArray[indexPath.section];
+            self.participateBlock(model);
+        }
+    }];
+    [controller addAction:confirm];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [controller addAction:cancel];
+    [self presentViewController:controller animated:YES completion:nil];
+    
+}
+
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

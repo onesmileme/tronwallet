@@ -14,6 +14,8 @@
 #import "TWRepresentativeViewController.h"
 #import "TWTokensViewController.h"
 #import "TWSettingViewController.h"
+#import "TWParticipateViewController.h"
+
 
 #define kTopScrollHeight 40
 
@@ -80,10 +82,15 @@
     [self addChildViewController:_pageContainerViewController];
     [_pageContainerViewController didMoveToParentViewController:self];
     
+    TWTokensViewController *tokenController = [[TWTokensViewController alloc]init];
+    tokenController.participateBlock = ^(AssetIssueContract *contract) {
+        [wself participate:contract];
+    };
+    
     _controllers = @[[[TWBlockChainViewController alloc]init],
                      [[TWRepresentativeViewController alloc]init],
                      [[TWNodesViewController alloc]init],
-                     [[TWTokensViewController alloc]init]
+                     tokenController
 //                     [[TWAccountsViewController alloc]init]
                      ];
     [_pageContainerViewController setViewControllers:@[_controllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -129,6 +136,17 @@
 //{
 //    NSLog(@"finish view controller is: %@",previousViewControllers);
 //}
+
+-(void)participate:(AssetIssueContract *)contract
+{
+    if (!contract) {
+        return;
+    }
+    
+    TWParticipateViewController *controller = [[TWParticipateViewController alloc]initWithNibName:@"TWParticipateViewController" bundle:nil];
+    controller.contract = contract;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 /*
 #pragma mark - Navigation

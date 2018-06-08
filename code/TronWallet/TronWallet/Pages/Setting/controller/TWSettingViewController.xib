@@ -76,12 +76,29 @@
                         <action selector="resetAppAction:" destination="-1" eventType="touchUpInside" id="fcb-3l-RgA"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMU-sU-umZ" userLabel="transactionButton">
+                    <rect key="frame" x="0.0" y="158" width="375" height="54"/>
+                    <color key="backgroundColor" red="0.1751576403" green="0.1125776027" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="GcT-NF-Pcy"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="UfN-dP-wyQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="TRANSACTION RECORD">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="transactionListAction:" destination="-1" eventType="touchUpInside" id="BO4-7J-uaE"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="2Dq-ag-MoI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0xX-Rb-4X6"/>
                 <constraint firstItem="csH-Ra-yWp" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="H6R-sR-8Uf"/>
                 <constraint firstItem="csH-Ra-yWp" firstAttribute="top" secondItem="eos-8D-10O" secondAttribute="bottom" constant="10" id="Jlz-nK-Ohw"/>
+                <constraint firstItem="gMU-sU-umZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Mvy-PV-qhg"/>
+                <constraint firstItem="gMU-sU-umZ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="QsR-Dj-BJ8"/>
                 <constraint firstItem="2Dq-ag-MoI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YDr-67-B4F"/>
                 <constraint firstItem="eos-8D-10O" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="gWA-ig-NsK"/>
                 <constraint firstItem="eos-8D-10O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="loY-A1-cQV"/>
@@ -91,6 +108,7 @@
                 <constraint firstItem="csH-Ra-yWp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xzA-q1-fRF"/>
                 <constraint firstItem="zfW-Vm-BUf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="yis-AS-LFl"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="2Dq-ag-MoI" secondAttribute="bottom" constant="20" id="zMd-F2-D71"/>
+                <constraint firstItem="gMU-sU-umZ" firstAttribute="top" secondItem="eos-8D-10O" secondAttribute="bottom" constant="10" id="zmJ-It-rlQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="36.5" y="54.5"/>

@@ -12,6 +12,8 @@
 #import "TWMainInfoTipHeader.h"
 #import "TWMainBlockInfoTableViewCell.h"
 
+#define kUseBlockOnly  1
+
 @interface TWBlockChainViewController ()
 
 @property(nonatomic , strong) TWMainRecentBlockTableViewCell *blockCell;
@@ -92,18 +94,37 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#if kUseBlockOnly
+    return 1;
+#else
     return 2;
+#endif
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#if kUseBlockOnly
+    return self.blockArray.count;
+#else
     return 1;
-//    return self.blockArray.count;
+#endif
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = nil;
     
+    
+#if kUseBlockOnly
+    
+    TWMainBlockInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
+    Block *block = _blockArray[indexPath.row];
+    [cell updateWithModel:block.blockHeader index:0];
+    return cell;
+
+    
+#else
+    
+    UITableViewCell *cell = nil;
     // Configure the cell...
     if (indexPath.section == 0) {
 
@@ -126,31 +147,41 @@
 
     return cell;
     
-//    TWMainBlockInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
-//    Block *block = _blockArray[indexPath.row];
-//    [cell updateWithModel:block.blockHeader index:0];
-//    return cell;
+#endif
+    
     
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+#if kUseBlockOnly
+    return 60;
+#else
     return (CGRectGetHeight(tableView.frame)-110)/2;
 //    return (CGRectGetHeight(tableView.frame)-110)+55;
-//    return 60;
+#endif
+    
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+#if kUseBlockOnly
+    return nil;
+#else
     TWMainInfoTipHeader *infoTip = [[TWMainInfoTipHeader alloc]init];
     infoTip.tipLabel.text = (section == 0? @"    BLOCKCHAIN":@"    RECENT TRANSACTIONS");
     return infoTip;
+#endif
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+#if kUseBlockOnly
+    return CGFLOAT_MIN;
+#else
     return 50;
+#endif
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

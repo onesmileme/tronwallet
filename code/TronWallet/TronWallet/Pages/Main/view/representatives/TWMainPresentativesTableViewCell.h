@@ -17,6 +17,7 @@
 @property(nonatomic , strong) IBOutlet UILabel *blockLabel;
 @property(nonatomic , strong) IBOutlet UILabel *productIdLabel;
 @property(nonatomic , strong) IBOutlet UILabel *missLabel;
+@property(nonatomic , strong) IBOutlet UIView *borderView;
 
 -(void)updateWithModel:(Witness *)model index:(NSInteger)index;
 

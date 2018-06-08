@@ -12,7 +12,7 @@
 #import "TWExchangeViewController.h"
 #import "AppDelegate.h"
 #import "TWVoteViewController.h"
-
+#import "TWAssetIssueViewController.h"
 
 @interface TWWalletViewController ()
 
@@ -77,6 +77,13 @@
 -(IBAction)exchangeAction:(id)sender
 {
     TWExchangeViewController *controller = [[TWExchangeViewController alloc]init];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(IBAction)issueTokenAction:(id)sender
+{
+    TWAssetIssueViewController *controller = [[TWAssetIssueViewController alloc]initWithNibName:@"TWAssetIssueViewController" bundle:nil];
     controller.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
 }

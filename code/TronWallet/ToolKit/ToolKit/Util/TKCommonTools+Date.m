@@ -30,7 +30,7 @@ NSString *const TKDateFormatChineseMD           = @"MM月dd日";
 // 显示时分, 12:30
 NSString *const TKDateFormatHHMM                = @"HH:mm";
 // 显示英文的日期格式, 2014/12/03 16:30
-NSString *const TKDateFormatEnglishAll          = @"yyyy/MM/dd HH:mm";
+NSString *const TKDateFormatEnglishAll          = @"yyyy/MM/dd HH:mm:ss";
 // 显示英文的日期格式, Oct 03, 2014 (2014/10/03)
 NSString *const TKDateFormatEnglishMedium1      = @"MMM dd, YYYY";
 // 显示英文的日期格式, 12/03/2014

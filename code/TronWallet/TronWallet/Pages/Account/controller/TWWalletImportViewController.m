@@ -33,7 +33,7 @@
 //#if DEBUG
 ////
 ////    self.pubkeyField.text = @"27Uicvysc8ty2MZRQtV2YQ6oFpSdzQf737G";
-////    
+////
 //    self.privateKeyField.text = @"6f2de3339919d938ab4bba361282df1d69ec9b287bf9af1ed37bc30d8641491d";//@"bc3acf104ca7be33aedde72280c44f2eedf46216bfc1e723af52be003159ae2e";//@"2FD756A756D83B6F167ED1441BCDDE0E517295EE198DD0AAAE3C24BFD3AB95B8";
 //    self.passwordField.text = @"1234567889";
 //    

@@ -47,7 +47,7 @@
 //        _items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS",@"ACCOUNT"];
         self.items = items;
         
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = HexColor(0x1ab0fd);//[UIColor whiteColor];
         
         
     }

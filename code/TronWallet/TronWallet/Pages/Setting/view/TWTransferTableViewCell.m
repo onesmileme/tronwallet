@@ -1,15 +1,15 @@
 //
-//  TWTransInfoTableViewCell.m
+//  TWTransferTableViewCell.m
 //  TronWallet
 //
 //  Created by chunhui on 2018/5/18.
 //  Copyright © 2018年 onesmile. All rights reserved.
 //
 
-#import "TWTransInfoTableViewCell.h"
+#import "TWTransferTableViewCell.h"
 #import "TWShEncoder.h"
 
-@implementation TWTransInfoTableViewCell
+@implementation TWTransferTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

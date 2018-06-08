@@ -52,17 +52,16 @@ IMP_SINGLETON
 -(void)initTabStyle
 {
     UITabBarItem *item = [UITabBarItem appearance];
-    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:HexColor(0x777777)} forState:UIControlStateNormal];
+    UIColor *color = HexColor(0xcacfd3);
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:color} forState:UIControlStateNormal];
 
     //HexColor(0xe84c3d)}
-//    UIColor *color = HexColor(0xe84c3d)}
-    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}  forState:UIControlStateSelected];
-    
-    
-    
-    UITabBar *bar = [UITabBar appearance];
-    bar.backgroundImage = [UIImage imageNamed:@"tab_bg"];
-    
+    color = HexColor(0x39bffc);
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:color}  forState:UIControlStateSelected];
+
+//    UITabBar *bar = [UITabBar appearance];
+//    bar.backgroundImage = [UIImage imageNamed:@"tab_bg"];
+
 }
 
 -(void)initHudStyle

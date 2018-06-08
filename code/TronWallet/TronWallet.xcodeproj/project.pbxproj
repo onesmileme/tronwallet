@@ -162,6 +162,14 @@
 		6EC46DFC20BE33E30059C68F /* TWColdSignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DFB20BE33E30059C68F /* TWColdSignViewController.xib */; };
 		6EC46E0020BE34FA0059C68F /* TWColdSignTranscationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC46DFE20BE34FA0059C68F /* TWColdSignTranscationViewController.m */; };
 		6EC46E0120BE34FA0059C68F /* TWColdSignTranscationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC46DFF20BE34FA0059C68F /* TWColdSignTranscationViewController.xib */; };
+		6EE6F97320C98CB7009EA60F /* TWParticipateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6F97120C98CB7009EA60F /* TWParticipateViewController.m */; };
+		6EE6F97420C98CB7009EA60F /* TWParticipateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6F97220C98CB7009EA60F /* TWParticipateViewController.xib */; };
+		6EE6F97820C99994009EA60F /* TWAssetIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6F97620C99994009EA60F /* TWAssetIssueViewController.m */; };
+		6EE6F97920C99994009EA60F /* TWAssetIssueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6F97720C99994009EA60F /* TWAssetIssueViewController.xib */; };
+		6EE6F97D20CA0ADF009EA60F /* TWTransactionRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6F97B20CA0ADF009EA60F /* TWTransactionRecordViewController.m */; };
+		6EE6F97E20CA0ADF009EA60F /* TWTransactionRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6F97C20CA0ADF009EA60F /* TWTransactionRecordViewController.xib */; };
+		6EE6F98220CA1849009EA60F /* TWTransferTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6F97F20CA1849009EA60F /* TWTransferTableViewCell.m */; };
+		6EE6F98320CA1849009EA60F /* TWTransferTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6F98120CA1849009EA60F /* TWTransferTableViewCell.xib */; };
 		6EED948920AEC2DA003FF63E /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED948820AEC2DA003FF63E /* UIColor+Theme.m */; };
 		6EED948C20AEC485003FF63E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED948B20AEC485003FF63E /* libsqlite3.tbd */; };
 		6EED949220AEC817003FF63E /* TWMainBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED949120AEC817003FF63E /* TWMainBasicViewController.m */; };
@@ -477,6 +485,18 @@
 		6EC46DFD20BE34FA0059C68F /* TWColdSignTranscationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWColdSignTranscationViewController.h; sourceTree = "<group>"; };
 		6EC46DFE20BE34FA0059C68F /* TWColdSignTranscationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWColdSignTranscationViewController.m; sourceTree = "<group>"; };
 		6EC46DFF20BE34FA0059C68F /* TWColdSignTranscationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWColdSignTranscationViewController.xib; sourceTree = "<group>"; };
+		6EE6F97020C98CB7009EA60F /* TWParticipateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWParticipateViewController.h; sourceTree = "<group>"; };
+		6EE6F97120C98CB7009EA60F /* TWParticipateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWParticipateViewController.m; sourceTree = "<group>"; };
+		6EE6F97220C98CB7009EA60F /* TWParticipateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWParticipateViewController.xib; sourceTree = "<group>"; };
+		6EE6F97520C99994009EA60F /* TWAssetIssueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWAssetIssueViewController.h; sourceTree = "<group>"; };
+		6EE6F97620C99994009EA60F /* TWAssetIssueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAssetIssueViewController.m; sourceTree = "<group>"; };
+		6EE6F97720C99994009EA60F /* TWAssetIssueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWAssetIssueViewController.xib; sourceTree = "<group>"; };
+		6EE6F97A20CA0ADF009EA60F /* TWTransactionRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTransactionRecordViewController.h; sourceTree = "<group>"; };
+		6EE6F97B20CA0ADF009EA60F /* TWTransactionRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWTransactionRecordViewController.m; sourceTree = "<group>"; };
+		6EE6F97C20CA0ADF009EA60F /* TWTransactionRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWTransactionRecordViewController.xib; sourceTree = "<group>"; };
+		6EE6F97F20CA1849009EA60F /* TWTransferTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTransferTableViewCell.m; sourceTree = "<group>"; };
+		6EE6F98020CA1849009EA60F /* TWTransferTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTransferTableViewCell.h; sourceTree = "<group>"; };
+		6EE6F98120CA1849009EA60F /* TWTransferTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWTransferTableViewCell.xib; sourceTree = "<group>"; };
 		6EED948320AEC21E003FF63E /* TronWallet.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TronWallet.pch; sourceTree = "<group>"; };
 		6EED948720AEC2DA003FF63E /* UIColor+Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
 		6EED948820AEC2DA003FF63E /* UIColor+Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
@@ -1027,6 +1047,7 @@
 				6EC46DC020BD4C720059C68F /* Account */,
 				6EA351E420AC82C100AF1984 /* Main */,
 				6EA351EA20AC82C100AF1984 /* Setting */,
+				6EE6F96B20C98C7E009EA60F /* Token */,
 				6EA351F020AC82C100AF1984 /* Wallet */,
 			);
 			path = Pages;
@@ -1106,6 +1127,9 @@
 				6E4AD55920B4F8520012DCD1 /* TWConnectViewController.h */,
 				6E4AD55A20B4F8520012DCD1 /* TWConnectViewController.m */,
 				6E4AD55B20B4F8520012DCD1 /* TWConnectViewController.xib */,
+				6EE6F97A20CA0ADF009EA60F /* TWTransactionRecordViewController.h */,
+				6EE6F97B20CA0ADF009EA60F /* TWTransactionRecordViewController.m */,
+				6EE6F97C20CA0ADF009EA60F /* TWTransactionRecordViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1120,6 +1144,9 @@
 		6EA351EF20AC82C100AF1984 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6EE6F98020CA1849009EA60F /* TWTransferTableViewCell.h */,
+				6EE6F97F20CA1849009EA60F /* TWTransferTableViewCell.m */,
+				6EE6F98120CA1849009EA60F /* TWTransferTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1257,6 +1284,35 @@
 			sourceTree = "<group>";
 		};
 		6EC46DED20BE2BA20059C68F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EE6F96B20C98C7E009EA60F /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				6EE6F96C20C98C7E009EA60F /* Controller */,
+				6EE6F96D20C98C7E009EA60F /* View */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		6EE6F96C20C98C7E009EA60F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EE6F97020C98CB7009EA60F /* TWParticipateViewController.h */,
+				6EE6F97120C98CB7009EA60F /* TWParticipateViewController.m */,
+				6EE6F97220C98CB7009EA60F /* TWParticipateViewController.xib */,
+				6EE6F97520C99994009EA60F /* TWAssetIssueViewController.h */,
+				6EE6F97620C99994009EA60F /* TWAssetIssueViewController.m */,
+				6EE6F97720C99994009EA60F /* TWAssetIssueViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EE6F96D20C98C7E009EA60F /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1423,8 +1479,10 @@
 				6E4AD55D20B4F8520012DCD1 /* TWConnectViewController.xib in Resources */,
 				6E93FF1120AF22BC000FD37D /* TWMainBlockInfoTableViewCell.xib in Resources */,
 				6E3E9F8020BA4A990096399D /* TWVoteViewController.xib in Resources */,
+				6EE6F97420C98CB7009EA60F /* TWParticipateViewController.xib in Resources */,
 				6EC46DD520BD4CB20059C68F /* TWWalletViewController.xib in Resources */,
 				6EA351C120AC7D1500AF1984 /* Assets.xcassets in Resources */,
+				6EE6F97920C99994009EA60F /* TWAssetIssueViewController.xib in Resources */,
 				6EC46DCE20BD4C720059C68F /* TWWalletCreateViewController.xib in Resources */,
 				6EC46E0120BE34FA0059C68F /* TWColdSignTranscationViewController.xib in Resources */,
 				6EA351BF20AC7D1500AF1984 /* Main.storyboard in Resources */,
@@ -1440,8 +1498,10 @@
 				6E3E9F6020B88F160096399D /* TWExReceiveViewController.xib in Resources */,
 				6E93FF2420B08EB2000FD37D /* TWMainPresentativesTableViewCell.xib in Resources */,
 				6EC46DFA20BE2CDC0059C68F /* TWColdReceiveViewController.xib in Resources */,
+				6EE6F97E20CA0ADF009EA60F /* TWTransactionRecordViewController.xib in Resources */,
 				6E3A080020BE59E00004AD66 /* TWAddressOnlyViewController.xib in Resources */,
 				6E9103DE20B2A5A8006FDEA1 /* log_severity.proto in Resources */,
+				6EE6F98320CA1849009EA60F /* TWTransferTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1592,6 +1652,7 @@
 				6E3A07FF20BE59E00004AD66 /* TWAddressOnlyViewController.m in Sources */,
 				6E3E9F8620BA4EDC0096399D /* TWYourVotesViewController.m in Sources */,
 				6E9103C020B2A5A8006FDEA1 /* Operations.pbobjc.m in Sources */,
+				6EE6F97D20CA0ADF009EA60F /* TWTransactionRecordViewController.m in Sources */,
 				6E91040920B2AE79006FDEA1 /* Descriptor.pbobjc.m in Sources */,
 				6E3E9F8A20BA4F420096399D /* TWCandicateTableViewCell.m in Sources */,
 				6E91037520B2A370006FDEA1 /* TronInventoryItems.pbobjc.m in Sources */,
@@ -1614,6 +1675,7 @@
 				6EED94A120AEC8DC003FF63E /* TWAccountsViewController.m in Sources */,
 				6E9103CC20B2A5A8006FDEA1 /* Context.pbobjc.m in Sources */,
 				6EC46DBC20BD2F600059C68F /* UIViewController+BroadcastTransaction.m in Sources */,
+				6EE6F98220CA1849009EA60F /* TWTransferTableViewCell.m in Sources */,
 				6E3E9F2220B5BA7B0096399D /* TWPriceUpdater.m in Sources */,
 				6EA7869C20C212F7006F40DE /* UIBarButtonItem+Navigation.m in Sources */,
 				6E40346720BBB483008140F5 /* bignum.c in Sources */,
@@ -1627,8 +1689,10 @@
 				6E40346420BBB483008140F5 /* curves.c in Sources */,
 				6E93FF1A20AFB9F3000FD37D /* TWMainSearchHeader.m in Sources */,
 				6E40346F20BBB483008140F5 /* pbkdf2.c in Sources */,
+				6EE6F97320C98CB7009EA60F /* TWParticipateViewController.m in Sources */,
 				6EED949B20AEC8C2003FF63E /* TWNodesViewController.m in Sources */,
 				6EA351FA20AC82C200AF1984 /* TWMainInfoViewController.m in Sources */,
+				6EE6F97820C99994009EA60F /* TWAssetIssueViewController.m in Sources */,
 				6E9103C720B2A5A8006FDEA1 /* Metric.pbobjc.m in Sources */,
 				6EA351FB20AC82C200AF1984 /* TWSettingViewController.m in Sources */,
 				6E93FF1020AF22BC000FD37D /* TWMainBlockInfoTableViewCell.m in Sources */,

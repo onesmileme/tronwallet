@@ -10,4 +10,6 @@
 
 @interface TWTokensViewController : TWMainBasicViewController
 
+@property(nonatomic , copy) void (^participateBlock)(AssetIssueContract *contract);
+
 @end

@@ -135,12 +135,11 @@
                     [client refreshAccount:^(Account *account, NSError *error) {
                         [self refreshAmount];
                     }];
-                    
                 }else{
                     hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
                 }
             }
-            [hud hideAnimated:YES afterDelay:0.7 ];
+            [hud hideAnimated:YES afterDelay:1.5];
         }];
         
     }];
@@ -148,7 +147,7 @@
 
 -(void)addressOnlySend:(TransferContract *)contract
 {
-    TWWalletAccountClient *client = AppWalletClient;
+//    TWWalletAccountClient *client = AppWalletClient;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
     
@@ -166,8 +165,8 @@
         
         [self signTransaction:response];
         
-        response = [client signTransaction:response];
-                       
+//        response = [client signTransaction:response];
+        
     }];
     
 }
@@ -206,9 +205,14 @@
                 [client refreshAccount:^(Account *account, NSError *error) {
                     [self refreshAmount];
                 }];
+                self.amountTextField.text = @"";
                 
             }else{
+                
                 hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
+                if (hud.label.text.length == 0) {
+                    hud.label.text = @"Send failed";
+                }
             }
         }
         [hud hideAnimated:YES afterDelay:1.5 ];

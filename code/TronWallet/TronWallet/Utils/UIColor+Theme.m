@@ -12,7 +12,7 @@
 
 +(UIColor *)themeRed
 {
-    return HexColor(0x3a82f9);//0x67ACFF//HexColor(0xa22b28);
+    return HexColor(0x4d90fe);//HexColor(0x1ab0fd);//0x67ACFF//HexColor(0xa22b28);
 }
 
 +(UIColor *)themeDarkBgColor

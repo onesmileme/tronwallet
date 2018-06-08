@@ -16,6 +16,7 @@
 @property(nonatomic , strong) IBOutlet UILabel *issuerLabel;
 @property(nonatomic , strong) IBOutlet UILabel *startLabel;
 @property(nonatomic , strong) IBOutlet UILabel *endLabel;
+@property(nonatomic , strong) IBOutlet UIView *borderView;
 
 @property(nonatomic , copy) void (^participateBlock)(AssetIssueContract *asset);
 

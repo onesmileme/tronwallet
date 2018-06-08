@@ -133,6 +133,7 @@
         _type = type;
         [self storeWallet];
         [self loadAccountInfo];
+        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
         
     }
     return self;
@@ -146,6 +147,7 @@
         _type = type;
         
         [self storeWallet];
+        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
     }
     return self;
 }
@@ -173,8 +175,14 @@
         [self storeWallet];
         
         [self loadAccountInfo];
+        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
     }
     return self;
+}
+
+-(void)onTimer:(NSTimer *)timer
+{
+    [self loadAccountInfo];
 }
 
 

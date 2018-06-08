@@ -90,10 +90,15 @@
     }
     
     NSString *msg = [NSString stringWithFormat:@"Do you want to freeze %@ ?",_amountField.text];
-    
+    if (AppWalletClient.type == TWWalletAddressOnly) {
+        [self showAlert:@"TIP" mssage:msg confrim:@"YES" cancel:@"NO" confirmAction:^{
+            [self doFreeze];
+        }];
+    }else{
     [self showPasswordAlert:@"TIP" mssage:msg confrim:@"YES" cancel:@"NO" confirmAction:^{
         [self doFreeze];
     }];
+    }
 }
 -(void)doFreeze
 {
@@ -129,10 +134,15 @@
 -(IBAction)unfreezeAction:(id)sender
 {
     [self.view endEditing:YES];
-    [self showPasswordAlert:@"TIP" mssage:@"Do you want to unfreeze ?" confrim:@"YES" cancel:@"NO" confirmAction:^{
-        [self doUnFreeze];
-    }];
-    
+    if (AppWalletClient.type == TWWalletAddressOnly) {
+        [self showAlert:@"TIP" mssage:@"Do you want to unfreeze ?" confrim:@"YES" cancel:@"NO" confirmAction:^{
+            [self doUnFreeze];
+        }];
+    }else{
+        [self showPasswordAlert:@"TIP" mssage:@"Do you want to unfreeze ?" confrim:@"YES" cancel:@"NO" confirmAction:^{
+            [self doUnFreeze];
+        }];
+    }
 }
 -(void)doUnFreeze
 {

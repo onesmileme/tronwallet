@@ -123,6 +123,10 @@ IMP_SINGLETON
     [defaults setObject:self.nodePort forKey:kNodePortKey];
     [defaults synchronize];
     
+    _walletClient = [[Wallet alloc]initWithHost:[[self class]appHost]];
+    _walletSolidityClient = [[WalletSolidity alloc]initWithHost:[[self class]appHost]];
+    _networkClient = [[Network alloc]initWithHost:[[self class]appHost]];
+    _databaseClient = [[Database alloc]initWithHost:[[self class]appHost]];
 }
 
 -(void)resetToDefault
