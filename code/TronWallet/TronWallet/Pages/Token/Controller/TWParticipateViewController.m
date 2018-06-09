@@ -24,10 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = @"PARTICIPATE";
+    [self initBackItem];
     
     UINib *nib = [UINib nibWithNibName:@"TWMainTokenTableViewCell" bundle:nil];
     _tokenCell = [[nib instantiateWithOwner:self options:nil] firstObject];
     _tokenCell.borderView.layer.borderColor = nil;
+    _tokenCell.borderView.layer.cornerRadius = 0;
+    _tokenCell.borderView.layer.borderWidth = 0;
     
     _tokenCell.frame = CGRectMake(0, 0, SCREEN_WIDTH, 190);
     [_tokenCell updateWithModel:self.contract];
@@ -40,6 +44,14 @@
         self.price = 0;
     }
     
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)onTap:(UIGestureRecognizer *)gesture
+{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,7 +136,6 @@
 
 -(void)participateAddressOnly:(ParticipateAssetIssueContract *)pcontract
 {
-//    TWWalletAccountClient *client = AppWalletClient;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
     

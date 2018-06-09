@@ -129,7 +129,7 @@ NSString *const TKDateFormatEnglishMedium2      = @"MM/dd/YYYY";
     if (interval < 60*60){
         int n = (int)interval/60;
         des = [NSString stringWithFormat:@"%d minute%@ ago",(int)interval/60,n> 1?@"s":@""];
-    }else if (interval < 60*60 * 24){
+    }else if (interval < 60*60 * 3){
         int n = (int)interval/3600;
         des = [NSString stringWithFormat:@"%ld hour%@ ago",(NSInteger)(interval/3600),n>1?@"s":@""];
     }

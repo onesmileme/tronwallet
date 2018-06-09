@@ -14,7 +14,8 @@
 @property(nonatomic , strong) IBOutlet UILabel *fromLabel;
 @property(nonatomic , strong) IBOutlet UILabel *toLabel;
 @property(nonatomic , strong) IBOutlet UILabel *countLabel;
+@property(nonatomic , strong) IBOutlet UILabel *hashLabel;
 
--(void)bindData:(Transaction *)transaction;
+-(void)bindData:(NSDictionary *)transaction;
 
 @end

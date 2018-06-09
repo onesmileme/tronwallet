@@ -144,6 +144,7 @@
     }
     
     TWParticipateViewController *controller = [[TWParticipateViewController alloc]initWithNibName:@"TWParticipateViewController" bundle:nil];
+    controller.hidesBottomBarWhenPushed = YES;
     controller.contract = contract;
     [self.navigationController pushViewController:controller animated:YES];
 }

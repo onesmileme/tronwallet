@@ -15,6 +15,8 @@ typedef NS_ENUM( NSInteger,TWWalletType) {
     TWWalletAddressOnly  = 2,//只有地址
 };
 
+extern NSString *const kAccountUpdateNotification;
+
 @interface TWWalletAccountClient : NSObject
 
 @property(nonatomic , strong) Account *account;

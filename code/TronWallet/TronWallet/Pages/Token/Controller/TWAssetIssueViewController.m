@@ -51,6 +51,7 @@
         }
     }
     
+    _datePicker.minimumDate = [NSDate date];
     _contract = [AssetIssueContract new];
     _contract.ownerAddress = [AppWalletClient address];
     
@@ -83,7 +84,9 @@
         tip = @"Input token name";
     }else if (_abbrField.text.length == 0){
         tip = @"Input token abbr";
-    }else if ([_totalSupplyField.text integerValue] == 0){
+    }else if (_abbrField.text.length >= 6){
+        tip = @"Abbr length should less than 6 ";
+    } else if ([_totalSupplyField.text integerValue] == 0){
         tip = @"Input total supply";
     }else if ([_descriptionField.text length] == 0){
         tip = @"Input description";
@@ -93,6 +96,12 @@
         tip = @"Input TRX Amount";
     }else if ([_exTrxField.text integerValue] == 0){
         tip = @"Input token amount";
+    }else if (_contract.startTime <= 1){
+        tip = @"Choose start time";
+    }else if (_contract.endTime <= 1){
+        tip = @"Choose end time";
+    }else if (_contract.endTime < _contract.startTime){
+        tip = @"Start time must earlier than end time";
     }
     
     if (tip) {
@@ -107,22 +116,25 @@
     _contract.totalSupply = [self.totalSupplyField.text integerValue];
     _contract.description_p = [self.descriptionField.text dataUsingEncoding:NSUTF8StringEncoding];
     _contract.URL = [self.websiteField.text dataUsingEncoding:NSUTF8StringEncoding];
-    _contract.trxNum = [self.exTrxField.text intValue];
+    _contract.trxNum = [self.exTrxField.text intValue]*kDense;
     _contract.num = [self.exTokenField.text intValue];
+    
     
     if ([self.frozenDaysField.text integerValue] > 0 && [self.frozenAmountField.text integerValue] > 0) {
         AssetIssueContract_FrozenSupply *supply = [AssetIssueContract_FrozenSupply new];
         supply.frozenDays = [_frozenDaysField.text integerValue];
         supply.frozenAmount = [_frozenAmountField.text integerValue];
-        
+
         [_contract.frozenSupplyArray addObject:supply];
     }else{
         AssetIssueContract_FrozenSupply *supply = [AssetIssueContract_FrozenSupply new];
         supply.frozenDays = 1;
         supply.frozenAmount = 0;
-        
+
         [_contract.frozenSupplyArray addObject:supply];
     }
+    
+    
     
     return YES;
 }
@@ -133,13 +145,16 @@
     if (![self canCreate]) {
         return;
     }
+        
+    [self showAlert:nil mssage:@"Confirm that creating the total supply of the token costs a one time total fee of 1024 TRX." confrim:@"Confirm" cancel:@"Cancel" confirmAction:^{
+        if (AppWalletClient.type == TWWalletAddressOnly) {
+            [self publicAddressOnlyCreate];
+            return;
+        }
+        
+        [self createIssue];
+    }];
     
-    if (AppWalletClient.type == TWWalletAddressOnly) {
-        [self publicAddressOnlyCreate];
-        return;
-    }
-    
-    [self createIssue];
 }
 
 -(void)createIssue

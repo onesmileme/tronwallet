@@ -27,7 +27,7 @@
     scrollView.header = header;
 }
 
--(void)addHeaderRefreshView:(UIScrollView *)scrollView callBack:(void(^)())callback
+-(void)addHeaderRefreshView:(UIScrollView *)scrollView callBack:(void(^)(void))callback
 {
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         callback();
@@ -46,7 +46,7 @@
     
 }
 
--(void)addFooterRefreshView:(UIScrollView *)scrollView callBack:(void (^)())callback
+-(void)addFooterRefreshView:(UIScrollView *)scrollView callBack:(void (^)(void))callback
 {
     MJRefreshFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         callback();

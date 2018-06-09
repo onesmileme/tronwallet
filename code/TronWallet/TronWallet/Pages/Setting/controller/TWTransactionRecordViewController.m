@@ -8,10 +8,14 @@
 
 #import "TWTransactionRecordViewController.h"
 #import "TWTransferTableViewCell.h"
+#import "UIViewController+Refresh.h"
+#import "TKCommonTools.h"
+
 @interface TWTransactionRecordViewController ()
 
 @property(nonatomic , strong) NSMutableArray *transactionList;
-
+@property(nonatomic , assign) NSInteger index;
+@property(nonatomic , strong) NSURLSession *session;
 @end
 
 @implementation TWTransactionRecordViewController
@@ -24,18 +28,76 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"Transactions";
+    [self initBackItem];
+    
+    self.transactionList = [NSMutableArray new];
+    
+    self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
     UINib *nib = [UINib nibWithNibName:@"TWTransferTableViewCell" bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"cell_id"];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"cellid"];
     
+    [self addHeaderRefreshView:self.tableView];
+    [self addFooterRefreshView:self.tableView];
     
+    [self startHeadRefresh:self.tableView];
+   
 }
 
--(void)loadData
+
+-(void)headRefreshAction
 {
-    Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
+    [self loadData:YES];
+}
+
+-(void)footRefreshAction
+{
+    [self loadData:NO];
+}
+
+-(void)loadData:(BOOL)isHead
+{
+    if (isHead) {
+        _index = 0;
+    }
+    NSString *address = AppWalletClient.base58OwnerAddress;
     
-    [wallet gettrans];
+    NSString *urlStr = [NSString stringWithFormat:@"https://api.tronscan.org/api/transfer?sort=-timestamp&limit=30&start=%ld&address=%@",_index,address];
+    __weak typeof(self) wself = self;
+    
+    NSURLSessionDataTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:urlStr] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [wself stopRefresh:wself.tableView];
+        });
+        if (error) {
+            [TKCommonTools showToast:@"Request failed"];
+            return ;
+        }
+        
+        @try{
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            if (json) {
+                if (isHead) {
+                    [wself.transactionList removeAllObjects];
+                }
+                NSArray *data = json[@"data"];
+                if (data.count > 0) {
+                    [wself.transactionList addObjectsFromArray:data];
+                    wself.index += data.count;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [wself.tableView reloadData];
+                    });
+                }
+            }
+        }@catch(NSException *e){
+            
+        }
+        
+    }];
+    [task resume];    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,46 +121,17 @@
     TWTransferTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
     
     // Configure the cell...
-    Transaction *transcation = _transactionList[indexPath.row];
+    NSDictionary *transcation = _transactionList[indexPath.row];
     [cell bindData:transcation];
         
     return cell;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 145;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Table view delegate

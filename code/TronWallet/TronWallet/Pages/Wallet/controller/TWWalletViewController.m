@@ -47,6 +47,8 @@
     self.exchangeButton.layer.borderWidth = 1;
     self.exchangeButton.layer.cornerRadius = 6;
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accountUpdateNotification:) name:kAccountUpdateNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,16 +61,32 @@
     [super viewWillAppear:animated];
     [_priceUpdater startUpdate];
     
+    [self updateAccount];
+    
+}
+
+
+-(void)updateAccount
+{
     TWWalletAccountClient *client = AppWalletClient;
     self.tokenLabel.text = [client base58OwnerAddress];
     
     self.countLabel.text = [NSString stringWithFormat:@"%@", @(client.account.balance/kDense)];
-    
+}
+
+-(void)accountUpdateNotification:(NSNotification *)notfication
+{
+    [self updateAccount];
 }
 
 
 -(IBAction)walletAction:(id)sender
 {
+    if(AppWalletClient.account.asset){
+        [self showAlert:nil mssage:@"You may create only one token per account" confrim:@"Confirm" cancel:nil];
+        return;
+    }
+    
     TWVoteViewController *vote = [[TWVoteViewController alloc]initWithNibName:@"TWVoteViewController" bundle:nil];
     vote.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vote animated:YES];

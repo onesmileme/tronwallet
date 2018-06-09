@@ -28,7 +28,6 @@
 #define kColdAddressKey @"cold_address_key"
 #define kWalletType @"wallet_type"
 
-
 @interface TWWalletAccountClient()
 
 @property(nonatomic , strong) TWEllipticCurveCrypto *crypto;
@@ -256,6 +255,7 @@
         
         if(response){
             self.account = response;
+            [[NSNotificationCenter defaultCenter] postNotificationName:kAccountUpdateNotification object:response];
         }
         if (completion) {
             completion(response,error);
@@ -377,3 +377,5 @@
 
 
 @end
+
+NSString *const kAccountUpdateNotification = @"_kAccountUpdateNotification";

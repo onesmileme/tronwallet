@@ -361,13 +361,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Wallet/Vote/Controller/TWYourVotesViewController.m"
-            timestampString = "549989695.702675"
+            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+            timestampString = "550242226.983664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-startRequest"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-participateAction:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TWParticipateViewController participateAction:]"
+                  moduleName = "TronWallet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+                  timestampString = "550242227.298979"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__49-[TWParticipateViewController participateAction:]_block_invoke"
+                  moduleName = "TronWallet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+                  timestampString = "550242227.300501"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+            timestampString = "550242226.9837641"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-participateAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -377,13 +425,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Wallet/Vote/Controller/TWYourVotesViewController.m"
-            timestampString = "549989695.702736"
+            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+            timestampString = "550242226.98382"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-participate:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+            timestampString = "550242226.9838721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-participate:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+            timestampString = "550242226.9839211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "-startRequest"
+            landmarkName = "-updateCost"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+            timestampString = "550242226.983969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-participate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
