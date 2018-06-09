@@ -24,6 +24,9 @@
     [self.qrImageView addGestureRecognizer:gesture];
     self.qrImageView.userInteractionEnabled = YES;
     
+    self.qrImageView.layer.borderColor = [HexColor(0x747C7F) CGColor];
+    self.qrImageView.layer.borderWidth = 1;
+    
     gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTap)];
     [self.addressLabel addGestureRecognizer:gesture];
     self.addressLabel.userInteractionEnabled = YES;

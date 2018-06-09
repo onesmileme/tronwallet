@@ -166,11 +166,15 @@
         
         if (error) {
             hud.label.text = [error localizedDescription];
-            [hud hideAnimated:YES afterDelay:1.5 ];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideAnimated:YES afterDelay:1.5 ];
+            });
             return ;
         }else if (!response.hasRawData){
             hud.label.text = @"Create Asset Issue Failed";
-            [hud hideAnimated:YES afterDelay:1.5 ];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideAnimated:YES afterDelay:1.5 ];
+            });
             return ;
         }
         
@@ -191,7 +195,9 @@
                     hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
                 }
             }
-            [hud hideAnimated:YES afterDelay:1.5];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideAnimated:YES afterDelay:1.5];
+            });
         }];
         
     }];
@@ -205,15 +211,20 @@
     [wallet createAssetIssueWithRequest:_contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
         if (error) {
             hud.label.text = [error localizedDescription];
-            [hud hideAnimated:YES afterDelay:1.5 ];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideAnimated:YES afterDelay:1.5 ];
+            });
             return ;
         }else if (!response.hasRawData){
             hud.label.text = @"Create Asset Issue Failed";
-            [hud hideAnimated:YES afterDelay:1.5 ];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideAnimated:YES afterDelay:1.5 ];
+            });
             return ;
         }
-        
-        [hud hideAnimated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES];
+        });
         
         [self signTransaction:response];
     }];
@@ -262,7 +273,9 @@
                 }
             }
         }
-        [hud hideAnimated:YES afterDelay:1.5 ];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES afterDelay:1.5 ];
+        });
     }];
 }
 

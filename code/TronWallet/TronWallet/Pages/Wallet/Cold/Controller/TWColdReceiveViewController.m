@@ -27,7 +27,11 @@
     NSString *address =  [AppWalletClient base58OwnerAddress];
     self.addressLabel.text = address;
     
-    self.qaImageView.image = [TWQRCoderGenerator generate:address];    
+    self.qaImageView.image = [TWQRCoderGenerator generate:address];
+    
+    CALayer *layer = self.qaImageView.layer;
+    layer.borderColor = [HexColor(0x747C7F) CGColor];
+    layer.borderWidth = 1;
 }
 
 - (void)didReceiveMemoryWarning {

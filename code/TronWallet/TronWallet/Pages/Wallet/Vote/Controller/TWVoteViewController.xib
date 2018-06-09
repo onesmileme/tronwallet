@@ -26,9 +26,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dij-hN-Om6" userLabel="topView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                     <subviews>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_short.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0qC-ND-Brk">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Votes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1e-ZA-gis" userLabel="remainLabel">
                             <rect key="frame" x="20" y="30" width="126" height="21"/>
                             <constraints>
@@ -41,7 +38,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfM-c3-4v9">
                             <rect key="frame" x="244" y="35" width="111" height="30"/>
-                            <color key="backgroundColor" red="1" green="0.16162655989999999" blue="0.068977443479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.1019607843" green="0.69019607839999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="111" id="BJd-yv-Gl4"/>
                                 <constraint firstAttribute="height" constant="30" id="sAx-vi-TqY"/>
@@ -66,15 +63,11 @@
                     </subviews>
                     <color key="backgroundColor" red="0.2274509804" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="0qC-ND-Brk" firstAttribute="top" secondItem="Dij-hN-Om6" secondAttribute="top" id="1aG-Nc-ivp"/>
                         <constraint firstAttribute="trailing" secondItem="qfM-c3-4v9" secondAttribute="trailing" constant="20" id="3w4-v3-ek5"/>
                         <constraint firstItem="qfM-c3-4v9" firstAttribute="leading" secondItem="0Kz-RK-Vbe" secondAttribute="trailing" constant="20" id="4p4-vo-LHf"/>
-                        <constraint firstAttribute="trailing" secondItem="0qC-ND-Brk" secondAttribute="trailing" id="9zU-Sl-BSy"/>
                         <constraint firstItem="e1e-ZA-gis" firstAttribute="top" secondItem="Dij-hN-Om6" secondAttribute="top" constant="30" id="DU8-eD-CXN"/>
                         <constraint firstItem="qfM-c3-4v9" firstAttribute="centerY" secondItem="Dij-hN-Om6" secondAttribute="centerY" id="OUD-Zg-mbD"/>
                         <constraint firstItem="0Kz-RK-Vbe" firstAttribute="leading" secondItem="Dij-hN-Om6" secondAttribute="leading" constant="25" id="ge6-Gg-H6n"/>
-                        <constraint firstAttribute="bottom" secondItem="0qC-ND-Brk" secondAttribute="bottom" id="nD5-ws-PpR"/>
-                        <constraint firstItem="0qC-ND-Brk" firstAttribute="leading" secondItem="Dij-hN-Om6" secondAttribute="leading" id="qEm-aw-awA"/>
                         <constraint firstItem="0Kz-RK-Vbe" firstAttribute="top" secondItem="e1e-ZA-gis" secondAttribute="bottom" constant="10" id="xYL-YV-mcA"/>
                         <constraint firstItem="e1e-ZA-gis" firstAttribute="leading" secondItem="Dij-hN-Om6" secondAttribute="leading" constant="20" id="yd8-Vn-6OJ"/>
                         <constraint firstAttribute="height" constant="100" id="zPl-xX-11M"/>
@@ -99,7 +92,4 @@
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="bg_short.jpg" width="750" height="400"/>
-    </resources>
 </document>

@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "TWVoteViewController.h"
 #import "TWAssetIssueViewController.h"
+#import "TKCommonTools.h"
 
 @interface TWWalletViewController ()
 
@@ -35,6 +36,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             wself.priceLabel.text = price.price_usd;
             wself.changeLabel.text = [NSString stringWithFormat:@"%@%%",price.percent_change_1h];
+            wself.changeLabel.textColor = ([price.percent_change_1h floatValue] > 0) ? HexColor(0xFF2912) :[UIColor greenColor];
         });
     };
     
@@ -47,8 +49,16 @@
     self.exchangeButton.layer.borderWidth = 1;
     self.exchangeButton.layer.cornerRadius = 6;
     
+    self.issueButton.layer.borderColor = [lineColor CGColor];
+    self.issueButton.layer.borderWidth = 1;
+    self.issueButton.layer.cornerRadius = 6;
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accountUpdateNotification:) name:kAccountUpdateNotification object:nil];
+    
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
+    self.tokenLabel.userInteractionEnabled = YES;
+    [self.tokenLabel addGestureRecognizer:gesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +75,17 @@
     
 }
 
+-(void)onTap:(UITapGestureRecognizer *)gesture
+{
+    TWWalletAccountClient *client = AppWalletClient;
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = [client base58OwnerAddress];
+    
+    
+    [TKCommonTools showToast:@"Address has copied to pasteboard"];
+//    MBProgressHUD *hud = [self showHudTitle:@"Address has copied to pasteboard"];
+//    [hud hideAnimated:YES afterDelay:1];
+}
 
 -(void)updateAccount
 {
@@ -82,10 +103,6 @@
 
 -(IBAction)walletAction:(id)sender
 {
-    if(AppWalletClient.account.asset){
-        [self showAlert:nil mssage:@"You may create only one token per account" confrim:@"Confirm" cancel:nil];
-        return;
-    }
     
     TWVoteViewController *vote = [[TWVoteViewController alloc]initWithNibName:@"TWVoteViewController" bundle:nil];
     vote.hidesBottomBarWhenPushed = YES;
@@ -101,6 +118,13 @@
 
 -(IBAction)issueTokenAction:(id)sender
 {
+    
+    TWWalletAccountClient *client =  AppWalletClient;
+    if(client.account.asset_Count > 0){
+        [self showAlert:nil mssage:@"You may create only one token per account" confrim:@"Confirm" cancel:nil];
+        return;
+    }
+    
     TWAssetIssueViewController *controller = [[TWAssetIssueViewController alloc]initWithNibName:@"TWAssetIssueViewController" bundle:nil];
     controller.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];

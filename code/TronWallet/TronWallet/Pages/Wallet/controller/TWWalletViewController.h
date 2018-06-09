@@ -19,5 +19,6 @@
 
 @property(nonatomic , strong) IBOutlet UIButton *walletButton;
 @property(nonatomic , strong) IBOutlet UIButton *exchangeButton;
+@property(nonatomic , strong) IBOutlet UIButton *issueButton;
 @end
 

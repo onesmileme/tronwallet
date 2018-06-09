@@ -33,7 +33,7 @@
 {
 //    TWMainInfoViewController
     
-    UIImage *img = [UIImage imageNamed:@"tab_set"];
+    UIImage *img = [UIImage imageNamed:@"dot"];
     img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStylePlain target:self action:@selector(gotoSet)];
     self.navigationItem.rightBarButtonItem = item;
@@ -132,10 +132,13 @@
     [self.topScrollView scrollToShow:index];
 }
 
-//- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
-//{
-//    NSLog(@"finish view controller is: %@",previousViewControllers);
-//}
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    UIViewController *controller = [pageViewController.viewControllers firstObject];
+    NSInteger index = [self.controllers indexOfObject:controller];
+    [self.topScrollView scrollToShow:index];
+}
+
 
 -(void)participate:(AssetIssueContract *)contract
 {

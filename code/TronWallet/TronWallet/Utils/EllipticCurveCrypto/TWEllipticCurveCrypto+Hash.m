@@ -11,7 +11,7 @@
 
 
 NSData *twDerEncodeInteger(NSData *value) {
-    int length = [value length];
+    NSInteger length = [value length];
     const unsigned char *data = [value bytes];
     
     int outputIndex = 0;
@@ -39,7 +39,7 @@ NSData *twDerEncodeInteger(NSData *value) {
 
 NSData *twDerEncodeSignature(NSData *signature) {
     
-    int length = [signature length];
+    NSInteger length = [signature length];
     if (length % 2) { return nil; }
     
     NSData *rValue = twDerEncodeInteger([signature subdataWithRange:NSMakeRange(0, length / 2)]);

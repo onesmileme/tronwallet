@@ -107,8 +107,10 @@
     [wallet participateAssetIssueWithRequest:issue handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
         //update amount
         if (error) {
-            hud.label.text = [error localizedDescription];
-            [hud hideAnimated:YES afterDelay:0.7 ];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                hud.label.text = [error localizedDescription];
+                [hud hideAnimated:YES afterDelay:0.7 ];
+            });
             return ;
         }
         
@@ -129,7 +131,9 @@
                     hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
                 }
             }
-            [hud hideAnimated:YES afterDelay:1.5];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideAnimated:YES afterDelay:1.5];
+            });
         }];
     }];
 }
@@ -146,8 +150,9 @@
             [hud hideAnimated:YES afterDelay:0.7 ];
             return ;
         }
-        
-        [hud hideAnimated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES];
+        });
         [self signTransaction:response];
     }];
     
@@ -197,7 +202,9 @@
                 }
             }
         }
-        [hud hideAnimated:YES afterDelay:1.5 ];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES afterDelay:1.5 ];
+        });
     }];
 }
 /*

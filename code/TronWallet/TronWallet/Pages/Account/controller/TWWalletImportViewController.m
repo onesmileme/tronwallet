@@ -63,6 +63,7 @@
     if(sender == _publicSwitch){
         _pubContainerView.hidden = !_publicSwitch.isOn;
     }
+    [self.view endEditing:YES];
 }
 
 -(IBAction)publicQRAction:(id)sender

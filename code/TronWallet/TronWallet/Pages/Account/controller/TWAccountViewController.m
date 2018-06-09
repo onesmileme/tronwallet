@@ -25,10 +25,20 @@
 
 @implementation TWAccountViewController
 
+-(void)customeBorder:(CALayer *)layer
+{
+    layer.borderColor = [HexColor(0x747C7F) CGColor];
+    layer.borderWidth = 1;
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    [self customeBorder:_addressQR.layer];
+    [self customeBorder:_priKeyQR.layer];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAddressTap)];
     [self.addressLabel addGestureRecognizer:tap];

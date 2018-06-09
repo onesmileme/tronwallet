@@ -52,7 +52,7 @@ IMP_SINGLETON
 -(void)initTabStyle
 {
     UITabBarItem *item = [UITabBarItem appearance];
-    UIColor *color = HexColor(0xcacfd3);
+    UIColor *color = HexColor(0x747c7f);//HexColor(0xcacfd3);
     [item setTitleTextAttributes:@{NSForegroundColorAttributeName:color} forState:UIControlStateNormal];
 
     //HexColor(0xe84c3d)}

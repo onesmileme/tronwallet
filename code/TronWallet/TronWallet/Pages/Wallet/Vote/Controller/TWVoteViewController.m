@@ -23,6 +23,9 @@
 @property(nonatomic , strong) TWCandicateViewController *canController;
 @property(nonatomic , strong) TWYourVotesViewController *ownController;
 
+@property(nonatomic , assign) NSInteger balance;
+@property(nonatomic , assign) NSInteger avaiable;
+
 @end
 
 @implementation TWVoteViewController
@@ -66,7 +69,6 @@
     
     [_pageContainerViewController setViewControllers:@[_controllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-//    _pageContainerViewController.view.frame = self.containerView.bounds;
     _pageContainerViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.containerView addSubview:_pageContainerViewController.view];
     
@@ -89,7 +91,6 @@
     TWWalletAccountClient * client =  AppWalletClient ;
     NSMutableArray<Vote*> *voteArray = client.account.votesArray;
     
-//    NSMutableArray *voteWitness = [NSMutableArray new];
     
     NSInteger totalVotes = 0;
     NSInteger fronzes = 0;
@@ -105,10 +106,18 @@
     long balance = fronzes/kDense;
     _amountLabel.text = [NSString stringWithFormat:@"%@ / %@",@(balance - totalVotes),@(balance)];
     
+    self.avaiable = balance - totalVotes;
+    self.balance = balance;
+    
 }
 
 -(IBAction)submitAction:(id)sender
 {
+    if (self.avaiable == 0 && self.balance == 0) {
+        [self showAlert:nil mssage:@"Please froze enough TRX" confrim:@"OK" cancel:nil];
+        return;
+    }
+    
     [self.canController.view endEditing:YES];
     if (self.canController.voteWitness.count == 0) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -127,8 +136,6 @@
         vote.voteCount = model.vote;
         [contract.votesArray addObject:vote];
     }
-    
-    
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak typeof(self) wself = self;

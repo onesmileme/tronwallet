@@ -26,6 +26,7 @@
     self.voteMap = [NSMutableDictionary new];
     
     self.tableView.allowsSelection = NO;
+    self.tableView.separatorColor = [UIColor blackColor];//HexColor(0x747C7F);
     UINib *nib = [UINib nibWithNibName:@"TWCandicateTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell_id"];
 }

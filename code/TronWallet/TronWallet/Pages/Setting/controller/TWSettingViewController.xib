@@ -22,7 +22,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfW-Vm-BUf" userLabel="accountButton">
                     <rect key="frame" x="0.0" y="30" width="375" height="54"/>
-                    <color key="backgroundColor" red="0.1751576403" green="0.1125776027" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.69019607839999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="Z1G-Yq-oq4"/>
                     </constraints>
@@ -36,7 +36,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eos-8D-10O" userLabel="connectionButton">
                     <rect key="frame" x="0.0" y="94" width="375" height="54"/>
-                    <color key="backgroundColor" red="0.1751576403" green="0.1125776027" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.69019607839999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="EZl-5o-sHp"/>
                     </constraints>
@@ -64,7 +64,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Dq-ag-MoI" userLabel="resetButton">
                     <rect key="frame" x="0.0" y="617" width="375" height="30"/>
-                    <color key="backgroundColor" red="0.1751576403" green="0.1125776027" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.69019607839999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="c3n-3e-bx1"/>
                     </constraints>
@@ -78,7 +78,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMU-sU-umZ" userLabel="transactionButton">
                     <rect key="frame" x="0.0" y="158" width="375" height="54"/>
-                    <color key="backgroundColor" red="0.1751576403" green="0.1125776027" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.69019607839999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="GcT-NF-Pcy"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="UfN-dP-wyQ"/>
@@ -92,7 +92,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="2Dq-ag-MoI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0xX-Rb-4X6"/>
                 <constraint firstItem="csH-Ra-yWp" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="H6R-sR-8Uf"/>

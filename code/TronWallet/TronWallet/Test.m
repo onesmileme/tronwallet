@@ -39,13 +39,13 @@
 //    [self fake2];
 //    [self fake];
 //    [self revFake];
-//    [self imageTest];
+    [self imageTest];
 }
 
 +(void)imageTest
 {
     
-    NSArray *names = @[@"tab_wallet",@"tab_news",@"tab_set"];
+    NSArray *names = @[@"tab_wallet",@"tab_news",@"dot"];
     
     for (NSString *name in names) {
 

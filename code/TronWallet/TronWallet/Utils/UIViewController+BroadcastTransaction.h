@@ -10,6 +10,6 @@
 
 @interface UIViewController (BroadcastTransaction)
 
--(void)broadcastTransaction:(Transaction *)transaction hud:(MBProgressHUD *)hud completion:(void(^)(Return * _Nullable response, NSError * _Nullable error))completion;
+-(void)broadcastTransaction:(Transaction * _Nonnull)transaction hud:(MBProgressHUD *_Nullable)hud completion:(void(^_Nullable)(Return * _Nullable response, NSError * _Nullable error))completion;
 
 @end
