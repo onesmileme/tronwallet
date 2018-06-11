@@ -14,7 +14,9 @@
 @property(nonatomic , strong) IBOutlet UIView *contentView;
 @property(nonatomic , strong) IBOutlet UIImageView *addressQR;
 @property(nonatomic , strong) IBOutlet UIImageView *priKeyQR;
+@property(nonatomic , strong) IBOutlet UILabel *addressTipLabel;
 @property(nonatomic , strong) IBOutlet UILabel *addressLabel;
+@property(nonatomic , strong) IBOutlet UILabel *privateKeyTipLabel;
 @property(nonatomic , strong) IBOutlet UILabel *privateKeyLabel;
 @property(nonatomic , strong) IBOutlet NSLayoutConstraint *contentWidth;
 @property(nonatomic , strong) IBOutlet UIButton *continueButton;

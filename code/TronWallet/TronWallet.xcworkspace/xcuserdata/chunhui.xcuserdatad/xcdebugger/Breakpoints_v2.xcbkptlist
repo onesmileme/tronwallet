@@ -362,43 +362,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
-            timestampString = "550249126.539305"
+            timestampString = "550373606.3228641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-participateAction:"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "-participate:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
+            timestampString = "550373606.323706"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-participate:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TronWallet/Pages/Token/Controller/TWAssetIssueViewController.m"
+            timestampString = "550371647.096249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-publicAddressOnlyCreate"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[TWParticipateViewController participateAction:]"
+                  symbolName = "-[TWAssetIssueViewController publicAddressOnlyCreate]"
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
-                  timestampString = "550249126.8640521"
+                  urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Token/Controller/TWAssetIssueViewController.m"
+                  timestampString = "550373606.422628"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "67">
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "224">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__49-[TWParticipateViewController participateAction:]_block_invoke"
+                  symbolName = "__53-[TWAssetIssueViewController publicAddressOnlyCreate]_block_invoke"
                   moduleName = "TronWallet"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
-                  timestampString = "550249126.866305"
+                  urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Token/Controller/TWAssetIssueViewController.m"
+                  timestampString = "550373606.4243"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "15">
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "90">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -409,13 +441,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
-            timestampString = "550249126.539394"
+            filePath = "TronWallet/Pages/Token/Controller/TWAssetIssueViewController.m"
+            timestampString = "550371647.0963041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-participateAction:"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "-publicAddressOnlyCreate"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -425,14 +457,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
-            timestampString = "550249126.5394551"
+            filePath = "TronWallet/Pages/Token/Controller/TWAssetIssueViewController.m"
+            timestampString = "550371647.0963531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "-participate:"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "-createIssue"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TWAssetIssueViewController createIssue]"
+                  moduleName = "TronWallet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Token/Controller/TWAssetIssueViewController.m"
+                  timestampString = "550373606.431161"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "382">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[TWAssetIssueViewController createIssue]_block_invoke"
+                  moduleName = "TronWallet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chunhui/workspace/work/mine/TronWallet/ios/tronwallet/code/TronWallet/TronWallet/Pages/Token/Controller/TWAssetIssueViewController.m"
+                  timestampString = "550373606.432887"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "90">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -441,45 +505,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
-            timestampString = "550249126.539511"
+            filePath = "TronWallet/Pages/Token/Controller/TWAssetIssueViewController.m"
+            timestampString = "550371647.0963989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-participate:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
-            timestampString = "550249126.539566"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-updateCost"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Token/Controller/TWParticipateViewController.m"
-            timestampString = "550249126.539619"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "-participate:"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-createIssue"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -490,12 +522,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
-            timestampString = "550249126.539675"
+            timestampString = "550371647.097497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-addressOnlyVote:"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-submitAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -505,13 +537,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TronWallet/Pages/Wallet/controller/TWWalletViewController.m"
-            timestampString = "550249126.5397331"
+            filePath = "TronWallet/Pages/Wallet/Vote/Controller/TWVoteViewController.m"
+            timestampString = "550371647.097808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-issueTokenAction:"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-submitAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

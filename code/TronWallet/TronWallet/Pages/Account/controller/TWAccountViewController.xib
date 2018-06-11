@@ -14,11 +14,13 @@
             <connections>
                 <outlet property="addressLabel" destination="mQP-H1-tiB" id="rJK-Tl-8ws"/>
                 <outlet property="addressQR" destination="Hud-iP-whv" id="Jho-BE-LrB"/>
+                <outlet property="addressTipLabel" destination="i70-RG-17e" id="kVj-wE-mWg"/>
                 <outlet property="contentView" destination="SFG-vr-rqF" id="o2l-mU-Cf3"/>
                 <outlet property="contentWidth" destination="zMu-tU-nLs" id="oKZ-XM-yPl"/>
                 <outlet property="continueButton" destination="ZHt-qr-Yeo" id="2gY-D2-qXf"/>
                 <outlet property="priKeyQR" destination="EFS-ob-kYP" id="BNe-QT-RYl"/>
                 <outlet property="privateKeyLabel" destination="Oii-ze-59Y" id="5UQ-gs-AaR"/>
+                <outlet property="privateKeyTipLabel" destination="9Bo-QW-8X7" id="2Iv-ed-qz6"/>
                 <outlet property="scrollView" destination="IS8-XP-iNy" id="CrL-mF-ax6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -77,7 +79,7 @@
                     <color key="textColor" red="0.4549019608" green="0.48627450979999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i70-RG-17e" userLabel="addressLabel">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address(Tap to Copy)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i70-RG-17e" userLabel="addressLabel">
                     <rect key="frame" x="10" y="80" width="168" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="sJl-zn-Rog"/>
@@ -86,7 +88,7 @@
                     <color key="textColor" red="0.4549019608" green="0.48627450979999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQP-H1-tiB" userLabel="addressValueLabel">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQP-H1-tiB" userLabel="addressValueLabel">
                     <rect key="frame" x="20" y="111" width="335" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Hb3-pY-oNf"/>
@@ -109,22 +111,22 @@
                     <color key="textColor" red="0.4549019608" green="0.48627450979999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hud-iP-whv" userLabel="addrQR Image View">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hud-iP-whv" userLabel="addrQR Image View">
                     <rect key="frame" x="87" y="142" width="200" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="BBh-IU-y59"/>
                         <constraint firstAttribute="height" constant="200" id="XY6-UR-RD7"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-ob-kYP" userLabel="privQR Image View">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-ob-kYP" userLabel="privQR Image View">
                     <rect key="frame" x="87" y="420" width="200" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="0qT-qa-2fk"/>
                         <constraint firstAttribute="height" constant="200" id="C7F-Mu-auM"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bo-QW-8X7" userLabel="priLabel">
-                    <rect key="frame" x="10" y="362" width="72.5" height="17"/>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Key(Tap to Copy)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bo-QW-8X7" userLabel="priLabel">
+                    <rect key="frame" x="10" y="362" width="160" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.4549019608" green="0.48627450979999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -143,7 +145,7 @@
                         <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="jFy-zV-F7a"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oii-ze-59Y" userLabel="priValueLabel">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oii-ze-59Y" userLabel="priValueLabel">
                     <rect key="frame" x="20" y="389" width="335" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="J2m-ye-hDc"/>

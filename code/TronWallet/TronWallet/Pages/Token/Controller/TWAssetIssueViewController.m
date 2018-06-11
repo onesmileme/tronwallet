@@ -120,19 +120,20 @@
     _contract.num = [self.exTokenField.text intValue];
     
     
-    if ([self.frozenDaysField.text integerValue] > 0 && [self.frozenAmountField.text integerValue] > 0) {
-        AssetIssueContract_FrozenSupply *supply = [AssetIssueContract_FrozenSupply new];
-        supply.frozenDays = [_frozenDaysField.text integerValue];
-        supply.frozenAmount = [_frozenAmountField.text integerValue];
-
-        [_contract.frozenSupplyArray addObject:supply];
-    }else{
-        AssetIssueContract_FrozenSupply *supply = [AssetIssueContract_FrozenSupply new];
-        supply.frozenDays = 1;
-        supply.frozenAmount = 0;
-
-        [_contract.frozenSupplyArray addObject:supply];
-    }
+//    if ([self.frozenDaysField.text integerValue] > 0 && [self.frozenAmountField.text integerValue] > 0) {
+//        AssetIssueContract_FrozenSupply *supply = [AssetIssueContract_FrozenSupply new];
+//        supply.frozenDays = [_frozenDaysField.text integerValue];
+//        supply.frozenAmount = [_frozenAmountField.text integerValue];
+//
+//        [_contract.frozenSupplyArray addObject:supply];
+//    }    
+//    else{
+//        AssetIssueContract_FrozenSupply *supply = [AssetIssueContract_FrozenSupply new];
+//        supply.frozenDays = 1;
+//        supply.frozenAmount = 0;
+//
+//        [_contract.frozenSupplyArray addObject:supply];
+//    }
     
     
     

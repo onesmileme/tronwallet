@@ -24,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"SIGN";
+    [self initBackItem];
 
     CALayer *layer = self.qrImageView.layer;
     layer.borderColor = [HexColor(0x747C7F) CGColor];

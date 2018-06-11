@@ -20,6 +20,12 @@
         return;
     }
     transaction = [AppWalletClient signTransaction:transaction];
+    if ([NSThread currentThread] != [NSThread mainThread]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self signedbroadcastTransaction:transaction hud:hud completion:completion];
+        });
+        return;
+    }
     [self signedbroadcastTransaction:transaction hud:hud completion:completion];
 }
 
@@ -38,7 +44,7 @@
                 hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
             }
         }
-        [hud hideAnimated:YES afterDelay:1 ];
+        [hud hideAnimated:YES afterDelay:2];
         if (completion) {
             completion(response,error);
         }        

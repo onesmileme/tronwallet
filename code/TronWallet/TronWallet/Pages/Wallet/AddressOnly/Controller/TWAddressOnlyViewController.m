@@ -22,6 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self initBackItem];
+    self.title = @"TRANSACTION";
+    
     CALayer *layer = self.qrImageView.layer;
     layer.borderColor = [HexColor(0x747C7F) CGColor];
     layer.borderWidth = 1;
@@ -48,6 +51,17 @@
 
 -(IBAction)scanDoneAction:(id)sender
 {
+//
+//#if DEBUG
+//    NSString *qr = [NSString stringWithContentsOfFile:@"/Users/chunhui/Desktop/temp/wallet/sign.txt" encoding:NSUTF8StringEncoding error:nil];
+//
+//    [self.navigationController popViewControllerAnimated:NO];
+//    if (self.scanblock) {
+//        self.scanblock(qr);
+//    }
+//    return;
+//#endif
+//
     TWQRViewController *controller = [[TWQRViewController alloc]init];
     __weak typeof(self) wself = self;
     controller.captureBlock = ^(NSString *metaObbj) {

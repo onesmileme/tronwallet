@@ -16,7 +16,6 @@
 @interface TWAccountViewController ()
 
 @property(nonatomic , strong) NSString *address;
-//@property(nonatomic , strong) NSString *password;
 @property(nonatomic , assign) BOOL cold;
 @property(nonatomic , strong) TWWalletAccountClient *client;
 @property(nonatomic , assign) BOOL showInfoOnly;
@@ -42,9 +41,19 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAddressTap)];
     [self.addressLabel addGestureRecognizer:tap];
+
+    tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAddressTap)];
+    [self.addressTipLabel addGestureRecognizer:tap];
+    tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAddressTap)];
+    [self.addressQR addGestureRecognizer:tap];
+    
     
     tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onPrivateKeyTap)];
     [self.privateKeyLabel addGestureRecognizer:tap];
+    tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onPrivateKeyTap)];
+    [self.privateKeyTipLabel addGestureRecognizer:tap];
+    tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onPrivateKeyTap)];
+    [self.priKeyQR addGestureRecognizer:tap];
     
     self.continueButton.hidden = _showInfoOnly;
     [self initBackItem];

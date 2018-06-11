@@ -79,6 +79,7 @@
 
 -(IBAction)participateAction:(id)sender
 {
+    [self.view endEditing:YES];
     
     [self showAlert:@"TIP" mssage:@"Really want to participate this?" confrim:@"YES" cancel:@"NO" confirmAction:^{
     
@@ -129,6 +130,9 @@
                     }];
                 }else{
                     hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
+                    if (hud.label.text.length == 0) {
+                        hud.label.text = @"Participate failed~";
+                    }
                 }
             }
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -180,7 +184,7 @@
 {
     TWWalletAccountClient *client = AppWalletClient;
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
-    MBProgressHUD *hud = [self showHud];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [wallet broadcastTransactionWithRequest:transaction handler:^(Return * _Nullable response, NSError * _Nullable error) {
         
         if (error) {

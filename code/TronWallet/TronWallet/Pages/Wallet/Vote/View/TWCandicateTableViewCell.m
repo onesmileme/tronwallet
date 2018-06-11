@@ -54,7 +54,7 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     if (self.updateVotes) {
-        self.updateVotes([textField.text integerValue],_index);
+        self.updateVotes([textField.text integerValue],self.idLabel.text,_index);
     }
     self.votesFields.text = [@([textField.text integerValue]) description];
 }

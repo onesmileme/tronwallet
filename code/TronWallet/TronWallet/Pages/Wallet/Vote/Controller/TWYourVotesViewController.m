@@ -63,6 +63,7 @@
                         if ([vote.voteAddress isEqualToData:witness.address]) {
                             [self.witnessesArray addObject:witness];
                             self.voteMap[@(index)] = @(vote.voteCount);
+                            index++;
                             break;
                         }
                     }

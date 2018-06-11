@@ -68,6 +68,7 @@
 
 -(IBAction)publicQRAction:(id)sender
 {
+    [self.view endEditing:YES];
     TWQRViewController *controller = [[TWQRViewController alloc]init];
     __weak typeof(self) wself = self;
     controller.captureBlock = ^(NSString *metaObbj) {
@@ -78,6 +79,7 @@
 
 -(IBAction)qaAction:(id)sender
 {
+    [self.view endEditing:YES];
     TWQRViewController *controller = [[TWQRViewController alloc]init];
     __weak typeof(self) wself = self;
     controller.captureBlock = ^(NSString *metaObbj) {
@@ -88,6 +90,7 @@
 
 -(IBAction)importAction:(id)sender
 {
+    [self.view endEditing:YES];
     NSString *tip = nil;
     if (self.passwordField.text.length == 0) {
         tip = @"Please input password";
@@ -110,6 +113,7 @@
 
 -(IBAction)pubImportAction:(id)sender
 {
+    [self.view endEditing:YES];
     if (self.pubkeyField.text.length == 0) {
         [self showAlert:@"TIP" mssage:@"Input address please" confrim:@"Confirm" cancel:nil];
         return;

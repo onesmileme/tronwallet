@@ -9,7 +9,7 @@
 #import "TWCandicateViewController.h"
 #import "TWCandicateTableViewCell.h"
 #import "TWVoteWitnessModel.h"
-
+#import "TWShEncoder.h"
 
 @interface TWCandicateViewController ()
 
@@ -47,6 +47,7 @@
     Wallet *wallet = [[TWNetworkManager sharedInstance] walletClient];
     [wallet listWitnessesWithRequest:[EmptyMessage new] handler:^(WitnessList * _Nullable response, NSError * _Nullable error) {
         
+        [self.voteMap removeAllObjects];
         BOOL success = NO;
         if (response.witnessesArray_Count > 0) {
             success = YES;
@@ -62,15 +63,17 @@
         return NULL;
     }
     NSMutableArray *witnesses = [[NSMutableArray alloc] initWithCapacity:_voteMap.count];
-    for (NSNumber *key in [_voteMap allKeys]) {
-        NSInteger index = [key integerValue];
-        Witness *witness = _witnessesArray[index];
+    for (NSString *address in [_voteMap allKeys]) {
         
-        TWVoteWitnessModel *model = [[TWVoteWitnessModel alloc]init];
-        model.witness = witness;
-        model.vote = [_voteMap[key] integerValue];
-        
-        [witnesses addObject:model];
+        for (Witness *wit in _witnessesArray) {
+            NSString *addr = [TWShEncoder encode58Check:wit.address];
+            if ([addr isEqualToString:address]) {
+                TWVoteWitnessModel *model = [[TWVoteWitnessModel alloc]init];
+                model.witness = wit;
+                model.vote = [_voteMap[address] integerValue];
+                [witnesses addObject:model];
+            }
+        }     
     }
     return witnesses;
 }
@@ -91,8 +94,8 @@
     TWCandicateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_id" forIndexPath:indexPath];
     if (!cell.updateVotes) {
         __weak typeof(self) wself = self;
-        cell.updateVotes = ^(NSInteger votes, NSInteger index) {
-            wself.voteMap[@(index)] = @(votes);
+        cell.updateVotes = ^(NSInteger votes,NSString *address, NSInteger index) {
+            wself.voteMap[address] = @(votes);
             [wself.tableView reloadData];
         };
     }
@@ -100,7 +103,11 @@
     // Configure the cell...
     NSInteger index = indexPath.section+1;
     Witness *witness = _witnessesArray[indexPath.section];
-    NSInteger votes = [self.voteMap[@(indexPath.section+1)] integerValue];
+    NSString *address = [TWShEncoder encode58Check:witness.address];
+    NSInteger votes = 0;
+    if (address) {
+        votes = [self.voteMap[address] integerValue];
+    }
     [cell updateWithModel:witness index:index votes:votes];
     
     return cell;

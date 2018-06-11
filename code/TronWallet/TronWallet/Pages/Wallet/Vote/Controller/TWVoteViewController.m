@@ -12,6 +12,7 @@
 #import "TWTopScrollView.h"
 #import "TWAddressOnlyViewController.h"
 #import "TWHexConvert.h"
+#import "TWShEncoder.h"
 
 #define kTopScrollHeight 40
 
@@ -137,6 +138,11 @@
         [contract.votesArray addObject:vote];
     }
     
+    if (AppWalletClient.type == TWWalletAddressOnly) {
+        [self addressOnlyVote:contract];
+        return;
+    }
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak typeof(self) wself = self;
     [wallet voteWitnessAccountWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
@@ -160,8 +166,8 @@
 
 -(void)addressOnlyVote:(VoteWitnessContract *)contract
 {
-    TWWalletAccountClient *client = AppWalletClient;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    TWWalletAccountClient *client = AppWalletClient;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view.window animated:YES];
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
     
     [wallet voteWitnessAccountWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
@@ -173,46 +179,18 @@
             [hud hideAnimated:YES afterDelay:1];
         }else{
             
+            [hud hideAnimated:NO];
             
-            [hud hideAnimated:YES];
-            
-            [self signTransaction:response];
-            
-            response = [client signTransaction:response];
-            
-//            [wself broadcastTransaction:response hud:hud completion:^(Return * _Nullable response, NSError * _Nullable error) {
-//                [AppWalletClient refreshAccount:^(Account *account, NSError *error) {
-//                    [wself refrshUI];
-//                }];
-//                [wself.canController startRequest];
-//                [wself.ownController startRequest];
-//            }];
+            [self signTransaction:response];                        
         }
     }];
     
-//    [wallet createTransactionWithRequest:contract handler:^(Transaction * _Nullable response, NSError * _Nullable error) {
-//        //update amount
-//        if (error) {
-//            hud.label.text = [error localizedDescription];
-//            [hud hideAnimated:YES afterDelay:0.7 ];
-//            return ;
-//        }
-//
-//        [hud hideAnimated:YES];
-//
-//        self.toSignTransaction = response;
-//
-//        [self signTransaction:response];
-//
-//        response = [client signTransaction:response];
-//
-//    }];
     
 }
 
 -(void)signTransaction:(Transaction *)transaction
 {
-    
+        
     TWAddressOnlyViewController *controller = [[TWAddressOnlyViewController alloc] initWithNibName:@"TWAddressOnlyViewController" bundle:nil];
     
     NSData *data = [transaction data];
@@ -222,7 +200,9 @@
     controller.scanblock = ^(NSString *qr) {
         NSData *tdata = [TWHexConvert convertHexStrToData:qr];
         Transaction *transaction = [Transaction parseFromData:tdata error:nil];
-        [wself broadcastTransaction:transaction];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [wself broadcastTransaction:transaction];
+        });        
     };
     
     [self.navigationController pushViewController:controller animated:YES];
@@ -232,7 +212,7 @@
 {
     TWWalletAccountClient *client = AppWalletClient;
     Wallet *wallet =  [[TWNetworkManager sharedInstance] walletClient];
-    MBProgressHUD *hud = [self showHud];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak typeof(self) wself = self;
     [wallet broadcastTransactionWithRequest:transaction handler:^(Return * _Nullable response, NSError * _Nullable error) {
         
@@ -245,15 +225,14 @@
                 [client refreshAccount:^(Account *account, NSError *error) {
                     [wself.canController startRequest];
                     [wself.ownController startRequest];
-                }];
-                
-                
+                }];                                
             }else{
                 
-                hud.label.text = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
-                if (hud.label.text.length == 0) {
-                    hud.label.text = @"Vote failed";
+                NSString *tip  = [[NSString alloc] initWithData:response.message encoding:NSUTF8StringEncoding];
+                if (tip.length == 0) {
+                    tip = @"Vote failed";
                 }
+                hud.label.text = tip;
             }
         }
         [hud hideAnimated:YES afterDelay:1.5 ];

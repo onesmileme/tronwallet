@@ -19,7 +19,7 @@
 @property(nonatomic , strong) IBOutlet UILabel *missLabel;
 @property(nonatomic , strong) IBOutlet UITextField *votesFields;
 
-@property(nonatomic , copy) void(^updateVotes)(NSInteger votes , NSInteger index);
+@property(nonatomic , copy) void(^updateVotes)(NSInteger votes ,NSString *address ,NSInteger index);
 
 -(void)updateWithModel:(Witness *)model index:(NSInteger)index votes:(NSInteger)votes;
 

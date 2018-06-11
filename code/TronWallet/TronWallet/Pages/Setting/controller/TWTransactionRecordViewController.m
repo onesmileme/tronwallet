@@ -35,8 +35,11 @@
     
     self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
+    self.tableView.allowsSelection = NO;
+    
     UINib *nib = [UINib nibWithNibName:@"TWTransferTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cellid"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self addHeaderRefreshView:self.tableView];
     [self addFooterRefreshView:self.tableView];
