@@ -9,7 +9,7 @@
 #import "TWQRViewController.h"
 #import "TWQRScanView.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import <Photos/Photos.h>
 @interface TWQRViewController ()
 
 @end
@@ -22,6 +22,39 @@
     
     self.title = @"SCAN QR";
     
+    NSString * mediaType = AVMediaTypeVideo;
+    AVAuthorizationStatus  authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+    
+    if (authorizationStatus == AVAuthorizationStatusRestricted|| authorizationStatus == AVAuthorizationStatusDenied) {
+        
+        UIAlertController * alertC = [UIAlertController alertControllerWithTitle:nil message:@"Can't access capture, please switch on in settings" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction * action = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+            if(self.navigationController){
+                [self.navigationController popViewControllerAnimated:YES ];
+            }else{
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            
+        }];
+        
+        [alertC addAction:action];
+        
+        [self presentViewController:alertC animated:YES completion:nil];
+        
+    }else{
+        
+        [self tryAddScan];
+        
+    }
+    
+
+    
+}
+
+-(void)tryAddScan
+{
     TWQRScanView *scanview = [[TWQRScanView alloc] init];
     __weak typeof(self) wself = self;
     scanview.captureBlock = ^(NSArray *metaObbjs) {
@@ -29,14 +62,14 @@
             [wself.navigationController popViewControllerAnimated:YES];
             
             if (wself.captureBlock) {
-                AVMetadataMachineReadableCodeObject *object = [metaObbjs firstObject];            
+                AVMetadataMachineReadableCodeObject *object = [metaObbjs firstObject];
                 wself.captureBlock(object.stringValue);
             }
         });
     };
     [self.view addSubview:scanview];
-    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

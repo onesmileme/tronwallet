@@ -15,7 +15,7 @@
 #import "TWTokensViewController.h"
 #import "TWSettingViewController.h"
 #import "TWParticipateViewController.h"
-
+#import "TWTransactionRecordViewController.h"
 
 #define kTopScrollHeight 40
 
@@ -57,7 +57,7 @@
     
     [self initNavbar];
     
-    NSArray *items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS"];//,@"ACCOUNT"
+    NSArray *items = @[@"BLOCKCHAIN",@"WITNESS",@"NODES",@"TOKENS",@"ACCOUNT"];//,
     _topScrollView = [[TWTopScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), kTopScrollHeight) items:items type:TWTopScrollViewTypeDefault];
     [self.view addSubview:_topScrollView];
     __weak typeof(self) wself = self;
@@ -86,11 +86,12 @@
     tokenController.participateBlock = ^(AssetIssueContract *contract) {
         [wself participate:contract];
     };
-    
+    TWTransactionRecordViewController *transactionController = [[TWTransactionRecordViewController alloc]initWithNibName:@"TWTransactionRecordViewController" bundle:nil];
     _controllers = @[[[TWBlockChainViewController alloc]init],
                      [[TWRepresentativeViewController alloc]init],
                      [[TWNodesViewController alloc]init],
-                     tokenController
+                     tokenController,
+                    transactionController
 //                     [[TWAccountsViewController alloc]init]
                      ];
     [_pageContainerViewController setViewControllers:@[_controllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];

@@ -48,9 +48,6 @@
     [self showAV];
     
     
-    
-    
-    
 }
 
 

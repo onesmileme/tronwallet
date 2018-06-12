@@ -76,7 +76,7 @@
                         <action selector="resetAppAction:" destination="-1" eventType="touchUpInside" id="fcb-3l-RgA"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMU-sU-umZ" userLabel="transactionButton">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMU-sU-umZ" userLabel="transactionButton">
                     <rect key="frame" x="0.0" y="158" width="375" height="54"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.69019607839999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>

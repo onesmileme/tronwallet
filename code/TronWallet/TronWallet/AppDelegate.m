@@ -13,6 +13,7 @@
 #import "TWWalletAccountClient.h"
 #import "TWWalletCreateViewController.h"
 #import "ViewController.h"
+#import <Bugly/Bugly.h>
 
 @interface AppDelegate ()
 
@@ -28,6 +29,9 @@
     [TWUIInitManager sharedInstance];
     [TWNetworkManager sharedInstance];
     
+    //84a1cddd73
+    [Bugly startWithAppId:@"84a1cddd73"];
+        
     self.originRootController =self.window.rootViewController;
     _walletClient = [TWWalletAccountClient loadWallet];
     if (!_walletClient) {        

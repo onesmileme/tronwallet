@@ -60,15 +60,15 @@ PODS:
   - NJKWebViewProgress/ProgressView (0.2.3)
   - OpenSSL-Universal (1.0.2.14)
   - Protobuf (3.0.0)
-  - SDWebImage (4.1.0):
-    - SDWebImage/Core (= 4.1.0)
-  - SDWebImage/Core (4.1.0)
+  - SDWebImage (4.1.2):
+    - SDWebImage/Core (= 4.1.2)
+  - SDWebImage/Core (4.1.2)
   - SZTextView (1.3.0)
-  - TPKeyboardAvoiding (1.3.1)
-  - WebViewJavascriptBridge (6.0.2)
+  - TPKeyboardAvoiding (1.3.2)
+  - WebViewJavascriptBridge (6.0.3)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.1.0)
+  - AFNetworking (= 3.1.0)
   - BoringSSL (~> 9.2)
   - CocoaLumberjack (~> 3.2.1)
   - gRPC (= 1.9.1)
@@ -91,7 +91,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   OpenSSL-Universal:
-    :commit: b9afecb514be9872fbc028428af2d1e120e9cc4f
+    :commit: 90ac344122a7f69d578c945690c25186f29810b3
     :git: https://github.com/krzyzanowskim/OpenSSL.git
 
 SPEC CHECKSUMS:
@@ -109,11 +109,11 @@ SPEC CHECKSUMS:
   NJKWebViewProgress: 2b63fbc0e8b5210997a8e79702b9a1dcd23ffe0c
   OpenSSL-Universal: 60db51d46fdf2af071f141d9c4fec5430276d3ed
   Protobuf: 5bb6408423b76ceb45aeb6017dcf5aa4864a3243
-  SDWebImage: e38485a0612e3f45f1ae2f7bc450b4140fb3da69
+  SDWebImage: 4b86a229f30a77a39c9a4d1aea624b02a9b30ebe
   SZTextView: c317aace4926300500789dd10297b33de2c08407
-  TPKeyboardAvoiding: a6ba96fbec28ae5dacea11f45132a9d0698e1960
-  WebViewJavascriptBridge: 318ccc771d1ad661b9c05b12d70994f725cf0639
+  TPKeyboardAvoiding: 76918ec2151e245bdd6921836ed4da31a6d55b46
+  WebViewJavascriptBridge: 74316fd3ac8d0feb8aa05430b31ffae6dcdb93f3
 
-PODFILE CHECKSUM: c162b7e842f3c5f18ad15b4384a0359b21547df7
+PODFILE CHECKSUM: 486f2bde469f648289925eb6cf5efd5509fef3cf
 
 COCOAPODS: 1.2.0

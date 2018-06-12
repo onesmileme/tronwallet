@@ -106,6 +106,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    if(AppWalletClient.type == TWWalletCold){
+        //cold wallet can't participate
+        return;
+    }
+    
     UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil message:@"Want to participate this ?" preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

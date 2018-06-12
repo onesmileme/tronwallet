@@ -159,7 +159,7 @@ typedef struct
 //    self.publicKey = publicKey.data;
     self.privateKey = priData;
     
-    NSLog(@"private key is: %@\n public key data is: %@",self.privateKey,self.publicKey);
+//    NSLog(@"private key is: %@\n public key data is: %@",self.privateKey,self.publicKey);
     
     
     return YES;

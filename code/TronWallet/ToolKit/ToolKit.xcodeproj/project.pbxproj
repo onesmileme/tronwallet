@@ -54,7 +54,6 @@
 		6E1CD5471B3FAFB9003E56FF /* TKTabControllerIniter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD5461B3FAFB9003E56FF /* TKTabControllerIniter.m */; };
 		6E1CD54A1B3FAFC8003E56FF /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD5491B3FAFC8003E56FF /* TKViewController.m */; };
 		6E1CD5631B3FC324003E56FF /* TKNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD5601B3FC324003E56FF /* TKNetworkManager.m */; };
-		6E1CD5641B3FC324003E56FF /* TKUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD5621B3FC324003E56FF /* TKUploader.m */; };
 		6E203EB21BA31D1600451DE0 /* TKAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E203EB11BA31D1600451DE0 /* TKAppInfo.m */; };
 		6E24FF961C045F7A005E6D57 /* SGActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24FF8D1C045F7A005E6D57 /* SGActionView.m */; };
 		6E24FF971C045F7A005E6D57 /* SGAlertMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24FF8F1C045F7A005E6D57 /* SGAlertMenu.m */; };
@@ -245,8 +244,6 @@
 		6E1CD5491B3FAFC8003E56FF /* TKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewController.m; sourceTree = "<group>"; };
 		6E1CD55F1B3FC324003E56FF /* TKNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNetworkManager.h; sourceTree = "<group>"; };
 		6E1CD5601B3FC324003E56FF /* TKNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNetworkManager.m; sourceTree = "<group>"; };
-		6E1CD5611B3FC324003E56FF /* TKUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUploader.h; sourceTree = "<group>"; };
-		6E1CD5621B3FC324003E56FF /* TKUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUploader.m; sourceTree = "<group>"; };
 		6E1D71A41DC2078000179926 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
 		6E1D71A51DC207A200179926 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		6E203EB01BA31D1600451DE0 /* TKAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAppInfo.h; sourceTree = "<group>"; };
@@ -606,8 +603,6 @@
 				6E7EFC6C1B50CF97002D0971 /* Util */,
 				6E1CD55F1B3FC324003E56FF /* TKNetworkManager.h */,
 				6E1CD5601B3FC324003E56FF /* TKNetworkManager.m */,
-				6E1CD5611B3FC324003E56FF /* TKUploader.h */,
-				6E1CD5621B3FC324003E56FF /* TKUploader.m */,
 				6E1CD3011B3BEB1B003E56FF /* TKHttpParameter.h */,
 				6E1CD3021B3BEB1B003E56FF /* TKHttpParameter.m */,
 				6EEF9AE71BBBE45200FA17A6 /* Reachability.h */,
@@ -1141,7 +1136,6 @@
 				6EB83EAD1CDC7AFD00F1B45A /* TKInputEmojiManager.m in Sources */,
 				6E1CD4531B3FA345003E56FF /* ImageHelper.m in Sources */,
 				6EA15C571CBCAB8C0031DDBC /* NSData+GZIP.m in Sources */,
-				6E1CD5641B3FC324003E56FF /* TKUploader.m in Sources */,
 				6E24FF9A1C045F7A005E6D57 /* SGSheetMenu.m in Sources */,
 				6E1CD4E51B3FA351003E56FF /* UIDevice+Hardware.m in Sources */,
 				F50F98EC1CB76D9D00F2E82A /* NSNotificationCenter+adapter.m in Sources */,
@@ -1293,9 +1287,10 @@
 				);
 				GCC_PREFIX_HEADER = ToolKit/ToolKit.pch;
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Pods/AFNetworking/**",
+					"$(SRCROOT)/../Pods/Headers/Public/AFNetworking/**",
 					"$(SRCROOT)/ToolKit/ThirdParty/UMeng/**",
 					"$(inherited)",
-					"$(SRCROOT)/../Pods/Headers/Public/AFNetworking",
 					"$(SRCROOT)/../Pods/Headers/Public/JSONModel",
 					"$(SRCROOT)/../Pods/Headers/Public/SDWebImage",
 					"$(SRCROOT)/../Pods/Headers/Public/NJKWebViewProgress",
@@ -1337,9 +1332,10 @@
 				);
 				GCC_PREFIX_HEADER = ToolKit/ToolKit.pch;
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Pods/AFNetworking/**",
+					"$(SRCROOT)/../Pods/Headers/Public/AFNetworking/**",
 					"$(SRCROOT)/ToolKit/ThirdParty/UMeng/**",
 					"$(inherited)",
-					"$(SRCROOT)/../Pods/Headers/Public/AFNetworking",
 					"$(SRCROOT)/../Pods/Headers/Public/JSONModel",
 					"$(SRCROOT)/../Pods/Headers/Public/SDWebImage",
 					"$(SRCROOT)/../Pods/Headers/Public/NJKWebViewProgress",
